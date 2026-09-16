@@ -34,7 +34,7 @@ Nesta operação você recebe **apenas a apresentação e o relatório** de cada
 4. **Corrija por critério, não por candidato.** Se avaliar vários, avalie todos no C1, depois todos no C2, e assim por diante. Isso evita que uma boa impressão geral contamine as 20 notas.
 5. **Não premie volume nem tangente.** Em **R3** e **E4**, relevância vale mais que quantidade: análise extra que não muda nem informa a decisão é **0, não 2**; três páginas tangenciais valem menos que nada.
 6. **Teto de acurácia:** em **A1/A2**, mesmo com o valor certo, o teto é **2** se a memória de cálculo não estiver visível.
-7. **Não tente detectar uso de IA no take-home.** A verificação de autoria/propriedade acontece na entrevista (fora do seu escopo). Avalie o que foi entregue.
+7. **Separe mérito de autoria.** As notas da rubrica avaliam só a qualidade da entrega e **nunca** são alteradas por suspeita de IA. À parte, você produz uma **leitura de indício de IA** (seção própria): é *advisory*, não pontua e não elimina — serve para orientar a checagem de propriedade na entrevista.
 8. **Não chute.** Se faltar material para pontuar um critério com segurança, registre "sem evidência suficiente" como *flag* e não atribua nota alta por suposição.
 9. **Não avaliável ≠ zero.** Critério que depende de artefato não fornecido é marcado **NÃO AVALIÁVEL** e removido do cálculo (ver seção acima). Zero é uma nota de mérito — só use quando o material existe e não atende ao descritor.
 
@@ -179,6 +179,28 @@ Para cada critério de escala 0–3, os pontos = **(nota ÷ 3) × peso**. Para o
 - **Total bruto /100** — a soma dos pontos obtidos, deixando os itens não avaliáveis fora (equivale a considerá-los pendentes).
 - **Total ajustado (0–100)** = (pontos obtidos ÷ soma dos pesos dos critérios avaliáveis) × 100. É esse que torna candidatos comparáveis quando o mesmo conjunto foi excluído para todos. As notas de V1 e V2 (importadas da planilha) **entram no total normalmente**. Informe também **qual peso foi excluído** (ex.: "excluídos 5 pts: E1, E3").
 
+## LEITURA DE INDÍCIO DE IA  *(advisory — NÃO entra na nota)*
+
+Além da rubrica, produza uma leitura de **o quanto a entrega parece construída com IA**, olhando a **maneira de construir** (escrita/estrutura) e a **complexidade dos cálculos e estimativas**. Princípios:
+
+- **É sinal, não veredito.** Não altera nenhuma nota nem o total, não é motivo de corte e não é acusação. É uma **hipótese** a confirmar na **checagem ao vivo da entrevista** (o candidato refaz, ao vivo, uma conta da própria entrega com um parâmetro alterado — quem montou resolve em minutos).
+- **Cuidado com falso positivo.** Texto limpo, bem formatado e bem escrito **não** é prova de IA — candidato forte também escreve assim. E usar IA como ferramenta não é proibido; o que se verifica é **propriedade** (se a pessoa entende o que entregou).
+- Sempre com **evidência apontável** (slide, página, trecho, número).
+
+**Sinais na MANEIRA DE CONSTRUIR (escrita/estrutura):**
+- Prosa genérica e simétrica, "consultingês" que serviria para qualquer empresa; frameworks aplicados sem amarrar aos números/tabelas específicos DESTE case.
+- Muito texto polido com pouca substância; recomendação que não se compromete; ausência de referência aos dados concretos do material.
+- **Não identificou a inconsistência plantada (A6 = 0)** — IA tende a aceitar o enunciado como verdade. É o indício mais forte do conjunto.
+- Premissa deixada em aberto tratada com suposição genérica e não carregada de forma coerente até a recomendação.
+
+**Sinais na COMPLEXIDADE dos CÁLCULOS/ESTIMATIVAS:**
+- Números aparecem **sem memória de cálculo / sem derivação rastreável**; narrativa sofisticada convivendo com conta rasa ou ausente (descompasso entre discurso e matemática).
+- Estimativas redondas/genéricas, não ancoradas nos dados do case; **nenhuma** análise de sensibilidade nem teste de caminho alternativo.
+- "Números de impacto" que **não reconciliam** com as próprias tabelas/DRE do case.
+- Uniformidade suspeita: tudo no mesmo nível de profundidade, sem os cortes e priorizações típicos de quem tem tempo limitado.
+
+**Saída do indício:** `Indício de IA: Baixo / Médio / Alto | evidências apontadas | pergunta sugerida para a checagem ao vivo da entrevista`.
+
 ## CASE DESTE SEMESTRE  *(preencher antes de avaliar)*
 
 - **Enunciado / contexto do case:** [colar o enunciado ou um resumo com os dados-chave]
@@ -204,5 +226,6 @@ Nome/ID do candidato + a **apresentação e o relatório** do case + as **notas 
 3. **3 forças e 3 lacunas**, cada uma ancorada numa evidência — redigidas para virar feedback ao candidato.
 4. **Flags de atenção** (não entram na nota): critérios sem material suficiente; qualquer nota que você não conseguiu amarrar a um descritor; se A6 não foi encontrada.
 5. Se o material trouxer sinais de elegibilidade (formatura próxima, intercâmbio, carga de estágio), registre como **observação**, nunca como nota — é *warning*, não corte.
+6. **Leitura de indício de IA** (advisory, fora da nota): `Baixo / Médio / Alto | evidências apontadas | pergunta sugerida para a checagem ao vivo`. Deixe explícito que não afeta o total nem elimina o candidato.
 
 Seja conciso, factual e sempre revisável: outra pessoa deve conseguir reabrir a entrega, ir à sua evidência e concordar ou contestar a nota.
