@@ -40,8 +40,8 @@ toda semana em que o case for de entrada ou lançamento, que é a maior parte do
 | Sexta, até 18h | Duplas confirmam participação | Membros | Grupo |
 | Segunda | Check-in de meio de ciclo, cada dupla responde em uma linha | Diretor pergunta, duplas respondem | Grupo |
 | Quarta | Empurrão curto, com uma dica e nada mais | Diretor | Grupo |
-| Quinta | Lembrete de prazo com o link da pasta | Diretor | Grupo |
-| Sexta, 23h59 | Fecha a entrega. Nada entra depois, e na semana 1 isso não é negociável | Duplas | Pasta de entrega |
+| Quinta | Lembrete de prazo, com o e-mail de entrega | Diretor | Grupo |
+| Sexta, 23h59 | Fecha a entrega. Nada entra depois, e na semana 1 isso não é negociável | Duplas | E-mail equipeccu@gmail.com |
 | Sábado, manhã | Correção critério por critério, com evidência | Diretor | Planilha |
 | Sábado, 12h | Publica gabarito e notas | Diretor | Grupo e Drive |
 | Segunda, 9h | Anuncia a Dupla Destaque e abre o ciclo seguinte no mesmo post | Diretor | Grupo |
@@ -261,25 +261,29 @@ corresponde a uma das quatro perguntas.
 
 Nota final = soma de (nota ÷ 3 × peso). Sem evidência apontada, a nota 3 cai para 2.
 
-## 7. Gamificação
+## 7. Gamificação, cobrança e recompensas
 
-| Como pontuar | Pontos |
-|---|---|
-| Entregou dentro do prazo | 10 |
-| Nota igual ou acima de 7,0 | +10 |
-| Nota igual ou acima de 8,5 | +20, substitui o de cima |
-| Tratou o custo de aquisição só sobre as usuárias novas, e disse isso | +5 |
-| Apontou a inconsistência entre os anexos | +5 |
-| Respondeu o check-in de segunda | +3 |
-| Comentou a entrega de outra dupla com crítica útil | +5 |
-| Dupla Destaque da semana | +15 |
+Passou a ter documento próprio: `Gamificacao, cobranca e recompensas.docx`, na pasta
+`ciclo-de-cases`, com PDF ao lado. Ele vale para o ciclo inteiro de 8 semanas, não só para esta
+semana. O que está lá:
 
-**Dupla Destaque:** maior nota da semana. Empate desempata por A2, depois por C1. Anunciada na
-segunda às 9h, no mesmo post que abre o ciclo, com uma frase dizendo o que ela fez de diferente.
+- **Os três comportamentos** que o sistema premia, em ordem: entregar, entregar bem e ajudar quem
+  entrega. Quem entrega sempre e razoavelmente bem termina à frente de quem brilhou duas vezes e
+  desapareceu, e isso é intencional.
+- **Tabela de pontos** com dez linhas, máximo de 60 por semana. Sem ponto negativo: quem não entrega
+  simplesmente não pontua, e o assunto vai para a cobrança, não para o placar.
+- **Régua de cobrança em quatro degraus**, do lembrete coletivo até a conversa de expectativa, com a
+  regra que sustenta tudo: nome no grupo só aparece para reconhecer, cobrança é sempre individual e
+  privada.
+- **Recompensas em três níveis**, baseadas em acesso e visibilidade em vez de prêmio. A do fim do
+  ciclo é a dupla campeã apresentar o case final do Trainee para a banca da consultoria parceira, o
+  que amarra o ciclo ao Tópico 3 da sabatina.
+- **Anti-gaming**, indicadores para saber se está funcionando e o critério de encerramento honesto:
+  se a taxa de entrega cair três semanas seguidas, o ciclo não precisa de mais pontos nem de mais
+  cobrança, precisa de case menor.
 
-**Ciclo:** 8 semanas, premiação para a dupla com mais pontos. Sugestão que custa pouco e vale muito:
-a dupla campeã apresenta o case final do Trainee para a banca da consultoria parceira, o que amarra
-a gamificação ao Tópico 3 da sabatina.
+Para a semana 1, o bônus analítico é achar a inconsistência entre o Anexo A e o Anexo B, ou tratar
+corretamente a base sobre a qual o custo de aquisição incide.
 
 ## 8. Kit de comunicação, pronto para copiar
 
@@ -306,8 +310,8 @@ a gamificação ao Tópico 3 da sabatina.
 > para cobrir o custo fixo. E olhem com atenção sobre qual base o custo de aquisição incide.
 
 **Quinta, lembrete**
-> Falta um dia. Entrega até amanhã 23h59 na pasta do Drive, pelo template. Campo em branco conta
-> como não respondido, então vale revisar antes de subir.
+> Falta um dia. Entrega até amanhã 23h59, por e-mail para equipeccu@gmail.com, pelo template.
+> Campo em branco conta como não respondido, então vale revisar antes de enviar.
 
 **Sexta, fechamento**
 > Fechou o ciclo. Obrigado a quem entregou. Corrijo amanhã de manhã e publico o gabarito e as notas
@@ -372,7 +376,8 @@ falta de interesse.
 
 # Dependências: o que só você decide antes de sexta
 
-1. **Nome e link da pasta do Drive** da semana 1, para entrar nas mensagens.
+1. **Confirmar o e-mail de entrega.** Ficou equipeccu@gmail.com no enunciado e nas mensagens. Se
+   preferir uma caixa separada só para cases, é trocar em dois lugares.
 2. **Quem são as duplas**, ou se a formação é livre. Com poucos membros, sugiro formação livre na
    semana 1 e duplas sorteadas a partir da semana 2.
 3. **O prêmio do ciclo de 8 semanas**, mesmo que anunciado só na semana 2.
