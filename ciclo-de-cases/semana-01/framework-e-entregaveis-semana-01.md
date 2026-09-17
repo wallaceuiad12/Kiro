@@ -135,15 +135,31 @@ anexos e quatro perguntas:
 
 ## 4. Template de entrega
 
-Em `Template de entrega - Case 01.docx`. Agora é ele que padroniza a entrega, e não um limite de
-páginas. Uma seção por pergunta do enunciado, na mesma ordem, com campo estruturado para cada coisa
-pedida: a cadeia do dimensionamento etapa por etapa, a margem de contribuição e o ponto de
-equilíbrio, a tabela dos três anos separando usuárias ativas de usuárias novas, a priorização em
-essencial, desejável e opcional com o dado que justifica cada linha, as cinco dimensões da entrada e
-um campo obrigatório de premissas, encabeçado pela base sobre a qual o custo de aquisição incide.
+Em `Template de entrega - ciclo de cases.docx`, na pasta `ciclo-de-cases`, com PDF ao lado. **É o
+mesmo template para todas as semanas**, e essa é a mudança em relação à primeira versão, que era
+amarrada ao Case 01 e morreria com ele. Seis seções:
 
-Não há seção que não corresponda a uma pergunta, e não há pergunta sem seção. Campo em branco conta
-como não respondido, o que torna a correção mais rápida e as entregas comparáveis entre duplas.
+| Seção | O que cobre |
+|---|---|
+| 1. Recomendação | uma frase com o número que a sustenta |
+| 2. Diagnóstico | a conta central do case, etapa por etapa, com cálculo e resultado, mais a leitura em duas ou três frases |
+| 3. A conta que decide | o número que sustenta a decisão, comparado com a alternativa, e o que precisaria ser verdade para mudar |
+| 4. Recomendação em detalhe | o que fazer em ordem de prioridade, com o dado que sustenta, e o que foi descartado com justificativa |
+| 5. Riscos, próximos passos e premissas | riscos com mitigação, passos com prazo e toda premissa criada pela dupla |
+| 6. Espaço livre | só se o enunciado pedir algo que não cabe nas anteriores, com o título dizendo o que está sendo respondido |
+
+As seções 1 a 5 valem para dimensionamento, rentabilidade, precificação, entrada em mercado ou
+qualquer outro tipo. A seção 6 é a válvula de escape para o que é específico de cada case, e é ela
+que evita ter um template novo por semana.
+
+**Mapeamento para o Case 01**, que vale avisar na abertura:
+
+| Pergunta do enunciado | Onde responder |
+|---|---|
+| 1. Mercado endereçável e receita do ano 1 | seção 2, a cadeia do dimensionamento etapa por etapa |
+| 2. Ponto de equilíbrio e business case de três anos | seção 3, com os três anos nas linhas e a leitura de venture capital |
+| 3. Estratégia de produto e priorização | seção 4, usando as prioridades 1, 2 e 3 como essencial, desejável e opcional, e a tabela de descartados para o que fica de fora |
+| 4. Entrada no mercado nas cinco dimensões | seção 6, uma linha por dimensão |
 
 ## 5. Gabarito, para liberar sábado ao meio-dia
 
