@@ -163,6 +163,13 @@ que evita ter um template novo por semana.
 
 ## 5. Gabarito, para liberar sábado ao meio-dia
 
+Agora existe em documento próprio e formatado, `Gabarito - Case 01 FemVest.docx`, na pasta
+`ciclo-de-cases`, com PDF ao lado. É o arquivo para circular com o time e depois com os membros,
+com as duas contas resolvidas passo a passo, a referência das duas perguntas abertas, a rubrica e
+uma seção final comparando entrega correta com entrega boa. Ele abre com um aviso de não liberar
+antes do fechamento. O resumo abaixo fica aqui para consulta rápida.
+
+
 ### Pergunta 1: tamanho do mercado e receita potencial
 
 | Etapa | Cálculo | Resultado |
@@ -385,6 +392,10 @@ falta de interesse.
 5. **Se mantém a nota do PFOF no Anexo D.** Ela não faz parte do case original e é uma adição
    nossa. Ela enriquece a discussão de precificação, mas também entrega parte da resposta. Tirar
    deixa o case mais difícil.
-6. **Tipo de case do ciclo 2**, para anunciar na segunda 28/09. O case de varejo da Rede Verdemar
+6. **Quem monta o case do ciclo 2.** O modelo em branco do enunciado está em
+   `Template de enunciado - ciclo de cases.docx`, com a última página trazendo o checklist de quem
+   monta, o que precisa estar plantado e a rubrica a preencher. Essa página é para apagar antes de
+   enviar aos membros.
+7. **Tipo de case do ciclo 2**, para anunciar na segunda 28/09. O case de varejo da Rede Verdemar
    está pronto em `banco-de-cases`, com gabarito conferido, e é um case de rentabilidade, o que
    variaria bem o tipo em relação à semana 1.
