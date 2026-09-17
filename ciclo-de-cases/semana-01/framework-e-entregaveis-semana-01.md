@@ -24,7 +24,7 @@ da autoria fica registrado no próprio enunciado.
 
 | Quando | O que acontece | Quem faz | Onde |
 |---|---|---|---|
-| Sexta, 9h | Abre o ciclo: dispara enunciado, relatório setorial e template no mesmo post | Diretor | Grupo e pasta da semana |
+| Sexta, 9h | Abre o ciclo: dispara enunciado, guia de tipo de case e template no mesmo post | Diretor | Grupo e pasta da semana |
 | Sexta, até 18h | Duplas confirmam participação | Membros | Grupo |
 | Segunda | Check-in de meio de ciclo, cada dupla responde em uma linha | Diretor pergunta, duplas respondem | Grupo |
 | Quarta | Empurrão curto, com uma dica do setor e nada mais | Diretor | Grupo |
@@ -85,27 +85,26 @@ ser refeito, o que importa porque o material está de 2022.
 | 26/09 | sábado | Correção pela manhã, gabarito e notas ao meio-dia |
 | 28/09 | segunda | 9h Dupla Destaque e abertura do ciclo 2, já no padrão segunda a domingo |
 
-## 2. Relatório setorial da semana
+## 2. Guia de tipo de case
 
-Pronto em `Relatorio setorial - Neobrokers (modelo CCU).docx`, na pasta `ciclo-de-cases`. Dez
-seções, com dado real e fonte citada. O que ele carrega de mais importante:
+Pronto em `Guia de tipo de case - Market Entry e Novo Produto.docx`, na pasta `ciclo-de-cases`, com
+versão em PDF ao lado. Duas páginas, e é este o material que abre a semana junto com o enunciado.
 
-- **O fim do PFOF.** O artigo 39a do MiFIR proíbe o pagamento por direcionamento de ordens, e desde
-  1º de julho de 2026 a proibição vale integralmente na Alemanha, porque o país usou a transição
-  nacional até 30 de junho. Era essa a receita que financiava a gratuidade do setor.
-- **Benchmarks para calibrar:** Trade Republic com mais de 10 milhões de clientes e mais de 150
-  bilhões de euros, o que dá cerca de 15 mil por cliente. Scalable Capital com mais de 1 milhão de
-  clientes e mais de 60 bilhões, cerca de 60 mil por cliente. O setor de brokerage alemão gera cerca
-  de 2 bilhões de euros com cerca de 7 milhões de investidores autodirigidos, aproximadamente 286
-  euros por investidor por ano.
-- **O gap de gênero:** 14,6 pontos percentuais no estudo da Universidade de Mannheim, 18% das
-  mulheres investindo com regularidade contra 31% dos homens na pesquisa ING de 2024, e preferência
-  por conta remunerada citada por 37% na pesquisa do N26.
+A troca em relação ao plano inicial: em vez de um relatório do setor da semana, o toolkit passa a
+ser do **tipo de case**. A razão é capilaridade. Um relatório de neobroker alemão serve para uma
+semana e nunca mais. Um guia de market entry serve para toda semana em que o case for de entrada em
+mercado ou lançamento de produto, e isso é a maior parte dos cases de PS. O membro acumula
+repertório em vez de acumular curiosidade sobre um setor.
 
-Esse último ponto é o que faz o case ter graça: o gap é real, mas público que aporta pouco gera
-patrimônio por cliente baixo, e é justamente patrimônio baixo que quebra a conta de um neobroker.
+As oito seções do guia: como reconhecer o tipo de case, a estrutura em quatro blocos, o
+dimensionamento pelos dois caminhos, as contas que sempre caem, dez macetes que mudam a nota, oito
+armadilhas, o roteiro de ataque distribuído na semana e o checklist final.
 
-Antes de publicar, falta apenas checar se você quer acrescentar alguma tendência local.
+O relatório setorial de neobrokers continua disponível em `banco-de-cases`, como anexo opcional para
+quem quiser se aprofundar. Ele tem dado real com fonte sobre o fim do PFOF, os benchmarks de
+patrimônio por cliente das duas maiores corretoras alemãs e os números do gap de gênero. Mas ele
+deixa de ser leitura obrigatória, porque a restrição que decide o case já está escrita no próprio
+enunciado.
 
 ## 3. Enunciado do case
 
@@ -230,9 +229,10 @@ amarra a gamificação ao Tópico 3 da sabatina.
 > Bom dia! Abriu o primeiro ciclo de cases. Esta semana o setor é neobroker e investimento de
 > varejo, e o case é a FemVest, uma fintech alemã que quer lançar uma corretora mobile focada em
 > mulheres em 2026.
-> Na pasta tem três arquivos: o enunciado, o relatório setorial e o template de entrega. Comecem
-> pelo relatório setorial, são dez minutos e ele dá os indicadores que decidem no setor, além dos
-> benchmarks para vocês checarem se a estimativa está de pé.
+> Na pasta tem três arquivos: o enunciado, o guia de tipo de case e o template de entrega. Comecem
+> pelo guia, são duas páginas e dez minutos. Ele não é sobre neobroker, é sobre como se ataca
+> qualquer case de entrada em mercado ou lançamento de produto, então vale guardar: vocês vão usar
+> em quase todo PS.
 > Entrega em dupla, no máximo 5 slides ou 2 páginas, até sexta 25/09 às 23h59.
 > Confirmem aqui no grupo com quem vão fazer dupla até hoje às 18h.
 > Aviso de ritmo: esta primeira semana vai de sexta a sexta porque começamos agora. A partir do
