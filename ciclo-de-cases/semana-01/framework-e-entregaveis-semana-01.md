@@ -1,20 +1,24 @@
 # Ciclo de cases CCU: framework e entregáveis da semana 1
 
-Setor da semana: **neobrokers e investimento de varejo, na Alemanha**. Case: **FemVest**, adaptado
-do case público da Roland Berger publicado no PrepLounge. Início: **sexta, 18/09/2026, às 9h**.
-Fechamento: **sexta, 25/09/2026, às 23h59**.
+Tipo de case da semana: **market entry e novo produto**. Case: **FemVest**, adaptado do case público
+da Roland Berger publicado no PrepLounge. Início: **sexta, 18/09/2026, às 9h**. Fechamento:
+**sexta, 25/09/2026, às 23h59**.
 
-## Duas observações antes de começar
+## Três observações antes de começar
 
 **Sobre o ritmo.** A sabatina definiu o ciclo de segunda 9h a domingo 23h59. Esta primeira semana
-começa numa sexta, porque a decisão foi colocar em prática já. Então trato a semana 1 como ciclo
-piloto de sexta a sexta e faço a transição para o padrão no ciclo 2, que abre na segunda 28/09 e
-fecha no domingo 04/10. Vale avisar isso na abertura, senão o pessoal aprende o ritmo errado.
+começa numa sexta porque a decisão foi colocar em prática já. Trato a semana 1 como ciclo piloto de
+sexta a sexta e faço a transição no ciclo 2, que abre na segunda 28/09 e fecha no domingo 04/10.
+Vale avisar na abertura, senão o pessoal aprende o ritmo errado.
 
-**Sobre o case.** O enunciado é uma adaptação nossa. O contexto foi reescrito e os anexos de
-premissas são próprios, com **números diferentes dos da versão original**. Quem procurar a
-resolução publicada na internet não vai chegar no nosso gabarito, e isso é de propósito. O crédito
-da autoria fica registrado no próprio enunciado.
+**Sobre a fidelidade ao original.** A sequência das quatro perguntas é exatamente a do case da
+Roland Berger: dimensionamento de mercado, business case de três anos, estratégia de produto com
+priorização e entrada no mercado em cinco dimensões. O que é nosso são os números dos anexos, todos
+diferentes dos publicados, então quem achar a resolução na internet não chega no nosso gabarito.
+
+**Sobre o toolkit.** O material que abre a semana é o guia de tipo de case, não um relatório
+setorial. Um setorial de neobroker alemão serve para uma semana. Um guia de market entry serve para
+toda semana em que o case for de entrada ou lançamento, que é a maior parte dos cases de PS.
 
 ---
 
@@ -27,30 +31,26 @@ da autoria fica registrado no próprio enunciado.
 | Sexta, 9h | Abre o ciclo: dispara enunciado, guia de tipo de case e template no mesmo post | Diretor | Grupo e pasta da semana |
 | Sexta, até 18h | Duplas confirmam participação | Membros | Grupo |
 | Segunda | Check-in de meio de ciclo, cada dupla responde em uma linha | Diretor pergunta, duplas respondem | Grupo |
-| Quarta | Empurrão curto, com uma dica do setor e nada mais | Diretor | Grupo |
+| Quarta | Empurrão curto, com uma dica e nada mais | Diretor | Grupo |
 | Quinta | Lembrete de prazo com o link da pasta | Diretor | Grupo |
 | Sexta, 23h59 | Fecha a entrega. Nada entra depois, e na semana 1 isso não é negociável | Duplas | Pasta de entrega |
 | Sábado, manhã | Correção critério por critério, com evidência | Diretor | Planilha |
 | Sábado, 12h | Publica gabarito e notas | Diretor | Grupo e Drive |
 | Segunda, 9h | Anuncia a Dupla Destaque e abre o ciclo seguinte no mesmo post | Diretor | Grupo |
 
-A abertura do ciclo novo e o anúncio da Dupla Destaque ficam no mesmo post. Reconhecimento e
-convocação juntos custam um disparo e rendem dois.
-
 ## Papéis, considerando que pode haver só uma pessoa operando
 
 | Papel | Quem | Carga | Entrega |
 |---|---|---|---|
-| Dono do ciclo | Diretor de Gestão de Pessoas | até 1h de setup, 1h30 de correção | enunciado, setorial, gabarito, notas, comunicação |
+| Dono do ciclo | Diretoria de Gestão de Pessoas | até 1h de setup, 1h30 de correção | enunciado, guia, gabarito, notas, comunicação |
 | Dupla | 2 membros | livre, dentro da semana | uma entrega de 3 a 5 slides ou 2 páginas |
 | Corretor de apoio (opcional) | 1 membro sênior ou alumni | 30 min | segunda leitura das notas acima de 8 e abaixo de 4 |
 
 ## Como o ciclo sobrevive a semana ruim
 
-- **Semana de prova:** o ciclo não para, o case encolhe. Roda só a primeira pergunta, valendo
-  metade dos pontos.
+- **Semana de prova:** o ciclo não para, o case encolhe. Roda só as duas primeiras perguntas,
+  valendo metade dos pontos.
 - **Feriado ou recesso:** pula, mas com aviso na semana anterior e data de retomada publicada.
-  Pular sem avisar é o que mata o hábito.
 - **Período de processo seletivo:** o case da semana passa a ser o próprio case do PS, resolvido
   pelos membros antes dos candidatos. Calibra a dificuldade e mantém o ciclo vivo no período em que
   ele costuma morrer.
@@ -60,14 +60,14 @@ convocação juntos custam um disparo e rendem dois.
 ## O que o ciclo alimenta e quais números são coletados toda semana
 
 1. Duplas inscritas e duplas que entregaram, com a taxa de entrega.
-2. Nota média e nota por bloco, para ver se a fraqueza é comunicação, raciocínio ou conta.
-3. Quantas duplas acharam a inconsistência plantada.
-4. Quantas responderam o check-in de segunda.
+2. Nota média e nota por bloco, para ver se a fraqueza é comunicação, conta ou priorização.
+3. Quantas duplas trataram o custo de aquisição corretamente.
+4. Quantas acharam a inconsistência entre os anexos.
 5. Pontos acumulados no ciclo.
 
-Isso conecta com o ritual de dados da sabatina: no 1on1 trimestral, a conversa sobre desempenho em
-cases deixa de ser impressão e passa a ter histórico. E a nota por bloco diz onde o Prep precisa
-ser refeito, o que importa porque o material está de 2022.
+No 1on1 trimestral a conversa sobre desempenho em cases deixa de ser impressão e passa a ter
+histórico. E a nota por bloco diz onde o Prep precisa ser refeito, o que importa porque o material
+está de 2022.
 
 ---
 
@@ -79,7 +79,7 @@ ser refeito, o que importa porque o material está de 2022.
 |---|---|---|
 | 18/09 | sexta | 9h abre o ciclo. Confirmação de duplas até 18h |
 | 21/09 | segunda | Check-in de meio de ciclo |
-| 23/09 | quarta | Dica do setor |
+| 23/09 | quarta | Dica do meio do caminho |
 | 24/09 | quinta | Lembrete de prazo |
 | 25/09 | sexta | 23h59 fecha a entrega |
 | 26/09 | sábado | Correção pela manhã, gabarito e notas ao meio-dia |
@@ -88,109 +88,136 @@ ser refeito, o que importa porque o material está de 2022.
 ## 2. Guia de tipo de case
 
 Pronto em `Guia de tipo de case - Market Entry e Novo Produto.docx`, na pasta `ciclo-de-cases`, com
-versão em PDF ao lado. Duas páginas, e é este o material que abre a semana junto com o enunciado.
+PDF ao lado. Duas páginas: como reconhecer o tipo de case, a estrutura em quatro blocos, o
+dimensionamento pelos dois caminhos, as contas que sempre caem, dez macetes, oito armadilhas, o
+roteiro de ataque na semana e o checklist final.
 
-A troca em relação ao plano inicial: em vez de um relatório do setor da semana, o toolkit passa a
-ser do **tipo de case**. A razão é capilaridade. Um relatório de neobroker alemão serve para uma
-semana e nunca mais. Um guia de market entry serve para toda semana em que o case for de entrada em
-mercado ou lançamento de produto, e isso é a maior parte dos cases de PS. O membro acumula
-repertório em vez de acumular curiosidade sobre um setor.
-
-As oito seções do guia: como reconhecer o tipo de case, a estrutura em quatro blocos, o
-dimensionamento pelos dois caminhos, as contas que sempre caem, dez macetes que mudam a nota, oito
-armadilhas, o roteiro de ataque distribuído na semana e o checklist final.
-
-O relatório setorial de neobrokers continua disponível em `banco-de-cases`, como anexo opcional para
-quem quiser se aprofundar. Ele tem dado real com fonte sobre o fim do PFOF, os benchmarks de
-patrimônio por cliente das duas maiores corretoras alemãs e os números do gap de gênero. Mas ele
-deixa de ser leitura obrigatória, porque a restrição que decide o case já está escrita no próprio
-enunciado.
+O relatório setorial de neobrokers continua em `banco-de-cases`, como anexo opcional para quem
+quiser se aprofundar. Ele tem dado real com fonte sobre o fim do PFOF, os benchmarks de patrimônio
+por cliente das duas maiores corretoras alemãs e os números do gap de gênero.
 
 ## 3. Enunciado do case
 
-Em `Case 01 - FemVest (enunciado).docx`. O desenho, para você saber o que está plantado onde:
+Em `Case 01 - FemVest (enunciado).docx`, duas páginas. Segue a sequência do original, com quatro
+anexos e quatro perguntas:
 
-- **Conta central 1, resposta única:** a cadeia do dimensionamento até o número de clientes no ano
-  5, a receita anual e o ARPU.
-- **Conta central 2, resposta única:** a operação se paga no ano 5, e qual o ponto de equilíbrio em
-  clientes, em ARPU e em patrimônio por cliente.
-- **Premissa deliberadamente em aberto:** o segmento dentro do público feminino e a composição das
-  linhas de receita. O Anexo A fixa a aritmética, de propósito, mas não fixa a estratégia.
-- **Inconsistência plantada:** o contexto diz que a diretoria da FemVest menciona cerca de 13,5
-  milhões de mulheres entre 28 e 49 anos. As premissas do Anexo A levam a 11,96 milhões. Diferença
-  de 1,54 milhão, quase 13%.
-- **Restrição que separa as entregas:** o PFOF está proibido. Quem propuser modelo de receita
-  baseado nele erra o item mais importante do case.
+- **Anexo A**, premissas do dimensionamento: população, participação de mulheres, faixa de idade e
+  perfil digital, o gap de quem não tem conta em neobroker, penetração no ano 1 e receita média por
+  usuária.
+- **Anexo B**, dados do business case: custo fixo, custo de aquisição, custo variável por usuária e
+  a projeção de usuárias ativas dos anos 1 a 3.
+- **Anexo C**, pesquisa de uso de produto por gênero, que é o dado que sustenta a priorização.
+- **Anexo D**, preferências declaradas do público e o que o setor já trata como obrigatório.
+
+**O que está plantado:**
+
+- **Conta central 1:** a cadeia do dimensionamento até a usuária e até a receita do ano 1.
+- **Conta central 2:** o business case dos três anos, com a margem de contribuição, o ponto de
+  equilíbrio e o resultado ano a ano.
+- **A pegadinha principal:** o custo de aquisição se aplica só às usuárias **novas** de cada ano,
+  não à base inteira. O enunciado não entrega isso de graça, apenas pede que a dupla escreva a
+  premissa que adotou. É o item que mais separa as entregas, e no case original ele é
+  deliberadamente escondido para testar se o candidato percebe sozinho.
+- **Inconsistência entre anexos:** a pergunta 1, com as premissas do Anexo A, chega a 130.637
+  usuárias no ano 1. O Anexo B projeta 145.000 no ano 1. Diferença de 14.363 usuárias, cerca de 11%.
+  Quem apontar e disser com qual número seguiu leva o ponto. Vale saber que o case original tem uma
+  discrepância do mesmo tipo, e bem maior: 189.000 na primeira pergunta contra 120.000 na segunda.
+- **Premissa em aberto:** segmento, produto e precificação continuam livres, como no original.
 
 ## 4. Template de entrega
 
-Em `Template de entrega - Case 01.docx`. Quatro seções, com uma linha de orientação em cada:
-diagnóstico e tamanho da oportunidade, estratégia com segmento e modelo de receita, finanças com o
-ponto de equilíbrio, e entrada com riscos e próximos passos. Limite de 5 slides ou 2 páginas escrito
-no próprio arquivo, para ninguém alegar desconhecimento.
+Em `Template de entrega - Case 01.docx`. Uma seção por pergunta, mais recomendação no topo e riscos
+no fim. Limite de 5 slides ou 2 páginas escrito no próprio arquivo.
 
 ## 5. Gabarito, para liberar sábado ao meio-dia
 
-**A inconsistência.** O número correto, pelas premissas do Anexo A, é 11.964.600 mulheres na faixa,
-não 13,5 milhões. Quem apontou e disse com qual número seguiu leva o ponto cheio.
-
-**Conta central 1, o dimensionamento:**
+### Pergunta 1: tamanho do mercado e receita potencial
 
 | Etapa | Cálculo | Resultado |
 |---|---|---|
-| Adultos na Alemanha | premissa | 69.000.000 |
-| Mulheres adultas | 69.000.000 × 51% | 35.190.000 |
-| Faixa de 28 a 49 anos | 35.190.000 × 34% | 11.964.600 |
-| Com renda e capacidade, mercado endereçável | 11.964.600 × 32% | 3.828.672 |
-| **Clientes no ano 5** | 3.828.672 × 3,5% | **134.004** |
-| Patrimônio sob custódia | 134.004 × 5.800 euros | 777,2 milhões de euros |
-| **Receita anual no ano 5** | 777,2 milhões × 0,70% | **5,44 milhões de euros** |
-| **ARPU** | 5.800 × 0,70% | **40,60 euros por ano** |
+| População da Alemanha | premissa | 84.000.000 |
+| Mulheres | × 50% | 42.000.000 |
+| De 25 a 50 anos e digitalmente ativas | × 36% | 15.120.000 |
+| Sem conta em neobroker, o gap de mercado | × 72% | 10.886.400 |
+| **Usuárias alcançáveis no ano 1** | × 1,2% | **130.637** |
+| **Receita potencial no ano 1** | × 21 euros | **2,74 milhões de euros** |
 
-**Conta central 2, a conta fecha?**
+O filtro que mais gente esquece é o terceiro. Sem tirar quem já tem conta em outro neobroker, o
+mercado fica inflado e a tese do case, que é público sub-atendido, perde o sentido.
 
-| Linha | Valor |
+### Pergunta 2: a FemVest chega ao ponto de equilíbrio?
+
+Margem de contribuição por usuária = 21 − 7 = **14 euros por ano**.
+
+Ponto de equilíbrio, considerando só o custo fixo = 5.200.000 ÷ 14 = **371.429 usuárias**.
+
+| Ano | Ativas | Novas | Contribuição | Custo de aquisição | Custo fixo | Resultado |
+|---|---|---|---|---|---|---|
+| 1 | 145.000 | 145.000 | 2.030.000 | 6.090.000 | 5.200.000 | **−9.260.000** |
+| 2 | 240.000 | 95.000 | 3.360.000 | 3.990.000 | 5.200.000 | **−5.830.000** |
+| 3 | 410.000 | 170.000 | 5.740.000 | 7.140.000 | 5.200.000 | **−6.600.000** |
+
+Prejuízo acumulado em três anos: **21,69 milhões de euros**.
+
+**A leitura completa, que é o que separa uma entrega boa de uma correta.** No ano 3 a contribuição
+de 5,74 milhões passa o custo fixo de 5,2 milhões, então a operação cruza o equilíbrio **antes do
+custo de aquisição**, com 410.000 usuárias contra as 371.429 necessárias. Mas com o custo de
+aquisição dentro, o resultado segue negativo nos três anos. Isso não é sinal de negócio ruim: é o
+padrão de uma empresa financiada por venture capital, que queima caixa comprando base enquanto a
+margem de contribuição unitária é positiva. A pergunta certa não é se dá lucro em três anos, é
+quanto capital é preciso até a base madurar e se o custo de aquisição cai com escala.
+
+**O discriminador.** Custo de aquisição incide só sobre as usuárias novas do ano. Quem aplicou sobre
+a base inteira chega a números muito piores, por exemplo 410.000 × 42 = 17,22 milhões no ano 3, e um
+prejuízo de 16,68 milhões. Não é erro de conta, é erro de premissa, e derruba a recomendação. Nota
+cheia em A2 exige a premissa escrita e aplicada de forma consistente.
+
+### Pergunta 3: estratégia de produto e priorização (parte aberta)
+
+Não existe resposta única, e o critério é usar o Anexo C como justificativa em vez de listar ideias.
+Uma boa resposta se organiza assim:
+
+- **Essencial:** ETFs e planos de aporte recorrente, sem taxa. É o produto de maior adoção entre
+  mulheres, 79%, com diferença de apenas 2 pontos em relação aos homens, e é a porta de entrada que
+  não exige conhecimento prévio. Some a isso aplicativo primeiro e taxa de ordem baixa, que é o
+  principal critério de escolha declarado.
+- **Desejável:** filtro ESG, porque é o único produto em que as mulheres indexam acima, 34% contra
+  22%, o que transforma preferência em diferencial de produto e não em discurso. Mais consultoria
+  híbrida, para atender a demanda de apoio sem custo de consultoria diária, e um hub de educação
+  financeira sem jargão.
+- **Opcional:** comunidade, que ajuda retenção e indicação, além de ações individuais e cripto, onde
+  as diferenças de 19 e 26 pontos mostram demanda baixa no público-alvo. Entram por completude de
+  portfólio, não por prioridade.
+- **Recomendação:** lançar com um produto mínimo enxuto centrado em ETF e aporte recorrente e
+  expandir depois. E o aviso que o próprio case cobra: sem pinkwashing. O valor entregue tem que ser
+  real, senão o posicionamento vira alvo fácil.
+
+### Pergunta 4: entrada no mercado, cinco dimensões (parte aberta)
+
+Cobrir as cinco é obrigatório. Quem entregar só ações de marketing, sem precificação e sem métrica,
+não pontua no critério.
+
+| Dimensão | Referência de boa resposta |
 |---|---|
-| Receita no ano 5 | 5,44 milhões de euros |
-| Custo fixo no ano 5 | 8,40 milhões de euros |
-| **Resultado no ano 5** | **prejuízo de 2,96 milhões de euros** |
-| Ponto de equilíbrio em clientes | 8,4 milhões ÷ 40,60 = **206.897 clientes** |
-| Ponto de equilíbrio em ARPU | 8,4 milhões ÷ 134.004 = **62,69 euros** |
-| Patrimônio por cliente que isso exige | 62,69 ÷ 0,70% = **8.955 euros** |
-| Payback do CAC | 110 ÷ 40,60 = **2,7 anos de ARPU bruto**, sem considerar churn |
-
-**A leitura que separa as boas entregas.** O cenário base não fecha. Para a operação se pagar no
-ano 5, a FemVest precisa de **1,54 vez mais clientes** do que a penetração de 3,5% entrega, o que
-significa 5,4% do mercado endereçável, ou de um patrimônio por cliente de quase 9 mil euros em vez
-de 5,8 mil. Comparando com os benchmarks, 9 mil por cliente fica abaixo dos 15 mil da maior
-corretora do país, então não é impossível, mas exige um público mais patrimonializado do que o
-perfil de quem está começando a investir. É exatamente aí que a definição de segmento deixa de ser
-discurso e passa a ser decisão financeira.
-
-**Sobre o modelo de receita.** Sem PFOF, as linhas disponíveis são juros sobre caixa não investido,
-assinatura, aluguel de ativos, comissão explícita, câmbio e taxa em aporte recorrente. A resposta
-boa diz de onde vem cada euro e aponta qual linha é frágil. A mais frágil é juro sobre caixa, que
-depende da taxa básica e encolhe quando o ciclo de juros vira. Quem apoiou o modelo inteiro em juro
-sobre caixa e não mencionou esse risco perdeu o ponto de raciocínio.
-
-**Sobre segmento e proposta de valor, que é a parte aberta.** Não existe resposta única. O critério
-é coerência com os dados: quem usou o gap de 14,6 pontos para justificar o tamanho da oportunidade
-e ao mesmo tempo reconheceu que o público que prefere conta remunerada aporta pouco fez a análise
-completa. Quem só citou o gap como oportunidade, sem enfrentar o efeito dele no patrimônio por
-cliente, ficou na metade.
+| Segmento | Mulheres de 25 a 45 anos, profissionalmente ativas, renda média a alta, alcançáveis de forma escalável por canal digital |
+| Proposta de valor | Investimento repensado de verdade para esse público, educação sem jargão, filtro ESG e metas de vida como licença-maternidade e lacuna previdenciária |
+| Canal | Orgânico antes do lançamento, com criadoras em vídeo curto, para construir lista de espera. Parceria com empregadores, redes de mulheres e universidades para baixar o custo de aquisição. Mídia paga só depois de a conversão estar validada |
+| Precificação | Entrada gratuita com ETF, aporte e educação. Camada premium mensal com consultoria híbrida e ferramentas de planejamento. Taxa de ordem baixa como padrão de mercado |
+| Métricas | Usuárias ativas, custo de aquisição abaixo dos 42 euros do enunciado, taxa de ativação com primeiro aporte em 30 dias, indicador de recomendação e conversão de gratuito para premium |
 
 ## 6. Rubrica de correção
 
 Escala de 0 a 3 com descritor, evidência obrigatória ao lado da nota, no mesmo espírito da rubrica
-v2 do processo seletivo. Os pesos somam 10, então a nota já sai de 0 a 10.
+v2 do processo seletivo. Os pesos somam 10, então a nota já sai de 0 a 10. Cada critério de conteúdo
+corresponde a uma das quatro perguntas.
 
 | Código | Critério | Peso |
 |---|---|---|
 | C1 | Recomendação clara, em uma frase, com o número que a sustenta | 2 |
-| R1 | Quali e quanti se sustentam, e há alternativa descartada por escrito | 2 |
-| A1 | Dimensionamento correto, com a cadeia de filtros visível | 2 |
-| A2 | Ponto de equilíbrio correto, em clientes e em ARPU | 2 |
-| A3 | Modelo de receita sem PFOF, e inconsistência apontada | 1 |
+| A1 | Pergunta 1: dimensionamento correto, com a cadeia de filtros visível | 2 |
+| A2 | Pergunta 2: business case dos três anos correto, com a premissa do custo de aquisição declarada e aplicada de forma consistente | 2 |
+| R1 | Pergunta 3: priorização de produto justificada com os dados do Anexo C | 2 |
+| R2 | Pergunta 4: entrada coberta nas cinco dimensões, inclusive precificação e métricas | 1 |
 | E1 | Formato, limite de páginas e prazo respeitados | 1 |
 
 Âncoras válidas para todos os critérios:
@@ -209,31 +236,30 @@ Nota final = soma de (nota ÷ 3 × peso). Sem evidência apontada, a nota 3 cai 
 | Entregou dentro do prazo | 10 |
 | Nota igual ou acima de 7,0 | +10 |
 | Nota igual ou acima de 8,5 | +20, substitui o de cima |
-| Apontou a inconsistência plantada | +5 |
-| Percebeu sozinho a restrição do PFOF, sem eu ter dado a dica | +5 |
+| Tratou o custo de aquisição só sobre as usuárias novas, e disse isso | +5 |
+| Apontou a inconsistência entre os anexos | +5 |
 | Respondeu o check-in de segunda | +3 |
 | Comentou a entrega de outra dupla com crítica útil | +5 |
 | Dupla Destaque da semana | +15 |
 
 **Dupla Destaque:** maior nota da semana. Empate desempata por A2, depois por C1. Anunciada na
 segunda às 9h, no mesmo post que abre o ciclo, com uma frase dizendo o que ela fez de diferente.
-Reconhecimento genérico vira formalidade.
 
-**Ciclo:** 8 semanas, premiação para a dupla com mais pontos. Sugestão que custa pouco e vale
-muito: a dupla campeã apresenta o case final do Trainee para a banca da consultoria parceira, o que
-amarra a gamificação ao Tópico 3 da sabatina.
+**Ciclo:** 8 semanas, premiação para a dupla com mais pontos. Sugestão que custa pouco e vale muito:
+a dupla campeã apresenta o case final do Trainee para a banca da consultoria parceira, o que amarra
+a gamificação ao Tópico 3 da sabatina.
 
 ## 8. Kit de comunicação, pronto para copiar
 
 **Sexta, 9h, abertura**
-> Bom dia! Abriu o primeiro ciclo de cases. Esta semana o setor é neobroker e investimento de
-> varejo, e o case é a FemVest, uma fintech alemã que quer lançar uma corretora mobile focada em
-> mulheres em 2026.
+> Bom dia! Abriu o primeiro ciclo de cases. O case é a FemVest, uma fintech alemã que quer lançar
+> uma corretora mobile focada em mulheres, e o tipo de case é entrada em mercado com lançamento de
+> produto.
 > Na pasta tem três arquivos: o enunciado, o guia de tipo de case e o template de entrega. Comecem
 > pelo guia, são duas páginas e dez minutos. Ele não é sobre neobroker, é sobre como se ataca
-> qualquer case de entrada em mercado ou lançamento de produto, então vale guardar: vocês vão usar
-> em quase todo PS.
-> Entrega em dupla, no máximo 5 slides ou 2 páginas, até sexta 25/09 às 23h59.
+> qualquer case de entrada, então vale guardar: vocês vão usar em quase todo PS.
+> São quatro perguntas: tamanho de mercado, business case de três anos, estratégia de produto e
+> entrada no mercado. Entrega em dupla, no máximo 5 slides ou 2 páginas, até sexta 25/09 às 23h59.
 > Confirmem aqui no grupo com quem vão fazer dupla até hoje às 18h.
 > Aviso de ritmo: esta primeira semana vai de sexta a sexta porque começamos agora. A partir do
 > ciclo 2 o padrão é segunda 9h até domingo 23h59, e aí não muda mais.
@@ -242,15 +268,14 @@ amarra a gamificação ao Tópico 3 da sabatina.
 > Check-in rápido. Cada dupla responde em uma linha só: onde vocês estão e o que está travando.
 > Responder vale ponto, e serve para eu ajudar antes de virar problema.
 
-**Quarta, dica do setor**
-> Dica do meio do caminho: em business case de entrada, dimensionar o mercado é a parte fácil.
-> O que decide é transformar mercado em receita e depois perguntar quantos clientes são necessários
-> só para cobrir o custo fixo. Se vocês ainda não fizeram essa segunda conta, é por onde eu
-> continuaria.
+**Quarta, dica do meio do caminho**
+> Dica: dimensionar mercado é a parte fácil. O que decide é a segunda pergunta. Antes de montar os
+> três anos, calculem a margem de contribuição por usuária e quantas usuárias são necessárias só
+> para cobrir o custo fixo. E olhem com atenção sobre qual base o custo de aquisição incide.
 
 **Quinta, lembrete**
 > Falta um dia. Entrega até amanhã 23h59 na pasta do Drive, em 5 slides ou 2 páginas. Quem entregar
-> fora do formato perde ponto no critério de entrega, então vale conferir antes de subir.
+> fora do formato perde ponto no critério de entrega.
 
 **Sexta, fechamento**
 > Fechou o ciclo. Obrigado a quem entregou. Corrijo amanhã de manhã e publico o gabarito e as notas
@@ -259,17 +284,19 @@ amarra a gamificação ao Tópico 3 da sabatina.
 
 **Sábado, gabarito**
 > Gabarito do Case 01 no Drive, com as duas contas centrais passo a passo.
-> Dois pontos separaram as entregas. O primeiro é que o cenário base não fecha: dá prejuízo no ano
-> 5, e a pergunta boa não é se fecha, é o que precisaria ser verdade para fechar. O segundo é o
-> PFOF, que está proibido na União Europeia desde julho deste ano. Quem montou receita em cima dele
-> montou sobre algo que não existe mais.
-> As notas estão na planilha, cada uma com evidência. Se discordarem de alguma, me chamem, é para
-> isso que a evidência existe.
+> Três pontos separaram as entregas. O primeiro é o filtro de quem já tem conta em outro neobroker:
+> sem ele o mercado infla e a tese do case se desfaz. O segundo é sobre qual base o custo de
+> aquisição incide, e a resposta é só as usuárias novas de cada ano. O terceiro é a leitura do
+> prejuízo: ele é estrutural e esperado em empresa financiada por venture capital, e a pergunta
+> certa é quanto capital é preciso até a base madurar.
+> Quem percebeu que os anexos não fecham entre si, 130 mil usuárias pela primeira conta contra 145
+> mil na projeção, ganhou ponto extra. Achar isso é trabalho de consultor.
+> As notas estão na planilha, cada uma com evidência. Se discordarem de alguma, me chamem.
 
 **Segunda, Dupla Destaque e abertura do ciclo 2**
 > Dupla Destaque da semana 1: [nomes]. Motivo: [uma frase específica].
-> E abriu o ciclo 2, agora no ritmo definitivo, segunda 9h até domingo 23h59. Setor da semana:
-> [setor]. Arquivos na pasta.
+> E abriu o ciclo 2, agora no ritmo definitivo, segunda 9h até domingo 23h59. Tipo de case da
+> semana: [tipo]. Arquivos na pasta.
 
 ## 9. Estrutura da planilha de acompanhamento
 
@@ -278,21 +305,21 @@ Uma linha por dupla, por semana.
 | Coluna | Conteúdo |
 |---|---|
 | Semana | número do ciclo |
-| Setor | setor da imersão |
+| Tipo de case | market entry, rentabilidade, precificação e assim por diante |
 | Dupla | os dois nomes |
 | Entregou | Sim, Atrasado ou Não |
-| C1, R1, A1, A2, A3, E1 | nota de 0 a 3, com validação de dados |
+| C1, A1, A2, R1, R2, E1 | nota de 0 a 3, com validação de dados |
 | Evidência | slide ou página que justifica as notas de 3 e de 0 |
 | Nota final | fórmula, soma de (nota ÷ 3 × peso) |
+| Tratou o CAC certo | Sim ou Não |
 | Achou a inconsistência | Sim ou Não |
-| Percebeu o PFOF | Sim ou Não |
 | Check-in | Sim ou Não |
 | Pontos da semana | fórmula da tabela de gamificação |
 | Pontos acumulados | soma no ciclo |
 | Observação para o 1on1 | uma linha, alimenta a conversa trimestral |
 
-No rodapé: duplas inscritas, taxa de entrega, nota média, nota média por bloco, quantas acharam a
-inconsistência e quantas perceberam o PFOF.
+No rodapé: duplas inscritas, taxa de entrega, nota média, nota média por bloco, quantas trataram o
+custo de aquisição corretamente e quantas acharam a inconsistência.
 
 ## 10. Definição de pronto da semana 1
 
@@ -302,8 +329,8 @@ Funcionou se, no sábado ao meio-dia, isto for verdade:
 - **100% das entregas corrigidas com evidência apontada**, não só com nota.
 - **Gabarito publicado no prazo**, sábado ao meio-dia.
 - Os números da semana registrados na planilha.
-- Pelo menos **uma dupla apontou a inconsistência** e **uma percebeu a restrição do PFOF**. Se
-  nenhuma perceber o PFOF, o aprendizado da semana é esse, e ele entra na dica de quarta do ciclo 2.
+- Pelo menos **uma dupla tratou o custo de aquisição corretamente**. Se nenhuma tratar, o
+  aprendizado da semana é esse, e ele entra na dica de quarta do ciclo 2.
 
 Gatilho de correção: taxa de entrega abaixo de 70% não se resolve com cobrança no grupo. Vira
 pergunta no 1on1 de quem não entregou, e a primeira hipótese a testar é escopo grande demais, não
@@ -315,13 +342,12 @@ falta de interesse.
 
 1. **Nome e link da pasta do Drive** da semana 1, para entrar nas mensagens.
 2. **Quem são as duplas**, ou se a formação é livre. Com poucos membros, sugiro formação livre na
-   semana 1 e duplas sorteadas a partir da semana 2, para não formar sempre a mesma panelinha.
+   semana 1 e duplas sorteadas a partir da semana 2.
 3. **O prêmio do ciclo de 8 semanas**, mesmo que anunciado só na semana 2.
 4. **Se vai ter corretor de apoio** na semana 1 ou se você corrige sozinho.
-5. **Se quer manter a dica do PFOF fora da abertura.** Hoje o enunciado entrega a restrição de
-   forma explícita. Se você tirar essa seção, o case fica bem mais difícil e o PFOF passa a ser um
-   segundo item plantado, o que separa muito mais as duplas. A escolha é sua, e ela muda a
-   calibragem da semana.
-6. **Setor do ciclo 2**, para já anunciar na segunda 28/09. O case de varejo da Rede Verdemar está
-   pronto em `ciclo-de-cases/banco-de-cases`, com gabarito conferido, e serve para essa semana sem
-   trabalho adicional.
+5. **Se mantém a nota do PFOF no Anexo D.** Ela não faz parte do case original e é uma adição
+   nossa. Ela enriquece a discussão de precificação, mas também entrega parte da resposta. Tirar
+   deixa o case mais difícil.
+6. **Tipo de case do ciclo 2**, para anunciar na segunda 28/09. O case de varejo da Rede Verdemar
+   está pronto em `banco-de-cases`, com gabarito conferido, e é um case de rentabilidade, o que
+   variaria bem o tipo em relação à semana 1.
