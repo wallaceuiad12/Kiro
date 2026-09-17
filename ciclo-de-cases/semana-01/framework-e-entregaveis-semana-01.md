@@ -11,10 +11,18 @@ começa numa sexta porque a decisão foi colocar em prática já. Trato a semana
 sexta a sexta e faço a transição no ciclo 2, que abre na segunda 28/09 e fecha no domingo 04/10.
 Vale avisar na abertura, senão o pessoal aprende o ritmo errado.
 
-**Sobre a fidelidade ao original.** A sequência das quatro perguntas é exatamente a do case da
-Roland Berger: dimensionamento de mercado, business case de três anos, estratégia de produto com
-priorização e entrada no mercado em cinco dimensões. O que é nosso são os números dos anexos, todos
-diferentes dos publicados, então quem achar a resolução na internet não chega no nosso gabarito.
+**Sobre a fidelidade ao original e o crédito.** A sequência das quatro perguntas é a do case
+"Launch of a Mobile Neobroker", de autoria da Roland Berger, publicado no PrepLounge: dimensionamento
+de mercado, business case de três anos, estratégia de produto com priorização e entrada no mercado em
+cinco dimensões. O crédito fica registrado aqui, neste documento interno, e **não no enunciado que vai
+para os membros**. A razão é prática: citar a fonte no enunciado entrega a eles onde encontrar a
+resolução publicada. Todos os números dos anexos e o gráfico são nossos, diferentes dos publicados,
+então mesmo quem chegar ao original não bate com este gabarito.
+
+**Cuidado com um arquivo do repositório.** A captura de tela do case original está em
+`banco-de-cases/Captura de Tela (10).png`. Ela contém o gráfico da Roland Berger com os números
+originais. Serve como referência para você, mas não deve ser distribuída junto com o material da
+semana.
 
 **Sobre o toolkit.** O material que abre a semana é o guia de tipo de case, não um relatório
 setorial. Um setorial de neobroker alemão serve para uma semana. Um guia de market entry serve para
@@ -106,7 +114,8 @@ anexos e quatro perguntas:
   usuária.
 - **Anexo B**, dados do business case: custo fixo, custo de aquisição, custo variável por usuária e
   a projeção de usuárias ativas dos anos 1 a 3.
-- **Anexo C**, pesquisa de uso de produto por gênero, que é o dado que sustenta a priorização.
+- **Anexo C**, gráfico de uso declarado de produtos por gênero, com nove classes de ativo. É o dado
+  que sustenta a priorização de produto, e ele foi elaborado por nós, com números próprios.
 - **Anexo D**, preferências declaradas do público e o que o setor já trata como obrigatório.
 
 **O que está plantado:**
@@ -118,8 +127,8 @@ anexos e quatro perguntas:
   não à base inteira. O enunciado não entrega isso de graça, apenas pede que a dupla escreva a
   premissa que adotou. É o item que mais separa as entregas, e no case original ele é
   deliberadamente escondido para testar se o candidato percebe sozinho.
-- **Inconsistência entre anexos:** a pergunta 1, com as premissas do Anexo A, chega a 130.637
-  usuárias no ano 1. O Anexo B projeta 145.000 no ano 1. Diferença de 14.363 usuárias, cerca de 11%.
+- **Inconsistência entre anexos:** a pergunta 1, com as premissas do Anexo A, chega a 131.158
+  usuárias no ano 1. O Anexo B projeta 145.000 no ano 1. Diferença de 13.842 usuárias, cerca de 11%.
   Quem apontar e disser com qual número seguiu leva o ponto. Vale saber que o case original tem uma
   discrepância do mesmo tipo, e bem maior: 189.000 na primeira pergunta contra 120.000 na segunda.
 - **Premissa em aberto:** segmento, produto e precificação continuam livres, como no original.
@@ -135,12 +144,12 @@ no fim. Limite de 5 slides ou 2 páginas escrito no próprio arquivo.
 
 | Etapa | Cálculo | Resultado |
 |---|---|---|
-| População da Alemanha | premissa | 84.000.000 |
-| Mulheres | × 50% | 42.000.000 |
-| De 25 a 50 anos e digitalmente ativas | × 36% | 15.120.000 |
-| Sem conta em neobroker, o gap de mercado | × 72% | 10.886.400 |
-| **Usuárias alcançáveis no ano 1** | × 1,2% | **130.637** |
-| **Receita potencial no ano 1** | × 21 euros | **2,74 milhões de euros** |
+| População da Alemanha | premissa | 83.500.000 |
+| Mulheres | × 50,5% | 42.167.500 |
+| De 25 a 50 anos e digitalmente ativas | × 36% | 15.180.300 |
+| Sem conta em neobroker, o gap de mercado | × 72% | 10.929.816 |
+| **Usuárias alcançáveis no ano 1** | × 1,2% | **131.158** |
+| **Receita potencial no ano 1** | × 21 euros | **2,75 milhões de euros** |
 
 O filtro que mais gente esquece é o terceiro. Sem tirar quem já tem conta em outro neobroker, o
 mercado fica inflado e a tese do case, que é público sub-atendido, perde o sentido.
@@ -174,7 +183,7 @@ cheia em A2 exige a premissa escrita e aplicada de forma consistente.
 
 ### Pergunta 3: estratégia de produto e priorização (parte aberta)
 
-Não existe resposta única, e o critério é usar o Anexo C como justificativa em vez de listar ideias.
+Não existe resposta única, e o critério é usar o gráfico do Anexo C como justificativa em vez de listar ideias.
 Uma boa resposta se organiza assim:
 
 - **Essencial:** ETFs e planos de aporte recorrente, sem taxa. É o produto de maior adoção entre
@@ -289,7 +298,7 @@ a gamificação ao Tópico 3 da sabatina.
 > aquisição incide, e a resposta é só as usuárias novas de cada ano. O terceiro é a leitura do
 > prejuízo: ele é estrutural e esperado em empresa financiada por venture capital, e a pergunta
 > certa é quanto capital é preciso até a base madurar.
-> Quem percebeu que os anexos não fecham entre si, 130 mil usuárias pela primeira conta contra 145
+> Quem percebeu que os anexos não fecham entre si, 131 mil usuárias pela primeira conta contra 145
 > mil na projeção, ganhou ponto extra. Achar isso é trabalho de consultor.
 > As notas estão na planilha, cada uma com evidência. Se discordarem de alguma, me chamem.
 
