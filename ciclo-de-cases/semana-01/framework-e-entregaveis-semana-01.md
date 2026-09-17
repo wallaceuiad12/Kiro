@@ -51,7 +51,7 @@ toda semana em que o case for de entrada ou lançamento, que é a maior parte do
 | Papel | Quem | Carga | Entrega |
 |---|---|---|---|
 | Dono do ciclo | Diretoria de Gestão de Pessoas | até 1h de setup, 1h30 de correção | enunciado, guia, gabarito, notas, comunicação |
-| Dupla | 2 membros | livre, dentro da semana | uma entrega de 3 a 5 slides ou 2 páginas |
+| Dupla | 2 membros | livre, dentro da semana | uma entrega no template, com todos os campos preenchidos |
 | Corretor de apoio (opcional) | 1 membro sênior ou alumni | 30 min | segunda leitura das notas acima de 8 e abaixo de 4 |
 
 ## Como o ciclo sobrevive a semana ruim
@@ -135,8 +135,15 @@ anexos e quatro perguntas:
 
 ## 4. Template de entrega
 
-Em `Template de entrega - Case 01.docx`. Uma seção por pergunta, mais recomendação no topo e riscos
-no fim. Limite de 5 slides ou 2 páginas escrito no próprio arquivo.
+Em `Template de entrega - Case 01.docx`. Agora é ele que padroniza a entrega, e não um limite de
+páginas. Uma seção por pergunta do enunciado, na mesma ordem, com campo estruturado para cada coisa
+pedida: a cadeia do dimensionamento etapa por etapa, a margem de contribuição e o ponto de
+equilíbrio, a tabela dos três anos separando usuárias ativas de usuárias novas, a priorização em
+essencial, desejável e opcional com o dado que justifica cada linha, as cinco dimensões da entrada e
+um campo obrigatório de premissas, encabeçado pela base sobre a qual o custo de aquisição incide.
+
+Não há seção que não corresponda a uma pergunta, e não há pergunta sem seção. Campo em branco conta
+como não respondido, o que torna a correção mais rápida e as entregas comparáveis entre duplas.
 
 ## 5. Gabarito, para liberar sábado ao meio-dia
 
@@ -227,7 +234,7 @@ corresponde a uma das quatro perguntas.
 | A2 | Pergunta 2: business case dos três anos correto, com a premissa do custo de aquisição declarada e aplicada de forma consistente | 2 |
 | R1 | Pergunta 3: priorização de produto justificada com os dados do Anexo C | 2 |
 | R2 | Pergunta 4: entrada coberta nas cinco dimensões, inclusive precificação e métricas | 1 |
-| E1 | Formato, limite de páginas e prazo respeitados | 1 |
+| E1 | Template preenchido por completo, em todos os campos, e prazo respeitado | 1 |
 
 Âncoras válidas para todos os critérios:
 
@@ -268,7 +275,7 @@ a gamificação ao Tópico 3 da sabatina.
 > pelo guia, são duas páginas e dez minutos. Ele não é sobre neobroker, é sobre como se ataca
 > qualquer case de entrada, então vale guardar: vocês vão usar em quase todo PS.
 > São quatro perguntas: tamanho de mercado, business case de três anos, estratégia de produto e
-> entrada no mercado. Entrega em dupla, no máximo 5 slides ou 2 páginas, até sexta 25/09 às 23h59.
+> entrada no mercado. Entrega em dupla, pelo template, até sexta 25/09 às 23h59. Preencham todos os campos.
 > Confirmem aqui no grupo com quem vão fazer dupla até hoje às 18h.
 > Aviso de ritmo: esta primeira semana vai de sexta a sexta porque começamos agora. A partir do
 > ciclo 2 o padrão é segunda 9h até domingo 23h59, e aí não muda mais.
@@ -283,8 +290,8 @@ a gamificação ao Tópico 3 da sabatina.
 > para cobrir o custo fixo. E olhem com atenção sobre qual base o custo de aquisição incide.
 
 **Quinta, lembrete**
-> Falta um dia. Entrega até amanhã 23h59 na pasta do Drive, em 5 slides ou 2 páginas. Quem entregar
-> fora do formato perde ponto no critério de entrega.
+> Falta um dia. Entrega até amanhã 23h59 na pasta do Drive, pelo template. Campo em branco conta
+> como não respondido, então vale revisar antes de subir.
 
 **Sexta, fechamento**
 > Fechou o ciclo. Obrigado a quem entregou. Corrijo amanhã de manhã e publico o gabarito e as notas
