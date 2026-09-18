@@ -166,8 +166,9 @@ que evita ter um template novo por semana.
 Agora existe em documento próprio e formatado, `Gabarito - Case 01 FemVest.docx`, na pasta
 `ciclo-de-cases`, com PDF ao lado. É o arquivo para circular com o time e depois com os membros,
 com as duas contas resolvidas passo a passo, a referência das duas perguntas abertas, a rubrica e
-uma seção final comparando entrega correta com entrega boa. Ele abre com um aviso de não liberar
-antes do fechamento. O resumo abaixo fica aqui para consulta rápida.
+uma seção final comparando entrega correta com entrega boa. O resumo abaixo fica aqui para consulta
+rápida. Lembre apenas de circular o arquivo somente depois do fechamento das entregas, porque o
+aviso não está mais impresso no documento.
 
 
 ### Pergunta 1: tamanho do mercado e receita potencial
