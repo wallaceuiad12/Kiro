@@ -1,15 +1,15 @@
 # Ciclo de cases CCU: framework e entregáveis da semana 1
 
 Tipo de case da semana: **market entry e novo produto**. Case: **FemVest**, adaptado do case público
-da Roland Berger publicado no PrepLounge. Início: **sexta, 18/09/2026, às 9h**. Fechamento:
-**domingo, 27/09/2026, às 23h59**.
+da Roland Berger publicado no PrepLounge. Envio do case: **domingo, 20/09/2026, às 9h**. Fechamento da entrega:
+**domingo, 27/09/2026, às 23h59**. Uma semana cheia.
 
 ## Três observações antes de começar
 
 **Sobre o ritmo.** A sabatina definiu o ciclo de segunda 9h a domingo 23h59. Esta primeira semana
-começa numa sexta porque a decisão foi colocar em prática já. Trato a semana 1 como ciclo piloto de
-sexta a domingo, dez dias, e o ciclo 2 já entra no padrão: abre na segunda 28/09 e fecha no domingo
-04/10.
+começa num domingo porque foi essa a decisão de envio. Trato a semana 1 como ciclo piloto de
+domingo a domingo, sete dias, e o ciclo 2 já entra no padrão: abre na segunda 28/09 e fecha no
+domingo 04/10, emendando no dia seguinte ao fechamento do piloto.
 Vale avisar na abertura, senão o pessoal aprende o ritmo errado.
 
 **Sobre a fidelidade ao original e o crédito.** A sequência das quatro perguntas é a do case
@@ -37,10 +37,10 @@ toda semana em que o case for de entrada ou lançamento, que é a maior parte do
 
 | Quando | O que acontece | Quem faz | Onde |
 |---|---|---|---|
-| Sexta, 9h | Abre o ciclo: dispara enunciado, guia de tipo de case e template no mesmo post | Diretor | Grupo e pasta da semana |
-| Sexta, até 18h | Duplas confirmam participação | Membros | Grupo |
-| Segunda | Check-in de meio de ciclo, cada dupla responde em uma linha | Diretor pergunta, duplas respondem | Grupo |
-| Quarta | Empurrão curto, com uma dica e nada mais | Diretor | Grupo |
+| Domingo, 9h | Envia o case: enunciado, guia de tipo de case e template no mesmo post | Diretor | Grupo e pasta da semana |
+| Domingo, até 22h | Duplas confirmam participação | Membros | Grupo |
+| Quarta | Check-in de meio de ciclo, cada dupla responde em uma linha | Diretor pergunta, duplas respondem | Grupo |
+| Sexta | Empurrão curto, com uma dica e nada mais | Diretor | Grupo |
 | Sábado | Lembrete de prazo, com o e-mail de entrega | Diretor | Grupo |
 | Domingo, 23h59 | Fecha a entrega. Nada entra depois, e na semana 1 isso não é negociável | Duplas | E-mail equipeccu@gmail.com |
 | Segunda, 9h | Abre o ciclo seguinte, com as duplas da semana | Diretor | Grupo |
@@ -86,9 +86,9 @@ está de 2022.
 
 | Data | Dia | Marco |
 |---|---|---|
-| 18/09 | sexta | 9h abre o ciclo. Confirmação de duplas até 18h |
-| 21/09 | segunda | Check-in de meio de ciclo |
-| 23/09 | quarta | Dica do meio do caminho |
+| 20/09 | domingo | 9h envio do case. Confirmação de duplas até 22h |
+| 23/09 | quarta | Check-in de meio de ciclo |
+| 25/09 | sexta | Dica do meio do caminho |
 | 26/09 | sábado | Lembrete de prazo, falta um dia |
 | 27/09 | domingo | 23h59 fecha a entrega |
 | 28/09 | segunda | 9h abre o ciclo 2, já no padrão segunda a domingo. Correção ao longo do dia. Às 19h, gabarito, notas e Dupla Destaque da semana 1 |
@@ -295,7 +295,7 @@ corretamente a base sobre a qual o custo de aquisição incide.
 
 ## 8. Kit de comunicação, pronto para copiar
 
-**Sexta, 9h, abertura**
+**Domingo, 9h, envio do case**
 > Bom dia! Abriu o primeiro ciclo de cases. O case é a FemVest, uma fintech alemã que quer lançar
 > uma corretora mobile focada em mulheres, e o tipo de case é entrada em mercado com lançamento de
 > produto.
@@ -305,15 +305,15 @@ corretamente a base sobre a qual o custo de aquisição incide.
 > São quatro perguntas: tamanho de mercado, business case de três anos, estratégia de produto e
 > entrada no mercado. Entrega em dupla, pelo template, por e-mail para equipeccu@gmail.com, até
 > domingo 27/09 às 23h59. Preencham todos os campos.
-> Confirmem aqui no grupo com quem vão fazer dupla até hoje às 18h.
-> Aviso de ritmo: esta primeira semana vai de sexta a domingo porque começamos agora. A partir do
-> ciclo 2 o padrão é segunda 9h até domingo 23h59, e aí não muda mais.
+> Confirmem aqui no grupo com quem vão fazer dupla até hoje às 22h.
+> Aviso de ritmo: esta primeira semana vai de domingo a domingo. A partir do ciclo 2 o padrão é
+> segunda 9h até domingo 23h59, e aí não muda mais.
 
-**Segunda, check-in**
+**Quarta, check-in**
 > Check-in rápido. Cada dupla responde em uma linha só: onde vocês estão e o que está travando.
 > Responder vale ponto, e serve para eu ajudar antes de virar problema.
 
-**Quarta, dica do meio do caminho**
+**Sexta, dica do meio do caminho**
 > Dica: dimensionar mercado é a parte fácil. O que decide é a segunda pergunta. Antes de montar os
 > três anos, calculem a margem de contribuição por usuária e quantas usuárias são necessárias só
 > para cobrir o custo fixo. E olhem com atenção sobre qual base o custo de aquisição incide.
@@ -379,7 +379,7 @@ Funcionou se, na segunda à noite, isto for verdade:
 - **Gabarito publicado no prazo**, segunda à noite.
 - Os números da semana registrados na planilha.
 - Pelo menos **uma dupla tratou o custo de aquisição corretamente**. Se nenhuma tratar, o
-  aprendizado da semana é esse, e ele entra na dica de quarta do ciclo 2.
+  aprendizado da semana é esse, e ele entra na dica de sexta do ciclo 2.
 
 Gatilho de correção: taxa de entrega abaixo de 70% não se resolve com cobrança no grupo. Vira
 pergunta no 1on1 de quem não entregou, e a primeira hipótese a testar é escopo grande demais, não
