@@ -2,13 +2,14 @@
 
 Tipo de case da semana: **market entry e novo produto**. Case: **FemVest**, adaptado do case público
 da Roland Berger publicado no PrepLounge. Início: **sexta, 18/09/2026, às 9h**. Fechamento:
-**sexta, 25/09/2026, às 23h59**.
+**domingo, 27/09/2026, às 23h59**.
 
 ## Três observações antes de começar
 
 **Sobre o ritmo.** A sabatina definiu o ciclo de segunda 9h a domingo 23h59. Esta primeira semana
 começa numa sexta porque a decisão foi colocar em prática já. Trato a semana 1 como ciclo piloto de
-sexta a sexta e faço a transição no ciclo 2, que abre na segunda 28/09 e fecha no domingo 04/10.
+sexta a domingo, dez dias, e o ciclo 2 já entra no padrão: abre na segunda 28/09 e fecha no domingo
+04/10.
 Vale avisar na abertura, senão o pessoal aprende o ritmo errado.
 
 **Sobre a fidelidade ao original e o crédito.** A sequência das quatro perguntas é a do case
@@ -40,11 +41,11 @@ toda semana em que o case for de entrada ou lançamento, que é a maior parte do
 | Sexta, até 18h | Duplas confirmam participação | Membros | Grupo |
 | Segunda | Check-in de meio de ciclo, cada dupla responde em uma linha | Diretor pergunta, duplas respondem | Grupo |
 | Quarta | Empurrão curto, com uma dica e nada mais | Diretor | Grupo |
-| Quinta | Lembrete de prazo, com o e-mail de entrega | Diretor | Grupo |
-| Sexta, 23h59 | Fecha a entrega. Nada entra depois, e na semana 1 isso não é negociável | Duplas | E-mail equipeccu@gmail.com |
-| Sábado, manhã | Correção critério por critério, com evidência | Diretor | Planilha |
-| Sábado, 12h | Publica gabarito e notas | Diretor | Grupo e Drive |
-| Segunda, 9h | Anuncia a Dupla Destaque e abre o ciclo seguinte no mesmo post | Diretor | Grupo |
+| Sábado | Lembrete de prazo, com o e-mail de entrega | Diretor | Grupo |
+| Domingo, 23h59 | Fecha a entrega. Nada entra depois, e na semana 1 isso não é negociável | Duplas | E-mail equipeccu@gmail.com |
+| Segunda, 9h | Abre o ciclo seguinte, com as duplas da semana | Diretor | Grupo |
+| Segunda, ao longo do dia | Correção critério por critério, com evidência | Diretor | Planilha |
+| Segunda, 19h | Publica gabarito, notas e a Dupla Destaque da semana que fechou | Diretor | Grupo e Drive |
 
 ## Papéis, considerando que pode haver só uma pessoa operando
 
@@ -62,7 +63,7 @@ toda semana em que o case for de entrada ou lançamento, que é a maior parte do
 - **Período de processo seletivo:** o case da semana passa a ser o próprio case do PS, resolvido
   pelos membros antes dos candidatos. Calibra a dificuldade e mantém o ciclo vivo no período em que
   ele costuma morrer.
-- **Ninguém entrega:** publica o gabarito no sábado do mesmo jeito. O assunto vira pergunta de
+- **Ninguém entrega:** publica o gabarito na segunda do mesmo jeito. O assunto vira pergunta de
   1on1, não cobrança no grupo.
 
 ## O que o ciclo alimenta e quais números são coletados toda semana
@@ -88,10 +89,9 @@ está de 2022.
 | 18/09 | sexta | 9h abre o ciclo. Confirmação de duplas até 18h |
 | 21/09 | segunda | Check-in de meio de ciclo |
 | 23/09 | quarta | Dica do meio do caminho |
-| 24/09 | quinta | Lembrete de prazo |
-| 25/09 | sexta | 23h59 fecha a entrega |
-| 26/09 | sábado | Correção pela manhã, gabarito e notas ao meio-dia |
-| 28/09 | segunda | 9h Dupla Destaque e abertura do ciclo 2, já no padrão segunda a domingo |
+| 26/09 | sábado | Lembrete de prazo, falta um dia |
+| 27/09 | domingo | 23h59 fecha a entrega |
+| 28/09 | segunda | 9h abre o ciclo 2, já no padrão segunda a domingo. Correção ao longo do dia. Às 19h, gabarito, notas e Dupla Destaque da semana 1 |
 
 ## 2. Guia de tipo de case
 
@@ -161,7 +161,7 @@ que evita ter um template novo por semana.
 | 3. Estratégia de produto e priorização | seção 4, usando as prioridades 1, 2 e 3 como essencial, desejável e opcional, e a tabela de descartados para o que fica de fora |
 | 4. Entrada no mercado nas cinco dimensões | seção 6, uma linha por dimensão |
 
-## 5. Gabarito, para liberar sábado ao meio-dia
+## 5. Gabarito, para liberar na segunda à noite
 
 Agora existe em documento próprio e formatado, `Gabarito - Case 01 FemVest.docx`, na pasta
 `ciclo-de-cases`, com PDF ao lado. É o arquivo para circular com o time e depois com os membros,
@@ -303,9 +303,10 @@ corretamente a base sobre a qual o custo de aquisição incide.
 > pelo guia, são duas páginas e dez minutos. Ele não é sobre neobroker, é sobre como se ataca
 > qualquer case de entrada, então vale guardar: vocês vão usar em quase todo PS.
 > São quatro perguntas: tamanho de mercado, business case de três anos, estratégia de produto e
-> entrada no mercado. Entrega em dupla, pelo template, até sexta 25/09 às 23h59. Preencham todos os campos.
+> entrada no mercado. Entrega em dupla, pelo template, por e-mail para equipeccu@gmail.com, até
+> domingo 27/09 às 23h59. Preencham todos os campos.
 > Confirmem aqui no grupo com quem vão fazer dupla até hoje às 18h.
-> Aviso de ritmo: esta primeira semana vai de sexta a sexta porque começamos agora. A partir do
+> Aviso de ritmo: esta primeira semana vai de sexta a domingo porque começamos agora. A partir do
 > ciclo 2 o padrão é segunda 9h até domingo 23h59, e aí não muda mais.
 
 **Segunda, check-in**
@@ -317,16 +318,16 @@ corretamente a base sobre a qual o custo de aquisição incide.
 > três anos, calculem a margem de contribuição por usuária e quantas usuárias são necessárias só
 > para cobrir o custo fixo. E olhem com atenção sobre qual base o custo de aquisição incide.
 
-**Quinta, lembrete**
-> Falta um dia. Entrega até amanhã 23h59, por e-mail para equipeccu@gmail.com, pelo template.
+**Sábado, lembrete**
+> Falta um dia. Entrega até amanhã, domingo, 23h59, por e-mail para equipeccu@gmail.com, pelo template.
 > Campo em branco conta como não respondido, então vale revisar antes de enviar.
 
-**Sexta, fechamento**
-> Fechou o ciclo. Obrigado a quem entregou. Corrijo amanhã de manhã e publico o gabarito e as notas
-> ao meio-dia, cada nota com a evidência que a justifica, para vocês conseguirem contestar se
+**Domingo, fechamento**
+> Fechou o ciclo. Obrigado a quem entregou. Corrijo amanhã e publico o gabarito e as notas
+> amanhã às 19h, cada nota com a evidência que a justifica, para vocês conseguirem contestar se
 > discordarem.
 
-**Sábado, gabarito**
+**Segunda à noite, gabarito**
 > Gabarito do Case 01 no Drive, com as duas contas centrais passo a passo.
 > Três pontos separaram as entregas. O primeiro é o filtro de quem já tem conta em outro neobroker:
 > sem ele o mercado infla e a tese do case se desfaz. O segundo é sobre qual base o custo de
@@ -337,10 +338,14 @@ corretamente a base sobre a qual o custo de aquisição incide.
 > mil na projeção, ganhou ponto extra. Achar isso é trabalho de consultor.
 > As notas estão na planilha, cada uma com evidência. Se discordarem de alguma, me chamem.
 
-**Segunda, Dupla Destaque e abertura do ciclo 2**
+**Segunda, 9h, abertura do ciclo 2**
+> Bom dia! Abriu o ciclo 2, no ritmo definitivo: segunda 9h até domingo 23h59. Tipo de case da
+> semana: [tipo]. Duplas da semana na lista. Arquivos na pasta.
+> À noite publico o gabarito, as notas e a Dupla Destaque da semana 1.
+
+**Segunda, 19h, gabarito e Dupla Destaque**
 > Dupla Destaque da semana 1: [nomes]. Motivo: [uma frase específica].
-> E abriu o ciclo 2, agora no ritmo definitivo, segunda 9h até domingo 23h59. Tipo de case da
-> semana: [tipo]. Arquivos na pasta.
+> O ciclo 2 abriu hoje de manhã, agora no ritmo definitivo, segunda 9h até domingo 23h59.
 
 ## 9. Estrutura da planilha de acompanhamento
 
@@ -367,11 +372,11 @@ custo de aquisição corretamente e quantas acharam a inconsistência.
 
 ## 10. Definição de pronto da semana 1
 
-Funcionou se, no sábado ao meio-dia, isto for verdade:
+Funcionou se, na segunda à noite, isto for verdade:
 
 - Pelo menos **3 duplas inscritas** e **taxa de entrega de 70%** ou mais.
 - **100% das entregas corrigidas com evidência apontada**, não só com nota.
-- **Gabarito publicado no prazo**, sábado ao meio-dia.
+- **Gabarito publicado no prazo**, segunda à noite.
 - Os números da semana registrados na planilha.
 - Pelo menos **uma dupla tratou o custo de aquisição corretamente**. Se nenhuma tratar, o
   aprendizado da semana é esse, e ele entra na dica de quarta do ciclo 2.
@@ -382,7 +387,7 @@ falta de interesse.
 
 ---
 
-# Dependências: o que só você decide antes de sexta
+# Dependências: o que só você decide antes da abertura
 
 1. **Confirmar o e-mail de entrega.** Ficou equipeccu@gmail.com no enunciado e nas mensagens. Se
    preferir uma caixa separada só para cases, é trocar em dois lugares.
