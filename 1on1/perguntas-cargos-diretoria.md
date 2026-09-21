@@ -21,13 +21,19 @@ presente. Com quem quer assumir, pergunte no futuro ("como você faria", "o que 
 >
 > | Função | No guia |
 > |---|---|
-> | Diretoria de área | D1, D3, D4, D9, D10 |
+> | Diretoria de área | D1, D3, D4, D5, D9 |
 > | Vice-presidência | V1, V2, V3, V4, V10 |
 > | Presidência | P1, P2, P3, P7, P10 |
 > | Valem para os três | G1, G2, G3, G4 e a antiga D6 |
 >
 > O bloco geral tinha só quatro perguntas, então levei a D6 para lá, porque a pergunta de
 > autocrítica com exemplo datado serve aos três cargos igual.
+
+> **Sobre a pergunta de retenção.** A de 0 a 10 sobre a chance de continuar no próximo
+> semestre (D10 e V11) saiu do guia nas duas funções. No lugar dela entrou, em cada uma, a
+> pergunta que olha o mesmo risco de fora para dentro: na diretoria, quem do time vai sair;
+> na vice, como se percebe um diretor indo mal antes do resultado aparecer. As duas continuam
+> no banco completo, caso a diretoria queira voltar a medir retenção declarada.
 
 ---
 
@@ -52,7 +58,7 @@ de fato? Me diz nome por nome e o que mudou nessa pessoa desde que entrou.
 > Se não consegue falar nome por nome, não está acompanhando ninguém, está só distribuindo
 > tarefa.
 
-**D5 (R)** Quem do seu time você promoveria a diretor amanhã, e quem você acha que vai sair no
+**D5 (R)** ✓ Quem do seu time você promoveria a diretor amanhã, e quem você acha que vai sair no
 próximo semestre? O que você está fazendo em cada um dos dois casos?
 
 **D6 (F)** ✓ Qual decisão da sua área você tomou nos últimos dois meses que hoje tomaria
@@ -71,7 +77,7 @@ que alguém revisou de verdade, e o que hoje está rodando por inércia?
 **D9 (F)** ✓ De 0 a 10, quanto sua área funcionaria bem sem você por um mês? O que explica não
 ser 10?
 
-**D10 (F)** ✓ De 0 a 10, qual a chance de você continuar no clube no próximo semestre? O que
+**D10 (F)** De 0 a 10, qual a chance de você continuar no clube no próximo semestre? O que
 subiria esse número em dois pontos?
 
 **D11 (F)** Se você fosse o presidente na semana que vem, qual a primeira coisa que mudaria na
