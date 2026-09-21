@@ -22,7 +22,7 @@ presente. Com quem quer assumir, pergunte no futuro ("como você faria", "o que 
 > | Função | No guia |
 > |---|---|
 > | Diretoria de área | D1, D3, D4, D9, D10 |
-> | Vice-presidência | V1, V2, V4, V10, V11 |
+> | Vice-presidência | V1, V2, V3, V4, V10 |
 > | Presidência | P1, P2, P3, P7, P10 |
 > | Valem para os três | G1, G2, G3, G4 e a antiga D6 |
 >
@@ -91,7 +91,7 @@ diretores? Onde você é o dono final da decisão?
 **V2 (F)** ✓ Qual área está pior hoje e o que você está fazendo por ela nesta semana? E qual vai
 bem sem precisar de você?
 
-**V3 (F)** Como você sabe que um diretor está indo mal antes de o resultado aparecer? Que
+**V3 (F)** ✓ Como você sabe que um diretor está indo mal antes de o resultado aparecer? Que
 sinal você olha?
 > Sem sinal antecedente, a vice só apaga incêndio. Aqui dá para introduzir a ideia de olhar as
 > notas de retenção dos 1on1 como alarme.
@@ -120,7 +120,7 @@ ser de outra pessoa e não é?
 **V10 (F)** ✓ De 0 a 10, quanto o clube funcionaria se você e a presidência saíssem no mesmo
 semestre? O que explica o número?
 
-**V11 (F)** ✓ De 0 a 10, qual a chance de você continuar no próximo semestre, e o que subiria
+**V11 (F)** De 0 a 10, qual a chance de você continuar no próximo semestre, e o que subiria
 dois pontos?
 
 **V12 (F)** Se você assumisse a presidência no mês que vem, o que mudaria no primeiro mês e o
