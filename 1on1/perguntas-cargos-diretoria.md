@@ -16,8 +16,10 @@ Serve para os dois usos, mudando só o tempo verbal: com quem já ocupa o cargo,
 presente. Com quem quer assumir, pergunte no futuro ("como você faria", "o que você olharia").
 
 > **Nota sobre o guia em PDF.** O `Guia 1on1 - cargos de gestao.pdf` traz uma versão enxuta,
-> com **cinco perguntas por função**, para levar impressa na conversa. Este arquivo continua
-> sendo o banco completo. As que foram para o guia estão marcadas com ✓ abaixo.
+> com **cinco perguntas por função** e **só as perguntas**, sem os comentários de observação,
+> para levar impressa na conversa. Este arquivo continua sendo o banco completo, e é aqui que
+> ficam os comentários do que olhar em cada resposta. As que foram para o guia estão marcadas
+> com ✓ abaixo.
 >
 > | Função | No guia |
 > |---|---|
