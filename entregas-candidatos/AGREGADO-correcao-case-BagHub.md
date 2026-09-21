@@ -1,59 +1,58 @@
 # Correção do case BagHub, PS CCU 2026.2
 
-Agregado das 16 entregas avaliadas, com nome quando identificável, nota detalhada nos 20 critérios e o comentário de cada uma.
+Correção de 15 entregas, feita por Matteo, com a nota aberta nos 20 critérios e o comentário de cada uma.
 
-A pasta 01 foi corrigida antes, pelo Avaliador 1, e serviu de calibração. As pastas 02 a 16 são desta rodada.
+A nota usada aqui exclui o bloco Vídeo, que vale 10 pontos e foi avaliado na etapa anterior. Isso deixa todas as linhas na mesma base e permite comparar com os outros avaliadores.
 
-**V1 e V2 estão em branco em todas as linhas.** As notas da etapa de vídeo valem 10 pontos e hoje entram como zero, o que puxa o bruto para baixo. A coluna AJUSTADA exclui esses 10 pontos e é a que serve para comparar candidatos.
+## Comparação com as demais correções do clube
+
+| Candidato | Pasta | Matteo | Média dos outros | Diferença | Quem mais corrigiu |
+|---|---|---|---|---|---|
+| Aslan Rodrigues Maia | 02 | 9.19 | 7.33 | +1.85 **alerta** | Ferro 7.33 |
+| Bruno Heberth Oliveira Bastos | 03 | 6.85 | 5.59 | +1.26 **alerta** | victor 5.63 · Fred 5.56 |
+| Caio Augusto Saab | 04 | 3.19 | 3.06 | +0.13 | luis 2.93 · victor 3.19 |
+| Eduardo Alves Henrique | 05 | 6.81 | 5.87 | +0.94 | victor 5.93 · Proc 5.81 |
+| Enrico Tristão e Mello de Oliveira | 06 | 9.04 | 8.33 | +0.70 | victor 8.33 |
+| Gabrielle Cristofani do Rosario | 08 | 7.22 | 6.81 | +0.41 | victor 6.67 · Fred 6.96 |
+| Leandra Cunha de Souza | 11 | 5.41 | 4.78 | +0.63 | victor 5.00 · Proc 4.56 |
+| Mariana Nunes Galvão Sant'Anna | 12 | 8.70 | 8.85 | -0.15 | luis 8.85 |
+| Rafael Rodrigues Moreira | 14 | 6.52 | 7.37 | -0.85 | Ferro 7.37 |
+| Vagner Ássimos Gomes Carlos Filho | 16 | 6.52 | 5.91 | +0.61 | victor 5.93 · Proc 5.89 |
+
+Divergência média absoluta de **0.75**, com **2 de 10** acima do limite de 1,0 que a aba Como usar define como alerta.
+
+Os dois alertas que restam são desacordo de mérito, não de calibragem, e valem a conversa de calibração:
+
+- **Aslan Rodrigues Maia.** O Ferro corrigiu sozinho e deu 2 em quase tudo, sem justificar critério por critério. Em C1 o descritor pede a recomendação em uma frase, nos dois primeiros slides, com o número, e isso é apontável na página 2 dele. Em R2 ele prova que a vantagem dos parceiros vale para qualquer bairro, o que é mais do que comparar.
+- **Bruno Heberth.** O victor e o Fred deram notas próximas entre si e os dois escreveram que a entrega é feita por IA. A aba Como usar diz para não tentar detectar IA no take-home, e a regra da rubrica é que suspeita de IA não muda nota. Além disso o Fred marcou E2 igual a 0 e E4 igual a 0, e o Bruno entregou um relatório fechado de 10 páginas com tabelas nas páginas 3, 4 e 5. Vale reabrir esses dois itens.
 
 ## Ranking
 
-| # | Pasta | Candidato | Comunic. /30 | Racioc. /25 | Acurácia /25 | Entrega /10 | BRUTO | AJUSTADA | Aprovaria? |
-|---|---|---|---|---|---|---|---|---|---|
-| 1 | 07 | não identificado | 30.00 | 25.00 | 23.00 | 8.00 | **8.60** | **9.56** | Sim |
-| 2 | 06 | Enrico Tristão e Mello de Oliveira | 27.33 | 25.00 | 23.00 | 8.00 | **8.33** | **9.26** | Sim |
-| 3 | 02 | Aslan Rodrigues Maia | 30.00 | 25.00 | 23.00 | 5.00 | **8.30** | **9.22** | Sim |
-| 4 | 09 | não identificado | 30.00 | 23.33 | 21.67 | 8.00 | **8.30** | **9.22** | Sim |
-| 5 | 12 | Mariana Nunes Galvão Sant'Anna | 25.00 | 23.33 | 23.00 | 8.00 | **7.93** | **8.81** | Sim |
-| 6 | 01 | não identificado | 27.33 | 23.33 | 23.00 | 5.00 | **7.87** | **8.74** | Passaria para ver a entrevista |
-| 7 | 16 | Vagner Ássimos Gomes Carlos Filho | 25.00 | 25.00 | 22.00 | 5.00 | **7.70** | **8.56** | Sim |
-| 8 | 08 | Gabrielle Cristofani do Rosario | 24.00 | 23.33 | 22.00 | 4.00 | **7.33** | **8.15** | Sim |
-| 9 | 03 | Bruno Heberth Oliveira Bastos | 22.67 | 20.00 | 20.67 | 8.00 | **7.13** | **7.93** | Sim |
-| 10 | 10 | não identificado | 19.33 | 20.67 | 20.67 | 5.00 | **6.57** | **7.30** | Passaria para ver a entrevista |
-| 11 | 11 | Leandra Cunha de Souza | 16.00 | 20.00 | 20.67 | 4.00 | **6.07** | **6.74** | Passaria para ver a entrevista |
-| 12 | 05 | Eduardo Alves Henrique | 20.00 | 16.67 | 19.67 | 4.00 | **6.03** | **6.70** | Passaria para ver a entrevista |
-| 13 | 14 | Rafael Rodrigues Moreira | 14.33 | 17.33 | 16.33 | 4.00 | **5.20** | **5.78** | Passaria para ver a entrevista |
-| 14 | 13 | não identificado | 7.33 | 5.67 | 17.33 | 1.00 | **3.13** | **3.48** | Não |
-| 15 | 04 | Caio Augusto Saab | 13.33 | 6.33 | 8.00 | 2.00 | **2.97** | **3.30** | Não |
-| 16 | 15 | não identificado | 7.33 | 4.00 | 15.00 | 0.00 | **2.63** | **2.93** | Não |
-
-Nome identificado em **10 das 16** pastas. Em nove delas o próprio candidato colocou o nome no arquivo, na capa ou no metadado. A pasta 04 saiu só do metadado do PDF e precisa de confirmação antes de virar decisão.
-
-Seguem anônimas as pastas **07, 09, 01, 10, 13, 15**. Nelas não há nome no texto, no nome do arquivo nem no metadado, que está vazio ou foi limpo na exportação.
-
-## Candidatos inscritos ainda não pareados a nenhuma pasta
-
-São 11 nomes para 6 pastas anônimas, então 5 destes provavelmente não entregaram. Cruzando com o registro de envio de vocês, as seis pastas anônimas se resolvem por eliminação.
-
-- João Pedro Mendes Stama
-- Rafael Ponciano Rodrigues dos Santos
-- Enzo Chofakian Gagliardi
-- João Gabriel de Oliveira Morcelli
-- Raphael Negrini Saggioro
-- Gustavo Daher Pereira
-- Ricardo Augusto Schmitt Filho
-- Matheus Dias Freitas
-- Klaus Augusto Santos da Silva
-- José Vitor Dias Tutu
-- Isadora Kluge Dorigan
+| # | Pasta | Candidato | Comunic. /30 | Racioc. /25 | Acurácia /25 | Entrega /10 | Nota |
+|---|---|---|---|---|---|---|---|
+| 1 |  | Candidato 07 (pasta 07, não identificado) | 30.00 | 25.00 | 22.00 | 8.00 | **9.44** |
+| 2 | 02 | Aslan Rodrigues Maia | 30.00 | 25.00 | 19.67 | 8.00 | **9.19** |
+| 3 | 06 | Enrico Tristão e Mello de Oliveira | 27.33 | 25.00 | 21.00 | 8.00 | **9.04** |
+| 4 |  | Candidato 09 (pasta 09, não identificado) | 30.00 | 21.67 | 19.67 | 8.00 | **8.81** |
+| 5 | 12 | Mariana Nunes Galvão Sant'Anna | 25.00 | 23.33 | 22.00 | 8.00 | **8.70** |
+| 6 | 08 | Gabrielle Cristofani do Rosario | 20.00 | 19.33 | 18.67 | 7.00 | **7.22** |
+| 7 |  | Candidato 10 (pasta 10, não identificado) | 19.33 | 19.00 | 18.67 | 5.00 | **6.89** |
+| 8 | 03 | Bruno Heberth Oliveira Bastos | 21.00 | 15.00 | 17.67 | 8.00 | **6.85** |
+| 9 | 05 | Eduardo Alves Henrique | 20.00 | 16.67 | 17.67 | 7.00 | **6.81** |
+| 10 | 14 | Rafael Rodrigues Moreira | 17.67 | 20.67 | 14.33 | 6.00 | **6.52** |
+| 11 | 16 | Vagner Ássimos Gomes Carlos Filho | 20.00 | 19.00 | 14.67 | 5.00 | **6.52** |
+| 12 | 11 | Leandra Cunha de Souza | 16.00 | 15.00 | 13.67 | 4.00 | **5.41** |
+| 13 |  | Candidato 13 (pasta 13, não identificado) | 7.33 | 5.67 | 16.33 | 4.00 | **3.70** |
+| 14 | 04 | Caio Augusto Saab | 13.33 | 6.33 | 7.00 | 2.00 | **3.19** |
+| 15 |  | Candidato 15 (pasta 15, não identificado) | 7.33 | 4.00 | 14.00 | 3.00 | **3.15** |
 
 ---
 
-## Pasta 07, não identificado
+## Candidato 07 (pasta 07, não identificado)
 
-Pasta **07** · Nota bruta **8.60** · Nota ajustada **9.56** · Aprovaria: **Sim**
+Pasta **** · Nota **9.44** · Avaliador: Matteo
 
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
+| Critério | O que mede | Peso | Nota | Pontos |
 |---|---|---|---|---|
 | **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **30.00** |
 | C1 | Clareza da recomendação | 10 | 3 | 10.00 |
@@ -65,19 +64,19 @@ Pasta **07** · Nota bruta **8.60** · Nota ajustada **9.56** · Aprovaria: **Si
 | R2 | Discussão de alternativas | 7 | 3 | 7.00 |
 | R3 | Ir além do pedido, com relevância | 5 | 3 | 5.00 |
 | R4 | Interpretação além do óbvio | 5 | 3 | 5.00 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **23.00** |
+| **ACURÁCIA TÉCNICA** | | **25** | | **22.00** |
 | A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
 | A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
 | A3 | Projeção e plano | 4 | 3 | 4.00 |
 | A4 | Alternativa quantificada | 3 | 3 | 3.00 |
 | A5 | Riscos e próximos passos | 3 | 3 | 3.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
 | **ENTREGA** | | **10** | | **8.00** |
 | E1 | Enviou planilha | 3 | 1 | 3.00 |
 | E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
 | E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
 | E4 | Recursos visuais que sustentam | 3 | 3 | 3.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
 
 ### Comentário
 
@@ -93,19 +92,67 @@ Faltou pouco. Nenhum reparo de forma, e o único vazio é não ter explorado o q
 
 Na entrevista eu pergunto: por que a queda admissível até zerar, 77,3%, é exatamente igual à sua margem operacional? Quem entendeu que todo custo do case é fixo responde na hora. Quem só preencheu a planilha trava.
 
-Nota 8,60 com vídeo em branco. Considerando só o que dá para avaliar, 9,56.
+Nota 8,50 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 9,44.
 
 Indício de IA: Baixo (consultivo, não afeta nota). A disciplina do modelo é o indício. Bloco de Conferências com três identidades que devem zerar e um validador condicional de capacidade. A aba de premissas documenta convenção de cores e deixa nota de manutenção para quem usar o modelo depois, escrita para um leitor futuro e não para um avaliador. Ele marca sistematicamente o que não pode saber: distâncias não informadas, hipótese a validar, médias diárias como normalização. Esse hábito é o oposto de texto gerado.
 
-IDENTIFICAÇÃO: pasta anônima. Nenhum arquivo traz nome no texto, no nome do arquivo ou no metadado. Rastro de ferramenta que pode ajudar a estreitar: metadados completamente vazios nos dois arquivos. A planilha foi feita no Excel Online. Sem o mapa número para candidato, V1 e V2 não podem ser transcritos e o bloco Vídeo fica valendo zero. Candidatos inscritos ainda não pareados a nenhuma pasta: João Pedro Mendes Stama, Rafael Ponciano Rodrigues dos Santos, Enzo Chofakian Gagliardi, João Gabriel de Oliveira Morcelli, Raphael Negrini Saggioro, Gustavo Daher Pereira, Ricardo Augusto Schmitt Filho, Matheus Dias Freitas, Klaus Augusto Santos da Silva, José Vitor Dias Tutu, Isadora Kluge Dorigan.
+COMPARAÇÃO COM O CLUBE: pasta anônima, sem contraparte para cruzar. Precisa do mapa número para candidato.
+
+---
+
+## Aslan Rodrigues Maia
+
+Pasta **02** · Nota **9.19** · Avaliador: Matteo
+
+| Critério | O que mede | Peso | Nota | Pontos |
+|---|---|---|---|---|
+| **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **30.00** |
+| C1 | Clareza da recomendação | 10 | 3 | 10.00 |
+| C2 | Formato apresentável a cliente | 8 | 3 | 8.00 |
+| C3 | Storytelling | 7 | 3 | 7.00 |
+| C4 | Acabamento visual | 5 | 3 | 5.00 |
+| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **25.00** |
+| R1 | Recomendação quali + quanti | 8 | 3 | 8.00 |
+| R2 | Discussão de alternativas | 7 | 3 | 7.00 |
+| R3 | Ir além do pedido, com relevância | 5 | 3 | 5.00 |
+| R4 | Interpretação além do óbvio | 5 | 3 | 5.00 |
+| **ACURÁCIA TÉCNICA** | | **25** | | **19.67** |
+| A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
+| A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
+| A3 | Projeção e plano | 4 | 2 | 2.67 |
+| A4 | Alternativa quantificada | 3 | 3 | 3.00 |
+| A5 | Riscos e próximos passos | 3 | 2 | 2.00 |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
+| **ENTREGA** | | **10** | | **8.00** |
+| E1 | Enviou planilha | 3 | 1 | 3.00 |
+| E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
+| E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
+| E4 | Recursos visuais que sustentam | 3 | 3 | 3.00 |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
+
+### Comentário
+
+Melhor entrega que li. O que separa ele dos outros não é a conta, é ter provado por que parceiros ganham. O banco de 40 posições rateado dá R$ 1.750 por posição, e o prêmio que o parceiro cobra sobre a operação vai de R$ 400 a R$ 1.400. Como o prêmio é sempre menor, a escolha do modelo passa a não depender do bairro. Isso é um resultado que sobrevive a mudança de parâmetro, não leitura de tabela.
+
+Os oito cenários fecham todos, inclusive o arredondamento da Arena. O anexo traz as premissas numeradas de P0 a P11, cada uma com a fonte. Ele achou a tensão do case e resolveu: o Centro Histórico rende R$ 24.500 por posição contra R$ 11.600 da Estação, mas a prioridade declarada é rentabilidade anual e a capacidade é contratável, então lucro por posição não limita crescimento.
+
+Falta prazo nos riscos. As mitigações são boas e contratuais, só que nenhuma tem data e o piloto não tem duração. Também não fez sensibilidade numérica, embora a seção 5.1 funcione como breakeven implícito.
+
+Na entrevista eu pergunto: se o banco custasse R$ 50.000, o que muda? A resposta é que o rateio cai para R$ 1.250, fica abaixo do prêmio de R$ 1.400 da alta complexidade, e os armários passam a ganhar em Noite Alta. Quem montou aquela seção responde em um minuto.
+
+Nota 8,27 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 9,19.
+
+Indício de IA: Baixo (consultivo, não afeta nota). Vários sinais de autoria própria. A prova de dominância da seção 5.1 é um achado estrutural deste case, não leitura dos oito números. Ele nota que a vantagem dos parceiros em Noite Alta é de só R$ 350 por posição e transforma isso em ponto de monitoramento. A profundidade é desigual de propósito: o anexo faz a Estação por extenso e resume os outros três, o corte de quem tinha um fim de semana. O acabamento do anexo em LaTeX poderia levantar dúvida, mas acabamento não é evidência, e compor em LaTeX aponta para o contrário.
+
+COMPARAÇÃO COM O CLUBE: Ferro ficou em 7,33 e eu em 9,19, diferença de 1,86, acima do limite de 1,0. Cai na conversa de calibração.
 
 ---
 
 ## Enrico Tristão e Mello de Oliveira
 
-Pasta **06** · e278588@dac.unicamp.br · Nota bruta **8.33** · Nota ajustada **9.26** · Aprovaria: **Sim**
+Pasta **06** · Nota **9.04** · Avaliador: Matteo
 
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
+| Critério | O que mede | Peso | Nota | Pontos |
 |---|---|---|---|---|
 | **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **27.33** |
 | C1 | Clareza da recomendação | 10 | 3 | 10.00 |
@@ -117,19 +164,19 @@ Pasta **06** · e278588@dac.unicamp.br · Nota bruta **8.33** · Nota ajustada *
 | R2 | Discussão de alternativas | 7 | 3 | 7.00 |
 | R3 | Ir além do pedido, com relevância | 5 | 3 | 5.00 |
 | R4 | Interpretação além do óbvio | 5 | 3 | 5.00 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **23.00** |
+| **ACURÁCIA TÉCNICA** | | **25** | | **21.00** |
 | A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
 | A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
 | A3 | Projeção e plano | 4 | 3 | 4.00 |
 | A4 | Alternativa quantificada | 3 | 3 | 3.00 |
-| A5 | Riscos e próximos passos | 3 | 3 | 3.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
+| A5 | Riscos e próximos passos | 3 | 2 | 2.00 |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
 | **ENTREGA** | | **10** | | **8.00** |
 | E1 | Enviou planilha | 3 | 1 | 3.00 |
 | E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
 | E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
 | E4 | Recursos visuais que sustentam | 3 | 3 | 3.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
 
 ### Comentário
 
@@ -147,91 +194,43 @@ O que sobra de reparo é pequeno e todo de acabamento. O arquivo foi enviado com
 
 Na entrevista eu vou direto no que prova propriedade. O breakeven da Arena deu R$ 23.478, um número não redondo, de onde vem o 23 no denominador? E se o overhead real der R$ 1,4 mil por posição em vez de R$ 1,15 mil, o que acontece com a recomendação? Quem montou o modelo responde as duas em três minutos.
 
-Nota 8,33 com vídeo em branco. Considerando só o que dá para avaliar, 9,26.
+Nota 8,13 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 9,04.
 
 Indício de IA: Baixo (consultivo, não afeta nota). Foi a leitura mais difícil, porque o acabamento é alto e o vocabulário é bem de consultoria. Mas a planilha tem uma coluna de reconciliação que cruza a economia por dois caminhos independentes, e ninguém constrói autoconferência num modelo que não montou. O breakeven da Arena saiu R$ 23.478,26, não redondo, e ele não arredondou para embelezar. O R$ 1,15 mil por posição aparece encadeado em três artefatos. Somam-se o "hhh" no nome do arquivo e a numeração trocada.
 
-IDENTIFICAÇÃO: Enrico Tristão e Mello de Oliveira, e278588@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome no nome do arquivo e campo lastModifiedBy do pptx e do xlsx ("Enrico Mello"). As notas de vídeo dele estão nas linhas 12 e 34 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
+COMPARAÇÃO COM O CLUBE: victor ficou em 8,33 e eu em 9,04, diferença de 0,71, dentro do limite de 1,0.
 
 ---
 
-## Aslan Rodrigues Maia
+## Candidato 09 (pasta 09, não identificado)
 
-Pasta **02** · a266739@dac.unicamp.br · Nota bruta **8.30** · Nota ajustada **9.22** · Aprovaria: **Sim**
+Pasta **** · Nota **8.81** · Avaliador: Matteo
 
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
+| Critério | O que mede | Peso | Nota | Pontos |
 |---|---|---|---|---|
 | **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **30.00** |
 | C1 | Clareza da recomendação | 10 | 3 | 10.00 |
 | C2 | Formato apresentável a cliente | 8 | 3 | 8.00 |
 | C3 | Storytelling | 7 | 3 | 7.00 |
 | C4 | Acabamento visual | 5 | 3 | 5.00 |
-| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **25.00** |
-| R1 | Recomendação quali + quanti | 8 | 3 | 8.00 |
-| R2 | Discussão de alternativas | 7 | 3 | 7.00 |
-| R3 | Ir além do pedido, com relevância | 5 | 3 | 5.00 |
-| R4 | Interpretação além do óbvio | 5 | 3 | 5.00 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **23.00** |
-| A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
-| A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
-| A3 | Projeção e plano | 4 | 3 | 4.00 |
-| A4 | Alternativa quantificada | 3 | 3 | 3.00 |
-| A5 | Riscos e próximos passos | 3 | 3 | 3.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
-| **ENTREGA** | | **10** | | **5.00** |
-| E1 | Enviou planilha | 3 | 0 | 0.00 |
-| E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
-| E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
-| E4 | Recursos visuais que sustentam | 3 | 3 | 3.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
-
-### Comentário
-
-Melhor entrega que li. O que separa ele dos outros não é a conta, é ter provado por que parceiros ganham. O banco de 40 posições rateado dá R$ 1.750 por posição, e o prêmio que o parceiro cobra sobre a operação vai de R$ 400 a R$ 1.400. Como o prêmio é sempre menor, a escolha do modelo passa a não depender do bairro. Isso é um resultado que sobrevive a mudança de parâmetro, não leitura de tabela.
-
-Os oito cenários fecham todos, inclusive o arredondamento da Arena. O anexo traz as premissas numeradas de P0 a P11, cada uma com a fonte. Ele achou a tensão do case e resolveu: o Centro Histórico rende R$ 24.500 por posição contra R$ 11.600 da Estação, mas a prioridade declarada é rentabilidade anual e a capacidade é contratável, então lucro por posição não limita crescimento.
-
-Falta prazo nos riscos. As mitigações são boas e contratuais, só que nenhuma tem data e o piloto não tem duração. Também não fez sensibilidade numérica, embora a seção 5.1 funcione como breakeven implícito.
-
-Na entrevista eu pergunto: se o banco custasse R$ 50.000, o que muda? A resposta é que o rateio cai para R$ 1.250, fica abaixo do prêmio de R$ 1.400 da alta complexidade, e os armários passam a ganhar em Noite Alta. Quem montou aquela seção responde em um minuto.
-
-Nota 8,30 com vídeo em branco. Considerando só o que dá para avaliar, 9,22.
-
-Indício de IA: Baixo (consultivo, não afeta nota). Vários sinais de autoria própria. A prova de dominância da seção 5.1 é um achado estrutural deste case, não leitura dos oito números. Ele nota que a vantagem dos parceiros em Noite Alta é de só R$ 350 por posição e transforma isso em ponto de monitoramento. A profundidade é desigual de propósito: o anexo faz a Estação por extenso e resume os outros três, o corte de quem tinha um fim de semana. O acabamento do anexo em LaTeX poderia levantar dúvida, mas acabamento não é evidência, e compor em LaTeX aponta para o contrário.
-
-IDENTIFICAÇÃO: Aslan Rodrigues Maia, a266739@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome no nome dos dois arquivos e no titulo interno do PDF ("Apresentação - Aslan Maia - Case CCU"). As notas de vídeo dele estão nas linhas 17 e 39 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
-
----
-
-## Pasta 09, não identificado
-
-Pasta **09** · Nota bruta **8.30** · Nota ajustada **9.22** · Aprovaria: **Sim**
-
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
-|---|---|---|---|---|
-| **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **30.00** |
-| C1 | Clareza da recomendação | 10 | 3 | 10.00 |
-| C2 | Formato apresentável a cliente | 8 | 3 | 8.00 |
-| C3 | Storytelling | 7 | 3 | 7.00 |
-| C4 | Acabamento visual | 5 | 3 | 5.00 |
-| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **23.33** |
+| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **21.67** |
 | R1 | Recomendação quali + quanti | 8 | 3 | 8.00 |
 | R2 | Discussão de alternativas | 7 | 3 | 7.00 |
 | R3 | Ir além do pedido, com relevância | 5 | 2 | 3.33 |
-| R4 | Interpretação além do óbvio | 5 | 3 | 5.00 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **21.67** |
+| R4 | Interpretação além do óbvio | 5 | 2 | 3.33 |
+| **ACURÁCIA TÉCNICA** | | **25** | | **19.67** |
 | A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
 | A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
 | A3 | Projeção e plano | 4 | 2 | 2.67 |
 | A4 | Alternativa quantificada | 3 | 3 | 3.00 |
-| A5 | Riscos e próximos passos | 3 | 3 | 3.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
+| A5 | Riscos e próximos passos | 3 | 2 | 2.00 |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
 | **ENTREGA** | | **10** | | **8.00** |
 | E1 | Enviou planilha | 3 | 1 | 3.00 |
 | E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
 | E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
 | E4 | Recursos visuais que sustentam | 3 | 3 | 3.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
 
 ### Comentário
 
@@ -245,19 +244,19 @@ Segundo ponto, menor. Ele lê a prioridade de rentabilidade anual como margem, q
 
 Na entrevista eu faço uma pergunta só, e ela vale a etapa toda. O Anexo E diz que todos os custos são anuais, inclusive os R$ 70.000 por banco. Seu modelo remove esse custo a partir do Ano 2, por quê, e o que acontece com a sua recomendação se ele for mesmo anual? Quem entendeu o próprio modelo reconhece na hora que o roadmap cai.
 
-Nota 8,30 com vídeo em branco. Considerando só o que dá para avaliar, 9,22.
+Nota 7,93 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 8,81.
 
 Indício de IA: Baixo (consultivo, não afeta nota). O mais claro é a Arena com 23 bancos digitados à mão enquanto os outros três usam fórmula. É alguém que rodou o modelo, viu 22,5 aparecer e corrigiu pontualmente. A planilha tem marcas de trabalho manual, com células escritas como "IDEM" e "Noite alta" em minúscula contra "Noite Alta" no deck. E o erro central, tratar custo anual como investimento, é falha de interpretação de quem leu rápido, não artefato de geração.
 
-IDENTIFICAÇÃO: pasta anônima. Nenhum arquivo traz nome no texto, no nome do arquivo ou no metadado. Rastro de ferramenta que pode ajudar a estreitar: pptx exportado por "Walnut Exporter" e planilha no Excel Online. Criado em 17/09/2026 as 23:17 UTC. Sem o mapa número para candidato, V1 e V2 não podem ser transcritos e o bloco Vídeo fica valendo zero. Candidatos inscritos ainda não pareados a nenhuma pasta: João Pedro Mendes Stama, Rafael Ponciano Rodrigues dos Santos, Enzo Chofakian Gagliardi, João Gabriel de Oliveira Morcelli, Raphael Negrini Saggioro, Gustavo Daher Pereira, Ricardo Augusto Schmitt Filho, Matheus Dias Freitas, Klaus Augusto Santos da Silva, José Vitor Dias Tutu, Isadora Kluge Dorigan.
+COMPARAÇÃO COM O CLUBE: pasta anônima, sem contraparte para cruzar. Precisa do mapa número para candidato.
 
 ---
 
 ## Mariana Nunes Galvão Sant'Anna
 
-Pasta **12** · m277865@dac.unicamp.br · Nota bruta **7.93** · Nota ajustada **8.81** · Aprovaria: **Sim**
+Pasta **12** · Nota **8.70** · Avaliador: Matteo
 
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
+| Critério | O que mede | Peso | Nota | Pontos |
 |---|---|---|---|---|
 | **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **25.00** |
 | C1 | Clareza da recomendação | 10 | 3 | 10.00 |
@@ -269,19 +268,19 @@ Pasta **12** · m277865@dac.unicamp.br · Nota bruta **7.93** · Nota ajustada *
 | R2 | Discussão de alternativas | 7 | 3 | 7.00 |
 | R3 | Ir além do pedido, com relevância | 5 | 3 | 5.00 |
 | R4 | Interpretação além do óbvio | 5 | 2 | 3.33 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **23.00** |
+| **ACURÁCIA TÉCNICA** | | **25** | | **22.00** |
 | A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
 | A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
 | A3 | Projeção e plano | 4 | 3 | 4.00 |
 | A4 | Alternativa quantificada | 3 | 3 | 3.00 |
 | A5 | Riscos e próximos passos | 3 | 3 | 3.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
 | **ENTREGA** | | **10** | | **8.00** |
 | E1 | Enviou planilha | 3 | 1 | 3.00 |
 | E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
 | E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
 | E4 | Recursos visuais que sustentam | 3 | 3 | 3.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
 
 ### Comentário
 
@@ -297,131 +296,43 @@ De forma, o custo veio dos títulos repetidos. Três slides seguidos com o mesmo
 
 Na entrevista eu faço as duas perguntas. Como os 58% de horas ociosas se transformariam em lucro, se a demanda já está dada? E quais são os 5 bairros de fronteira da Estação Central? A segunda ela responde de imediato se olhou o mapa, e olhou.
 
-Nota 7,93 com vídeo em branco. Considerando só o que dá para avaliar, 8,81.
+Nota 7,83 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 8,70.
 
 Indício de IA: Baixo (consultivo, não afeta nota). A aba Rascunho é material cru, com a estrutura do case em abreviações e typos de digitação rápida. Ninguém gera uma aba de rascunho assim. O critério de potencial de fronteira exige abrir a imagem do mapa e contar adjacências, um ato físico de leitura de anexo. As contagens de banco estão fixadas bairro a bairro dentro das fórmulas. E o risco de baixa conversão pela pressa é observação idiossincrática sobre o público.
 
-IDENTIFICAÇÃO: Mariana Nunes Galvão Sant'Anna, m277865@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome no nome do arquivo, no slide de fechamento e no campo Author do metadado. As notas de vídeo dele estão nas linhas 16 e 38 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
-
----
-
-## Pasta 01, não identificado
-
-Pasta **01** · Nota bruta **7.87** · Nota ajustada **8.74** · Aprovaria: **Passaria para ver a entrevista**
-
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
-|---|---|---|---|---|
-| **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **27.33** |
-| C1 | Clareza da recomendação | 10 | 3 | 10.00 |
-| C2 | Formato apresentável a cliente | 8 | 2 | 5.33 |
-| C3 | Storytelling | 7 | 3 | 7.00 |
-| C4 | Acabamento visual | 5 | 3 | 5.00 |
-| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **23.33** |
-| R1 | Recomendação quali + quanti | 8 | 3 | 8.00 |
-| R2 | Discussão de alternativas | 7 | 3 | 7.00 |
-| R3 | Ir além do pedido, com relevância | 5 | 2 | 3.33 |
-| R4 | Interpretação além do óbvio | 5 | 3 | 5.00 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **23.00** |
-| A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
-| A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
-| A3 | Projeção e plano | 4 | 3 | 4.00 |
-| A4 | Alternativa quantificada | 3 | 3 | 3.00 |
-| A5 | Riscos e próximos passos | 3 | 3 | 3.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
-| **ENTREGA** | | **10** | | **5.00** |
-| E1 | Enviou planilha | 3 | 0 | 0.00 |
-| E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
-| E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
-| E4 | Recursos visuais que sustentam | 3 | 3 | 3.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
-
-### Comentário
-
-Deu pra ver que usou IA. O deck inteiro é imagem, não tem um texto selecionável, e o relatório é um HTML exportado em PDF; o nome do arquivo veio até com "McKinsey Style". As quatro seções têm exatamente a mesma profundidade, o que não acontece com quem resolve num fim de semana e precisa cortar coisa, e a memória de cálculo aparece detalhada só em um dos quatro bairros. Fora isso, a entrega é boa. Os oito cenários fecham, incluindo o arredondamento dos bancos na Arena, que é onde a maioria escorrega, e a recomendação está na primeira página e no slide 2 já com o número. O que me incomodou foi o critério do rollout mudar no meio: começa priorizando caixa absoluto, na fase 2 justifica pela maior margem e nas fases 3 e 4 volta para o absoluto, colocando Noite Alta com 64% de margem na frente da Arena com 83%. Também não fez nenhuma sensibilidade nem mostrou a partir de que ponto um modelo passa o outro. Na entrevista eu levaria duas perguntas: a partir de qual custo de operação por posição nos pontos parceiros o modelo de armários passa a ser melhor na Estação Central, e por que Noite Alta vem antes da Arena se a margem da Arena é maior. Quem montou o modelo responde rápido. A nota saiu 7,87 com V1 e V2 em branco; considerando só o que dá para avaliar de fato, equivale a 8,74.
-
----
-
-## Vagner Ássimos Gomes Carlos Filho
-
-Pasta **16** · v188630@dac.unicamp.br · Nota bruta **7.70** · Nota ajustada **8.56** · Aprovaria: **Sim**
-
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
-|---|---|---|---|---|
-| **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **25.00** |
-| C1 | Clareza da recomendação | 10 | 2 | 6.67 |
-| C2 | Formato apresentável a cliente | 8 | 3 | 8.00 |
-| C3 | Storytelling | 7 | 3 | 7.00 |
-| C4 | Acabamento visual | 5 | 2 | 3.33 |
-| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **25.00** |
-| R1 | Recomendação quali + quanti | 8 | 3 | 8.00 |
-| R2 | Discussão de alternativas | 7 | 3 | 7.00 |
-| R3 | Ir além do pedido, com relevância | 5 | 3 | 5.00 |
-| R4 | Interpretação além do óbvio | 5 | 3 | 5.00 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **22.00** |
-| A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
-| A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
-| A3 | Projeção e plano | 4 | 3 | 4.00 |
-| A4 | Alternativa quantificada | 3 | 3 | 3.00 |
-| A5 | Riscos e próximos passos | 3 | 2 | 2.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
-| **ENTREGA** | | **10** | | **5.00** |
-| E1 | Enviou planilha | 3 | 0 | 0.00 |
-| E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
-| E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
-| E4 | Recursos visuais que sustentam | 3 | 3 | 3.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
-
-### Comentário
-
-Entrega madura, e o que a distingue é fazer a pergunta que o case não faz: as transações projetadas fazem sentido?
-
-No slide 4 ele cria um critério de fit com o serviço e usa para questionar a própria demanda do material. Observa que grande parte de quem frequenta bares e casas de show não carrega mala, o que põe em dúvida as 20 mil transações semanais de Noite Alta apesar de ser o segundo maior volume da cidade. E que turista hospedado em hotel do Centro Histórico não precisa de guarda-volumes. Essa é leitura crítica de verdade, e reforça a escolha da Estação Central por um caminho que os números não mostram: é o único bairro onde o público carrega bagagem por definição.
-
-O segundo ponto forte é a honestidade do slide 8, que recomenda parceiros e então lista o que se perde com isso. Reserva local, serviço não padronizado porque é executado por funcionário do parceiro, e mais burocracia no suporte. Nomear o custo da própria recomendação é sinal de maturidade.
-
-As mitigações do slide 11 são as mais concretas de todo o conjunto, com destaque para a plataforma que indica quais parceiros estão lotados e qual o mais próximo, que ataca diretamente o risco de fila que ele mesmo identificou. E o anexo do slide 13, com premissas declaradas uma a uma, é o tipo de coisa que torna a entrega auditável.
-
-Os reparos são de forma e de escopo. A recomendação chega no slide 9 de 13, quando poderia abrir o deck. Três slides são parágrafo corrido e o slide 4 em especial é denso demais para o volume de informação que carrega. Faltou prazo em qualquer parte dos riscos e próximos passos, e só dois riscos foram mapeados. Há também um deslize de numeração: o slide 9 ordena a expansão de 1º a 4º e o slide 10 recomeça a contagem em 1º para os três restantes.
-
-Na entrevista eu vou atrás do melhor insight dele. Você escreveu que o público de Noite Alta não carrega bagagem, então o que você faz com as 20 mil transações que o case projeta para lá? E, para checar propriedade do modelo, a partir de que custo de banco os armários passariam a ganhar na Estação Central? A resposta é R$ 24.000.
-
-Nota 7,70 com vídeo em branco. Considerando só o que dá para avaliar, 8,56.
-
-Indício de IA: Baixo (consultivo, não afeta nota). O critério de fit com o serviço questiona os dados de demanda do próprio enunciado, e isso é justamente o que saída gerada não faz, porque tende a aceitar o input como verdade. As mitigações são invenções operacionais concretas, como staff da BagHub dentro do comércio no pico e a plataforma que sinaliza parceiro lotado. Do lado dos deslizes humanos, a numeração da expansão recomeçando no slide 10 e a fórmula do slide 6 omitindo o arredondamento que o anexo declara.
-
-IDENTIFICAÇÃO: Vagner Ássimos Gomes Carlos Filho, v188630@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome na capa e campo Author do metadado ("Vagner"). As notas de vídeo dele estão nas linhas 15 e 37 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
+COMPARAÇÃO COM O CLUBE: luis ficou em 8,85 e eu em 8,70, diferença de 0,15, dentro do limite de 1,0.
 
 ---
 
 ## Gabrielle Cristofani do Rosario
 
-Pasta **08** · g278083@dac.unicamp.br · Nota bruta **7.33** · Nota ajustada **8.15** · Aprovaria: **Sim**
+Pasta **08** · Nota **7.22** · Avaliador: Matteo
 
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
+| Critério | O que mede | Peso | Nota | Pontos |
 |---|---|---|---|---|
-| **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **24.00** |
+| **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **20.00** |
 | C1 | Clareza da recomendação | 10 | 2 | 6.67 |
 | C2 | Formato apresentável a cliente | 8 | 2 | 5.33 |
-| C3 | Storytelling | 7 | 3 | 7.00 |
-| C4 | Acabamento visual | 5 | 3 | 5.00 |
-| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **23.33** |
+| C3 | Storytelling | 7 | 2 | 4.67 |
+| C4 | Acabamento visual | 5 | 2 | 3.33 |
+| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **19.33** |
 | R1 | Recomendação quali + quanti | 8 | 3 | 8.00 |
-| R2 | Discussão de alternativas | 7 | 3 | 7.00 |
+| R2 | Discussão de alternativas | 7 | 2 | 4.67 |
 | R3 | Ir além do pedido, com relevância | 5 | 2 | 3.33 |
-| R4 | Interpretação além do óbvio | 5 | 3 | 5.00 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **22.00** |
+| R4 | Interpretação além do óbvio | 5 | 2 | 3.33 |
+| **ACURÁCIA TÉCNICA** | | **25** | | **18.67** |
 | A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
 | A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
-| A3 | Projeção e plano | 4 | 3 | 4.00 |
-| A4 | Alternativa quantificada | 3 | 3 | 3.00 |
+| A3 | Projeção e plano | 4 | 2 | 2.67 |
+| A4 | Alternativa quantificada | 3 | 2 | 2.00 |
 | A5 | Riscos e próximos passos | 3 | 2 | 2.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
-| **ENTREGA** | | **10** | | **4.00** |
-| E1 | Enviou planilha | 3 | 0 | 0.00 |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
+| **ENTREGA** | | **10** | | **7.00** |
+| E1 | Enviou planilha | 3 | 1 | 3.00 |
 | E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
 | E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
 | E4 | Recursos visuais que sustentam | 3 | 2 | 2.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
 
 ### Comentário
 
@@ -433,95 +344,43 @@ Três reparos, todos de execução e nenhum de raciocínio. O primeiro é o slid
 
 Na entrevista eu faço duas perguntas. No slide 4 o Centro Histórico aparece como complexidade Alta e suas contas usam Baixa, qual é o certo? E, puxando o achado dela, a partir de que custo de banco os armários passariam a ganhar na Estação? A resposta é R$ 24.000 e sai direto do R$ 1.750 que ela mesma derivou.
 
-Nota 7,33 com vídeo em branco. Considerando só o que dá para avaliar, 8,15.
+Nota 6,50 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 7,22.
 
 Indício de IA: Baixo (consultivo, não afeta nota). A memória de cálculo manuscrita mostra o processo, não só o resultado, com as premissas anotadas, o Anexo E transcrito à mão e o arredondamento resolvido na frente do leitor, "900:40 = 22,5 ≈ 23". O erro de complexidade do slide 4 convivendo com contas que usam o valor correto é assinatura de erro humano de transcrição, porque saída gerada seria consistente nos dois lugares. A referência a um relatório escrito que não foi anexado, e um arquivo pessoal que entrou por engano na pasta, indicam upload apressado.
 
-ATENÇÃO: URGENTE, o arquivo IMG-20260918-WA0254.jpg não tem relação com o case: é a captura de tela de um comprovante de compra parcelada, com valores, datas de vencimento e dados financeiros pessoais. Foi anexado por engano. Recomendo remover do repositório antes de qualquer coisa, porque o repositório chegou a ficar público. Não avaliei esse arquivo e não reproduzi seu conteúdo.
-
-IDENTIFICAÇÃO: Gabrielle Cristofani do Rosario, g278083@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome na capa, no nome do arquivo e no campo Author do metadado. As notas de vídeo dele estão nas linhas 7 e 29 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
+COMPARAÇÃO COM O CLUBE: victor e Fred ficou em 6,81 e eu em 7,22, diferença de 0,41, dentro do limite de 1,0.
 
 ---
 
-## Bruno Heberth Oliveira Bastos
+## Candidato 10 (pasta 10, não identificado)
 
-Pasta **03** · b309603@dac.unicamp.br · Nota bruta **7.13** · Nota ajustada **7.93** · Aprovaria: **Sim**
+Pasta **** · Nota **6.89** · Avaliador: Matteo
 
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
-|---|---|---|---|---|
-| **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **22.67** |
-| C1 | Clareza da recomendação | 10 | 3 | 10.00 |
-| C2 | Formato apresentável a cliente | 8 | 2 | 5.33 |
-| C3 | Storytelling | 7 | 1 | 2.33 |
-| C4 | Acabamento visual | 5 | 3 | 5.00 |
-| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **20.00** |
-| R1 | Recomendação quali + quanti | 8 | 3 | 8.00 |
-| R2 | Discussão de alternativas | 7 | 3 | 7.00 |
-| R3 | Ir além do pedido, com relevância | 5 | 1 | 1.67 |
-| R4 | Interpretação além do óbvio | 5 | 2 | 3.33 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **20.67** |
-| A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
-| A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
-| A3 | Projeção e plano | 4 | 2 | 2.67 |
-| A4 | Alternativa quantificada | 3 | 3 | 3.00 |
-| A5 | Riscos e próximos passos | 3 | 2 | 2.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
-| **ENTREGA** | | **10** | | **8.00** |
-| E1 | Enviou planilha | 3 | 1 | 3.00 |
-| E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
-| E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
-| E4 | Recursos visuais que sustentam | 3 | 3 | 3.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
-
-### Comentário
-
-Entrega honesta e bem conferida. Tem o melhor artefato de propriedade do conjunto: a planilha é um modelo que funciona, com ROUNDUP, fórmulas encadeadas e referências entre abas. Não é tabela colada. Os oito cenários fecham.
-
-Gostei do cuidado dele em separar o que a conta mostra do que a conta não mostra. Onde falta dado, ele aponta a lacuna em vez de inventar estimativa. Na página 5 ainda conta como conferiu o próprio trabalho, dizendo que revisou especialmente o arredondamento dos bancos porque um erro pequeno ali muda bastante o resultado.
-
-O problema é que ele se recusa a generalizar. Diz que não daria para afirmar que parceiros ganham sempre, que depende dos custos do case. Só que a generalização era possível, e é exatamente o que separa a pasta 02.
-
-O custo maior está na comunicação. Os títulos são rótulos de seção, não mensagens, então a recomendação não sobrevive à leitura só dos títulos. E o texto em primeira pessoa com hedge a cada parágrafo tira o documento do registro de entregável de cliente. São dois ajustes de forma que valem muitos pontos e não mudam nada do conteúdo. Faltam prazo nos riscos e qualquer sensibilidade.
-
-Na entrevista eu peço a conta que ele se recusou a fazer: a partir de que custo de banco os armários ganham na Estação? Sai da planilha dele, o banco teria que cair para R$ 24.000.
-
-Nota 7,13 com vídeo em branco. Considerando só o que dá para avaliar, 7,93.
-
-Indício de IA: Baixo (consultivo, não afeta nota). A planilha é um modelo que funciona, com fórmulas encadeadas entre abas e ROUNDUP, não tabela renderizada. É o artefato mais difícil de terceirizar. Ele relata o próprio processo de conferência na página 5 e se recusa a preencher lacuna de dado com estimativa inventada, que é o oposto da tendência de IA de completar tudo. Profundidade desigual entre as páginas.
-
-IDENTIFICAÇÃO: Bruno Heberth Oliveira Bastos, b309603@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome no nome dos dois arquivos dele. As notas de vídeo dele estão nas linhas 8 e 30 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
-
----
-
-## Pasta 10, não identificado
-
-Pasta **10** · Nota bruta **6.57** · Nota ajustada **7.30** · Aprovaria: **Passaria para ver a entrevista**
-
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
+| Critério | O que mede | Peso | Nota | Pontos |
 |---|---|---|---|---|
 | **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **19.33** |
 | C1 | Clareza da recomendação | 10 | 2 | 6.67 |
 | C2 | Formato apresentável a cliente | 8 | 2 | 5.33 |
 | C3 | Storytelling | 7 | 1 | 2.33 |
 | C4 | Acabamento visual | 5 | 3 | 5.00 |
-| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **20.67** |
+| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **19.00** |
 | R1 | Recomendação quali + quanti | 8 | 2 | 5.33 |
 | R2 | Discussão de alternativas | 7 | 3 | 7.00 |
 | R3 | Ir além do pedido, com relevância | 5 | 2 | 3.33 |
-| R4 | Interpretação além do óbvio | 5 | 3 | 5.00 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **20.67** |
+| R4 | Interpretação além do óbvio | 5 | 2 | 3.33 |
+| **ACURÁCIA TÉCNICA** | | **25** | | **18.67** |
 | A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
 | A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
 | A3 | Projeção e plano | 4 | 2 | 2.67 |
-| A4 | Alternativa quantificada | 3 | 3 | 3.00 |
+| A4 | Alternativa quantificada | 3 | 2 | 2.00 |
 | A5 | Riscos e próximos passos | 3 | 2 | 2.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
 | **ENTREGA** | | **10** | | **5.00** |
 | E1 | Enviou planilha | 3 | 0 | 0.00 |
 | E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
 | E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
 | E4 | Recursos visuais que sustentam | 3 | 3 | 3.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
 
 ### Comentário
 
@@ -535,69 +394,69 @@ O segundo é que ele lista apenas os riscos da opção que descartou. Escolheu a
 
 Na entrevista eu faço as duas perguntas que fecham os buracos. Se a decisão é só sobre a Estação, quanto você está abdicando de fato? E quais são os riscos de escolher armários, já que você só listou os de parceiros?
 
-Nota 6,57 com vídeo em branco. Considerando só o que dá para avaliar, 7,30.
+Nota 6,20 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 6,89.
 
 Indício de IA: Baixo (consultivo, não afeta nota). O rascunho enviado junto é material de trabalho pessoal, com anotações em caixa alta separadas por linhas de "######". Ninguém gera isso, e a progressão rascunho para relatório final deixa o processo de escrita visível. O raciocínio de Noite Alta é idiossincrático e coloquial de um jeito que texto gerado raramente é. Ele marca a própria suposição na Arena com "supõe-se" em vez de afirmar.
 
-IDENTIFICAÇÃO: pasta anônima. Nenhum arquivo traz nome no texto, no nome do arquivo ou no metadado. Rastro de ferramenta que pode ajudar a estreitar: rascunho impresso pelo Google Docs Renderer. No docx, o campo de autor foi preenchido com o titulo do documento e o lastModifiedBy esta como "Un-named". Sem o mapa número para candidato, V1 e V2 não podem ser transcritos e o bloco Vídeo fica valendo zero. Candidatos inscritos ainda não pareados a nenhuma pasta: João Pedro Mendes Stama, Rafael Ponciano Rodrigues dos Santos, Enzo Chofakian Gagliardi, João Gabriel de Oliveira Morcelli, Raphael Negrini Saggioro, Gustavo Daher Pereira, Ricardo Augusto Schmitt Filho, Matheus Dias Freitas, Klaus Augusto Santos da Silva, José Vitor Dias Tutu, Isadora Kluge Dorigan.
+COMPARAÇÃO COM O CLUBE: pasta anônima, sem contraparte para cruzar. Precisa do mapa número para candidato.
 
 ---
 
-## Leandra Cunha de Souza
+## Bruno Heberth Oliveira Bastos
 
-Pasta **11** · l304532@dac.unicamp.br · Nota bruta **6.07** · Nota ajustada **6.74** · Aprovaria: **Passaria para ver a entrevista**
+Pasta **03** · Nota **6.85** · Avaliador: Matteo
 
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
+| Critério | O que mede | Peso | Nota | Pontos |
 |---|---|---|---|---|
-| **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **16.00** |
-| C1 | Clareza da recomendação | 10 | 2 | 6.67 |
+| **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **21.00** |
+| C1 | Clareza da recomendação | 10 | 3 | 10.00 |
 | C2 | Formato apresentável a cliente | 8 | 2 | 5.33 |
 | C3 | Storytelling | 7 | 1 | 2.33 |
-| C4 | Acabamento visual | 5 | 1 | 1.67 |
-| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **20.00** |
-| R1 | Recomendação quali + quanti | 8 | 3 | 8.00 |
-| R2 | Discussão de alternativas | 7 | 3 | 7.00 |
+| C4 | Acabamento visual | 5 | 2 | 3.33 |
+| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **15.00** |
+| R1 | Recomendação quali + quanti | 8 | 2 | 5.33 |
+| R2 | Discussão de alternativas | 7 | 2 | 4.67 |
 | R3 | Ir além do pedido, com relevância | 5 | 1 | 1.67 |
 | R4 | Interpretação além do óbvio | 5 | 2 | 3.33 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **20.67** |
+| **ACURÁCIA TÉCNICA** | | **25** | | **17.67** |
 | A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
 | A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
 | A3 | Projeção e plano | 4 | 2 | 2.67 |
-| A4 | Alternativa quantificada | 3 | 3 | 3.00 |
-| A5 | Riscos e próximos passos | 3 | 2 | 2.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
-| **ENTREGA** | | **10** | | **4.00** |
-| E1 | Enviou planilha | 3 | 0 | 0.00 |
+| A4 | Alternativa quantificada | 3 | 2 | 2.00 |
+| A5 | Riscos e próximos passos | 3 | 1 | 1.00 |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
+| **ENTREGA** | | **10** | | **8.00** |
+| E1 | Enviou planilha | 3 | 1 | 3.00 |
 | E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
 | E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
-| E4 | Recursos visuais que sustentam | 3 | 2 | 2.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
+| E4 | Recursos visuais que sustentam | 3 | 3 | 3.00 |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
 
 ### Comentário
 
-A análise está certa e a comunicação é que derruba a nota. É uma pena, porque os dois problemas são baratos de resolver.
+Entrega honesta e bem conferida. Tem o melhor artefato de propriedade do conjunto: a planilha é um modelo que funciona, com ROUNDUP, fórmulas encadeadas e referências entre abas. Não é tabela colada. Os oito cenários fecham.
 
-Os oito cenários fecham, as margens todas conferem, e as tabelas dos slides 6 a 9 são um modelo de memória de cálculo. Cada linha de custo aparece separada, por bairro e por modelo, com resultado e margem no fim. Ela também faz a coisa certa no raciocínio, que é enfrentar o contra-argumento em vez de escondê-lo. Diz com clareza que a Estação Central tem o maior resultado e explica por que escolhe o Centro Histórico mesmo assim, pela margem, pela baixa complexidade e pela menor capacidade ociosa. O slide 12, justificando uma a uma as posições do ranking, é bem feito.
+Gostei do cuidado dele em separar o que a conta mostra do que a conta não mostra. Onde falta dado, ele aponta a lacuna em vez de inventar estimativa. Na página 5 ainda conta como conferiu o próprio trabalho, dizendo que revisou especialmente o arredondamento dos bancos porque um erro pequeno ali muda bastante o resultado.
 
-O que custa caro é o acabamento, e o volume de deslizes é grande. O nome da empresa sai errado na capa, "Bag Huby". "Armários inteligententes" se repete nas quatro tabelas. A utilização de Noite Alta e Arena está trocada no slide 3 e contradiz o slide 12. Os 110 mil embarques viram "110 embarques diários" no slide 4. E há texto de template, "BACK TO AGENDA", esquecido no meio do deck.
+O problema é que ele se recusa a generalizar. Diz que não daria para afirmar que parceiros ganham sempre, que depende dos custos do case. Só que a generalização era possível, e é exatamente o que separa a pasta 02.
 
-Somado a isso, a recomendação só aparece no slide 11 de 13 e os títulos não contam a história, então quem folheia não encontra a resposta. Do lado da análise, falta mitigação para os dois riscos que ela mesma identificou e faltam próximos passos, que a tarefa 04 pede.
+O custo maior está na comunicação. Os títulos são rótulos de seção, não mensagens, então a recomendação não sobrevive à leitura só dos títulos. E o texto em primeira pessoa com hedge a cada parágrafo tira o documento do registro de entregável de cliente. São dois ajustes de forma que valem muitos pontos e não mudam nada do conteúdo. Faltam prazo nos riscos e qualquer sensibilidade.
 
-Na entrevista eu faço duas perguntas. Na página 3 a Arena aparece com 33% de utilização e na 12 você diz que ela tem a mais baixa, 31%, qual é a certa? E você colocou a Arena, R$ 14,94 milhões, à frente de Noite Alta, R$ 19,20 milhões, no ranking, qual é o critério? A segunda ela deve responder bem, porque a lógica de margem e volatilidade está escrita.
+Na entrevista eu peço a conta que ele se recusou a fazer: a partir de que custo de banco os armários ganham na Estação? Sai da planilha dele, o banco teria que cair para R$ 24.000.
 
-Nota 6,07 com vídeo em branco. Considerando só o que dá para avaliar, 6,74.
+Nota 6,17 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 6,85.
 
-Indício de IA: Baixo (consultivo, não afeta nota). Todos os sinais vêm do padrão de erro. "Armários inteligententes" repetido igual nas quatro tabelas é copy-paste de um typo humano. "Bag Huby" na capa, "calcúlos" e "Operacao" sem acento. O texto de template "BACK TO AGENDA" esquecido indica deck montado sobre modelo e não revisado. E a utilização trocada no slide 3 convivendo com o valor correto no slide 12 é inconsistência interna de transcrição.
+Indício de IA: Baixo (consultivo, não afeta nota). A planilha é um modelo que funciona, com fórmulas encadeadas entre abas e ROUNDUP, não tabela renderizada. É o artefato mais difícil de terceirizar. Ele relata o próprio processo de conferência na página 5 e se recusa a preencher lacuna de dado com estimativa inventada, que é o oposto da tendência de IA de completar tudo. Profundidade desigual entre as páginas.
 
-IDENTIFICAÇÃO: Leandra Cunha de Souza, l304532@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome na capa, e-mail no ultimo slide e campo Author do metadado ("Leandra Cunha"). As notas de vídeo dele estão nas linhas 14 e 36 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
+COMPARAÇÃO COM O CLUBE: victor e Fred ficou em 5,59 e eu em 6,85, diferença de 1,26, acima do limite de 1,0. Cai na conversa de calibração.
 
 ---
 
 ## Eduardo Alves Henrique
 
-Pasta **05** · e221509@dac.unicamp.br · Nota bruta **6.03** · Nota ajustada **6.70** · Aprovaria: **Passaria para ver a entrevista**
+Pasta **05** · Nota **6.81** · Avaliador: Matteo
 
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
+| Critério | O que mede | Peso | Nota | Pontos |
 |---|---|---|---|---|
 | **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **20.00** |
 | C1 | Clareza da recomendação | 10 | 2 | 6.67 |
@@ -609,19 +468,19 @@ Pasta **05** · e221509@dac.unicamp.br · Nota bruta **6.03** · Nota ajustada *
 | R2 | Discussão de alternativas | 7 | 2 | 4.67 |
 | R3 | Ir além do pedido, com relevância | 5 | 2 | 3.33 |
 | R4 | Interpretação além do óbvio | 5 | 2 | 3.33 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **19.67** |
+| **ACURÁCIA TÉCNICA** | | **25** | | **17.67** |
 | A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
 | A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
 | A3 | Projeção e plano | 4 | 2 | 2.67 |
-| A4 | Alternativa quantificada | 3 | 3 | 3.00 |
+| A4 | Alternativa quantificada | 3 | 2 | 2.00 |
 | A5 | Riscos e próximos passos | 3 | 1 | 1.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
-| **ENTREGA** | | **10** | | **4.00** |
-| E1 | Enviou planilha | 3 | 0 | 0.00 |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
+| **ENTREGA** | | **10** | | **7.00** |
+| E1 | Enviou planilha | 3 | 1 | 3.00 |
 | E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
 | E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
 | E4 | Recursos visuais que sustentam | 3 | 2 | 2.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
 
 ### Comentário
 
@@ -637,43 +496,43 @@ No acabamento, Noite Alta virou "Alta Noite" em todas as tabelas e dois slides s
 
 Na entrevista eu faço duas perguntas. Por que o breakeven trata o banco como investimento se o Anexo E diz que é custo anual? E por que, no rollout do slide 14, os bairros 2 a 4 usam armários se a sua tabela mostra parceiros ganhando nos quatro? Quem entendeu o próprio breakeven conecta as duas respostas na hora.
 
-Nota 6,03 com vídeo em branco. Considerando só o que dá para avaliar, 6,70.
+Nota 6,13 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 6,81.
 
 Indício de IA: Baixo (consultivo, não afeta nota). As nove fotos de caderno são a evidência de propriedade mais forte do conjunto. Mostram o processo, não o resultado: estrutura do case transcrita à mão, derivação da fórmula por banco e a conta de Noite Alta passo a passo, batendo com o deck. A anotação "1º ano" em cima do termo de R$ 70.000 documenta decisão de modelagem deliberada. Os typos e o nome do bairro trocado em todas as tabelas são descuidos humanos.
 
-IDENTIFICAÇÃO: Eduardo Alves Henrique, e221509@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome escrito na capa do deck. As notas de vídeo dele estão nas linhas 13 e 35 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
+COMPARAÇÃO COM O CLUBE: victor e Proc ficou em 5,87 e eu em 6,81, diferença de 0,94, dentro do limite de 1,0.
 
 ---
 
 ## Rafael Rodrigues Moreira
 
-Pasta **14** · r302729@dac.unicamp.br · Nota bruta **5.20** · Nota ajustada **5.78** · Aprovaria: **Passaria para ver a entrevista**
+Pasta **14** · Nota **6.52** · Avaliador: Matteo
 
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
+| Critério | O que mede | Peso | Nota | Pontos |
 |---|---|---|---|---|
-| **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **14.33** |
-| C1 | Clareza da recomendação | 10 | 1 | 3.33 |
+| **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **17.67** |
+| C1 | Clareza da recomendação | 10 | 2 | 6.67 |
 | C2 | Formato apresentável a cliente | 8 | 2 | 5.33 |
 | C3 | Storytelling | 7 | 1 | 2.33 |
 | C4 | Acabamento visual | 5 | 2 | 3.33 |
-| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **17.33** |
+| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **20.67** |
 | R1 | Recomendação quali + quanti | 8 | 2 | 5.33 |
 | R2 | Discussão de alternativas | 7 | 3 | 7.00 |
-| R3 | Ir além do pedido, com relevância | 5 | 0 | 0.00 |
+| R3 | Ir além do pedido, com relevância | 5 | 2 | 3.33 |
 | R4 | Interpretação além do óbvio | 5 | 3 | 5.00 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **16.33** |
-| A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
-| A2 | Estrutura de custo e bancos | 6 | 2 | 4.00 |
+| **ACURÁCIA TÉCNICA** | | **25** | | **14.33** |
+| A1 | Receita e resultado dos 8 cenários | 6 | 2 | 4.00 |
+| A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
 | A3 | Projeção e plano | 4 | 1 | 1.33 |
-| A4 | Alternativa quantificada | 3 | 3 | 3.00 |
+| A4 | Alternativa quantificada | 3 | 2 | 2.00 |
 | A5 | Riscos e próximos passos | 3 | 1 | 1.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
-| **ENTREGA** | | **10** | | **4.00** |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
+| **ENTREGA** | | **10** | | **6.00** |
 | E1 | Enviou planilha | 3 | 0 | 0.00 |
 | E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
-| E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
+| E3 | Gravou vídeo da entrega | 2 | 1 | 2.00 |
 | E4 | Recursos visuais que sustentam | 3 | 2 | 2.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
 
 ### Comentário
 
@@ -687,19 +546,121 @@ No cálculo há um deslize instrutivo. Na Arena ele acertou os 23 bancos, que é
 
 Na entrevista eu faço três perguntas. A primeira é de propriedade pura: como você chegou nas 7 horas, e quanto dá no Centro Histórico? Dá 5,04 horas, e a resposta expõe a contradição do slide 8. Segunda: na Arena, 920 ou 900 posições? Terceira, a que decide: seu critério principal é rentabilidade e a Estação ganha, mas o Centro Histórico ganha em três dos quatro critérios, qual você recomenda e por quê?
 
-Nota 5,20 com vídeo em branco. Considerando só o que dá para avaliar, 5,78.
+Nota 5,87 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 6,52.
 
 Indício de IA: Baixo (consultivo, não afeta nota). O indício mais forte é quantitativo. Derivar as 7 horas de permanência exige manipular a definição de utilização contra posições e transações, e conferi que o valor está certo. Isso é raciocínio original. A contagem de adjacência exige olhar o mapa. A regra de robustez com limiares é instrumento construído por ele. Do outro lado, os erros são humanos: typos, numeração de página repetida, a contradição entre slides 6 e 8, e o 920 contra 900 nas duas colunas do mesmo slide.
 
-IDENTIFICAÇÃO: Rafael Rodrigues Moreira, r302729@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome na capa e no nome do arquivo. As notas de vídeo dele estão nas linhas 24 e 46 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
+COMPARAÇÃO COM O CLUBE: Ferro ficou em 7,37 e eu em 6,52, diferença de 0,85, dentro do limite de 1,0.
 
 ---
 
-## Pasta 13, não identificado
+## Vagner Ássimos Gomes Carlos Filho
 
-Pasta **13** · Nota bruta **3.13** · Nota ajustada **3.48** · Aprovaria: **Não**
+Pasta **16** · Nota **6.52** · Avaliador: Matteo
 
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
+| Critério | O que mede | Peso | Nota | Pontos |
+|---|---|---|---|---|
+| **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **20.00** |
+| C1 | Clareza da recomendação | 10 | 2 | 6.67 |
+| C2 | Formato apresentável a cliente | 8 | 2 | 5.33 |
+| C3 | Storytelling | 7 | 2 | 4.67 |
+| C4 | Acabamento visual | 5 | 2 | 3.33 |
+| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **19.00** |
+| R1 | Recomendação quali + quanti | 8 | 2 | 5.33 |
+| R2 | Discussão de alternativas | 7 | 3 | 7.00 |
+| R3 | Ir além do pedido, com relevância | 5 | 2 | 3.33 |
+| R4 | Interpretação além do óbvio | 5 | 2 | 3.33 |
+| **ACURÁCIA TÉCNICA** | | **25** | | **14.67** |
+| A1 | Receita e resultado dos 8 cenários | 6 | 2 | 4.00 |
+| A2 | Estrutura de custo e bancos | 6 | 2 | 4.00 |
+| A3 | Projeção e plano | 4 | 2 | 2.67 |
+| A4 | Alternativa quantificada | 3 | 2 | 2.00 |
+| A5 | Riscos e próximos passos | 3 | 2 | 2.00 |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
+| **ENTREGA** | | **10** | | **5.00** |
+| E1 | Enviou planilha | 3 | 0 | 0.00 |
+| E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
+| E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
+| E4 | Recursos visuais que sustentam | 3 | 3 | 3.00 |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
+
+### Comentário
+
+Entrega madura, e o que a distingue é fazer a pergunta que o case não faz: as transações projetadas fazem sentido?
+
+No slide 4 ele cria um critério de fit com o serviço e usa para questionar a própria demanda do material. Observa que grande parte de quem frequenta bares e casas de show não carrega mala, o que põe em dúvida as 20 mil transações semanais de Noite Alta apesar de ser o segundo maior volume da cidade. E que turista hospedado em hotel do Centro Histórico não precisa de guarda-volumes. Essa é leitura crítica de verdade, e reforça a escolha da Estação Central por um caminho que os números não mostram: é o único bairro onde o público carrega bagagem por definição.
+
+O segundo ponto forte é a honestidade do slide 8, que recomenda parceiros e então lista o que se perde com isso. Reserva local, serviço não padronizado porque é executado por funcionário do parceiro, e mais burocracia no suporte. Nomear o custo da própria recomendação é sinal de maturidade.
+
+As mitigações do slide 11 são as mais concretas de todo o conjunto, com destaque para a plataforma que indica quais parceiros estão lotados e qual o mais próximo, que ataca diretamente o risco de fila que ele mesmo identificou. E o anexo do slide 13, com premissas declaradas uma a uma, é o tipo de coisa que torna a entrega auditável.
+
+Os reparos são de forma e de escopo. A recomendação chega no slide 9 de 13, quando poderia abrir o deck. Três slides são parágrafo corrido e o slide 4 em especial é denso demais para o volume de informação que carrega. Faltou prazo em qualquer parte dos riscos e próximos passos, e só dois riscos foram mapeados. Há também um deslize de numeração: o slide 9 ordena a expansão de 1º a 4º e o slide 10 recomeça a contagem em 1º para os três restantes.
+
+Na entrevista eu vou atrás do melhor insight dele. Você escreveu que o público de Noite Alta não carrega bagagem, então o que você faz com as 20 mil transações que o case projeta para lá? E, para checar propriedade do modelo, a partir de que custo de banco os armários passariam a ganhar na Estação Central? A resposta é R$ 24.000.
+
+Nota 5,87 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 6,52.
+
+Indício de IA: Baixo (consultivo, não afeta nota). O critério de fit com o serviço questiona os dados de demanda do próprio enunciado, e isso é justamente o que saída gerada não faz, porque tende a aceitar o input como verdade. As mitigações são invenções operacionais concretas, como staff da BagHub dentro do comércio no pico e a plataforma que sinaliza parceiro lotado. Do lado dos deslizes humanos, a numeração da expansão recomeçando no slide 10 e a fórmula do slide 6 omitindo o arredondamento que o anexo declara.
+
+COMPARAÇÃO COM O CLUBE: victor e Proc ficou em 5,91 e eu em 6,52, diferença de 0,61, dentro do limite de 1,0.
+
+---
+
+## Leandra Cunha de Souza
+
+Pasta **11** · Nota **5.41** · Avaliador: Matteo
+
+| Critério | O que mede | Peso | Nota | Pontos |
+|---|---|---|---|---|
+| **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **16.00** |
+| C1 | Clareza da recomendação | 10 | 2 | 6.67 |
+| C2 | Formato apresentável a cliente | 8 | 2 | 5.33 |
+| C3 | Storytelling | 7 | 1 | 2.33 |
+| C4 | Acabamento visual | 5 | 1 | 1.67 |
+| **RACIOCÍNIO DE NEGÓCIO** | | **25** | | **15.00** |
+| R1 | Recomendação quali + quanti | 8 | 2 | 5.33 |
+| R2 | Discussão de alternativas | 7 | 2 | 4.67 |
+| R3 | Ir além do pedido, com relevância | 5 | 1 | 1.67 |
+| R4 | Interpretação além do óbvio | 5 | 2 | 3.33 |
+| **ACURÁCIA TÉCNICA** | | **25** | | **13.67** |
+| A1 | Receita e resultado dos 8 cenários | 6 | 2 | 4.00 |
+| A2 | Estrutura de custo e bancos | 6 | 2 | 4.00 |
+| A3 | Projeção e plano | 4 | 2 | 2.67 |
+| A4 | Alternativa quantificada | 3 | 2 | 2.00 |
+| A5 | Riscos e próximos passos | 3 | 1 | 1.00 |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
+| **ENTREGA** | | **10** | | **4.00** |
+| E1 | Enviou planilha | 3 | 0 | 0.00 |
+| E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
+| E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
+| E4 | Recursos visuais que sustentam | 3 | 2 | 2.00 |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
+
+### Comentário
+
+A análise está certa e a comunicação é que derruba a nota. É uma pena, porque os dois problemas são baratos de resolver.
+
+Os oito cenários fecham, as margens todas conferem, e as tabelas dos slides 6 a 9 são um modelo de memória de cálculo. Cada linha de custo aparece separada, por bairro e por modelo, com resultado e margem no fim. Ela também faz a coisa certa no raciocínio, que é enfrentar o contra-argumento em vez de escondê-lo. Diz com clareza que a Estação Central tem o maior resultado e explica por que escolhe o Centro Histórico mesmo assim, pela margem, pela baixa complexidade e pela menor capacidade ociosa. O slide 12, justificando uma a uma as posições do ranking, é bem feito.
+
+O que custa caro é o acabamento, e o volume de deslizes é grande. O nome da empresa sai errado na capa, "Bag Huby". "Armários inteligententes" se repete nas quatro tabelas. A utilização de Noite Alta e Arena está trocada no slide 3 e contradiz o slide 12. Os 110 mil embarques viram "110 embarques diários" no slide 4. E há texto de template, "BACK TO AGENDA", esquecido no meio do deck.
+
+Somado a isso, a recomendação só aparece no slide 11 de 13 e os títulos não contam a história, então quem folheia não encontra a resposta. Do lado da análise, falta mitigação para os dois riscos que ela mesma identificou e faltam próximos passos, que a tarefa 04 pede.
+
+Na entrevista eu faço duas perguntas. Na página 3 a Arena aparece com 33% de utilização e na 12 você diz que ela tem a mais baixa, 31%, qual é a certa? E você colocou a Arena, R$ 14,94 milhões, à frente de Noite Alta, R$ 19,20 milhões, no ranking, qual é o critério? A segunda ela deve responder bem, porque a lógica de margem e volatilidade está escrita.
+
+Nota 4,87 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 5,41.
+
+Indício de IA: Baixo (consultivo, não afeta nota). Todos os sinais vêm do padrão de erro. "Armários inteligententes" repetido igual nas quatro tabelas é copy-paste de um typo humano. "Bag Huby" na capa, "calcúlos" e "Operacao" sem acento. O texto de template "BACK TO AGENDA" esquecido indica deck montado sobre modelo e não revisado. E a utilização trocada no slide 3 convivendo com o valor correto no slide 12 é inconsistência interna de transcrição.
+
+COMPARAÇÃO COM O CLUBE: victor e Proc ficou em 4,78 e eu em 5,41, diferença de 0,63, dentro do limite de 1,0.
+
+---
+
+## Candidato 13 (pasta 13, não identificado)
+
+Pasta **** · Nota **3.70** · Avaliador: Matteo
+
+| Critério | O que mede | Peso | Nota | Pontos |
 |---|---|---|---|---|
 | **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **7.33** |
 | C1 | Clareza da recomendação | 10 | 1 | 3.33 |
@@ -711,19 +672,19 @@ Pasta **13** · Nota bruta **3.13** · Nota ajustada **3.48** · Aprovaria: **N�
 | R2 | Discussão de alternativas | 7 | 1 | 2.33 |
 | R3 | Ir além do pedido, com relevância | 5 | 0 | 0.00 |
 | R4 | Interpretação além do óbvio | 5 | 2 | 3.33 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **17.33** |
+| **ACURÁCIA TÉCNICA** | | **25** | | **16.33** |
 | A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
 | A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
 | A3 | Projeção e plano | 4 | 1 | 1.33 |
 | A4 | Alternativa quantificada | 3 | 2 | 2.00 |
 | A5 | Riscos e próximos passos | 3 | 1 | 1.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
-| **ENTREGA** | | **10** | | **1.00** |
-| E1 | Enviou planilha | 3 | 0 | 0.00 |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
+| **ENTREGA** | | **10** | | **4.00** |
+| E1 | Enviou planilha | 3 | 1 | 3.00 |
 | E2 | Enviou apresentação fechada | 2 | 0 | 0.00 |
 | E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
 | E4 | Recursos visuais que sustentam | 3 | 1 | 1.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
 
 ### Comentário
 
@@ -737,19 +698,19 @@ Sobre a projeção, ela também não sobrevive. Ele anota "apenas 1º ano" ao la
 
 Na entrevista, se ele passar, a primeira pergunta é a que falta. Você calculou tudo, então qual bairro e qual modelo você escolhe, e por quê? A segunda, por que o banco vale só no primeiro ano? A terceira eu faria por interesse genuíno: sua observação sobre a conexão de 1h30 é boa, o que ela faz com a demanda de 24 mil transações do case?
 
-Nota 3,13 com vídeo em branco. Considerando só o que dá para avaliar, 3,48.
+Nota 3,33 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 3,70.
 
 Indício de IA: Baixo (consultivo, não afeta nota). Evidência de propriedade praticamente incontestável, ao lado da pasta 05. Seis páginas de caderno fotografadas sob luz ruim, com os 3C's aplicados à mão e cada conta desenvolvida passo a passo. A anotação "apenas 1º ano" documenta decisão consciente. A observação sobre a duração das conexões traz informação de fora do case, o que texto gerado a partir do enunciado não produz porque não questiona o input. A ausência de recomendação é falta de tempo, não artefato.
 
-IDENTIFICAÇÃO: pasta anônima. Nenhum arquivo traz nome no texto, no nome do arquivo ou no metadado. Rastro de ferramenta que pode ajudar a estreitar: PDF das contas gerado pelo app Fotos do iOS 26.6.2. Sem o mapa número para candidato, V1 e V2 não podem ser transcritos e o bloco Vídeo fica valendo zero. Candidatos inscritos ainda não pareados a nenhuma pasta: João Pedro Mendes Stama, Rafael Ponciano Rodrigues dos Santos, Enzo Chofakian Gagliardi, João Gabriel de Oliveira Morcelli, Raphael Negrini Saggioro, Gustavo Daher Pereira, Ricardo Augusto Schmitt Filho, Matheus Dias Freitas, Klaus Augusto Santos da Silva, José Vitor Dias Tutu, Isadora Kluge Dorigan.
+COMPARAÇÃO COM O CLUBE: pasta anônima, sem contraparte para cruzar. Precisa do mapa número para candidato.
 
 ---
 
 ## Caio Augusto Saab
 
-Pasta **04** · c258388@dac.unicamp.br · Nota bruta **2.97** · Nota ajustada **3.30** · Aprovaria: **Não**
+Pasta **04** · Nota **3.19** · Avaliador: Matteo
 
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
+| Critério | O que mede | Peso | Nota | Pontos |
 |---|---|---|---|---|
 | **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **13.33** |
 | C1 | Clareza da recomendação | 10 | 2 | 6.67 |
@@ -761,19 +722,19 @@ Pasta **04** · c258388@dac.unicamp.br · Nota bruta **2.97** · Nota ajustada *
 | R2 | Discussão de alternativas | 7 | 2 | 4.67 |
 | R3 | Ir além do pedido, com relevância | 5 | 0 | 0.00 |
 | R4 | Interpretação além do óbvio | 5 | 1 | 1.67 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **8.00** |
+| **ACURÁCIA TÉCNICA** | | **25** | | **7.00** |
 | A1 | Receita e resultado dos 8 cenários | 6 | 2 | 4.00 |
 | A2 | Estrutura de custo e bancos | 6 | 1 | 2.00 |
 | A3 | Projeção e plano | 4 | 0 | 0.00 |
 | A4 | Alternativa quantificada | 3 | 1 | 1.00 |
 | A5 | Riscos e próximos passos | 3 | 0 | 0.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
 | **ENTREGA** | | **10** | | **2.00** |
 | E1 | Enviou planilha | 3 | 0 | 0.00 |
 | E2 | Enviou apresentação fechada | 2 | 1 | 2.00 |
 | E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
 | E4 | Recursos visuais que sustentam | 3 | 0 | 0.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
 
 ### Comentário
 
@@ -787,19 +748,19 @@ O único erro de cálculo é a Arena com 22,5 bancos em vez de 23, que por ser p
 
 Na entrevista eu faço duas perguntas diretas, as mesmas que revelam se ele enxerga o problema. Você disse que a métrica principal é a margem, então por que escolheu armários a 85,7% e não parceiros a 90,7% no mesmo bairro? E a Estação tem complexidade moderada na página 1 e alta na página 4, qual das duas?
 
-Nota 2,97 com vídeo em branco. Considerando só o que dá para avaliar, 3,30.
+Nota 2,87 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 3,19.
 
 Indício de IA: Baixo (consultivo, não afeta nota). O padrão de erros aponta para autoria própria sem assistência. A contradição entre página 1 e página 4 sobre a complexidade da Estação é inconsistência de quem escreveu em sessões diferentes sem reler. O registro oscila de primeira pessoa do plural para singular na última frase. Deixou de arredondar os bancos apesar da instrução escrita, e IA tende a seguir instrução explícita. A ausência total de tabela e estrutura é o oposto da over-estruturação típica de texto gerado.
 
-IDENTIFICAÇÃO: Caio Augusto Saab, c258388@dac.unicamp.br. Confiança media, confirmar. Como cheguei nisso: campo Author do metadado do PDF, gerado no Microsoft Word. O arquivo nao traz o nome no texto nem no nome do arquivo. As notas de vídeo dele estão nas linhas 25 e 47 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero. Atenção: esta identificação vem só do metadado, não do conteúdo. Metadado pode vir de computador compartilhado ou de modelo reaproveitado, então confirmem com o registro de envio antes de usar numa decisão.
+COMPARAÇÃO COM O CLUBE: luis e victor ficou em 3,06 e eu em 3,19, diferença de 0,13, dentro do limite de 1,0.
 
 ---
 
-## Pasta 15, não identificado
+## Candidato 15 (pasta 15, não identificado)
 
-Pasta **15** · Nota bruta **2.63** · Nota ajustada **2.93** · Aprovaria: **Não**
+Pasta **** · Nota **3.15** · Avaliador: Matteo
 
-| Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
+| Critério | O que mede | Peso | Nota | Pontos |
 |---|---|---|---|---|
 | **COMUNICAÇÃO E ESTRUTURA** | | **30** | | **7.33** |
 | C1 | Clareza da recomendação | 10 | 1 | 3.33 |
@@ -811,19 +772,19 @@ Pasta **15** · Nota bruta **2.63** · Nota ajustada **2.93** · Aprovaria: **N�
 | R2 | Discussão de alternativas | 7 | 1 | 2.33 |
 | R3 | Ir além do pedido, com relevância | 5 | 0 | 0.00 |
 | R4 | Interpretação além do óbvio | 5 | 1 | 1.67 |
-| **ACURÁCIA TÉCNICA** | | **25** | | **15.00** |
+| **ACURÁCIA TÉCNICA** | | **25** | | **14.00** |
 | A1 | Receita e resultado dos 8 cenários | 6 | 3 | 6.00 |
 | A2 | Estrutura de custo e bancos | 6 | 3 | 6.00 |
 | A3 | Projeção e plano | 4 | 0 | 0.00 |
 | A4 | Alternativa quantificada | 3 | 1 | 1.00 |
 | A5 | Riscos e próximos passos | 3 | 1 | 1.00 |
-| A6 | Inconsistência plantada | 3 | 1 | 1.00 |
-| **ENTREGA** | | **10** | | **0.00** |
-| E1 | Enviou planilha | 3 | 0 | 0.00 |
+| A6 | Inconsistência plantada | 3 | em branco | 0.00 |
+| **ENTREGA** | | **10** | | **3.00** |
+| E1 | Enviou planilha | 3 | 1 | 3.00 |
 | E2 | Enviou apresentação fechada | 2 | 0 | 0.00 |
 | E3 | Gravou vídeo da entrega | 2 | 0 | 0.00 |
 | E4 | Recursos visuais que sustentam | 3 | 0 | 0.00 |
-| **VÍDEO (V1 e V2)** | já avaliado na etapa anterior | **10** | em branco | **0,00** |
+| **VÍDEO (V1 e V2)** | avaliado na etapa anterior | **10** | não entra nesta nota | |
 
 ### Comentário
 
@@ -839,10 +800,10 @@ O que existe de análise qualitativa está no rascunho, e é melhor do que parec
 
 Na entrevista, se ele avançar, a pergunta é direta e vale tudo. Você calculou os oito cenários corretamente, então qual bairro e qual modelo você recomenda, e por quê? E, para confirmar propriedade, por que a Arena arredonda para 23 e não fica em 22,5?
 
-Nota 2,63 com vídeo em branco. Considerando só o que dá para avaliar, 2,93.
+Nota 2,83 com o bloco Vídeo em branco. Sem o Vídeo, que é a base comparável, 3,15.
 
 Indício de IA: Baixo (consultivo, não afeta nota). Evidência praticamente incontestável. Oito páginas manuscritas digitalizadas, com o rascunho transcrevendo os anexos à mão. O ponto decisivo é a autocorreção visível na página da Arena: valor riscado e a anotação "arredondando para 23" acrescentada acima com seta. Erro cometido e corrigido no próprio papel não é fabricável. A ausência de recomendação é falha de execução, e texto gerado faz o contrário, entrega a conclusão e economiza no desenvolvimento.
 
-IDENTIFICAÇÃO: pasta anônima. Nenhum arquivo traz nome no texto, no nome do arquivo ou no metadado. Rastro de ferramenta que pode ajudar a estreitar: os dois PDFs foram gerados pelo CamScanner. Sem o mapa número para candidato, V1 e V2 não podem ser transcritos e o bloco Vídeo fica valendo zero. Candidatos inscritos ainda não pareados a nenhuma pasta: João Pedro Mendes Stama, Rafael Ponciano Rodrigues dos Santos, Enzo Chofakian Gagliardi, João Gabriel de Oliveira Morcelli, Raphael Negrini Saggioro, Gustavo Daher Pereira, Ricardo Augusto Schmitt Filho, Matheus Dias Freitas, Klaus Augusto Santos da Silva, José Vitor Dias Tutu, Isadora Kluge Dorigan.
+COMPARAÇÃO COM O CLUBE: pasta anônima, sem contraparte para cruzar. Precisa do mapa número para candidato.
 
 ---
