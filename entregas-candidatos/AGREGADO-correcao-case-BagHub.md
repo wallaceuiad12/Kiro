@@ -83,8 +83,6 @@ Falta prazo nos riscos. As mitigações são boas e contratuais, só que nenhuma
 
 Na entrevista eu pergunto: se o banco custasse R$ 50.000, o que muda? A resposta é que o rateio cai para R$ 1.250, fica abaixo do prêmio de R$ 1.400 da alta complexidade, e os armários passam a ganhar em Noite Alta. Quem montou aquela seção responde em um minuto.
 
-Nota final 8,93, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 9,19.
-
 Indício de IA: Baixo (consultivo, não afeta nota). Vários sinais de autoria própria. A prova de dominância da seção 5.1 é um achado estrutural deste case, não leitura dos oito números. Ele nota que a vantagem dos parceiros em Noite Alta é de só R$ 350 por posição e transforma isso em ponto de monitoramento. A profundidade é desigual de propósito: o anexo faz a Estação por extenso e resume os outros três, o corte de quem tinha um fim de semana. O acabamento do anexo em LaTeX poderia levantar dúvida, mas acabamento não é evidência, e compor em LaTeX aponta para o contrário.
 
 COMPARAÇÃO COM O CLUBE: na base só do case, Ferro ficou em 7,33 e eu em 9,19, diferença de 1,86, acima do limite de 1,0, então cai na conversa de calibração.
@@ -137,8 +135,6 @@ O que sobra de reparo é pequeno e todo de acabamento. O arquivo foi enviado com
 
 Na entrevista eu vou direto no que prova propriedade. O breakeven da Arena deu R$ 23.478, um número não redondo, de onde vem o 23 no denominador? E se o overhead real der R$ 1,4 mil por posição em vez de R$ 1,15 mil, o que acontece com a recomendação? Quem montou o modelo responde as duas em três minutos.
 
-Nota final 8,63, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 9,04.
-
 Indício de IA: Baixo (consultivo, não afeta nota). Foi a leitura mais difícil, porque o acabamento é alto e o vocabulário é bem de consultoria. Mas a planilha tem uma coluna de reconciliação que cruza a economia por dois caminhos independentes, e ninguém constrói autoconferência num modelo que não montou. O breakeven da Arena saiu R$ 23.478,26, não redondo, e ele não arredondou para embelezar. O R$ 1,15 mil por posição aparece encadeado em três artefatos. Somam-se o "hhh" no nome do arquivo e a numeração trocada.
 
 COMPARAÇÃO COM O CLUBE: na base só do case, victor ficou em 8,33 e eu em 9,04, diferença de 0,71, dentro do limite de 1,0.
@@ -189,8 +185,6 @@ De forma, o custo veio dos títulos repetidos. Três slides seguidos com o mesmo
 
 Na entrevista eu faço as duas perguntas. Como os 58% de horas ociosas se transformariam em lucro, se a demanda já está dada? E quais são os 5 bairros de fronteira da Estação Central? A segunda ela responde de imediato se olhou o mapa, e olhou.
 
-Nota final 8,67, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 8,70.
-
 Indício de IA: Baixo (consultivo, não afeta nota). A aba Rascunho é material cru, com a estrutura do case em abreviações e typos de digitação rápida. Ninguém gera uma aba de rascunho assim. O critério de potencial de fronteira exige abrir a imagem do mapa e contar adjacências, um ato físico de leitura de anexo. As contagens de banco estão fixadas bairro a bairro dentro das fórmulas. E o risco de baixa conversão pela pressa é observação idiossincrática sobre o público.
 
 COMPARAÇÃO COM O CLUBE: na base só do case, luis ficou em 8,85 e eu em 8,70, diferença de 0,15, dentro do limite de 1,0.
@@ -236,8 +230,6 @@ A causa estrutural ela achou sozinha. O banco rateado dá R$ 1.750 por posição
 Três reparos, todos de execução e nenhum de raciocínio. O primeiro é o slide 4, que inverte a complexidade do Centro Histórico e de Noite Alta. A memória de cálculo usa os valores certos, então é erro de transcrição, mas está justamente no slide que serve para comparar os bairros. O segundo é a recomendação chegar só no slide 8: o deck tem contexto e metodologia antes da resposta, e trocar essa ordem valeria pontos sem mudar uma linha de análise. O terceiro é o slide 9, que promete um relatório escrito que não está na pasta e pareia riscos com próximos passos que não os endereçam.
 
 Na entrevista eu faço duas perguntas. No slide 4 o Centro Histórico aparece como complexidade Alta e suas contas usam Baixa, qual é o certo? E, puxando o achado dela, a partir de que custo de banco os armários passariam a ganhar na Estação? A resposta é R$ 24.000 e sai direto do R$ 1.750 que ela mesma derivou.
-
-Nota final 7,25, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 7,22.
 
 Indício de IA: Baixo (consultivo, não afeta nota). A memória de cálculo manuscrita mostra o processo, não só o resultado, com as premissas anotadas, o Anexo E transcrito à mão e o arredondamento resolvido na frente do leitor, "900:40 = 22,5 ≈ 23". O erro de complexidade do slide 4 convivendo com contas que usam o valor correto é assinatura de erro humano de transcrição, porque saída gerada seria consistente nos dois lugares. A referência a um relatório escrito que não foi anexado, e um arquivo pessoal que entrou por engano na pasta, indicam upload apressado.
 
@@ -286,8 +278,6 @@ O problema é que ele se recusa a generalizar. Diz que não daria para afirmar q
 O custo maior está na comunicação. Os títulos são rótulos de seção, não mensagens, então a recomendação não sobrevive à leitura só dos títulos. E o texto em primeira pessoa com hedge a cada parágrafo tira o documento do registro de entregável de cliente. São dois ajustes de forma que valem muitos pontos e não mudam nada do conteúdo. Faltam prazo nos riscos e qualquer sensibilidade.
 
 Na entrevista eu peço a conta que ele se recusou a fazer: a partir de que custo de banco os armários ganham na Estação? Sai da planilha dele, o banco teria que cair para R$ 24.000.
-
-Nota final 6,83, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 6,85.
 
 Indício de IA: Baixo (consultivo, não afeta nota). A planilha é um modelo que funciona, com fórmulas encadeadas entre abas e ROUNDUP, não tabela renderizada. É o artefato mais difícil de terceirizar. Ele relata o próprio processo de conferência na página 5 e se recusa a preencher lacuna de dado com estimativa inventada, que é o oposto da tendência de IA de completar tudo. Profundidade desigual entre as páginas.
 
@@ -339,8 +329,6 @@ No acabamento, Noite Alta virou "Alta Noite" em todas as tabelas e dois slides s
 
 Na entrevista eu faço duas perguntas. Por que o breakeven trata o banco como investimento se o Anexo E diz que é custo anual? E por que, no rollout do slide 14, os bairros 2 a 4 usam armários se a sua tabela mostra parceiros ganhando nos quatro? Quem entendeu o próprio breakeven conecta as duas respostas na hora.
 
-Nota final 6,55, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 6,81.
-
 Indício de IA: Baixo (consultivo, não afeta nota). As nove fotos de caderno são a evidência de propriedade mais forte do conjunto. Mostram o processo, não o resultado: estrutura do case transcrita à mão, derivação da fórmula por banco e a conta de Noite Alta passo a passo, batendo com o deck. A anotação "1º ano" em cima do termo de R$ 70.000 documenta decisão de modelagem deliberada. Os typos e o nome do bairro trocado em todas as tabelas são descuidos humanos.
 
 COMPARAÇÃO COM O CLUBE: na base só do case, victor e Proc ficou em 5,87 e eu em 6,81, diferença de 0,94, dentro do limite de 1,0.
@@ -388,8 +376,6 @@ E então ele não recomenda nada. O índice promete uma seção de recomendaçã
 No cálculo há um deslize instrutivo. Na Arena ele acertou os 23 bancos, que é onde a maioria escorrega, e depois aplicou os custos por posição a 920 posições em vez de 900, contrariando instrução explícita. E usou 900 corretamente na coluna de parceiros do mesmo slide. O valor ficou na tolerância por sorte de magnitude.
 
 Na entrevista eu faço três perguntas. A primeira é de propriedade pura: como você chegou nas 7 horas, e quanto dá no Centro Histórico? Dá 5,04 horas, e a resposta expõe a contradição do slide 8. Segunda: na Arena, 920 ou 900 posições? Terceira, a que decide: seu critério principal é rentabilidade e a Estação ganha, mas o Centro Histórico ganha em três dos quatro critérios, qual você recomenda e por quê?
-
-Nota final 6,37, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 6,52.
 
 Indício de IA: Baixo (consultivo, não afeta nota). O indício mais forte é quantitativo. Derivar as 7 horas de permanência exige manipular a definição de utilização contra posições e transações, e conferi que o valor está certo. Isso é raciocínio original. A contagem de adjacência exige olhar o mapa. A regra de robustez com limiares é instrumento construído por ele. Do outro lado, os erros são humanos: typos, numeração de página repetida, a contradição entre slides 6 e 8, e o 920 contra 900 nas duas colunas do mesmo slide.
 
@@ -441,8 +427,6 @@ Os reparos são de forma e de escopo. A recomendação chega no slide 9 de 13, q
 
 Na entrevista eu vou atrás do melhor insight dele. Você escreveu que o público de Noite Alta não carrega bagagem, então o que você faz com as 20 mil transações que o case projeta para lá? E, para checar propriedade do modelo, a partir de que custo de banco os armários passariam a ganhar na Estação Central? A resposta é R$ 24.000.
 
-Nota final 6,62, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 6,52.
-
 Indício de IA: Baixo (consultivo, não afeta nota). O critério de fit com o serviço questiona os dados de demanda do próprio enunciado, e isso é justamente o que saída gerada não faz, porque tende a aceitar o input como verdade. As mitigações são invenções operacionais concretas, como staff da BagHub dentro do comércio no pico e a plataforma que sinaliza parceiro lotado. Do lado dos deslizes humanos, a numeração da expansão recomeçando no slide 10 e a fórmula do slide 6 omitindo o arredondamento que o anexo declara.
 
 COMPARAÇÃO COM O CLUBE: na base só do case, victor e Proc ficou em 5,91 e eu em 6,52, diferença de 0,61, dentro do limite de 1,0.
@@ -491,8 +475,6 @@ Somado a isso, a recomendação só aparece no slide 11 de 13 e os títulos não
 
 Na entrevista eu faço duas perguntas. Na página 3 a Arena aparece com 33% de utilização e na 12 você diz que ela tem a mais baixa, 31%, qual é a certa? E você colocou a Arena, R$ 14,94 milhões, à frente de Noite Alta, R$ 19,20 milhões, no ranking, qual é o critério? A segunda ela deve responder bem, porque a lógica de margem e volatilidade está escrita.
 
-Nota final 5,53, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 5,41.
-
 Indício de IA: Baixo (consultivo, não afeta nota). Todos os sinais vêm do padrão de erro. "Armários inteligententes" repetido igual nas quatro tabelas é copy-paste de um typo humano. "Bag Huby" na capa, "calcúlos" e "Operacao" sem acento. O texto de template "BACK TO AGENDA" esquecido indica deck montado sobre modelo e não revisado. E a utilização trocada no slide 3 convivendo com o valor correto no slide 12 é inconsistência interna de transcrição.
 
 COMPARAÇÃO COM O CLUBE: na base só do case, victor e Proc ficou em 4,78 e eu em 5,41, diferença de 0,63, dentro do limite de 1,0.
@@ -540,8 +522,6 @@ Tem duas contradições factuais em cima disso. A Estação Central é descartad
 O único erro de cálculo é a Arena com 22,5 bancos em vez de 23, que por ser pequeno caiu na tolerância. Faltam riscos e próximos passos, que o enunciado pede na tarefa 04. E não tem uma tabela ou gráfico em cinco páginas de texto corrido.
 
 Na entrevista eu faço duas perguntas diretas, as mesmas que revelam se ele enxerga o problema. Você disse que a métrica principal é a margem, então por que escolheu armários a 85,7% e não parceiros a 90,7% no mesmo bairro? E a Estação tem complexidade moderada na página 1 e alta na página 4, qual das duas?
-
-Nota final 3,45, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 3,19.
 
 Indício de IA: Baixo (consultivo, não afeta nota). O padrão de erros aponta para autoria própria sem assistência. A contradição entre página 1 e página 4 sobre a complexidade da Estação é inconsistência de quem escreveu em sessões diferentes sem reler. O registro oscila de primeira pessoa do plural para singular na última frase. Deixou de arredondar os bancos apesar da instrução escrita, e IA tende a seguir instrução explícita. A ausência total de tabela e estrutura é o oposto da over-estruturação típica de texto gerado.
 
