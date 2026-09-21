@@ -24,10 +24,28 @@ A pasta 01 foi corrigida antes, pelo Avaliador 1, e serviu de calibração. As p
 | 12 | 05 | Eduardo Alves Henrique | 20.00 | 16.67 | 19.67 | 4.00 | **6.03** | **6.70** | Passaria para ver a entrevista |
 | 13 | 14 | Rafael Rodrigues Moreira | 14.33 | 17.33 | 16.33 | 4.00 | **5.20** | **5.78** | Passaria para ver a entrevista |
 | 14 | 13 | não identificado | 7.33 | 5.67 | 17.33 | 1.00 | **3.13** | **3.48** | Não |
-| 15 | 04 | não identificado | 13.33 | 6.33 | 8.00 | 2.00 | **2.97** | **3.30** | Não |
+| 15 | 04 | Caio Augusto Saab | 13.33 | 6.33 | 8.00 | 2.00 | **2.97** | **3.30** | Não |
 | 16 | 15 | não identificado | 7.33 | 4.00 | 15.00 | 0.00 | **2.63** | **2.93** | Não |
 
-Nome identificado em 9 das 16 pastas, porque o próprio candidato colocou o nome no arquivo ou na capa. As outras 7 seguem anônimas e precisam do mapa número para candidato.
+Nome identificado em **10 das 16** pastas. Em nove delas o próprio candidato colocou o nome no arquivo, na capa ou no metadado. A pasta 04 saiu só do metadado do PDF e precisa de confirmação antes de virar decisão.
+
+Seguem anônimas as pastas **07, 09, 01, 10, 13, 15**. Nelas não há nome no texto, no nome do arquivo nem no metadado, que está vazio ou foi limpo na exportação.
+
+## Candidatos inscritos ainda não pareados a nenhuma pasta
+
+São 11 nomes para 6 pastas anônimas, então 5 destes provavelmente não entregaram. Cruzando com o registro de envio de vocês, as seis pastas anônimas se resolvem por eliminação.
+
+- João Pedro Mendes Stama
+- Rafael Ponciano Rodrigues dos Santos
+- Enzo Chofakian Gagliardi
+- João Gabriel de Oliveira Morcelli
+- Raphael Negrini Saggioro
+- Gustavo Daher Pereira
+- Ricardo Augusto Schmitt Filho
+- Matheus Dias Freitas
+- Klaus Augusto Santos da Silva
+- José Vitor Dias Tutu
+- Isadora Kluge Dorigan
 
 ---
 
@@ -79,13 +97,13 @@ Nota 8,60 com vídeo em branco. Considerando só o que dá para avaliar, 9,56.
 
 Indício de IA: Baixo (consultivo, não afeta nota). A disciplina do modelo é o indício. Bloco de Conferências com três identidades que devem zerar e um validador condicional de capacidade. A aba de premissas documenta convenção de cores e deixa nota de manutenção para quem usar o modelo depois, escrita para um leitor futuro e não para um avaliador. Ele marca sistematicamente o que não pode saber: distâncias não informadas, hipótese a validar, médias diárias como normalização. Esse hábito é o oposto de texto gerado.
 
-IDENTIFICAÇÃO: pasta anônima, nenhum arquivo traz nome. Precisa do mapa número para candidato para trazer V1 e V2.
+IDENTIFICAÇÃO: pasta anônima. Nenhum arquivo traz nome no texto, no nome do arquivo ou no metadado. Rastro de ferramenta que pode ajudar a estreitar: metadados completamente vazios nos dois arquivos. A planilha foi feita no Excel Online. Sem o mapa número para candidato, V1 e V2 não podem ser transcritos e o bloco Vídeo fica valendo zero. Candidatos inscritos ainda não pareados a nenhuma pasta: João Pedro Mendes Stama, Rafael Ponciano Rodrigues dos Santos, Enzo Chofakian Gagliardi, João Gabriel de Oliveira Morcelli, Raphael Negrini Saggioro, Gustavo Daher Pereira, Ricardo Augusto Schmitt Filho, Matheus Dias Freitas, Klaus Augusto Santos da Silva, José Vitor Dias Tutu, Isadora Kluge Dorigan.
 
 ---
 
 ## Enrico Tristão e Mello de Oliveira
 
-Pasta **06** · Nota bruta **8.33** · Nota ajustada **9.26** · Aprovaria: **Sim**
+Pasta **06** · e278588@dac.unicamp.br · Nota bruta **8.33** · Nota ajustada **9.26** · Aprovaria: **Sim**
 
 | Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
 |---|---|---|---|---|
@@ -133,13 +151,13 @@ Nota 8,33 com vídeo em branco. Considerando só o que dá para avaliar, 9,26.
 
 Indício de IA: Baixo (consultivo, não afeta nota). Foi a leitura mais difícil, porque o acabamento é alto e o vocabulário é bem de consultoria. Mas a planilha tem uma coluna de reconciliação que cruza a economia por dois caminhos independentes, e ninguém constrói autoconferência num modelo que não montou. O breakeven da Arena saiu R$ 23.478,26, não redondo, e ele não arredondou para embelezar. O R$ 1,15 mil por posição aparece encadeado em três artefatos. Somam-se o "hhh" no nome do arquivo e a numeração trocada.
 
-IDENTIFICAÇÃO: a pasta tem o nome no arquivo, Enrico Tristão e Mello de Oliveira. As notas de vídeo dele estão nas linhas 12 (victor 2/1) e 34 (Ferro 2/1) e precisam ser transcritas.
+IDENTIFICAÇÃO: Enrico Tristão e Mello de Oliveira, e278588@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome no nome do arquivo e campo lastModifiedBy do pptx e do xlsx ("Enrico Mello"). As notas de vídeo dele estão nas linhas 12 e 34 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
 
 ---
 
 ## Aslan Rodrigues Maia
 
-Pasta **02** · Nota bruta **8.30** · Nota ajustada **9.22** · Aprovaria: **Sim**
+Pasta **02** · a266739@dac.unicamp.br · Nota bruta **8.30** · Nota ajustada **9.22** · Aprovaria: **Sim**
 
 | Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
 |---|---|---|---|---|
@@ -181,7 +199,7 @@ Nota 8,30 com vídeo em branco. Considerando só o que dá para avaliar, 9,22.
 
 Indício de IA: Baixo (consultivo, não afeta nota). Vários sinais de autoria própria. A prova de dominância da seção 5.1 é um achado estrutural deste case, não leitura dos oito números. Ele nota que a vantagem dos parceiros em Noite Alta é de só R$ 350 por posição e transforma isso em ponto de monitoramento. A profundidade é desigual de propósito: o anexo faz a Estação por extenso e resume os outros três, o corte de quem tinha um fim de semana. O acabamento do anexo em LaTeX poderia levantar dúvida, mas acabamento não é evidência, e compor em LaTeX aponta para o contrário.
 
-IDENTIFICAÇÃO: a pasta tem o nome no arquivo, Aslan Rodrigues Maia. As notas de vídeo dele estão nas linhas 17 (Ferro 1/2) e 39 (Proc 2/3) e precisam ser transcritas.
+IDENTIFICAÇÃO: Aslan Rodrigues Maia, a266739@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome no nome dos dois arquivos e no titulo interno do PDF ("Apresentação - Aslan Maia - Case CCU"). As notas de vídeo dele estão nas linhas 17 e 39 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
 
 ---
 
@@ -231,13 +249,13 @@ Nota 8,30 com vídeo em branco. Considerando só o que dá para avaliar, 9,22.
 
 Indício de IA: Baixo (consultivo, não afeta nota). O mais claro é a Arena com 23 bancos digitados à mão enquanto os outros três usam fórmula. É alguém que rodou o modelo, viu 22,5 aparecer e corrigiu pontualmente. A planilha tem marcas de trabalho manual, com células escritas como "IDEM" e "Noite alta" em minúscula contra "Noite Alta" no deck. E o erro central, tratar custo anual como investimento, é falha de interpretação de quem leu rápido, não artefato de geração.
 
-IDENTIFICAÇÃO: pasta anônima, nenhum arquivo traz nome. Precisa do mapa número para candidato para trazer V1 e V2.
+IDENTIFICAÇÃO: pasta anônima. Nenhum arquivo traz nome no texto, no nome do arquivo ou no metadado. Rastro de ferramenta que pode ajudar a estreitar: pptx exportado por "Walnut Exporter" e planilha no Excel Online. Criado em 17/09/2026 as 23:17 UTC. Sem o mapa número para candidato, V1 e V2 não podem ser transcritos e o bloco Vídeo fica valendo zero. Candidatos inscritos ainda não pareados a nenhuma pasta: João Pedro Mendes Stama, Rafael Ponciano Rodrigues dos Santos, Enzo Chofakian Gagliardi, João Gabriel de Oliveira Morcelli, Raphael Negrini Saggioro, Gustavo Daher Pereira, Ricardo Augusto Schmitt Filho, Matheus Dias Freitas, Klaus Augusto Santos da Silva, José Vitor Dias Tutu, Isadora Kluge Dorigan.
 
 ---
 
 ## Mariana Nunes Galvão Sant'Anna
 
-Pasta **12** · Nota bruta **7.93** · Nota ajustada **8.81** · Aprovaria: **Sim**
+Pasta **12** · m277865@dac.unicamp.br · Nota bruta **7.93** · Nota ajustada **8.81** · Aprovaria: **Sim**
 
 | Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
 |---|---|---|---|---|
@@ -283,7 +301,7 @@ Nota 7,93 com vídeo em branco. Considerando só o que dá para avaliar, 8,81.
 
 Indício de IA: Baixo (consultivo, não afeta nota). A aba Rascunho é material cru, com a estrutura do case em abreviações e typos de digitação rápida. Ninguém gera uma aba de rascunho assim. O critério de potencial de fronteira exige abrir a imagem do mapa e contar adjacências, um ato físico de leitura de anexo. As contagens de banco estão fixadas bairro a bairro dentro das fórmulas. E o risco de baixa conversão pela pressa é observação idiossincrática sobre o público.
 
-IDENTIFICAÇÃO: a pasta tem o nome no arquivo, Mariana Nunes Galvão Sant'Anna. As notas de vídeo dele estão nas linhas 16 (luis 3/2) e 38 (Proc 2/3) e precisam ser transcritas.
+IDENTIFICAÇÃO: Mariana Nunes Galvão Sant'Anna, m277865@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome no nome do arquivo, no slide de fechamento e no campo Author do metadado. As notas de vídeo dele estão nas linhas 16 e 38 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
 
 ---
 
@@ -319,13 +337,13 @@ Pasta **01** · Nota bruta **7.87** · Nota ajustada **8.74** · Aprovaria: **Pa
 
 ### Comentário
 
-Usou IA, dá para ver pelo layout: o deck é todo imagem, sem texto selecionável, o relatório é HTML exportado em PDF e o nome do arquivo vem com "McKinsey Style". A profundidade é igual nas quatro seções e a memória de cálculo aparece só em um bairro. Mesmo assim entregou bem: os oito cenários fecham, inclusive o arredondamento dos bancos da Arena, e a recomendação vem com número no slide 2 e na primeira página. Do lado fraco, o critério do rollout muda no meio, com Noite Alta a 64% na frente da Arena a 83%, não há sensibilidade nem ponto de virada entre os modelos, e o slide 7 mostra seis dos oito cenários. Vale levar para a entrevista e pedir para refazer a conta da Estação Central mexendo no custo de operação dos parceiros. Nota 7,87 com V1 e V2 em branco, 8,74 sobre o que é avaliável.
+Deu pra ver que usou IA. O deck inteiro é imagem, não tem um texto selecionável, e o relatório é um HTML exportado em PDF; o nome do arquivo veio até com "McKinsey Style". As quatro seções têm exatamente a mesma profundidade, o que não acontece com quem resolve num fim de semana e precisa cortar coisa, e a memória de cálculo aparece detalhada só em um dos quatro bairros. Fora isso, a entrega é boa. Os oito cenários fecham, incluindo o arredondamento dos bancos na Arena, que é onde a maioria escorrega, e a recomendação está na primeira página e no slide 2 já com o número. O que me incomodou foi o critério do rollout mudar no meio: começa priorizando caixa absoluto, na fase 2 justifica pela maior margem e nas fases 3 e 4 volta para o absoluto, colocando Noite Alta com 64% de margem na frente da Arena com 83%. Também não fez nenhuma sensibilidade nem mostrou a partir de que ponto um modelo passa o outro. Na entrevista eu levaria duas perguntas: a partir de qual custo de operação por posição nos pontos parceiros o modelo de armários passa a ser melhor na Estação Central, e por que Noite Alta vem antes da Arena se a margem da Arena é maior. Quem montou o modelo responde rápido. A nota saiu 7,87 com V1 e V2 em branco; considerando só o que dá para avaliar de fato, equivale a 8,74.
 
 ---
 
 ## Vagner Ássimos Gomes Carlos Filho
 
-Pasta **16** · Nota bruta **7.70** · Nota ajustada **8.56** · Aprovaria: **Sim**
+Pasta **16** · v188630@dac.unicamp.br · Nota bruta **7.70** · Nota ajustada **8.56** · Aprovaria: **Sim**
 
 | Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
 |---|---|---|---|---|
@@ -371,13 +389,13 @@ Nota 7,70 com vídeo em branco. Considerando só o que dá para avaliar, 8,56.
 
 Indício de IA: Baixo (consultivo, não afeta nota). O critério de fit com o serviço questiona os dados de demanda do próprio enunciado, e isso é justamente o que saída gerada não faz, porque tende a aceitar o input como verdade. As mitigações são invenções operacionais concretas, como staff da BagHub dentro do comércio no pico e a plataforma que sinaliza parceiro lotado. Do lado dos deslizes humanos, a numeração da expansão recomeçando no slide 10 e a fórmula do slide 6 omitindo o arredondamento que o anexo declara.
 
-IDENTIFICAÇÃO: a pasta tem o nome no arquivo, Vagner Ássimos Gomes Carlos Filho. As notas de vídeo dele estão nas linhas 15 (victor 2/3) e 37 (Proc 3/1) e precisam ser transcritas.
+IDENTIFICAÇÃO: Vagner Ássimos Gomes Carlos Filho, v188630@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome na capa e campo Author do metadado ("Vagner"). As notas de vídeo dele estão nas linhas 15 e 37 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
 
 ---
 
 ## Gabrielle Cristofani do Rosario
 
-Pasta **08** · Nota bruta **7.33** · Nota ajustada **8.15** · Aprovaria: **Sim**
+Pasta **08** · g278083@dac.unicamp.br · Nota bruta **7.33** · Nota ajustada **8.15** · Aprovaria: **Sim**
 
 | Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
 |---|---|---|---|---|
@@ -421,13 +439,13 @@ Indício de IA: Baixo (consultivo, não afeta nota). A memória de cálculo manu
 
 ATENÇÃO: URGENTE, o arquivo IMG-20260918-WA0254.jpg não tem relação com o case: é a captura de tela de um comprovante de compra parcelada, com valores, datas de vencimento e dados financeiros pessoais. Foi anexado por engano. Recomendo remover do repositório antes de qualquer coisa, porque o repositório chegou a ficar público. Não avaliei esse arquivo e não reproduzi seu conteúdo.
 
-IDENTIFICAÇÃO: a pasta tem o nome no arquivo, Gabrielle Cristofani do Rosario. As notas de vídeo dele estão nas linhas 7 (victor 2/2) e 29 (Fred 3/2) e precisam ser transcritas.
+IDENTIFICAÇÃO: Gabrielle Cristofani do Rosario, g278083@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome na capa, no nome do arquivo e no campo Author do metadado. As notas de vídeo dele estão nas linhas 7 e 29 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
 
 ---
 
 ## Bruno Heberth Oliveira Bastos
 
-Pasta **03** · Nota bruta **7.13** · Nota ajustada **7.93** · Aprovaria: **Sim**
+Pasta **03** · b309603@dac.unicamp.br · Nota bruta **7.13** · Nota ajustada **7.93** · Aprovaria: **Sim**
 
 | Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
 |---|---|---|---|---|
@@ -471,7 +489,7 @@ Nota 7,13 com vídeo em branco. Considerando só o que dá para avaliar, 7,93.
 
 Indício de IA: Baixo (consultivo, não afeta nota). A planilha é um modelo que funciona, com fórmulas encadeadas entre abas e ROUNDUP, não tabela renderizada. É o artefato mais difícil de terceirizar. Ele relata o próprio processo de conferência na página 5 e se recusa a preencher lacuna de dado com estimativa inventada, que é o oposto da tendência de IA de completar tudo. Profundidade desigual entre as páginas.
 
-IDENTIFICAÇÃO: a pasta tem o nome no arquivo, Bruno Heberth Oliveira Bastos. As notas de vídeo dele estão nas linhas 8 (victor 3/1) e 30 (Fred 3/1) e precisam ser transcritas.
+IDENTIFICAÇÃO: Bruno Heberth Oliveira Bastos, b309603@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome no nome dos dois arquivos dele. As notas de vídeo dele estão nas linhas 8 e 30 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
 
 ---
 
@@ -521,13 +539,13 @@ Nota 6,57 com vídeo em branco. Considerando só o que dá para avaliar, 7,30.
 
 Indício de IA: Baixo (consultivo, não afeta nota). O rascunho enviado junto é material de trabalho pessoal, com anotações em caixa alta separadas por linhas de "######". Ninguém gera isso, e a progressão rascunho para relatório final deixa o processo de escrita visível. O raciocínio de Noite Alta é idiossincrático e coloquial de um jeito que texto gerado raramente é. Ele marca a própria suposição na Arena com "supõe-se" em vez de afirmar.
 
-IDENTIFICAÇÃO: pasta anônima, nenhum arquivo traz nome. Precisa do mapa número para candidato para trazer V1 e V2.
+IDENTIFICAÇÃO: pasta anônima. Nenhum arquivo traz nome no texto, no nome do arquivo ou no metadado. Rastro de ferramenta que pode ajudar a estreitar: rascunho impresso pelo Google Docs Renderer. No docx, o campo de autor foi preenchido com o titulo do documento e o lastModifiedBy esta como "Un-named". Sem o mapa número para candidato, V1 e V2 não podem ser transcritos e o bloco Vídeo fica valendo zero. Candidatos inscritos ainda não pareados a nenhuma pasta: João Pedro Mendes Stama, Rafael Ponciano Rodrigues dos Santos, Enzo Chofakian Gagliardi, João Gabriel de Oliveira Morcelli, Raphael Negrini Saggioro, Gustavo Daher Pereira, Ricardo Augusto Schmitt Filho, Matheus Dias Freitas, Klaus Augusto Santos da Silva, José Vitor Dias Tutu, Isadora Kluge Dorigan.
 
 ---
 
 ## Leandra Cunha de Souza
 
-Pasta **11** · Nota bruta **6.07** · Nota ajustada **6.74** · Aprovaria: **Passaria para ver a entrevista**
+Pasta **11** · l304532@dac.unicamp.br · Nota bruta **6.07** · Nota ajustada **6.74** · Aprovaria: **Passaria para ver a entrevista**
 
 | Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
 |---|---|---|---|---|
@@ -571,13 +589,13 @@ Nota 6,07 com vídeo em branco. Considerando só o que dá para avaliar, 6,74.
 
 Indício de IA: Baixo (consultivo, não afeta nota). Todos os sinais vêm do padrão de erro. "Armários inteligententes" repetido igual nas quatro tabelas é copy-paste de um typo humano. "Bag Huby" na capa, "calcúlos" e "Operacao" sem acento. O texto de template "BACK TO AGENDA" esquecido indica deck montado sobre modelo e não revisado. E a utilização trocada no slide 3 convivendo com o valor correto no slide 12 é inconsistência interna de transcrição.
 
-IDENTIFICAÇÃO: a pasta tem o nome no arquivo, Leandra Cunha de Souza. As notas de vídeo dele estão nas linhas 14 (victor 2/2) e 36 (Proc 2/2) e precisam ser transcritas.
+IDENTIFICAÇÃO: Leandra Cunha de Souza, l304532@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome na capa, e-mail no ultimo slide e campo Author do metadado ("Leandra Cunha"). As notas de vídeo dele estão nas linhas 14 e 36 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
 
 ---
 
 ## Eduardo Alves Henrique
 
-Pasta **05** · Nota bruta **6.03** · Nota ajustada **6.70** · Aprovaria: **Passaria para ver a entrevista**
+Pasta **05** · e221509@dac.unicamp.br · Nota bruta **6.03** · Nota ajustada **6.70** · Aprovaria: **Passaria para ver a entrevista**
 
 | Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
 |---|---|---|---|---|
@@ -623,13 +641,13 @@ Nota 6,03 com vídeo em branco. Considerando só o que dá para avaliar, 6,70.
 
 Indício de IA: Baixo (consultivo, não afeta nota). As nove fotos de caderno são a evidência de propriedade mais forte do conjunto. Mostram o processo, não o resultado: estrutura do case transcrita à mão, derivação da fórmula por banco e a conta de Noite Alta passo a passo, batendo com o deck. A anotação "1º ano" em cima do termo de R$ 70.000 documenta decisão de modelagem deliberada. Os typos e o nome do bairro trocado em todas as tabelas são descuidos humanos.
 
-IDENTIFICAÇÃO: a pasta tem o nome no arquivo, Eduardo Alves Henrique. As notas de vídeo dele estão nas linhas 13 (victor 2/0) e 35 (Proc 2/1) e precisam ser transcritas.
+IDENTIFICAÇÃO: Eduardo Alves Henrique, e221509@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome escrito na capa do deck. As notas de vídeo dele estão nas linhas 13 e 35 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
 
 ---
 
 ## Rafael Rodrigues Moreira
 
-Pasta **14** · Nota bruta **5.20** · Nota ajustada **5.78** · Aprovaria: **Passaria para ver a entrevista**
+Pasta **14** · r302729@dac.unicamp.br · Nota bruta **5.20** · Nota ajustada **5.78** · Aprovaria: **Passaria para ver a entrevista**
 
 | Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
 |---|---|---|---|---|
@@ -673,7 +691,7 @@ Nota 5,20 com vídeo em branco. Considerando só o que dá para avaliar, 5,78.
 
 Indício de IA: Baixo (consultivo, não afeta nota). O indício mais forte é quantitativo. Derivar as 7 horas de permanência exige manipular a definição de utilização contra posições e transações, e conferi que o valor está certo. Isso é raciocínio original. A contagem de adjacência exige olhar o mapa. A regra de robustez com limiares é instrumento construído por ele. Do outro lado, os erros são humanos: typos, numeração de página repetida, a contradição entre slides 6 e 8, e o 920 contra 900 nas duas colunas do mesmo slide.
 
-IDENTIFICAÇÃO: a pasta tem o nome no arquivo, Rafael Rodrigues Moreira. As notas de vídeo dele estão nas linhas 24 (Ferro 2/3) e 46 (Proc 0/1) e precisam ser transcritas.
+IDENTIFICAÇÃO: Rafael Rodrigues Moreira, r302729@dac.unicamp.br. Confiança alta. Como cheguei nisso: nome na capa e no nome do arquivo. As notas de vídeo dele estão nas linhas 24 e 46 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero.
 
 ---
 
@@ -723,13 +741,13 @@ Nota 3,13 com vídeo em branco. Considerando só o que dá para avaliar, 3,48.
 
 Indício de IA: Baixo (consultivo, não afeta nota). Evidência de propriedade praticamente incontestável, ao lado da pasta 05. Seis páginas de caderno fotografadas sob luz ruim, com os 3C's aplicados à mão e cada conta desenvolvida passo a passo. A anotação "apenas 1º ano" documenta decisão consciente. A observação sobre a duração das conexões traz informação de fora do case, o que texto gerado a partir do enunciado não produz porque não questiona o input. A ausência de recomendação é falta de tempo, não artefato.
 
-IDENTIFICAÇÃO: pasta anônima, nenhum arquivo traz nome. Precisa do mapa número para candidato para trazer V1 e V2.
+IDENTIFICAÇÃO: pasta anônima. Nenhum arquivo traz nome no texto, no nome do arquivo ou no metadado. Rastro de ferramenta que pode ajudar a estreitar: PDF das contas gerado pelo app Fotos do iOS 26.6.2. Sem o mapa número para candidato, V1 e V2 não podem ser transcritos e o bloco Vídeo fica valendo zero. Candidatos inscritos ainda não pareados a nenhuma pasta: João Pedro Mendes Stama, Rafael Ponciano Rodrigues dos Santos, Enzo Chofakian Gagliardi, João Gabriel de Oliveira Morcelli, Raphael Negrini Saggioro, Gustavo Daher Pereira, Ricardo Augusto Schmitt Filho, Matheus Dias Freitas, Klaus Augusto Santos da Silva, José Vitor Dias Tutu, Isadora Kluge Dorigan.
 
 ---
 
-## Pasta 04, não identificado
+## Caio Augusto Saab
 
-Pasta **04** · Nota bruta **2.97** · Nota ajustada **3.30** · Aprovaria: **Não**
+Pasta **04** · c258388@dac.unicamp.br · Nota bruta **2.97** · Nota ajustada **3.30** · Aprovaria: **Não**
 
 | Critério | O que mede | Peso | Nota (0 a 3) | Pontos |
 |---|---|---|---|---|
@@ -773,7 +791,7 @@ Nota 2,97 com vídeo em branco. Considerando só o que dá para avaliar, 3,30.
 
 Indício de IA: Baixo (consultivo, não afeta nota). O padrão de erros aponta para autoria própria sem assistência. A contradição entre página 1 e página 4 sobre a complexidade da Estação é inconsistência de quem escreveu em sessões diferentes sem reler. O registro oscila de primeira pessoa do plural para singular na última frase. Deixou de arredondar os bancos apesar da instrução escrita, e IA tende a seguir instrução explícita. A ausência total de tabela e estrutura é o oposto da over-estruturação típica de texto gerado.
 
-IDENTIFICAÇÃO: pasta anônima, nenhum arquivo traz nome. Precisa do mapa número para candidato para trazer V1 e V2.
+IDENTIFICAÇÃO: Caio Augusto Saab, c258388@dac.unicamp.br. Confiança media, confirmar. Como cheguei nisso: campo Author do metadado do PDF, gerado no Microsoft Word. O arquivo nao traz o nome no texto nem no nome do arquivo. As notas de vídeo dele estão nas linhas 25 e 47 desta aba e precisam ser transcritas para cá, porque valem 10 pontos e hoje entram como zero. Atenção: esta identificação vem só do metadado, não do conteúdo. Metadado pode vir de computador compartilhado ou de modelo reaproveitado, então confirmem com o registro de envio antes de usar numa decisão.
 
 ---
 
@@ -825,6 +843,6 @@ Nota 2,63 com vídeo em branco. Considerando só o que dá para avaliar, 2,93.
 
 Indício de IA: Baixo (consultivo, não afeta nota). Evidência praticamente incontestável. Oito páginas manuscritas digitalizadas, com o rascunho transcrevendo os anexos à mão. O ponto decisivo é a autocorreção visível na página da Arena: valor riscado e a anotação "arredondando para 23" acrescentada acima com seta. Erro cometido e corrigido no próprio papel não é fabricável. A ausência de recomendação é falha de execução, e texto gerado faz o contrário, entrega a conclusão e economiza no desenvolvimento.
 
-IDENTIFICAÇÃO: pasta anônima, nenhum arquivo traz nome. Precisa do mapa número para candidato para trazer V1 e V2.
+IDENTIFICAÇÃO: pasta anônima. Nenhum arquivo traz nome no texto, no nome do arquivo ou no metadado. Rastro de ferramenta que pode ajudar a estreitar: os dois PDFs foram gerados pelo CamScanner. Sem o mapa número para candidato, V1 e V2 não podem ser transcritos e o bloco Vídeo fica valendo zero. Candidatos inscritos ainda não pareados a nenhuma pasta: João Pedro Mendes Stama, Rafael Ponciano Rodrigues dos Santos, Enzo Chofakian Gagliardi, João Gabriel de Oliveira Morcelli, Raphael Negrini Saggioro, Gustavo Daher Pereira, Ricardo Augusto Schmitt Filho, Matheus Dias Freitas, Klaus Augusto Santos da Silva, José Vitor Dias Tutu, Isadora Kluge Dorigan.
 
 ---
