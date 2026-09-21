@@ -83,7 +83,7 @@ Falta prazo nos riscos. As mitigações são boas e contratuais, só que nenhuma
 
 Na entrevista eu pergunto: se o banco custasse R$ 50.000, o que muda? A resposta é que o rateio cai para R$ 1.250, fica abaixo do prêmio de R$ 1.400 da alta complexidade, e os armários passam a ganhar em Noite Alta. Quem montou aquela seção responde em um minuto.
 
-Nota final 9,10, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 9,19.
+Nota final 8,93, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 9,19.
 
 Indício de IA: Baixo (consultivo, não afeta nota). Vários sinais de autoria própria. A prova de dominância da seção 5.1 é um achado estrutural deste case, não leitura dos oito números. Ele nota que a vantagem dos parceiros em Noite Alta é de só R$ 350 por posição e transforma isso em ponto de monitoramento. A profundidade é desigual de propósito: o anexo faz a Estação por extenso e resume os outros três, o corte de quem tinha um fim de semana. O acabamento do anexo em LaTeX poderia levantar dúvida, mas acabamento não é evidência, e compor em LaTeX aponta para o contrário.
 
@@ -189,7 +189,7 @@ De forma, o custo veio dos títulos repetidos. Três slides seguidos com o mesmo
 
 Na entrevista eu faço as duas perguntas. Como os 58% de horas ociosas se transformariam em lucro, se a demanda já está dada? E quais são os 5 bairros de fronteira da Estação Central? A segunda ela responde de imediato se olhou o mapa, e olhou.
 
-Nota final 8,83, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 8,70.
+Nota final 8,67, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 8,70.
 
 Indício de IA: Baixo (consultivo, não afeta nota). A aba Rascunho é material cru, com a estrutura do case em abreviações e typos de digitação rápida. Ninguém gera uma aba de rascunho assim. O critério de potencial de fronteira exige abrir a imagem do mapa e contar adjacências, um ato físico de leitura de anexo. As contagens de banco estão fixadas bairro a bairro dentro das fórmulas. E o risco de baixa conversão pela pressa é observação idiossincrática sobre o público.
 
@@ -237,7 +237,7 @@ Três reparos, todos de execução e nenhum de raciocínio. O primeiro é o slid
 
 Na entrevista eu faço duas perguntas. No slide 4 o Centro Histórico aparece como complexidade Alta e suas contas usam Baixa, qual é o certo? E, puxando o achado dela, a partir de que custo de banco os armários passariam a ganhar na Estação? A resposta é R$ 24.000 e sai direto do R$ 1.750 que ela mesma derivou.
 
-Nota final 7,33, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 7,22.
+Nota final 7,25, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 7,22.
 
 Indício de IA: Baixo (consultivo, não afeta nota). A memória de cálculo manuscrita mostra o processo, não só o resultado, com as premissas anotadas, o Anexo E transcrito à mão e o arredondamento resolvido na frente do leitor, "900:40 = 22,5 ≈ 23". O erro de complexidade do slide 4 convivendo com contas que usam o valor correto é assinatura de erro humano de transcrição, porque saída gerada seria consistente nos dois lugares. A referência a um relatório escrito que não foi anexado, e um arquivo pessoal que entrou por engano na pasta, indicam upload apressado.
 
@@ -339,7 +339,7 @@ No acabamento, Noite Alta virou "Alta Noite" em todas as tabelas e dois slides s
 
 Na entrevista eu faço duas perguntas. Por que o breakeven trata o banco como investimento se o Anexo E diz que é custo anual? E por que, no rollout do slide 14, os bairros 2 a 4 usam armários se a sua tabela mostra parceiros ganhando nos quatro? Quem entendeu o próprio breakeven conecta as duas respostas na hora.
 
-Nota final 6,63, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 6,81.
+Nota final 6,55, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 6,81.
 
 Indício de IA: Baixo (consultivo, não afeta nota). As nove fotos de caderno são a evidência de propriedade mais forte do conjunto. Mostram o processo, não o resultado: estrutura do case transcrita à mão, derivação da fórmula por banco e a conta de Noite Alta passo a passo, batendo com o deck. A anotação "1º ano" em cima do termo de R$ 70.000 documenta decisão de modelagem deliberada. Os typos e o nome do bairro trocado em todas as tabelas são descuidos humanos.
 
@@ -441,7 +441,7 @@ Os reparos são de forma e de escopo. A recomendação chega no slide 9 de 13, q
 
 Na entrevista eu vou atrás do melhor insight dele. Você escreveu que o público de Noite Alta não carrega bagagem, então o que você faz com as 20 mil transações que o case projeta para lá? E, para checar propriedade do modelo, a partir de que custo de banco os armários passariam a ganhar na Estação Central? A resposta é R$ 24.000.
 
-Nota final 6,70, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 6,52.
+Nota final 6,62, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 6,52.
 
 Indício de IA: Baixo (consultivo, não afeta nota). O critério de fit com o serviço questiona os dados de demanda do próprio enunciado, e isso é justamente o que saída gerada não faz, porque tende a aceitar o input como verdade. As mitigações são invenções operacionais concretas, como staff da BagHub dentro do comércio no pico e a plataforma que sinaliza parceiro lotado. Do lado dos deslizes humanos, a numeração da expansão recomeçando no slide 10 e a fórmula do slide 6 omitindo o arredondamento que o anexo declara.
 
@@ -541,7 +541,7 @@ O único erro de cálculo é a Arena com 22,5 bancos em vez de 23, que por ser p
 
 Na entrevista eu faço duas perguntas diretas, as mesmas que revelam se ele enxerga o problema. Você disse que a métrica principal é a margem, então por que escolheu armários a 85,7% e não parceiros a 90,7% no mesmo bairro? E a Estação tem complexidade moderada na página 1 e alta na página 4, qual das duas?
 
-Nota final 3,53, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 3,19.
+Nota final 3,45, já com o bloco Vídeo. Só o case, sem o Vídeo, dá 3,19.
 
 Indício de IA: Baixo (consultivo, não afeta nota). O padrão de erros aponta para autoria própria sem assistência. A contradição entre página 1 e página 4 sobre a complexidade da Estação é inconsistência de quem escreveu em sessões diferentes sem reler. O registro oscila de primeira pessoa do plural para singular na última frase. Deixou de arredondar os bancos apesar da instrução escrita, e IA tende a seguir instrução explícita. A ausência total de tabela e estrutura é o oposto da over-estruturação típica de texto gerado.
 
