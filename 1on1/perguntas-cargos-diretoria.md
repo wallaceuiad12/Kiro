@@ -1,43 +1,8 @@
 # Perguntas de 1on1 para cargos de gestão
 
-Banco separado por cargo, para usar no lugar dos blocos 1 a 5 do banco de membro quando a
-conversa é com quem ocupa (ou quer ocupar) diretoria, vice-presidência ou presidência. O
-bloco 0 de cadastro continua valendo igual.
-
-Convenção igual à do banco de membro: **F** é pergunta fixa, para fazer sempre, e **R** é
-rotativa, para escolher duas ou três por conversa. As perguntas de 0 a 10 existem para abrir
-conversa, não para virar nota. O valor está sempre no "o que explica esse número".
-
-A lógica que separa os três cargos: no diretor a pergunta é se **a área entrega**; na
-vice-presidência é se **as áreas entregam sem ela**; na presidência é se **o clube sobrevive
-à saída de quem está lá hoje**.
-
-Serve para os dois usos, mudando só o tempo verbal: com quem já ocupa o cargo, pergunte no
-presente. Com quem quer assumir, pergunte no futuro ("como você faria", "o que você olharia").
-
-> **Nota sobre o guia em PDF.** O `Guia 1on1 - cargos de gestao.pdf` traz uma versão enxuta,
-> com **cinco perguntas por função** e **só as perguntas**, sem os comentários de observação,
-> para levar impressa na conversa. Este arquivo continua sendo o banco completo, e é aqui que
-> ficam os comentários do que olhar em cada resposta. As que foram para o guia estão marcadas
-> com ✓ abaixo.
->
-> | Função | No guia |
-> |---|---|
-> | Diretoria de área | D1, D3, D4, D5, D9 |
-> | Vice-presidência | V1, V2, V3, V4, V10 |
-> | Presidência | P1, P2, P3, P7, P10 |
-> | Valem para os três | G1, G2, G3, G4 e a antiga D6 |
->
-> O bloco geral tinha só quatro perguntas, então levei a D6 para lá, porque a pergunta de
-> autocrítica com exemplo datado serve aos três cargos igual.
-
-> **Sobre a pergunta de retenção.** A de 0 a 10 sobre a chance de continuar no próximo
-> semestre (D10 e V11) saiu do guia nas duas funções. No lugar dela entrou, em cada uma, a
-> pergunta que olha o mesmo risco de fora para dentro: na diretoria, quem do time vai sair;
-> na vice, como se percebe um diretor indo mal antes do resultado aparecer. As duas continuam
-> no banco completo, caso a diretoria queira voltar a medir retenção declarada.
-
----
+Banco de perguntas para conversas com quem ocupa ou quer ocupar diretoria, vice-presidência e
+presidência, separado por cargo, mais um bloco que vale para os três. **F** é pergunta fixa e
+**R** é rotativa. O ✓ marca as que estão no guia impresso.
 
 ## Diretoria de área
 
