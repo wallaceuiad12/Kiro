@@ -1,151 +1,674 @@
-from reportlab.lib import colors
-from reportlab.lib.enums import TA_CENTER, TA_LEFT
-from reportlab.lib.pagesizes import A4
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib.units import cm
-from reportlab.platypus import (
-    BaseDocTemplate, PageTemplate, Frame, Paragraph, Spacer, PageBreak,
-    Image, Table, TableStyle, KeepTogether, HRFlowable
-)
-from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.pdfbase import pdfmetrics
-from reportlab.lib.utils import ImageReader
+"""
+Gera 'resumo-micro2-prova1.pdf' — resumo da Prova 1 de Microeconomia II (CE-362D / Unicamp).
+Fontes: Revisao_EGeMONO.pdf, lista1.pdf, excedente.pdf e o programa da disciplina.
+Toda a matemática de exibição é LaTeX renderizado (ver estilo_pdf.formula).
+Uso: python3 gerar_resumo_pdf.py
+"""
 import os
 
-# Noto Sans cobre acentos, subscritos/sobrescritos e símbolos matemáticos usados no material.
-pdfmetrics.registerFont(TTFont('NotoSans', '/usr/share/fonts/google-noto/NotoSans-Regular.ttf'))
-pdfmetrics.registerFont(TTFont('NotoSans-Bold', '/usr/share/fonts/google-noto/NotoSans-Bold.ttf'))
-pdfmetrics.registerFont(TTFont('NotoSans-Italic', '/usr/share/fonts/google-noto/NotoSans-Italic.ttf'))
-pdfmetrics.registerFont(TTFont('NotoSans-BoldItalic', '/usr/share/fonts/google-noto/NotoSans-BoldItalic.ttf'))
+from reportlab.lib import colors
+from reportlab.lib.units import cm
+from reportlab.platypus import PageBreak, Spacer
+
+from estilo_pdf import (
+    BLUE, BORDER, GOLD, GREEN, LIGHT_BLUE, LIGHT_GREEN, LIGHT_RED, RED,
+    P, bullets, build_pdf, caption, cover, formula, img, note, table,
+)
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-GRAPH = os.path.join(ROOT, "graficos")
-OUT = os.path.join(ROOT, "resumo-micro2-prova1.pdf")
-
-# Built-in Helvetica is sufficient for Portuguese accents in ReportLab's WinAnsi encoding.
-PAGE_W, PAGE_H = A4
-LEFT = RIGHT = 1.65 * cm
-TOP = 1.65 * cm
-BOTTOM = 1.55 * cm
-
-NAVY = colors.HexColor('#17365D')
-BLUE = colors.HexColor('#1F4E79')
-RED = colors.HexColor('#A61C00')
-GREEN = colors.HexColor('#2E7D32')
-GOLD = colors.HexColor('#FFF2CC')
-LIGHT_BLUE = colors.HexColor('#EAF2F8')
-LIGHT_GREEN = colors.HexColor('#EAF4EA')
-LIGHT_RED = colors.HexColor('#FCE4D6')
-GRAY = colors.HexColor('#555555')
-DARK = colors.HexColor('#202124')
-
-styles = getSampleStyleSheet()
-styles.add(ParagraphStyle(name='CoverTitle', parent=styles['Title'], fontName='NotoSans-Bold', fontSize=25, leading=31, alignment=TA_CENTER, textColor=NAVY, spaceAfter=15))
-styles.add(ParagraphStyle(name='CoverSub', parent=styles['Normal'], fontName='NotoSans', fontSize=13, leading=18, alignment=TA_CENTER, textColor=GRAY, spaceAfter=8))
-styles.add(ParagraphStyle(name='H1x', parent=styles['Heading1'], fontName='NotoSans-Bold', fontSize=17, leading=21, textColor=NAVY, spaceBefore=7, spaceAfter=8, keepWithNext=True))
-styles.add(ParagraphStyle(name='H2x', parent=styles['Heading2'], fontName='NotoSans-Bold', fontSize=13, leading=16, textColor=BLUE, spaceBefore=8, spaceAfter=5, keepWithNext=True))
-styles.add(ParagraphStyle(name='H3x', parent=styles['Heading3'], fontName='NotoSans-Bold', fontSize=11.5, leading=14, textColor=RED, spaceBefore=6, spaceAfter=3, keepWithNext=True))
-styles.add(ParagraphStyle(name='Bodyx', parent=styles['BodyText'], fontName='NotoSans', fontSize=9.4, leading=13.2, textColor=DARK, spaceAfter=5))
-styles.add(ParagraphStyle(name='Smallx', parent=styles['BodyText'], fontName='NotoSans', fontSize=8.1, leading=10.5, textColor=GRAY, spaceAfter=3))
-styles.add(ParagraphStyle(name='Formula', parent=styles['BodyText'], fontName='Helvetica', fontSize=9.0, leading=12.2, leftIndent=11, rightIndent=8, borderColor=colors.HexColor('#B7C9D6'), borderWidth=.5, borderPadding=6, backColor=colors.HexColor('#F5F8FA'), spaceBefore=4, spaceAfter=6))
-styles.add(ParagraphStyle(name='BoxTitle', parent=styles['BodyText'], fontName='NotoSans-Bold', fontSize=10.2, leading=13, textColor=NAVY, spaceAfter=3))
-styles.add(ParagraphStyle(name='Answer', parent=styles['BodyText'], fontName='NotoSans', fontSize=9.1, leading=12.8, leftIndent=8, rightIndent=5, spaceAfter=4))
-styles.add(ParagraphStyle(name='TOC', parent=styles['BodyText'], fontName='NotoSans', fontSize=10, leading=15, leftIndent=8, textColor=DARK, spaceAfter=1))
+GRAPH = os.path.join(ROOT, 'graficos')
+OUT = os.path.join(ROOT, 'resumo-micro2-prova1.pdf')
 
 
-def clean_text(text):
-    # Keep formulas legible even in PDF viewers whose default fonts lack Unicode math glyphs.
-    repl = {
-        '₀':'0','₁':'1','₂':'2','₃':'3','₄':'4','₅':'5','₆':'6','₇':'7','₈':'8','₉':'9',
-        'ₘ':'m','ₙ':'n','ₖ':'k','ₐ':'a','ₑ':'e','ᵢ':'i','ᵏ':'k','ᴬ':'A','ᴮ':'B','ᵃ':'a','ᵇ':'b',
-        '¹':'^1','²':'^2','³':'^3','⁴':'^4','⁵':'^5','⁶':'^6','⁷':'^7','⁸':'^8','⁹':'^9',
-        '−':'-','⇒':'=>','Σ':'SUM','∑':'SUM','½':'1/2','·':'*','×':'*','≈':'~','≤':'<=','≥':'>=',
-        '□':'[ ]','ᵅ':'alpha','ᵝ':'beta'
-    }
-    for a,b in repl.items(): text=text.replace(a,b)
-    return text
+def figure(name, text, width=16.6 * cm):
+    return [img(GRAPH, name, width), caption(text)]
 
-def P(text, style='Bodyx'):
-    return Paragraph(clean_text(text), styles[style])
 
-def F(text):
-    return P(text, 'Formula')
+def secao_escopo():
+    S = [P('1. Escopo provável da P1 e mapa do material', 'H1x')]
+    S += [P('O programa de Microeconomia II enumera quatro blocos: Equilíbrio Geral; Estruturas de '
+            'Mercado e Estratégia Competitiva; Teoria dos Jogos; e Incerteza. Entretanto, a aula de '
+            'revisão fornecida é explicitamente “Equilíbrio Geral e Monopólio”, e a Lista 1 cobra '
+            'equilíbrio geral, monopólio, custos multiplanta e discriminação de preços. Este resumo '
+            'prioriza esse recorte, sem afirmar que os demais blocos estejam fora da disciplina inteira.')]
+    S.append(table([
+        [P('Fonte', 'Smallx'), P('Conteúdo identificado', 'Smallx'), P('Uso neste resumo', 'Smallx')],
+        [P('<b>Revisao_EGeMONO.pdf</b>', 'Smallx'),
+         P('Leiloeiro walrasiano; equilíbrio parcial e geral; Pareto; caixa de Edgeworth; álgebra do '
+           'equilíbrio; Lei de Walras; monopólio; elasticidade; markup; bem-estar; discriminação de '
+           '1º a 3º graus.', 'Smallx'),
+         P('Fonte principal da teoria e dos exemplos numéricos.', 'Smallx')],
+        [P('<b>lista1.pdf</b>', 'Smallx'),
+         P('Troca pura, demandas Cobb–Douglas e Leontief, curva de contrato, monopólio, duas fábricas '
+           'e discriminação de preços.', 'Smallx'),
+         P('Modelo de exercícios e notação da prova.', 'Smallx')],
+        [P('<b>excedente.pdf</b>', 'Smallx'),
+         P('Comparação concorrência × monopólio com P = 100 − 2Q e CMg = 10 + 3Q; EC, EP, ET e PPM.', 'Smallx'),
+         P('Cálculos de bem-estar e gráfico de áreas.', 'Smallx')],
+        [P('<b>Programa da disciplina</b>', 'Smallx'),
+         P('Objetivos, ementa, organização do conteúdo e datas das provas.', 'Smallx'),
+         P('Contextualização; não especifica isoladamente o conteúdo da P1.', 'Smallx')],
+    ], [3.2 * cm, 8.6 * cm, 4.9 * cm]))
+    S += [Spacer(1, .25 * cm),
+          note('Atenção sobre o recorte',
+               'O programa geral menciona concorrência perfeita, concorrência monopolística, oligopólios '
+               'e teoria dos jogos. Eles aparecem na ementa anual, mas não são desenvolvidos no material '
+               'de revisão anexado, e por isso não são tratados aqui como conteúdo confirmado da P1.',
+               LIGHT_BLUE, BLUE)]
+    return S
 
-def bullets(items, style='Bodyx'):
-    out=[]
-    for item in items:
-        out.append(P('• ' + item, style))
-    return out
 
-def note(title, text, bg=GOLD, border=colors.HexColor('#D6B656')):
-    t=Table([[P(title,'BoxTitle')],[P(text,'Bodyx')]], colWidths=[PAGE_W-LEFT-RIGHT])
-    t.setStyle(TableStyle([
-        ('BACKGROUND',(0,0),(-1,-1),bg), ('BOX',(0,0),(-1,-1),.8,border),
-        ('LEFTPADDING',(0,0),(-1,-1),9), ('RIGHTPADDING',(0,0),(-1,-1),9),
-        ('TOPPADDING',(0,0),(-1,0),6), ('BOTTOMPADDING',(0,0),(-1,0),1),
-        ('TOPPADDING',(0,1),(-1,1),1), ('BOTTOMPADDING',(0,1),(-1,1),6),
+def secao_equilibrio_geral():
+    S = [PageBreak(), P('2. Equilíbrio geral em uma economia de trocas', 'H1x')]
+    S += [P('Equilíbrio parcial estuda um mercado isoladamente, mantendo os demais constantes. '
+            'Equilíbrio geral reconhece que preços e quantidades de todos os mercados são determinados '
+            'simultaneamente: uma mudança em um mercado altera a renda, a demanda e os preços relativos '
+            'nos outros.')]
+
+    S += [P('2.1 Estrutura do modelo de trocas', 'H2x')]
+    S += bullets([
+        'Dois ou mais consumidores, dois ou mais bens e dotações iniciais.',
+        'Cada consumidor escolhe a cesta que maximiza sua utilidade dentro da restrição orçamentária.',
+        'A oferta total de cada bem é a soma das dotações iniciais: não há produção.',
+        'Um equilíbrio walrasiano é um vetor de preços e uma alocação em que todos otimizam e todos os '
+        'mercados se equilibram.',
+    ])
+
+    S += [P('2.2 O leiloeiro walrasiano e o tâtonnement', 'H2x')]
+    S += [P('O leiloeiro anuncia um vetor de preços; os agentes informam demandas e ofertas; o leiloeiro '
+            'calcula a demanda excedente agregada de cada bem e ajusta os preços. As transações só '
+            'ocorrem no equilíbrio.')]
+    S.extend(formula([
+        r'z_i(p) \;=\; \sum \mathrm{Demanda}_i(p) \;-\; \sum \mathrm{Oferta}_i(p)',
+        r'z_i(p) > 0 \;\text{(excesso de demanda)} \;\Longrightarrow\; \text{o leiloeiro aumenta } p_i',
+        r'z_i(p) < 0 \;\text{(excesso de oferta)} \;\Longrightarrow\; \text{o leiloeiro reduz } p_i',
+        r'\text{o processo para quando } z_i(p^*) = 0 \;\text{ para todo bem } i',
     ]))
-    return t
 
-def table(data, widths, header=True, font=8.2):
-    t=Table(data, colWidths=widths, repeatRows=1 if header else 0, hAlign='LEFT')
-    cmds=[('GRID',(0,0),(-1,-1),.35,colors.HexColor('#AAB7C4')),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),5),('RIGHTPADDING',(0,0),(-1,-1),5),('TOPPADDING',(0,0),(-1,-1),5),('BOTTOMPADDING',(0,0),(-1,-1),5)]
-    if header:
-        cmds += [('BACKGROUND',(0,0),(-1,0),NAVY),('TEXTCOLOR',(0,0),(-1,0),colors.white),('FONTNAME',(0,0),(-1,0),'Helvetica-Bold')]
-        for i in range(1,len(data)):
-            if i%2==0: cmds.append(('BACKGROUND',(0,i),(-1,i),colors.HexColor('#F3F6F8')))
-    t.setStyle(TableStyle(cmds))
-    return t
-
-def img(name, width=16.8*cm):
-    path=os.path.join(GRAPH,name)
-    if not os.path.exists(path):
-        return note('Figura ausente', 'O arquivo de imagem não foi encontrado: '+name, LIGHT_RED, RED)
-    iw, ih = ImageReader(path).getSize()
-    height=width*ih/iw
-    im=Image(path, width=width, height=height)
-    im.hAlign='CENTER'
-    return im
-
-def caption(text):
-    return P('<b>Figura.</b> '+text, 'Smallx')
-
-class NumberedCanvas:
-    pass
-
-def header_footer(canvas, doc):
-    canvas.saveState()
-    if doc.page > 1:
-        canvas.setStrokeColor(colors.HexColor('#D2D9DF'))
-        canvas.setLineWidth(.5)
-        canvas.line(LEFT, PAGE_H-1.05*cm, PAGE_W-RIGHT, PAGE_H-1.05*cm)
-        canvas.setFont('Helvetica-Bold', 8)
-        canvas.setFillColor(NAVY)
-        canvas.drawString(LEFT, PAGE_H-.78*cm, 'MICROECONOMIA II — RESUMO DA PROVA 1')
-        canvas.setFont('Helvetica', 8)
-        canvas.setFillColor(GRAY)
-        canvas.drawRightString(PAGE_W-RIGHT, PAGE_H-.78*cm, 'CE-362D | Unicamp | 2º semestre de 2026')
-    canvas.setStrokeColor(colors.HexColor('#D2D9DF'))
-    canvas.setLineWidth(.5)
-    canvas.line(LEFT, .95*cm, PAGE_W-RIGHT, .95*cm)
-    canvas.setFont('Helvetica', 8)
-    canvas.setFillColor(GRAY)
-    canvas.drawString(LEFT, .63*cm, 'Material de estudo — conferir sempre a notação usada em aula')
-    canvas.drawRightString(PAGE_W-RIGHT, .63*cm, f'{doc.page}')
-    canvas.restoreState()
+    S += [P('2.3 Factibilidade, renda e demanda líquida', 'H2x')]
+    S += [P('Este é o ponto que mais gera erro na prova: na economia de trocas a renda <b>não</b> é um '
+            'número dado, e sim o valor da dotação aos preços vigentes.')]
+    S.extend(formula([
+        r'\text{Renda:}\quad m_i \;=\; p_1 w_i^1 + p_2 w_i^2',
+        r'\text{Factibilidade:}\quad \sum_i x_i^1 = \sum_i w_i^1 '
+        r'\quad\text{e}\quad \sum_i x_i^2 = \sum_i w_i^2',
+        r'\text{Demanda líquida:}\quad e_i^k \;=\; x_i^k - w_i^k',
+        r'\text{Demanda excedente agregada:}\quad z^k(p) \;=\; \sum_i e_i^k(p) '
+        r'\;=\; \sum_i x_i^k(p) - \sum_i w_i^k',
+    ]))
+    S += [P('Interpretação dos sinais: se e<sub>i</sub><super>k</super> &gt; 0 o agente é demandante '
+            'líquido do bem k; se for negativo, ele oferece parte da própria dotação. No equilíbrio, a '
+            'soma das demandas líquidas é zero em cada mercado.')]
+    S += figure('06-lei-de-walras.png',
+                'Demanda excedente e ajuste de preços no exemplo numérico dos slides. O preço absoluto é '
+                'normalizado; o que importa é o preço relativo.')
+    return S
 
 
-def build_story():
-    S=[]
-    # Cover
-    S += [Spacer(1,2.2*cm), P('MICROECONOMIA II','CoverTitle'), P('Resumo completo para a Prova 1','CoverSub'), Spacer(1,.25*cm), P('Equilíbrio Geral • Caixa de Edgeworth • Lei de Walras • Monopólio • Bem-estar • Discriminação de preços','CoverSub'), Spacer(1,1.0*cm)]
-    S.append(HRFlowable(width='75%', thickness=2, color=BLUE, hAlign='CENTER'))
-    S += [Spacer(1,.7*cm), P('<b>Disciplina:</b> CE-362D — Microeconomia II', 'CoverSub'), P('<b>Universidade:</b> Instituto de Economia — Unicamp', 'CoverSub'), P('<b>Prova 1:</b> 23 de setembro de 2026 (data indicada no programa)', 'CoverSub'), Spacer(1,1.1*cm)]
-    S.append(note('Como usar este resumo', 'Leia a intuição antes da álgebra; depois refaça os exercícios sem consultar o gabarito. Os gráficos foram reconstruídos a partir dos números dos slides de revisão, da Lista 1 e do material de excedente. Quando a fonte não fornece uma informação necessária, isso é indicado explicitamente.', LIGHT_BLUE, BLUE))
-    S += [Spacer(1,.8*cm), P('<b>Base documental utilizada:</b> Revisao_EGeMONO.pdf; lista1.pdf; excedente.pdf; _Programa_Micro II_2S_2025.pdf. O programa geral também contém Teoria dos Jogos e Incerteza, mas o material específico de revisão e a Lista 1 delimitam a P1 em Equilíbrio Geral e Monopólio.', 'Smallx'), PageBreak()]
+def secao_edgeworth():
+    S = [PageBreak(), P('3. Caixa de Edgeworth, eficiência e curva de contrato', 'H1x')]
+    S += [P('A caixa de Edgeworth representa todas as alocações factíveis entre dois agentes e dois bens. '
+            'A origem do agente A fica no canto inferior esquerdo e a origem do agente B no canto superior '
+            'direito. Um ponto dentro da caixa informa a cesta de A e, por complementaridade, a de B.')]
 
-    S += [P('Sumário','H1x')]
-    toc=[
+    S += [P('3.1 Trocas mutuamente benéficas', 'H2x')]
+    S += [P('A Taxa Marginal de Substituição mede quanto de um bem o consumidor aceita abrir mão para '
+            'obter uma unidade adicional do outro, mantendo a utilidade constante. Em solução interior:')]
+    S.extend(formula([
+        r'TMS_i \;=\; \frac{UMg_1^i}{UMg_2^i} \;=\; \frac{p_1}{p_2}',
+    ]))
+    S += bullets([
+        'Se as TMS dos dois agentes são <b>diferentes</b>, existe troca que melhora ambos.',
+        'A troca se esgota quando as TMS se igualam — ou em soluções de canto ou de vértice.',
+        'A dotação inicial é apenas o ponto de partida e não precisa ser eficiente.',
+    ])
+
+    S += [P('3.2 Curva de contrato e eficiência de Pareto', 'H2x')]
+    S += [P('A curva de contrato reúne as alocações Pareto-eficientes: aquelas em que não é possível '
+            'melhorar um agente sem piorar o outro. Para soluções interiores:')]
+    S.extend(formula([r'TMS_A \;=\; TMS_B']))
+    S += [P('Em uma economia com produção, a eficiência também exige que as TMS dos consumidores se '
+            'igualem à taxa marginal de transformação, e que as taxas marginais de substituição técnica '
+            'coincidam entre firmas. Isso não é necessário nos exercícios de troca pura da Lista 1.')]
+
+    S += [P('3.3 Exemplo completo com Cobb–Douglas', 'H2x')]
+    S += [P('Dados da Questão 1 da Lista 1: U<sub>i</sub> = x<sub>1</sub>x<sub>2</sub> para os dois '
+            'agentes, w<sub>A</sub> = (4, 2) e w<sub>B</sub> = (1, 3), com dotação total de 5 unidades de '
+            'cada bem.')]
+    S.extend(formula([
+        r'TMS_A(4,2) = \frac{2}{4} = \frac{1}{2} \qquad TMS_B(1,3) = \frac{3}{1} = 3'
+        r'\quad\Longrightarrow\quad \text{há ganhos de troca}',
+        r'x_1^{i\,*} = \frac{m_i}{2p_1} \qquad x_2^{i\,*} = \frac{m_i}{2p_2}',
+        r'\frac{4p_1 + 2p_2}{2p_1} + \frac{p_1 + 3p_2}{2p_1} = 5 '
+        r'\;\Longrightarrow\; \frac{5p_1 + 5p_2}{2p_1} = 5 \;\Longrightarrow\; p_1 = p_2',
+        r'\text{com } p_1 = p_2 = 1:\quad x^A = (3,3) \qquad x^B = (2,2)',
+    ]))
+    S += figure('01-caixa-edgeworth.png',
+                'Caixa 5 × 5. W é a dotação de A; E é o equilíbrio. A reta orçamentária tem inclinação '
+                '−1 porque os preços são iguais. A lente amarela reúne as trocas que melhoram os dois e o '
+                'núcleo é o trecho da curva de contrato dentro dela.')
+    S += [note('Leitura econômica do gráfico',
+               'A dotação W está dentro da lente de ganhos mútuos, então ambos podem melhorar trocando. '
+               'O ponto E está sobre a curva de contrato (a diagonal x<sub>2</sub><super>A</super> = '
+               'x<sub>1</sub><super>A</super>) e também dentro do núcleo compatível com a dotação inicial. '
+               'A reta orçamentária reúne as cestas de mesmo valor aos preços de equilíbrio.',
+               LIGHT_GREEN, GREEN)]
+    return S
+
+
+def secao_algebra_walras():
+    S = [PageBreak(), P('4. Álgebra do equilíbrio e Lei de Walras', 'H1x')]
+    S += [P('O procedimento algébrico é quase sempre o mesmo. Vale decorar o roteiro e treinar até ficar '
+            'mecânico, porque isso libera tempo na prova para a interpretação.')]
+
+    S += [P('4.1 Roteiro em cinco passos', 'H2x')]
+    S.append(table([
+        [P('Passo', 'Smallx'), P('O que fazer', 'Smallx')],
+        [P('1', 'Smallx'), P('Escrever a renda de cada agente como valor da dotação: '
+                             'm<sub>i</sub> = p₁w<sub>i</sub><super>1</super> + '
+                             'p₂w<sub>i</sub><super>2</super>.', 'Smallx')],
+        [P('2', 'Smallx'), P('Resolver a escolha ótima com TMS<sub>i</sub> = p₁/p₂ e substituir na '
+                             'restrição orçamentária.', 'Smallx')],
+        [P('3', 'Smallx'), P('Obter as demandas marshallianas e somá-las entre os agentes.', 'Smallx')],
+        [P('4', 'Smallx'), P('Normalizar um preço (numerário) e impor o equilíbrio em um mercado.', 'Smallx')],
+        [P('5', 'Smallx'), P('Conferir o outro mercado pela factibilidade e pela Lei de Walras.', 'Smallx')],
+    ], [1.4 * cm, 15.3 * cm]))
+
+    S += [P('4.2 Regra de bolso para Cobb–Douglas', 'H2x')]
+    S.extend(formula([
+        r'U(x_1,x_2) = x_1^{\alpha}\, x_2^{\beta} \;\Longrightarrow\; '
+        r'x_1^* = \frac{\alpha}{\alpha+\beta}\cdot\frac{m}{p_1}'
+        r'\qquad x_2^* = \frac{\beta}{\alpha+\beta}\cdot\frac{m}{p_2}',
+    ]))
+    S += [P('Cada agente gasta a fração α/(α+β) da renda no bem 1 e o restante no bem 2, '
+            'independentemente dos preços. Essa regra resolve a maior parte dos itens da Lista 1.')]
+
+    S += [P('4.3 Exemplo numérico dos slides', 'H2x')]
+    S += [P('Dados: U<sub>A</sub> = x₁<super>A</super>(x₂<super>A</super>)², '
+            'w<sub>A</sub> = (10, 10); U<sub>B</sub> = (x₁<super>B</super>)²x₂<super>B</super>, '
+            'w<sub>B</sub> = (20, 20). Normalize p₁ = 1 e encontre p₂.')]
+    S.extend(formula([
+        r'TMS_A = \frac{x_2^A}{2x_1^A} = \frac{p_1}{p_2} = \frac{1}{p_2}'
+        r'\;\Longrightarrow\; x_2^A = \frac{2x_1^A}{p_2}',
+        r'm_A = 10 + 10p_2 \;\Longrightarrow\; x_1^A = \frac{10(1+p_2)}{3}'
+        r'\qquad x_2^A = \frac{20(1+p_2)}{3p_2}',
+        r'x_1^B = \frac{40(1+p_2)}{3} \qquad x_2^B = \frac{20(1+p_2)}{3p_2}',
+        r'\frac{10(1+p_2)}{3} + \frac{40(1+p_2)}{3} = 30 \;\Longrightarrow\; '
+        r'50(1+p_2) = 90 \;\Longrightarrow\; p_2 = 0{,}8',
+    ]))
+    S += [P('Com p₂ = 0,8: A consome (6, 15) e B consome (24, 15). A é ofertante líquido do bem 1 e '
+            'demandante líquido do bem 2; B faz o oposto. A soma das demandas é (30, 30), igual à soma '
+            'das dotações.')]
+    S.extend(formula([
+        r'e^A = (6-10,\; 15-10) = (-4,\; +5) \qquad e^B = (24-20,\; 15-20) = (+4,\; -5)',
+        r'1\cdot(-4) + 0{,}8\cdot(+5) + 1\cdot(+4) + 0{,}8\cdot(-5) = 0',
+    ]))
+
+    S += [P('4.4 Lei de Walras', 'H2x')]
+    S.extend(formula([
+        r'\sum_k p_k\, z_k(p) \;=\; 0 \qquad \forall\, p',
+    ]))
+    S += [P('O valor da demanda excedente agregada é zero para <b>qualquer</b> vetor de preços, não só no '
+            'equilíbrio. A consequência prática: se n − 1 mercados estão equilibrados, o n-ésimo também '
+            'está, então em dois bens basta equilibrar um mercado. Além disso, apenas preços relativos são '
+            'determinados — multiplicar todos os preços pela mesma constante não muda nada, e é por isso '
+            'que se escolhe um numerário.')]
+    S += [note('Não confunda',
+               'A Lei de Walras <b>não</b> diz que todo mercado está em equilíbrio a qualquer preço. '
+               'Ela diz que o <i>valor</i> do excesso de demanda agregado é sempre zero. Fora do '
+               'equilíbrio, um mercado com excesso de demanda é necessariamente compensado por outro com '
+               'excesso de oferta.', LIGHT_RED, RED)]
+    return S
+
+
+def secao_monopolio():
+    S = [PageBreak(), P('5. Monopólio: decisão, receita marginal e elasticidade', 'H1x')]
+    S += [P('O monopolista é <i>price maker</i>: enfrenta a demanda de mercado e escolhe a quantidade que '
+            'maximiza o lucro. Ele não escolhe preço e quantidade de forma independente, porque a demanda '
+            'amarra os dois.')]
+    S.extend(formula([r'\max_{Q}\;\; \pi(Q) \;=\; R(Q) - C(Q)']))
+
+    S += [P('5.1 Receita marginal e o efeito-preço', 'H2x')]
+    S += [P('Aumentar a quantidade tem dois efeitos: vende-se mais unidades, mas o preço cai para '
+            '<b>todas</b> as unidades. O segundo efeito é o que separa o monopólio da concorrência.')]
+    S.extend(formula([
+        r'R(Q) = P(Q)\cdot Q',
+        r"RMg(Q) = \frac{dR}{dQ} = P(Q) + P'(Q)\cdot Q",
+        r"\text{efeito quantidade: } P(Q) > 0 \qquad \text{efeito preço: } P'(Q)\cdot Q < 0",
+        r"\text{concorrência perfeita: } P'(Q) = 0 \;\Longrightarrow\; RMg = P",
+    ]))
+    S += [P('Para demanda linear, a receita marginal tem o mesmo intercepto vertical e o dobro da '
+            'inclinação:')]
+    S.extend(formula([
+        r'P(y) = a - by \;\Longrightarrow\; R(y) = ay - by^2 \;\Longrightarrow\; RMg(y) = a - 2by',
+        r'\text{intercepto horizontal: } \frac{a}{2b} \;\text{ contra }\; \frac{a}{b} \text{ da demanda}',
+    ]))
+    S += figure('02-demanda-rmg.png',
+                'A receita marginal corta o eixo horizontal na metade do intercepto da demanda, exatamente '
+                'onde a elasticidade tem módulo 1.')
+
+    S += [P('5.2 Condição de ótimo', 'H2x')]
+    S.extend(formula([
+        r'RMg(Q_m) \;=\; CMg(Q_m)',
+        r'P_m \;=\; P(Q_m) \quad \text{(lido na DEMANDA, nunca na } RMg)',
+        r'\pi_m \;=\; \left[P_m - CMe(Q_m)\right]\cdot Q_m',
+    ]))
+    S += [P('A curva de oferta competitiva vem do custo marginal acima do mínimo do custo médio. '
+            'O monopolista <b>não</b> tem curva de oferta independente: a quantidade ótima depende '
+            'conjuntamente da demanda e do custo.')]
+    S += figure('03-monopolio-equilibrio.png',
+                'Exemplo dos slides com P = 100 − y e C(y) = y²/2 + 10. O monopólio produz y = 100/3 e '
+                'cobra p = 200/3; a referência competitiva seria y = 50 e p = 50.')
+
+    S += [P('5.3 Elasticidade, markup e poder de mercado', 'H2x')]
+    S.extend(formula([
+        r'RMg = p(y)\left(1 + \frac{1}{\epsilon(y)}\right) '
+        r'= p(y)\left(1 - \frac{1}{|\epsilon(y)|}\right), \qquad \epsilon(y) < 0',
+        r'p(y)\left(1 - \frac{1}{|\epsilon(y)|}\right) = CMg(y)',
+        r'\frac{P}{CMg} \;=\; \frac{1}{1 - \dfrac{1}{|\epsilon|}} \;=\; M \;>\; 1',
+    ]))
+    S += bullets([
+        'Quanto <b>menos</b> elástica a demanda, maior o markup.',
+        'O poder de mercado é medido pelo inverso da elasticidade, 1/|ε|.',
+        'Na concorrência perfeita |ε| tende ao infinito e o markup vai a 1, isto é, P = CMg.',
+    ])
+    S += [note('Por que o monopolista nunca opera na região inelástica',
+               'Se |ε| &lt; 1, então 1 − 1/|ε| &lt; 0 e portanto RMg &lt; 0. Reduzir a quantidade '
+               'aumentaria a receita total <b>e</b> reduziria o custo total ao mesmo tempo. Nenhum ponto '
+               'nessa região pode ser ótimo, qualquer que seja o custo marginal.', GOLD)]
+    S += [P('5.4 Exemplo numérico dos slides', 'H2x')]
+    S.extend(formula([
+        r'P(y) = 100 - y, \qquad C(y) = \frac{y^2}{2} + 10',
+        r'RMg = 100 - 2y, \qquad CMg = y',
+        r'100 - 2y = y \;\Longrightarrow\; y_m = \frac{100}{3} \approx 33{,}33 '
+        r'\qquad p_m = \frac{200}{3} \approx 66{,}67',
+        r'\text{concorrência: } P = CMg \;\Longrightarrow\; y_c = 50, \quad p_c = 50',
+    ]))
+    return S
+
+
+def secao_bem_estar():
+    S = [PageBreak(), P('6. Bem-estar: concorrência versus monopólio', 'H1x')]
+    S += [P('O material de excedente usa P = 100 − 2Q e CMg = 10 + 3Q. Na concorrência, a disposição a '
+            'pagar da última unidade se iguala ao custo marginal. No monopólio a firma restringe a '
+            'quantidade, porque considera o efeito da queda de preço sobre todas as unidades.')]
+
+    S += [P('6.1 Os dois equilíbrios', 'H2x')]
+    S.extend(formula([
+        r'\text{Concorrência:}\quad 100 - 2Q = 10 + 3Q \;\Longrightarrow\; Q_c = 18,\;\; P_c = 64',
+        r'\text{Monopólio:}\quad RMg = 100 - 4Q',
+        r'100 - 4Q = 10 + 3Q \;\Longrightarrow\; Q_m = \frac{90}{7} \approx 12{,}86 '
+        r'\qquad P_m = \frac{520}{7} \approx 74{,}29',
+    ]))
+
+    S += [P('6.2 Excedentes', 'H2x')]
+    S.extend(formula([
+        r'EC = \frac{1}{2}\cdot Q\cdot\left(P_{max} - P\right)',
+        r'EC_c = \frac{1}{2}(18)(100-64) = 324 \qquad EP_c = \frac{1}{2}(18)(64-10) = 486',
+        r'CMg(Q_m) = 10 + 3\cdot\frac{90}{7} = \frac{340}{7} \approx 48{,}57',
+        r'\text{retângulo: } Q_m\left(P_m - CMg(Q_m)\right) = \frac{90}{7}\cdot\frac{180}{7} '
+        r'\approx 330{,}61',
+        r'\text{triângulo: } \frac{1}{2}Q_m\left(CMg(Q_m) - CMg(0)\right) \approx 248{,}98',
+        r'EP_m \approx 330{,}61 + 248{,}98 = 578{,}57',
+    ]))
+    S += [P('Atenção: com custo marginal <b>crescente</b>, o excedente do produtor no monopólio não é um '
+            'triângulo simples. Ele é a área entre a linha de preço e a curva de custo marginal, o que dá '
+            'um retângulo mais um triângulo.')]
+    S.append(table([
+        [P('Indicador', 'Smallx'), P('Concorrência', 'Smallx'), P('Monopólio', 'Smallx'),
+         P('Efeito', 'Smallx')],
+        [P('Quantidade', 'Smallx'), P('18', 'Smallx'), P('12,86', 'Smallx'), P('reduz', 'Smallx')],
+        [P('Preço', 'Smallx'), P('64', 'Smallx'), P('74,29', 'Smallx'), P('aumenta', 'Smallx')],
+        [P('Excedente do consumidor', 'Smallx'), P('324', 'Smallx'), P('165,31', 'Smallx'),
+         P('cai 158,69', 'Smallx')],
+        [P('Excedente do produtor', 'Smallx'), P('486', 'Smallx'), P('578,57', 'Smallx'),
+         P('sobe 92,57', 'Smallx')],
+        [P('Excedente total', 'Smallx'), P('810', 'Smallx'), P('743,88', 'Smallx'), P('cai', 'Smallx')],
+        [P('Perda de peso morto', 'Smallx'), P('0', 'Smallx'), P('66,12', 'Smallx'),
+         P('perda líquida', 'Smallx')],
+    ], [5.2 * cm, 3.4 * cm, 3.4 * cm, 4.7 * cm]))
+
+    S += [P('6.3 Transferência contra perda líquida', 'H2x')]
+    S.extend(formula([
+        r'\text{Transferência } EC \to EP = Q_m\left(P_m - P_c\right) '
+        r'= \frac{90}{7}\left(\frac{520}{7} - 64\right) \approx 132{,}24',
+        r'PPM = ET_c - ET_m = 810 - 743{,}88 = 66{,}12',
+        r'\text{conferindo: } PPM = \frac{1}{2}\left(Q_c - Q_m\right)\left(P_m - CMg(Q_m)\right) '
+        r'\approx \frac{1}{2}(5{,}14)(25{,}71) = 66{,}12',
+    ]))
+    S += [P('A queda de 158,69 no excedente do consumidor <b>não</b> é toda perda social: 132,24 é '
+            'transferência para o produtor e apenas o restante compõe a perda líquida. A perda de peso '
+            'morto corresponde às unidades entre Q<sub>m</sub> e Q<sub>c</sub> que deixaram de ser '
+            'produzidas mesmo tendo benefício social acima do custo.')]
+    S += figure('04-onus-monopolio.png',
+                'Áreas de excedente do consumidor e do produtor, transferência e perda de peso morto no '
+                'exemplo do material.')
+    return S
+
+
+def secao_discriminacao():
+    S = [PageBreak(), P('7. Discriminação de preços', 'H1x')]
+    S += [P('Discriminar é cobrar preços diferentes por unidades ou consumidores conforme a disposição a '
+            'pagar. Exige poder de mercado, capacidade de distinguir ou induzir tipos e algum bloqueio à '
+            'revenda entre consumidores.')]
+    S.append(table([
+        [P('Grau', 'Smallx'), P('Como funciona', 'Smallx'), P('Resultado típico', 'Smallx')],
+        [P('1º', 'Smallx'), P('Preço personalizado, igual à disposição a pagar de cada consumidor.', 'Smallx'),
+         P('Captura todo o excedente do consumidor; produz até P = CMg; sem perda de peso morto.', 'Smallx')],
+        [P('2º', 'Smallx'), P('Menu de quantidades, pacotes ou versões; o consumidor se auto-seleciona.', 'Smallx'),
+         P('Extrai excedente sem observar diretamente o tipo de cada consumidor.', 'Smallx')],
+        [P('3º', 'Smallx'), P('Preços diferentes por grupos observáveis (estudante, idoso, região).', 'Smallx'),
+         P('Preço mais alto no mercado menos elástico.', 'Smallx')],
+    ], [1.5 * cm, 8.2 * cm, 7.0 * cm]))
+
+    S += [P('7.1 Terceiro grau: a condição central', 'H2x')]
+    S += [P('Uma unidade adicional custa o mesmo CMg em qualquer mercado. Logo, no ótimo, a receita '
+            'marginal tem de ser igual nos dois — caso contrário compensaria remanejar vendas.')]
+    S.extend(formula([
+        r'RMg_1 \;=\; RMg_2 \;=\; CMg',
+        r'p_1\left(1 - \frac{1}{|\epsilon_1|}\right) = p_2\left(1 - \frac{1}{|\epsilon_2|}\right) = CMg',
+    ]))
+    S += [P('Aplicando ao exemplo dos slides e da Lista 1, com ε₁ = −2 e ε₂ = −4:')]
+    S.extend(formula([
+        r'RMg_1 = p_1\left(1 - \frac{1}{2}\right) = 0{,}50\,p_1 \qquad '
+        r'RMg_2 = p_2\left(1 - \frac{1}{4}\right) = 0{,}75\,p_2',
+        r'0{,}50\,p_1 = 0{,}75\,p_2 \;\Longrightarrow\; \frac{p_1}{p_2} = 1{,}5',
+    ]))
+    S += [P('Se a firma cobrasse p₁ = 2,5p₂, teríamos RMg₁ = 1,25p₂ contra RMg₂ = 0,75p₂. Como a receita '
+            'marginal no mercado 1 seria maior, valeria a pena vender mais nele: reduzir p₁ e/ou aumentar '
+            'p₂ até igualar as receitas marginais.')]
+    S += figure('05-discriminacao-precos.png',
+                'Os três graus de discriminação. No painel da direita as demandas estão calibradas para '
+                'módulos de elasticidade 2 e 4 no ótimo, com razão de preços exatamente 1,5.', 16.8 * cm)
+
+    S += [P('7.2 Segundo grau: o exemplo dos slides', 'H2x')]
+    S += [P('O Tipo A aceita pagar 30, 20 e 10 pelas três primeiras unidades; o Tipo B aceita 20 e 10 '
+            'pelas duas primeiras. Um pacote de 2 unidades por R$ 30 captura o Tipo B (20 + 10) e um '
+            'pacote de 3 unidades por R$ 60 captura o Tipo A (30 + 20 + 10). Os pacotes fazem os tipos se '
+            'revelarem por conta própria.')]
+    return S
+
+
+def secao_metodo():
+    S = [PageBreak(), P('8. Método de resolução e pegadinhas', 'H1x')]
+    S += [P('8.1 Checklist de equilíbrio geral', 'H2x')]
+    S += bullets([
+        'Liste as dotações e some os totais de cada bem: é a base da caixa de Edgeworth.',
+        'Calcule a renda como <b>valor</b> da dotação, nunca como quantidade.',
+        'Derive a demanda individual antes de somar entre agentes.',
+        'Normalize um preço e equilibre apenas um mercado.',
+        'Confira o segundo mercado pela factibilidade e pela Lei de Walras.',
+        'Verifique se as cestas finais somam exatamente as dotações totais.',
+    ])
+    S += [P('8.2 Checklist de monopólio', 'H2x')]
+    S += bullets([
+        'Se a demanda vier como Q(P), <b>inverta</b> para P(Q) antes de derivar.',
+        'Calcule a receita total e depois a receita marginal.',
+        'Iguale a receita marginal ao custo marginal para achar a quantidade.',
+        'Volte à curva de demanda para ler o preço.',
+        'Compare o preço com o custo médio para obter o lucro.',
+        'Para bem-estar, calcule também o equilíbrio competitivo com P = CMg.',
+    ])
+    S += [P('8.3 Pegadinhas frequentes', 'H2x')]
+    S.append(table([
+        [P('Erro', 'Smallx'), P('Correção', 'Smallx')],
+        [P('Usar P = CMg no monopólio.', 'Smallx'),
+         P('P = CMg é a condição competitiva. No monopólio use RMg = CMg e leia o preço na demanda.', 'Smallx')],
+        [P('Ler o preço na curva de receita marginal.', 'Smallx'),
+         P('A RMg serve apenas para achar a quantidade. O preço sempre sai da demanda.', 'Smallx')],
+        [P('Tratar Pareto-eficiente como justo.', 'Smallx'),
+         P('Eficiência e equidade são critérios distintos. Os cantos da caixa são eficientes e '
+           'extremamente desiguais.', 'Smallx')],
+        [P('Buscar preços absolutos no equilíbrio geral.', 'Smallx'),
+         P('Só o preço relativo é determinado. Fixe um numerário.', 'Smallx')],
+        [P('Dizer que toda a perda do consumidor é peso morto.', 'Smallx'),
+         P('Boa parte é transferência para o produtor. A PPM é apenas a perda líquida do excedente total.', 'Smallx')],
+        [P('No 3º grau, cobrar mais onde a demanda é mais elástica.', 'Smallx'),
+         P('É o inverso: preço mais alto no mercado <b>menos</b> elástico.', 'Smallx')],
+        [P('Usar a fórmula triangular do EP com CMg crescente.', 'Smallx'),
+         P('Com CMg crescente, o EP do monopólio é retângulo mais triângulo.', 'Smallx')],
+    ], [5.6 * cm, 11.1 * cm]))
+    return S
+
+
+EXERCICIOS = [
+    ('Exercício 1 — Lista 1, Q1 (troca pura)',
+     'Dois agentes A e B têm U<sub>i</sub>(x₁,x₂) = x₁x₂, com dotações w<sub>A</sub> = (4,2) e '
+     'w<sub>B</sub> = (1,3). (a) Verifique se há incentivo à troca na dotação inicial. '
+     '(b) Encontre as demandas marshallianas. (c) Determine p₁/p₂ e as cestas de equilíbrio. '
+     '(d) Calcule as demandas líquidas e interprete em termos de eficiência de Pareto.'),
+    ('Exercício 2 — Lista 1, Q2 (Cobb–Douglas assimétrica)',
+     'U = x⁴y⁶ para o agente 1 e V = x⁶y⁴ para o agente 2, com dotações (4,2) e (2,4). Julgue: '
+     '(a) o agente 1 gasta 40% da renda em x; (b) p<sub>x</sub>/p<sub>y</sub> = 2; '
+     '(c) o agente 1 consome 2,4 unidades de x; (d) a TMS do agente 1 no equilíbrio é 1.'),
+    ('Exercício 3 — Lista 1, Q3 (curva de contrato com Leontief)',
+     'U<sub>A</sub> = x₁<super>1/3</super>x₂<super>2/3</super>, '
+     'U<sub>B</sub> = min{x₁, x₂}, w<sub>A</sub> = (10,20) e w<sub>B</sub> = (20,5). '
+     '(a) Obtenha a curva de contrato. (b) Avalie se x<sub>A</sub> = (10,5) e x<sub>B</sub> = (20,20) é '
+     'Pareto-eficiente. (c) Com p₁ = p₂ = 1, calcule o excesso de demanda agregado.'),
+    ('Exercício 4 — Lista 1, Q4 (monopólio)',
+     'A demanda é P = 18 − Q e o custo total é CT(Q) = 27 + 2Q². Encontre a receita marginal, o custo '
+     'marginal, a quantidade e o preço de monopólio. Calcule o lucro e interprete.'),
+    ('Exercício 5 — exemplo dos slides (equilíbrio geral)',
+     'U<sub>A</sub> = x₁<super>A</super>(x₂<super>A</super>)², '
+     'U<sub>B</sub> = (x₁<super>B</super>)²x₂<super>B</super>, w<sub>A</sub> = (10,10) e '
+     'w<sub>B</sub> = (20,20). Normalize p₁ = 1, encontre p₂, as cestas de equilíbrio e as demandas '
+     'líquidas. Verifique a Lei de Walras.'),
+    ('Exercício 6 — Lista 1, Q6 (terceiro grau)',
+     'Um monopolista vende em dois mercados com ε₁ = −2 e ε₂ = −4. Mostre se a política p₁ = 2,5p₂ '
+     'maximiza o lucro e encontre a relação correta entre os preços.'),
+    ('Exercício 7 — excedentes e perda de peso morto',
+     'Com P = 100 − 2Q e CMg = 10 + 3Q, calcule os equilíbrios competitivo e monopolista, os excedentes '
+     'do consumidor e do produtor nos dois casos, o excedente total e a perda de peso morto. Separe a '
+     'parcela de transferência.'),
+    ('Exercício 8 — questão conceitual',
+     'Explique por que o monopolista nunca escolhe quantidade na região inelástica da demanda, e por que '
+     'a discriminação de primeiro grau elimina a perda de peso morto embora seja distributivamente '
+     'controversa.'),
+]
+
+
+def secao_exercicios():
+    S = [PageBreak(), P('9. Exercícios para resolver', 'H1x')]
+    S += [P('Resolva antes de abrir a seção 10. Os exercícios 1 a 4 e 6 são da Lista 1; os demais '
+            'consolidam os exemplos dos slides e do material de excedente.')]
+    S += [note('Onde encontrar mais',
+               'A Lista 1 resolvida item por item, incluindo a Questão 5 das duas fábricas, e um banco de '
+               '23 exercícios adicionais com gabarito estão no arquivo '
+               '<b>lista1-resolvida-e-exercicios-extra.pdf</b>, na mesma pasta.', LIGHT_BLUE, BLUE)]
+    for titulo, texto in EXERCICIOS:
+        S += [P(titulo, 'H2x'), note('Para resolver', texto, colors.white, BORDER),
+              Spacer(1, .08 * cm)]
+    return S
+
+
+def secao_gabaritos():
+    S = [PageBreak(), P('10. Gabaritos comentados', 'H1x')]
+
+    S += [P('Gabarito 1 — troca pura', 'H2x')]
+    S.extend(formula([
+        r'TMS_A(4,2) = \frac{2}{4} = 0{,}5 \qquad TMS_B(1,3) = \frac{3}{1} = 3 '
+        r'\;\Longrightarrow\; \text{há troca}',
+        r'x_1^{i\,*} = \frac{m_i}{2p_1} \qquad x_2^{i\,*} = \frac{m_i}{2p_2}',
+        r'\frac{5p_1+5p_2}{2p_1} = 5 \;\Longrightarrow\; \frac{p_1}{p_2} = 1',
+        r'm_A = 6,\; m_B = 4 \;\Longrightarrow\; x^A = (3,3),\quad x^B = (2,2)',
+        r'e^A = (-1,+1) \qquad e^B = (+1,-1)',
+    ]))
+    S += [P('A curva de contrato é x₂<super>A</super> = x₁<super>A</super> e o ponto (3,3) está sobre ela, '
+            'com TMS<sub>A</sub> = TMS<sub>B</sub> = 1 = p₁/p₂. A utilidade de A sai de 8 para 9 e a de B '
+            'de 3 para 4.', 'Answer')]
+    S += [note('Resposta', 'Há incentivo à troca; <b>p₁/p₂ = 1</b>; <b>A = (3,3)</b> e <b>B = (2,2)</b>. '
+               'O equilíbrio é Pareto-eficiente.', LIGHT_GREEN, GREEN)]
+
+    S += [P('Gabarito 2 — Cobb–Douglas assimétrica', 'H2x')]
+    S.extend(formula([
+        r'\text{frações de gasto em } x:\quad \frac{4}{10} = 40\% \;\text{(agente 1)},\qquad '
+        r'\frac{6}{10} = 60\% \;\text{(agente 2)}',
+        r'p_y = 1,\; r = p_x: \qquad m_1 = 4r+2, \qquad m_2 = 2r+4',
+        r'\frac{0{,}4(4r+2)}{r} + \frac{0{,}6(2r+4)}{r} = 6 '
+        r'\;\Longrightarrow\; 2{,}8 + \frac{3{,}2}{r} = 6 \;\Longrightarrow\; r = 1',
+        r'x_1 = 0{,}4\cdot\frac{6}{1} = 2{,}4 \qquad y_1 = 0{,}6\cdot 6 = 3{,}6',
+        r'TMS_1 = \frac{4y}{6x} = \frac{2(3{,}6)}{3(2{,}4)} = 1',
+    ]))
+    S += [note('Resposta', '<b>Verdadeiras: (a), (c) e (d). Falsa: (b)</b> — o preço relativo é 1, não 2. '
+               'Atalho: preferências e dotações espelhadas implicam preço relativo unitário por simetria.',
+               LIGHT_GREEN, GREEN)]
+
+    S += [P('Gabarito 3 — curva de contrato com Leontief', 'H2x')]
+    S.extend(formula([
+        r'\text{totais: } 10+20 = 30 \;\text{(bem 1)}, \qquad 20+5 = 25 \;\text{(bem 2)}',
+        r'\min\{x_1,x_2\} \;\Longrightarrow\; x_1^B = x_2^B \quad\text{(vértice)}',
+        r'x_2^A = 25 - x_2^B = 25 - x_1^B = 25 - (30 - x_1^A) \;\Longrightarrow\; x_2^A = x_1^A - 5',
+        r'p = (1,1):\quad m_A = 30 \;\Longrightarrow\; x^A = (10,20) = w^A '
+        r'\;\Longrightarrow\; e^A = (0,0)',
+        r'm_B = 25 \;\Longrightarrow\; x_1^B = x_2^B = \frac{25}{2} = 12{,}5 '
+        r'\;\Longrightarrow\; e^B = (-7{,}5,\; +7{,}5)',
+        r'z = (-7{,}5,\; +7{,}5) \qquad p_1 z_1 + p_2 z_2 = 0 \;\checkmark',
+    ]))
+    S += [P('Note que o agente A demanda exatamente sua própria dotação a esses preços, então todo o '
+            'desequilíbrio vem de B. A alocação do item (a) é factível, respeita o vértice de B e satisfaz '
+            'a curva de contrato, logo é eficiente.', 'Answer')]
+    S += [note('Resposta', '<b>(a) V, (b) F, (c) V, (d) V.</b> Curva de contrato '
+               'x₂<super>A</super> = x₁<super>A</super> − 5 e excesso de demanda (−7,5; +7,5).',
+               LIGHT_GREEN, GREEN)]
+
+    S += [P('Gabarito 4 — monopólio com custo quadrático', 'H2x')]
+    S.extend(formula([
+        r'R(Q) = (18-Q)Q \;\Longrightarrow\; RMg = 18 - 2Q, \qquad CMg = 4Q',
+        r'18 - 2Q = 4Q \;\Longrightarrow\; Q_m = 3 \qquad P_m = 18 - 3 = 15',
+        r'\pi = 15(3) - \left[27 + 2(3^2)\right] = 45 - 45 = 0',
+        r'CMe(3) = \frac{27}{3} + 2(3) = 15 = P_m',
+    ]))
+    S += [note('Resposta', '<b>Q = 3, P = 15 e lucro exatamente zero.</b> Ser monopolista não garante lucro: '
+               'o preço fica acima do custo marginal (15 contra 12), mas o custo fixo de 27 consome toda a '
+               'margem. Ainda assim produzir 3 é melhor que fechar, o que daria prejuízo de 27.',
+               LIGHT_GREEN, GREEN)]
+
+    S += [P('Gabarito 5 — exemplo dos slides', 'H2x')]
+    S.extend(formula([
+        r'x_1^A = \frac{10(1+p_2)}{3}, \quad x_1^B = \frac{40(1+p_2)}{3}',
+        r'\frac{50(1+p_2)}{3} = 30 \;\Longrightarrow\; p_2 = 0{,}8',
+        r'x^A = (6,15) \qquad x^B = (24,15)',
+        r'e^A = (-4,+5) \qquad e^B = (+4,-5)',
+    ]))
+    S += [P('As demandas somam (30, 30), exatamente as dotações totais, e a Lei de Walras confirma o '
+            'segundo mercado sem precisar resolvê-lo.', 'Answer')]
+
+    S += [P('Gabarito 6 — discriminação de terceiro grau', 'H2x')]
+    S.extend(formula([
+        r'RMg_1 = 0{,}50\,p_1 \qquad RMg_2 = 0{,}75\,p_2',
+        r'0{,}50\,p_1 = 0{,}75\,p_2 \;\Longrightarrow\; \frac{p_1}{p_2} = 1{,}5',
+        r'\text{se } p_1 = 2{,}5\,p_2: \quad RMg_1 = 1{,}25\,p_2 \;>\; RMg_2 = 0{,}75\,p_2',
+    ]))
+    S += [note('Resposta', '<b>Não está maximizando.</b> A razão correta é <b>p₁/p₂ = 1,5</b>. '
+               'A direção está certa (preço maior no mercado menos elástico), mas a magnitude está errada: '
+               'deveria ser 50% de diferença, não 150%. O ajuste é reduzir p₁ e/ou aumentar p₂.',
+               LIGHT_GREEN, GREEN)]
+
+    S += [P('Gabarito 7 — excedentes e perda de peso morto', 'H2x')]
+    S.extend(formula([
+        r'Q_c = 18,\; P_c = 64 \qquad Q_m = \frac{90}{7} \approx 12{,}86,\; '
+        r'P_m = \frac{520}{7} \approx 74{,}29',
+        r'EC_c = 324, \quad EP_c = 486, \quad ET_c = 810',
+        r'EC_m \approx 165{,}31, \quad EP_m \approx 578{,}57, \quad ET_m \approx 743{,}88',
+        r'\text{transferência} \approx 132{,}24 \qquad PPM = 810 - 743{,}88 = 66{,}12',
+    ]))
+    S += [P('O produtor ganha excedente, mas o ganho de 92,57 não compensa a perda de 158,69 do '
+            'consumidor. A diferença é a perda líquida de bem-estar.', 'Answer')]
+
+    S += [P('Gabarito 8 — questão conceitual', 'H2x')]
+    S += [P('Na região inelástica |ε| &lt; 1, então RMg = P(1 − 1/|ε|) &lt; 0. Reduzir a quantidade '
+            'aumentaria a receita e reduziria o custo simultaneamente, portanto nenhum ponto ali pode ser '
+            'ótimo, independentemente do custo marginal.', 'Answer')]
+    S += [P('Na discriminação de primeiro grau cada unidade é vendida ao preço máximo que aquele '
+            'consumidor aceita pagar. A firma segue expandindo enquanto a disposição a pagar for pelo '
+            'menos o custo marginal, então a quantidade coincide com a eficiente e a perda de peso morto '
+            'desaparece. A ressalva é distributiva: o excedente do consumidor vai a zero, e toda a '
+            'eficiência é apropriada pela firma.', 'Answer')]
+    return S
+
+
+CHECKLIST = [
+    'Desenhar e interpretar uma caixa de Edgeworth, identificando as duas origens.',
+    'Calcular a TMS e explicar por que TMS diferentes geram ganhos de troca.',
+    'Derivar a curva de contrato com Cobb–Douglas e com Leontief.',
+    'Escrever a renda de cada consumidor como valor da dotação.',
+    'Obter demandas Cobb–Douglas pela regra de bolso e equilibrar um mercado.',
+    'Enunciar a Lei de Walras e explicar preço relativo e numerário.',
+    'Calcular receita total, receita marginal, quantidade, preço e lucro de monopólio.',
+    'Explicar por que o monopolista opera só na região elástica.',
+    'Calcular excedentes e perda de peso morto com curvas lineares.',
+    'Distinguir transferência de excedente de perda de peso morto.',
+    'Aplicar a igualdade de receitas marginais na discriminação de terceiro grau.',
+    'Explicar os três graus de discriminação e as condições que os viabilizam.',
+]
+
+
+def secao_formulario():
+    S = [PageBreak(), P('11. Formulário e checklist final', 'H1x')]
+    S += [P('11.1 Formulário de uma página', 'H2x')]
+    S.extend(formula([
+        r'm_i = p_1 w_i^1 + p_2 w_i^2',
+        r'TMS_i = \frac{UMg_1^i}{UMg_2^i} = \frac{p_1}{p_2}',
+        r'U = x_1^{\alpha}x_2^{\beta} \;\Longrightarrow\; '
+        r'x_1^* = \frac{\alpha}{\alpha+\beta}\frac{m}{p_1},\quad '
+        r'x_2^* = \frac{\beta}{\alpha+\beta}\frac{m}{p_2}',
+        r'\sum_i x_i^k = \sum_i w_i^k \qquad z^k = \sum_i x_i^k - \sum_i w_i^k',
+    ], juntar=False))
+    S.extend(formula([
+        r'\text{Pareto interior: } TMS_A = TMS_B',
+        r'\text{Lei de Walras: } \sum_k p_k z_k(p) = 0 \quad \forall\, p',
+        r'\text{Leontief } \min\{x_1,x_2\}: \; x_1 = x_2 = \frac{m}{p_1+p_2}',
+    ], juntar=False))
+    S.extend(formula([
+        r"R(Q) = P(Q)Q \qquad RMg = P + P'(Q)\,Q \qquad RMg = CMg "
+        r"\;\Longrightarrow\; P_m = P(Q_m)",
+        r'P(y) = a - by \;\Longrightarrow\; RMg = a - 2by',
+        r'RMg = P\left(1 - \frac{1}{|\epsilon|}\right) \qquad '
+        r'\frac{P}{CMg} = \frac{1}{1 - 1/|\epsilon|}',
+        r'\pi = \left[P - CMe(Q)\right]Q \qquad \text{concorrência: } P = CMg',
+    ], juntar=False))
+    S.extend(formula([
+        r'EC = \frac{1}{2}Q\left(P_{max} - P\right) \qquad PPM = ET_c - ET_m',
+        r'\text{3º grau: } RMg_1 = RMg_2 = CMg \;\Longrightarrow\; '
+        r'\text{maior preço onde } |\epsilon| \text{ é menor}',
+    ], juntar=False))
+
+    S += [P('11.2 Checklist “eu sei fazer?”', 'H2x')]
+    S += [P('Marque cada item somente depois de resolvê-lo sem consultar o texto:')]
+    S += [P('□ ' + item) for item in CHECKLIST]
+    S += [Spacer(1, .25 * cm),
+          note('Prioridade para a véspera',
+               '<b>1.</b> Refaça os exercícios 1, 3, 4, 6 e 7. '
+               '<b>2.</b> Memorize o roteiro RMg = CMg e a regra do terceiro grau. '
+               '<b>3.</b> Desenhe de memória a caixa de Edgeworth e o gráfico de perda de peso morto. '
+               '<b>4.</b> Confira sinais de demanda líquida e preços relativos.', LIGHT_GREEN, GREEN)]
+    S += [Spacer(1, .3 * cm),
+          P('<b>Nota de transparência:</b> este resumo foi produzido a partir dos arquivos da disciplina '
+            'disponíveis no diretório <i>prints</i> do repositório. As equações de custo da Questão 5 da '
+            'Lista 1 estavam embutidas como imagem no PDF original e foram recuperadas por renderização: '
+            'C₁(Q₁) = 10Q₁² e C₂(Q₂) = 20Q₂². Todos os resultados numéricos são recalculados por '
+            '<i>verificar_contas.py</i>, com 114 checagens simbólicas em SymPy. A teoria está coberta, '
+            'mas a notação usada em aula deve prevalecer em caso de divergência.', 'Smallx')]
+    return S
+
+
+def main():
+    badge = note('Como usar este resumo',
+                 'Leia a intuição antes da álgebra e só depois refaça os exercícios sem consultar o '
+                 'gabarito. Os gráficos foram reconstruídos a partir dos números dos slides de revisão, '
+                 'da Lista 1 e do material de excedente.', LIGHT_BLUE, BLUE)
+    story = cover(
+        'MICROECONOMIA II', 'Resumo completo para a Prova 1',
+        ['Equilíbrio geral • Caixa de Edgeworth • Lei de Walras',
+         'Monopólio • Bem-estar • Discriminação de preços',
+         '',
+         '<b>Disciplina:</b> CE-362D — Microeconomia II',
+         '<b>Universidade:</b> Instituto de Economia — Unicamp'],
+        badge)
+
+    story += [PageBreak(), P('Sumário', 'H1x')]
+    sumario = [
         '1. Escopo provável da P1 e mapa do material',
         '2. Equilíbrio geral em uma economia de trocas',
         '3. Caixa de Edgeworth, eficiência e curva de contrato',
@@ -158,147 +681,35 @@ def build_story():
         '10. Gabaritos comentados',
         '11. Formulário e checklist final',
     ]
-    S += [P(x,'TOC') for x in toc]
-    S += [Spacer(1,.35*cm), note('Resultado mais importante para memorizar', '<b>Equilíbrio Geral:</b> os preços relativos coordenam as decisões individuais e zeram a demanda excedente. <b>Monopólio:</b> a firma escolhe Q onde RMg = CMg e depois lê P na demanda; por isso, em geral, P > CMg e Q é menor que na concorrência perfeita.', LIGHT_GREEN, GREEN), PageBreak()]
+    story += [P(x, 'TOC') for x in sumario]
+    story += [Spacer(1, .35 * cm),
+              note('Os dois resultados que você não pode esquecer',
+                   '<b>Equilíbrio geral:</b> os preços relativos coordenam as decisões individuais e zeram '
+                   'a demanda excedente agregada. <b>Monopólio:</b> a firma escolhe a quantidade onde '
+                   'RMg = CMg e depois lê o preço na demanda, o que resulta em preço acima do custo '
+                   'marginal e quantidade abaixo da competitiva.', LIGHT_GREEN, GREEN),
+              PageBreak()]
 
-    # 1 scope
-    S += [P('1. Escopo provável da P1 e mapa do material','H1x')]
-    S += [P('O programa de Microeconomia II enumera quatro blocos: Equilíbrio Geral; Estruturas de Mercado e Estratégia Competitiva; Teoria dos Jogos; e Incerteza. Entretanto, a aula de revisão fornecida é explicitamente “Equilíbrio Geral e Monopólio”, e a Lista 1 cobra equilíbrio geral, monopólio, custos multiproduto e discriminação de preços. Portanto, este PDF prioriza esse recorte, sem afirmar que os demais blocos estejam fora da disciplina inteira.', 'Bodyx')]
-    S.append(table([
-        [P('Fonte','Smallx'),P('Conteúdo identificado','Smallx'),P('Uso neste resumo','Smallx')],
-        [P('<b>Revisao_EGeMONO.pdf</b>','Smallx'),P('Leiloeiro walrasiano; equilíbrio parcial/geral; Pareto; caixa de Edgeworth; álgebra; Lei de Walras; monopólio; elasticidade; markup; bem-estar; discriminação 1º–3º graus.','Smallx'),P('Fonte principal da teoria e dos exemplos numéricos.','Smallx')],
-        [P('<b>lista1.pdf</b>','Smallx'),P('Questões de troca pura, demandas Cobb–Douglas/Leontief, curva de contrato, monopólio, duas fábricas e discriminação.','Smallx'),P('Modelo de exercícios e notação da prova.','Smallx')],
-        [P('<b>excedente.pdf</b>','Smallx'),P('Comparação competitiva/monopólio: P = 100 − 2Q e CMg = 10 + 3Q; EC, EP, ET e PPM.','Smallx'),P('Cálculos de bem-estar e gráfico de áreas.','Smallx')],
-        [P('<b>Programa</b>','Smallx'),P('Objetivos, ementa, organização e datas.','Smallx'),P('Contextualização; não especifica isoladamente o conteúdo da P1.','Smallx')],
-    ], [3.0*cm, 8.7*cm, 5.0*cm]))
-    S += [Spacer(1,.25*cm), note('Atenção sobre o recorte', 'O programa geral menciona concorrência perfeita, concorrência monopolística, oligopólios e teoria dos jogos. Eles aparecem na ementa anual, mas não são desenvolvidos no material específico de revisão anexado. Por isso, não são tratados aqui como conteúdo confirmado da P1.','',)]
-    # fix note bg accidental string? no, note accepts bg string invalid. We'll replace below at generation? 
-    return S
+    story += secao_escopo()
+    story += secao_equilibrio_geral()
+    story += secao_edgeworth()
+    story += secao_algebra_walras()
+    story += secao_monopolio()
+    story += secao_bem_estar()
+    story += secao_discriminacao()
+    story += secao_metodo()
+    story += secao_exercicios()
+    story += secao_gabaritos()
+    story += secao_formulario()
 
-# Remove accidental unfinished section by rebuilding tail below; build_story is completed by _build_rest.
+    caminho = build_pdf(OUT, story,
+                        title='Resumo da Prova 1 — Microeconomia II',
+                        left_title='MICROECONOMIA II — RESUMO DA PROVA 1',
+                        right_title='CE-362D | Unicamp | 2º semestre de 2026',
+                        footer_note='Material de estudo — confira a notação usada em aula')
+    print(caminho)
+    print(os.path.getsize(caminho), 'bytes')
 
-def _build_rest(S):
-    # 2 Equilibrio geral
-    S += [P('2. Equilíbrio geral em uma economia de trocas','H1x'), P('Equilíbrio parcial estuda um mercado isoladamente, mantendo os demais constantes. Equilíbrio geral reconhece que preços e quantidades de todos os mercados são determinados simultaneamente: uma mudança em um mercado altera a renda, a demanda e os preços relativos nos outros.', 'Bodyx')]
-    S += [P('2.1 Modelo básico','H2x')] + bullets(['Dois ou mais consumidores, dois ou mais bens e dotações iniciais.','Cada consumidor escolhe a cesta que maximiza sua utilidade dentro da restrição orçamentária.','A oferta total de cada bem é a soma das dotações iniciais, no modelo de trocas puras.','Um equilíbrio walrasiano é um vetor de preços e uma alocação em que cada agente otimiza e todos os mercados são factíveis/limpos.'])
-    S += [P('O leiloeiro walrasiano anuncia um vetor de preços. Se a demanda excedente de um bem for positiva, o preço sobe; se for negativa, o preço cai. O processo de ajuste, ou <i>tâtonnement</i>, continua até que a demanda agregada coincida com a oferta em todos os mercados. As transações ocorrem apenas no equilíbrio.', 'Bodyx'), img('06-lei-de-walras.png', 16.6*cm), caption('Demanda excedente e ajuste de preços no exemplo numérico dos slides. O preço absoluto é normalizado; o que importa é o preço relativo.')]
-    S += [P('2.2 Factibilidade, dotações e demanda líquida','H2x'), F('Factibilidade:  Σᵢ x¹ᵢ = Σᵢ w¹ᵢ  e  Σᵢ x²ᵢ = Σᵢ w²ᵢ'), F('Demanda líquida do agente i no bem k:  eᵏᵢ = xᵏᵢ − wᵏᵢ'), F('Demanda excedente agregada:  zᵏ(p) = Σᵢ eᵏᵢ(p) = Σᵢ xᵏᵢ(p) − Σᵢ wᵏᵢ')]
-    S += [P('Interpretação: eᵏᵢ > 0 significa que o agente é demandante líquido do bem k; eᵏᵢ < 0 significa que ele oferece parte de sua dotação. No equilíbrio, a soma das demandas líquidas é zero para cada bem.', 'Bodyx')]
-
-    # 3 Edgeworth
-    S += [P('3. Caixa de Edgeworth, eficiência e curva de contrato','H1x'), P('A caixa de Edgeworth representa todas as alocações factíveis entre dois agentes e dois bens. A origem do agente A fica no canto inferior esquerdo; a origem do agente B fica no canto superior direito. Um ponto dentro da caixa informa simultaneamente a cesta de A e, por complementaridade, a cesta de B.', 'Bodyx')]
-    S += [P('3.1 Dotação inicial e trocas mutuamente benéficas','H2x')] + bullets(['A dotação inicial é o ponto de partida, não necessariamente eficiente.','Se as TMS dos agentes forem diferentes, existe espaço para uma troca que pode melhorar ambos.','A troca termina quando as TMS se igualam, ou quando se chega a uma solução de canto/kink que já não permite melhoria conjunta.'])
-    S += [P('A Taxa Marginal de Substituição (TMS) mede quanto de um bem o consumidor aceita abrir mão para obter uma unidade adicional do outro, mantendo a utilidade constante. Em uma solução interior:', 'Bodyx'), F('TMSᵢ = UMg¹ᵢ / UMg²ᵢ = p₁ / p₂')]
-    S += [img('01-caixa-edgeworth.png', 16.6*cm), caption('Caixa de Edgeworth construída para a Questão 1 da Lista 1: totais (5,5), A com (4,2), B com (1,3), Uᵢ = x₁x₂. O equilíbrio é A=(3,3), B=(2,2).')]
-    S += [P('3.2 Curva de contrato e Pareto','H2x'), P('A curva de contrato é o conjunto das alocações Pareto-eficientes: pontos em que não é possível aumentar a utilidade de um agente sem reduzir a do outro. Ela não significa “justiça”. Uma alocação pode ser eficiente e extremamente desigual, como um canto da caixa em que um agente possui todos os bens.', 'Bodyx'), F('Para soluções interiores:  TMS_A = TMS_B'), P('Em uma economia com produção, a condição de eficiência também relaciona as TMS dos consumidores à taxa marginal de transformação. Isso não é necessário para os exercícios de troca pura da Lista 1.', 'Bodyx')]
-    S += [P('3.3 Exemplo Cobb–Douglas da Lista 1','H2x'), P('Na Questão 1, U_A = x₁ᴬx₂ᴬ e U_B = x₁ᴮx₂ᴮ, com w_A=(4,2) e w_B=(1,3). A oferta total é (5,5). Na dotação inicial, TMS_A = 2 e TMS_B = 1/3. Como são diferentes, há ganhos de troca.', 'Bodyx'), F('Para U=x₁x₂:  x₁* = ½·m/p₁  e  x₂* = ½·m/p₂'), P('Com p₁/p₂=1, as rendas são m_A=6 e m_B=4. Logo A demanda (3,3), B demanda (2,2), e os mercados fecham. No equilíbrio, TMS_A=TMS_B=1.', 'Bodyx')]
-    S += [note('Leitura econômica do gráfico', 'A dotação W está dentro da lente de ganhos mútuos: ambos podem melhorar trocando. O ponto E está na curva de contrato e também no núcleo compatível com a dotação inicial. A reta orçamentária indica as cestas que têm o mesmo valor aos preços de equilíbrio.', LIGHT_GREEN, GREEN)]
-
-    # 4 Algebra/Walras
-    S += [P('4. Álgebra do equilíbrio e Lei de Walras','H1x'), P('O procedimento algébrico da prova é quase sempre o mesmo. A maior fonte de erro é usar a renda como se fosse um número fixo quando, na economia de trocas, a renda é o valor da dotação aos preços vigentes.', 'Bodyx')]
-    S += [P('4.1 Roteiro mecânico','H2x')]
-    S += [table([[P('Passo','Smallx'),P('O que fazer','Smallx')],[P('1','Smallx'),P('Escrever a renda de cada agente: mᵢ = p₁w¹ᵢ + p₂w²ᵢ.','Smallx')],[P('2','Smallx'),P('Resolver a escolha ótima: TMSᵢ = p₁/p₂ e substituir na restrição orçamentária.','Smallx')],[P('3','Smallx'),P('Obter as demandas xᵢ*(p) e somá-las.','Smallx')],[P('4','Smallx'),P('Impor market clearing em um mercado e normalizar um preço, por exemplo p₁=1.','Smallx')],[P('5','Smallx'),P('Usar a Lei de Walras para conferir o outro mercado.','Smallx')]], [1.2*cm,15.5*cm])]
-    S += [P('4.2 Regra Cobb–Douglas','H2x'), F('U(x₁,x₂)=x₁ᵅx₂ᵝ  ⇒  x₁* = [α/(α+β)]·m/p₁;  x₂* = [β/(α+β)]·m/p₂'), P('Cada agente gasta a fração α/(α+β) da renda no bem 1 e β/(α+β) no bem 2. Essa regra é muito útil na Lista 1.', 'Bodyx')]
-    S += [P('4.3 Exemplo numérico dos slides','H2x'), P('Dados: U_A=x₁ᴬ(x₂ᴬ)², w_A=(10,10); U_B=(x₁ᴮ)²x₂ᴮ, w_B=(20,20). Normalize p₁=1 e encontre p₂.', 'Bodyx'), F('A: TMS_A = x₂/(2x₁) = 1/p₂  ⇒  x₂ᴬ = 2x₁ᴬ/p₂'), F('m_A=10+10p₂  ⇒  x₁ᴬ=10(1+p₂)/3;  x₂ᴬ=20(1+p₂)/(3p₂)'), F('B: x₁ᴮ=40(1+p₂)/3;  x₂ᴮ=20(1+p₂)/(3p₂)'), F('Mercado 1: 10(1+p₂)/3 + 40(1+p₂)/3 = 30  ⇒  p₂ = 0,8'), P('Com p₂=0,8: A consome (6,15), B consome (24,15). A é ofertante líquido do bem 1 e demandante líquida do bem 2; B faz o oposto. A soma das demandas é (30,30), igual à soma das dotações.', 'Bodyx'), img('06-lei-de-walras.png', 16.6*cm), caption('No ponto p₂*=0,8, as duas demandas excedentes se anulam no exemplo dos slides.')]
-    S += [P('4.4 Lei de Walras','H2x'), F('Σₖ pₖ zₖ(p) = 0  para todo vetor de preços p'), P('Se existem dois mercados e um está em equilíbrio, a Lei de Walras garante que o outro também está, desde que as restrições orçamentárias sejam respeitadas. Por isso, em dois bens, basta limpar um mercado. O preço absoluto não é determinado: multiplicar todos os preços pelo mesmo número não altera escolhas. Normaliza-se um preço como numerário.', 'Bodyx')]
-    S += [note('Não confunda', '<b>Lei de Walras</b> não diz que cada mercado está em equilíbrio para qualquer preço. Ela diz que o valor do excesso de demanda agregado é zero para qualquer preço; se n−1 mercados estão limpos, o último também estará.', LIGHT_RED, RED)]
-
-    # 5 monopoly
-    S += [P('5. Monopólio: decisão, receita marginal e elasticidade','H1x'), P('O monopolista é price maker: enfrenta a demanda de mercado e escolhe a quantidade que maximiza π(Q)=RT(Q)−CT(Q). Ele não escolhe simultaneamente preço e quantidade de forma independente; a demanda liga os dois.', 'Bodyx')]
-    S += [P('5.1 Receita marginal','H2x'), F('RT(Q)=P(Q)·Q'), F('RMg(Q)=dRT/dQ=P(Q)+P′(Q)·Q'), P('O segundo termo é o efeito-preço: para vender mais, a firma reduz o preço de todas as unidades. É por isso que RMg fica abaixo da demanda quando a demanda é descendente.', 'Bodyx'), img('02-demanda-rmg.png', 16.6*cm), caption('Para demanda linear P=a−bQ, RMg=a−2bQ: mesmo intercepto vertical e inclinação duas vezes maior.')]
-    S += [P('5.2 Condição de ótimo e curva de oferta','H2x'), F('Condição de primeira ordem:  RMg(Qₘ)=CMg(Qₘ)'), F('Preço:  Pₘ=P(Qₘ)  (leia na curva de demanda, não na RMg)'), F('Lucro:  πₘ=[Pₘ−CMe(Qₘ)]·Qₘ'), P('A curva de oferta da concorrência perfeita é derivada do CMg acima do mínimo do CMe. Um monopolista não possui uma curva de oferta independente: a quantidade ótima depende da demanda e do custo.', 'Bodyx'), img('03-monopolio-equilibrio.png', 16.6*cm), caption('Exemplo dos slides: P=100−y, C=y²/2+10. O monopólio produz yₘ=100/3 e cobra pₘ=200/3; a referência competitiva é y_c=50, p_c=50.')]
-    S += [P('5.3 Elasticidade e markup','H2x'), F('RMg=P·(1+1/ε)=P·(1−1/|ε|),  com ε<0'), F('RMg=CMg  ⇒  P/CMg = 1/[1−1/|ε|]'), P('O markup aumenta quando a demanda fica menos elástica. O monopolista sempre opera na região elástica: se |ε|<1, RMg<0; reduzir Q aumenta a receita e reduz o custo.', 'Bodyx')]
-    S += [P('Exemplo linear rápido','H2x'), F('P=100−Q;  C(Q)=Q²/2+10  ⇒  RMg=100−2Q; CMg=Q'), F('100−2Q=Q  ⇒  Qₘ=100/3≈33,33;  Pₘ=100−100/3=200/3≈66,67'), P('A margem é P−CMg=200/3−100/3=100/3. O lucro é positivo porque o preço está acima do custo médio no Q escolhido.', 'Bodyx')]
-
-    # 6 welfare
-    S += [P('6. Bem-estar: concorrência versus monopólio','H1x'), P('O material de excedente usa P=100−2Q e CMg=10+3Q. Na concorrência, a disposição a pagar da última unidade se iguala ao custo marginal. No monopólio, a firma restringe Q porque considera o efeito da redução de preço sobre todas as unidades.', 'Bodyx')]
-    S += [P('6.1 Cálculo completo do exemplo','H2x'), F('Concorrência: 100−2Q=10+3Q  ⇒  Q_c=18, P_c=64'), F('Monopólio: RMg=100−4Q;  100−4Q=10+3Q  ⇒  Q_m=90/7≈12,86; P_m=520/7≈74,29'), S[-1] if False else Spacer(1,0)]
-    # Remove weird placeholder effect harmless; add rest
-    S += [table([[P('Indicador','Smallx'),P('Concorrência','Smallx'),P('Monopólio','Smallx'),P('Efeito','Smallx')],[P('Quantidade','Smallx'),P('18','Smallx'),P('12,86','Smallx'),P('reduz','Smallx')],[P('Preço','Smallx'),P('64','Smallx'),P('74,29','Smallx'),P('aumenta','Smallx')],[P('EC','Smallx'),P('324','Smallx'),P('165,31','Smallx'),P('cai','Smallx')],[P('EP','Smallx'),P('486','Smallx'),P('578,57','Smallx'),P('aumenta','Smallx')],[P('ET','Smallx'),P('810','Smallx'),P('743,88','Smallx'),P('cai','Smallx')],[P('PPM','Smallx'),P('0','Smallx'),P('66,12','Smallx'),P('perda líquida','Smallx')]], [4.0*cm,3.0*cm,3.0*cm,6.7*cm]), img('04-onus-monopolio.png', 16.6*cm), caption('Áreas de EC, EP, transferência de excedente e perda de peso morto no exemplo do material.'), P('A redução do EC não é toda uma perda social: parte é transferência para o produtor (área retangular). A perda de peso morto é o triângulo associado às unidades entre Qₘ e Q_c que deixaram de ser produzidas mesmo tendo benefício social maior que o custo.', 'Bodyx')]
-    S += [P('6.2 Excedentes com curvas lineares','H2x'), F('EC = ½·Q·(preço máximo−preço de mercado)'), F('EP competitivo = ½·Q·(preço de mercado−CMg em Q=0)'), F('PPM = ET competitivo − ET monopólio'), P('Em monopólio, o EP pode ser calculado como retângulo de margem mais a área entre a curva de CMg e a linha de preço. Não use automaticamente a fórmula triangular do EP competitivo se o custo marginal for crescente.', 'Bodyx')]
-
-    # 7 discrimination
-    S += [P('7. Discriminação de preços','H1x'), P('Discriminar é cobrar preços diferentes por unidades ou consumidores com base na disposição a pagar, impedindo que a arbitragem/revenda elimine a diferença.', 'Bodyx')]
-    S += [table([[P('Grau','Smallx'),P('Como funciona','Smallx'),P('Resultado típico','Smallx')],[P('1º','Smallx'),P('Preço personalizado, igual à disposição a pagar de cada consumidor.','Smallx'),P('Captura todo o EC; produz até P=CMg; PPM=0.','Smallx')],[P('2º','Smallx'),P('Menu de quantidades, pacotes ou versões. O consumidor se auto-seleciona.','Smallx'),P('Extrai excedente sem observar diretamente o tipo.','Smallx')],[P('3º','Smallx'),P('Preços diferentes em grupos/mercados observáveis.','Smallx'),P('RMg₁=RMg₂=CMg; preço maior no mercado menos elástico.','Smallx')]], [1.5*cm,8.5*cm,7.0*cm]), img('05-discriminacao-precos.png', 16.8*cm), caption('Os três graus de discriminação, incluindo o exemplo da Lista 1 com ε₁=−2 e ε₂=−4.')]
-    S += [P('7.1 Terceiro grau: condição central','H2x'), F('RMg₁=RMg₂=CMg'), F('P₁(1−1/|ε₁|)=P₂(1−1/|ε₂|)=CMg'), P('Como |ε₁|=2 e |ε₂|=4:', 'Bodyx'), F('RMg₁=0,5P₁;  RMg₂=0,75P₂  ⇒  0,5P₁=0,75P₂  ⇒  P₁/P₂=1,5'), P('Se a firma cobra P₁=2,5P₂, não está maximizando: RMg₁=1,25P₂, enquanto RMg₂=0,75P₂. A receita marginal do mercado 1 é maior; a firma deve deslocar vendas para o mercado 1, reduzindo P₁ e/ou aumentando P₂, até igualar as receitas marginais.', 'Bodyx')]
-    S += [P('7.2 Segundo grau: exemplo dos slides','H2x'), P('Tipo A aceita 30, 20 e 10 pelas três primeiras unidades; Tipo B aceita 20 e 10 pelas duas primeiras. O menu dos slides ilustra pacote de 2 unidades por R$30 e pacote de 3 por R$60. Os pacotes permitem auto-seleção: B escolhe o menor pacote; A escolhe o maior.', 'Bodyx')]
-    S += [note('Condições para discriminar', 'A firma precisa conseguir identificar ou induzir tipos diferentes, limitar a revenda e ter poder de mercado. Sem essas condições, consumidores que compram barato podem revender para os que pagariam caro.', LIGHT_BLUE, BLUE)]
-
-    # 8 method traps
-    S += [P('8. Método de resolução e pegadinhas','H1x'), P('8.1 Checklist algébrico de equilíbrio geral','H2x')]
-    S += bullets(['Liste dotações e some os totais de cada bem.','Calcule a renda pelo valor da dotação, não apenas pela quantidade consumida.','Derive a demanda individual antes de somar agentes.','Normalize um preço: p₁=1 ou p₂=1.','Limpe um mercado e confira o segundo pela factibilidade/Lei de Walras.','Verifique se as cestas finais somam as dotações totais.'])
-    S += [P('8.2 Checklist algébrico de monopólio','H2x')]
-    S += bullets(['Converta a demanda para a forma inversa P(Q), se necessário.','Calcule RT=P(Q)Q e depois RMg=dRT/dQ.','Calcule CMg=dC/dQ.','Resolva RMg=CMg para Qₘ.','Substitua Qₘ na demanda para obter Pₘ.','Compare Pₘ com CMe para obter lucro; compare Qₘ e Q_c para bem-estar.'])
-    S += [P('Pegadinhas frequentes','H2x'), table([[P('Erro','Smallx'),P('Correção','Smallx')],[P('Usar P=CMg no monopólio.','Smallx'),P('P=CMg é a condição competitiva; monopólio usa RMg=CMg e depois lê P na demanda.','Smallx')],[P('Confundir RMg com demanda.','Smallx'),P('Para demanda descendente, RMg fica abaixo de P porque vender mais reduz o preço das unidades anteriores.','Smallx')],[P('Achar que Pareto eficiente é justo.','Smallx'),P('Pareto é eficiência; justiça/equidade é outro critério.','Smallx')],[P('Resolver todos os mercados sem normalizar preço.','Smallx'),P('Só preços relativos importam; fixe um numerário.','Smallx')],[P('Dizer que PPM é toda a perda do EC.','Smallx'),P('Parte da perda do EC é transferência para EP; PPM é a perda líquida de ET.','Smallx')],[P('No 3º grau, cobrar mais no mercado mais elástico.','Smallx'),P('A regra é o contrário: preço maior onde a demanda é menos elástica.','Smallx')]], [5.2*cm,13.0*cm])]
-
-    # exercises
-    S += [PageBreak(), P('9. Exercícios para resolver','H1x'), P('Tente resolver todos antes de abrir a seção 10. Os quatro primeiros reproduzem ou adaptam diretamente questões da Lista 1; os demais consolidam os exemplos dos slides e do material de excedente.', 'Bodyx')]
-    exs=[
-        ('Exercício 1 — Lista 1, Q1 (troca pura)', 'Dois agentes A e B têm Uᵢ(x₁,x₂)=x₁x₂. As dotações são w_A=(4,2) e w_B=(1,3). (a) Verifique se há incentivo à troca na dotação inicial. (b) Encontre as demandas Marshallianas. (c) Determine p₁/p₂ e as cestas de equilíbrio. (d) Calcule as demandas líquidas e interprete a eficiência de Pareto.'),
-        ('Exercício 2 — Lista 1, Q2 (Cobb–Douglas)', 'U=x⁴y⁶ para o agente 1 e V=x⁶y⁴ para o agente 2. As dotações são (4,2) e (2,4). Julgue: (a) o agente 1 gasta 40% da renda em x; (b) p_x/p_y=2; (c) o agente 1 consome 2,4 unidades de x; (d) a TMS do agente 1 no equilíbrio é 1.'),
-        ('Exercício 3 — Lista 1, Q3 (curva de contrato)', 'UA=x₁ᴬ^(1/3)x₂ᴬ^(2/3), UB=min{x₁ᴮ,x₂ᴮ}, w_A=(10,20), w_B=(20,5). (a) Obtenha a curva de contrato. (b) Avalie se (x_A=(10,5), x_B=(20,20)) é Pareto-eficiente. (c) Com p₁=p₂=1, calcule o excesso de demanda agregado.'),
-        ('Exercício 4 — Lista 1, Q4 (monopólio)', 'A demanda é P=18−Q e o custo total é CT(Q)=27+2Q². Encontre RMg, CMg, quantidade e preço de monopólio. Calcule o lucro.'),
-        ('Exercício 5 — exemplo dos slides (equilíbrio geral)', 'UA=x₁ᴬ(x₂ᴬ)², UB=(x₁ᴮ)²x₂ᴮ, w_A=(10,10), w_B=(20,20). Normalize p₁=1. Encontre p₂, as cestas de equilíbrio e as demandas líquidas.'),
-        ('Exercício 6 — Lista 1, Q6 (3º grau)', 'Um monopolista vende em dois mercados com ε₁=−2 e ε₂=−4. Mostre se a relação P₁=2,5P₂ maximiza o lucro. Encontre a relação correta entre os preços.'),
-        ('Exercício 7 — excedente e PPM', 'Com P=100−2Q e CMg=10+3Q, calcule os equilíbrios competitivo e monopolista, EC, EP, ET e a perda de peso morto.'),
-        ('Exercício 8 — comparação conceitual', 'Explique por que o monopolista nunca escolhe uma quantidade na região inelástica da demanda e por que a discriminação perfeita elimina a PPM, embora possa ser distributivamente controversa.'),
-    ]
-    for title, text in exs:
-        S += [P(title,'H2x'), note('Para resolver', text, colors.white, colors.HexColor('#AAB7C4')), Spacer(1,.08*cm)]
-
-    # gabaritos
-    S += [P('10. Gabaritos comentados','H1x'), P('As soluções abaixo mostram o caminho algébrico e a interpretação econômica. Valores aproximados usam vírgula decimal.', 'Bodyx')]
-    S += [P('Gabarito 1 — troca pura','H2x'), P('(a) Na dotação, TMS_A = x₂/x₁ = 2/4 = 0,5 e TMS_B = x₂ᴮ/x₁ᴮ = 3/1 = 3. Como são diferentes, há trocas mutuamente benéficas. (b) Para U=x₁x₂, a condição TMS=p₁/p₂ e a restrição dão:', 'Answer'), F('x₁ᵢ* = mᵢ/(2p₁);  x₂ᵢ* = mᵢ/(2p₂)'), P('(c) Normalize p₁=p₂=1. Então m_A=4+2=6 e m_B=1+3=4. Logo A=(3,3) e B=(2,2). A soma é (5,5), exatamente a dotação total; portanto p₁/p₂=1. (d) A demanda líquida de A é (3−4,3−2)=(−1,+1); a de B é (2−1,2−3)=(+1,−1). A troca é uma realocação sem desperdício e o equilíbrio está na curva de contrato, portanto é Pareto-eficiente.', 'Answer'), note('Resposta final', '<b>Há incentivo à troca; p₁/p₂=1; A=(3,3); B=(2,2).</b> A vende 1 unidade do bem 1 e compra 1 unidade do bem 2; B faz o oposto.', LIGHT_GREEN, GREEN)]
-    S += [P('Gabarito 2 — Cobb–Douglas','H2x'), P('Para U=x⁴y⁶, as frações de gasto são 4/10=40% em x e 6/10=60% em y. Para V=x⁶y⁴, são 60% e 40%. Portanto (a) é verdadeira.', 'Answer'), F('Fixe p_y=1 e r=p_x/p_y=p_x.  m₁=4r+2;  m₂=2r+4'), F('Demanda total de x = 0,4(4r+2)/r + 0,6(2r+4)/r = 2,8 + 3,2/r'), P('A oferta total de x é 6. Igualando: 2,8+3,2/r=6, então 3,2/r=3,2 e <b>r=1</b>. Logo (b) é falsa. A demanda de x do agente 1 é 0,4·6/1=<b>2,4</b>, então (c) é verdadeira. Sua demanda de y é 0,6·6=3,6; TMS=MU_x/MU_y=(4y)/(6x)=2y/(3x)=2·3,6/(3·2,4)=<b>1</b>. (d) é verdadeira.', 'Answer'), note('Resposta final', '<b>Verdadeiras: (a), (c), (d). Falsa: (b).</b> O preço relativo correto é p_x/p_y=1.', LIGHT_GREEN, GREEN)]
-    S += [P('Gabarito 3 — curva de contrato','H2x'), P('(a) Para B, UB=min{x₁ᴮ,x₂ᴮ}; suas alocações eficientes têm x₁ᴮ=x₂ᴮ. Pela factibilidade:', 'Answer'), F('x₁ᴬ+x₁ᴮ=30;  x₂ᴬ+x₂ᴮ=25;  x₁ᴮ=x₂ᴮ'), F('x₂ᴬ = 25−x₂ᴮ = 25−x₁ᴮ = 25−(30−x₁ᴬ) = x₁ᴬ−5'), P('Logo a curva de contrato é x₂ᴬ=x₁ᴬ−5, respeitando os limites da caixa. (b) A alocação A=(10,5), B=(20,20) satisfaz x₁ᴮ=x₂ᴮ e está na curva de contrato; é Pareto-eficiente. (c) Com p₁=p₂=1: m_A=30. A demanda Cobb–Douglas é (10,20). B tem m_B=25 e, pela preferência Leontief, demanda (12,5;12,5). A demanda agregada é (22,5;32,5). Menos a oferta total (30,25), o excesso é <b>(−7,5,+7,5)</b>.', 'Answer'), note('Resposta final', '<b>Curva de contrato: x₂ᴬ=x₁ᴬ−5; excesso de demanda: (−7,5; +7,5).</b> O primeiro bem tem excesso de oferta e o segundo, excesso de demanda.', LIGHT_GREEN, GREEN)]
-    S += [P('Gabarito 4 — monopólio com custo quadrático','H2x'), F('P=18−Q  ⇒  RT=(18−Q)Q=18Q−Q²  ⇒  RMg=18−2Q'), F('CT=27+2Q²  ⇒  CMg=4Q'), F('RMg=CMg  ⇒  18−2Q=4Q  ⇒  Qₘ=3'), F('Pₘ=18−3=<b>15</b>'), F('π=RT−CT = 15·3 − [27+2(3²)] = 45−45 = <b>0</b>'), P('O custo fixo de 27 é exatamente coberto no ponto ótimo. A firma produz três unidades e cobra quinze; produzir zero daria prejuízo de 27.', 'Answer')]
-    S += [P('Gabarito 5 — exemplo dos slides','H2x'), P('As demandas dos slides são:', 'Answer'), F('x₁ᴬ=10(1+p₂)/3;  x₂ᴬ=20(1+p₂)/(3p₂)'), F('x₁ᴮ=40(1+p₂)/3;  x₂ᴮ=20(1+p₂)/(3p₂)'), P('No mercado 1, a demanda total deve ser 30:', 'Answer'), F('50(1+p₂)/3=30  ⇒  1+p₂=1,8  ⇒  <b>p₂=0,8</b>'), P('Substituindo: A=(6,15), B=(24,15). As demandas líquidas são A=(−4,+5) e B=(+4,−5). A soma é (30,30), igual à oferta total; a Lei de Walras confirma o segundo mercado.', 'Answer')]
-    S += [P('Gabarito 6 — discriminação de 3º grau','H2x'), F('RMg₁=P₁(1−1/2)=0,5P₁;  RMg₂=P₂(1−1/4)=0,75P₂'), P('O ótimo exige 0,5P₁=0,75P₂, então:', 'Answer'), F('<b>P₁/P₂=0,75/0,5=1,5</b>'), P('Se P₁=2,5P₂, então RMg₁=1,25P₂ e RMg₂=0,75P₂. Como RMg₁>RMg₂, uma unidade adicional no mercado 1 gera mais receita; a alocação atual não é ótima. O mercado 1 é menos elástico e deve ter o preço maior, mas na proporção 1,5, não 2,5.', 'Answer')]
-    S += [P('Gabarito 7 — excedente e PPM','H2x'), F('Competição: 100−2Q=10+3Q  ⇒  <b>Q_c=18, P_c=64</b>'), F('Monopólio: RMg=100−4Q; 100−4Q=10+3Q  ⇒  <b>Q_m=90/7≈12,86; P_m=520/7≈74,29</b>'), F('EC_c=½·18·(100−64)=<b>324</b>; EP_c=½·18·(64−10)=<b>486</b>; ET_c=<b>810</b>'), F('EC_m≈<b>165,31</b>; EP_m≈<b>578,57</b>; ET_m≈<b>743,88</b>'), F('PPM=810−743,88=<b>66,12</b>'), P('O monopólio reduz a quantidade e aumenta o preço. O produtor ganha excedente, mas o ganho não compensa a queda do consumidor: a diferença é a perda líquida de bem-estar.', 'Answer')]
-    S += [P('Gabarito 8 — comparação conceitual','H2x'), P('O monopolista não opera na região inelástica porque, nessa região, |ε|<1 e RMg=P(1−1/|ε|)<0. Reduzir a quantidade aumenta a receita total e reduz o custo, portanto uma escolha nessa região não pode ser ótima.', 'Answer'), P('Na discriminação perfeita, cada unidade é vendida ao preço máximo que aquele consumidor aceita pagar. A firma continua expandindo a produção enquanto a disposição a pagar for pelo menos o CMg; assim, a quantidade coincide com a eficiente e a PPM desaparece. Isso não significa igualdade distributiva: o EC é capturado pela firma.', 'Answer')]
-
-    # formula/checklist
-    S += [PageBreak(), P('11. Formulário e checklist final','H1x'), P('11.1 Formulário de uma página','H2x'), F('Renda:  mᵢ=p₁w¹ᵢ+p₂w²ᵢ'), F('TMS:  UMg₁/UMg₂=p₁/p₂'), F('Cobb–Douglas: U=x₁ᵅx₂ᵝ  ⇒  x₁=α/(α+β)·m/p₁;  x₂=β/(α+β)·m/p₂'), F('Factibilidade: Σxᵢᵏ=Σwᵢᵏ;  excesso: zᵏ=Σxᵢᵏ−Σwᵢᵏ'), F('Pareto interior: TMS_A=TMS_B'), F('Lei de Walras: Σₖ pₖzₖ(p)=0; se n−1 mercados fecham, o n-ésimo fecha'), F('Monopólio: RT=P(Q)Q; RMg=P+P′Q; RMg=CMg; P=P(Qₘ)'), F('Elasticidade: RMg=P(1−1/|ε|); markup P/CMg=1/[1−1/|ε|]'), F('Concorrência: P=CMg; monopólio: P>CMg em geral'), F('Discriminação 3º grau: RMg₁=RMg₂=CMg; preço maior onde |ε| é menor'), F('Excedentes lineares: EC=½·base·altura; PPM=ET_c−ET_m'), P('11.2 Checklist “eu sei fazer?”','H2x')]
-    checklist=['Desenhar e interpretar uma caixa de Edgeworth, identificando as duas origens.','Calcular a TMS e explicar por que TMS diferentes geram ganhos de troca.','Derivar a curva de contrato em uma economia com Leontief e Cobb–Douglas.','Escrever a renda de cada consumidor como valor da dotação.','Obter demandas Cobb–Douglas e fechar um mercado.','Usar a Lei de Walras e explicar o que é preço relativo/numerário.','Calcular RT, RMg, CMg, Qₘ, Pₘ e lucro.','Explicar por que o monopolista opera na região elástica.','Calcular EC, EP, ET e PPM em um gráfico linear.','Distinguir transferência de excedente de perda de peso morto.','Aplicar RMg₁=RMg₂ no terceiro grau de discriminação.','Explicar os graus 1, 2 e 3 e as condições de arbitragem.']
-    S += [P('Marque cada item após resolvê-lo sem consultar o texto:', 'Bodyx')]
-    for x in checklist: S.append(P('□ '+x,'Bodyx'))
-    S += [note('Prioridade para a véspera', '<b>1º:</b> refaça os Exercícios 1, 3, 4, 6 e 7. <b>2º:</b> memorize o roteiro RMg=CMg e a regra de terceiro grau. <b>3º:</b> desenhe de memória a caixa de Edgeworth e o gráfico de PPM. <b>4º:</b> confira os sinais das demandas líquidas e os preços relativos.', LIGHT_GREEN, GREEN),
-      Spacer(1,.35*cm),
-      note('Continuação deste material',
-           'A <b>Lista 1 completa e resolvida</b> (as seis questões, item por item, incluindo a Questão 5 '
-           'das duas fábricas) e um <b>banco de 23 exercícios novos</b> com gabaritos estão no arquivo '
-           '<b>lista1-resolvida-e-exercicios-extra.pdf</b>, na mesma pasta.', LIGHT_BLUE, BLUE),
-      Spacer(1,.35*cm),
-      P('<b>Nota de transparência:</b> este resumo foi produzido com base nos arquivos da disciplina disponíveis no diretório prints do repositório. As equações de custo da Questão 5 da Lista 1 estavam embutidas como imagem no PDF original e foram recuperadas por renderização: C₁(Q₁)=10Q₁² e C₂(Q₂)=20Q₂². Todos os resultados numéricos são recalculados por verificar_contas.py (114 checagens simbólicas). A teoria está coberta, mas a notação específica usada em aula deve prevalecer.', 'Smallx')]
-    return S
-
-# Fix the one note call with invalid background in build_story by constructing only before it and overriding.
-def make_story():
-    # We cannot use the accidental call in build_story; it is corrected in source by editing it at runtime logically.
-    S=[]
-    # execute build_story after monkey-free correction: build_story's last note has bg='' and would fail in TableStyle.
-    # Replicate by temporarily not relying on its last element: correct function text before invocation is handled below through local wrapper.
-    return _build_rest(S)
-
-# Build a clean story by using the same content function but with a corrected minimal preamble inserted explicitly.
-def full_story():
-    S=[]
-    S += [Spacer(1,2.2*cm), P('MICROECONOMIA II','CoverTitle'), P('Resumo completo para a Prova 1','CoverSub'), Spacer(1,.25*cm), P('Equilíbrio Geral • Caixa de Edgeworth • Lei de Walras • Monopólio • Bem-estar • Discriminação de preços','CoverSub'), Spacer(1,1.0*cm)]
-    S.append(HRFlowable(width='75%', thickness=2, color=BLUE, hAlign='CENTER'))
-    S += [Spacer(1,.7*cm), P('<b>Disciplina:</b> CE-362D — Microeconomia II', 'CoverSub'), P('<b>Universidade:</b> Instituto de Economia — Unicamp', 'CoverSub'), P('<b>Prova 1:</b> 23 de setembro de 2026 (data indicada no programa)', 'CoverSub'), Spacer(1,1.1*cm)]
-    S.append(note('Como usar este resumo', 'Leia a intuição antes da álgebra; depois refaça os exercícios sem consultar o gabarito. Os gráficos foram reconstruídos a partir dos números dos slides de revisão, da Lista 1 e do material de excedente. Quando a fonte não fornece uma informação necessária, isso é indicado explicitamente.', LIGHT_BLUE, BLUE))
-    S += [Spacer(1,.8*cm), P('<b>Base documental utilizada:</b> Revisao_EGeMONO.pdf; lista1.pdf; excedente.pdf; _Programa_Micro II_2S_2025.pdf. O programa geral também contém Teoria dos Jogos e Incerteza, mas o material específico de revisão e a Lista 1 delimitam a P1 em Equilíbrio Geral e Monopólio.', 'Smallx'), PageBreak(), P('Sumário','H1x')]
-    toc=['1. Escopo provável da P1 e mapa do material','2. Equilíbrio geral em uma economia de trocas','3. Caixa de Edgeworth, eficiência e curva de contrato','4. Álgebra do equilíbrio e Lei de Walras','5. Monopólio: decisão, receita marginal e elasticidade','6. Bem-estar: concorrência versus monopólio','7. Discriminação de preços','8. Método de resolução e pegadinhas','9. Exercícios para resolver','10. Gabaritos comentados','11. Formulário e checklist final']
-    S += [P(x,'TOC') for x in toc] + [Spacer(1,.35*cm), note('Resultado mais importante para memorizar', '<b>Equilíbrio Geral:</b> os preços relativos coordenam as decisões individuais e zeram a demanda excedente. <b>Monopólio:</b> a firma escolhe Q onde RMg = CMg e depois lê P na demanda; por isso, em geral, P > CMg e Q é menor que na concorrência perfeita.', LIGHT_GREEN, GREEN), PageBreak()]
-    S += [P('1. Escopo provável da P1 e mapa do material','H1x'), P('O programa de Microeconomia II enumera quatro blocos: Equilíbrio Geral; Estruturas de Mercado e Estratégia Competitiva; Teoria dos Jogos; e Incerteza. Entretanto, a aula de revisão fornecida é explicitamente “Equilíbrio Geral e Monopólio”, e a Lista 1 cobra equilíbrio geral, monopólio, custos multiproduto e discriminação de preços. Portanto, este PDF prioriza esse recorte, sem afirmar que os demais blocos estejam fora da disciplina inteira.', 'Bodyx')]
-    S.append(table([[P('Fonte','Smallx'),P('Conteúdo identificado','Smallx'),P('Uso neste resumo','Smallx')],[P('<b>Revisao_EGeMONO.pdf</b>','Smallx'),P('Leiloeiro walrasiano; equilíbrio parcial/geral; Pareto; caixa de Edgeworth; álgebra; Lei de Walras; monopólio; elasticidade; markup; bem-estar; discriminação 1º–3º graus.','Smallx'),P('Fonte principal da teoria e dos exemplos numéricos.','Smallx')],[P('<b>lista1.pdf</b>','Smallx'),P('Questões de troca pura, demandas Cobb–Douglas/Leontief, curva de contrato, monopólio, duas fábricas e discriminação.','Smallx'),P('Modelo de exercícios e notação da prova.','Smallx')],[P('<b>excedente.pdf</b>','Smallx'),P('Comparação competitiva/monopólio: P = 100 − 2Q e CMg = 10 + 3Q; EC, EP, ET e PPM.','Smallx'),P('Cálculos de bem-estar e gráfico de áreas.','Smallx')],[P('<b>Programa</b>','Smallx'),P('Objetivos, ementa, organização e datas.','Smallx'),P('Contextualização; não especifica isoladamente o conteúdo da P1.','Smallx')]], [3.0*cm, 8.7*cm, 5.0*cm]))
-    S += [Spacer(1,.25*cm), note('Atenção sobre o recorte', 'O programa geral menciona concorrência perfeita, concorrência monopolística, oligopólios e teoria dos jogos. Eles aparecem na ementa anual, mas não são desenvolvidos no material específico de revisão anexado. Por isso, não são tratados aqui como conteúdo confirmado da P1.', LIGHT_BLUE, BLUE), PageBreak()]
-    return _build_rest(S)
 
 if __name__ == '__main__':
-    doc=BaseDocTemplate(OUT, pagesize=A4, leftMargin=LEFT, rightMargin=RIGHT, topMargin=TOP, bottomMargin=BOTTOM, title='Resumo Microeconomia II — Prova 1', author='Kiro')
-    frame=Frame(LEFT, BOTTOM, PAGE_W-LEFT-RIGHT, PAGE_H-TOP-BOTTOM, id='normal')
-    doc.addPageTemplates([PageTemplate(id='main', frames=[frame], onPage=header_footer)])
-    doc.build(full_story())
-    print(OUT)
-    print(os.path.getsize(OUT))
+    main()
