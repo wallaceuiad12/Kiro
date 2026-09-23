@@ -1,0 +1,19 @@
+# Microdados da RAIS - NAO versionar.
+# Os arquivos vao de centenas de MB a alguns GB; baixe-os com
+# R/00-baixar-dados.sh em vez de comitá-los.
+dados-brutos/raw/
+dados/
+
+# Layouts oficiais (.xls baixados do FTP) - opcional versionar.
+# Descomente se preferir mantê-los fora do repo:
+# dados-brutos/layouts/
+
+# Artefatos do R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Saídas renderizadas do R Markdown
+*_files/
+*_cache/
