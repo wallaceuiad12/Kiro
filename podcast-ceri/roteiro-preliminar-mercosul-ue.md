@@ -4,7 +4,7 @@ INSTITUTO DE ECONOMIA
 
 Disciplina: CX904 — Podcast CERI
 
-Alunos: Alan Araújo Lima — RA: 243684; Nathan — RA: [a confirmar]
+Alunos: Alan Araújo Lima — RA: 243684; Nathan — RA: [a confirmar]; Matteo Lucato — RA: [a confirmar]
 
 Roteiro preliminar — entrega de 9 de outubro de 2026
 
@@ -134,6 +134,7 @@ O tema dialoga diretamente com a agenda do CERI sobre inserção externa brasile
 >
 > Alan Araújo Lima — RA 243684
 > Nathan — RA [a confirmar]
+> Matteo Lucato — RA [a confirmar]
 
 # Referências preliminares
 
@@ -183,10 +184,10 @@ Dois pontos da primeira entrega foram corrigidos após consulta às fontes prim�
 
 # Pendências e próximos passos
 
-1. **Registro acadêmico.** Confirmar o RA do Nathan para a versão final da entrega.
+1. **Registro acadêmico.** Confirmar os RAs do Nathan e do Matteo para a versão final da entrega.
 2. **Contato com o entrevistado.** Enviar o convite ao Professor Fernando Sarti na semana de 13 de outubro, com as perguntas em anexo; acionar o Professor Célio Hiratuka caso não haja resposta em uma semana.
 3. **Dados a confirmar.** Autoria, paginação e imprint do trabalho de Sarti e Castilho no V ENEI; número, data e ementa exata da Decisão (UE) 2026/183 no Jornal Oficial da União Europeia; número e data da decisão do Conselho de 9 de janeiro de 2026 relativa ao Acordo Provisório; autoria da coluna da Consultor Jurídico de 29 de abril de 2026.
 4. **Replicação no Comex Stat.** Reproduzir a composição da pauta exportadora à União Europeia em 2025 diretamente no Comex Stat, declarando a agregação utilizada, para dispor de um cálculo próprio além do agregado do MAPA.
 5. **Acompanhamento processual.** Verificar, até a gravação, se houve movimentação na ação principal da Polônia no TJUE ou no pedido de parecer formulado pelo Parlamento Europeu, dado que ambos podem alterar o bloco de abertura.
-6. **Divisão de tarefas.** Definir entre os dois a responsabilidade pela contextualização, pela condução da entrevista e pela edição.
+6. **Divisão de tarefas.** Definir entre os três a responsabilidade pela contextualização, pela condução da entrevista e pela edição.
 7. **Gravação.** Data provável na segunda metade de novembro, condicionada à agenda do entrevistado.

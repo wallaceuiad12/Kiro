@@ -29,6 +29,7 @@ OUT = os.path.join(ROOT, 'roteiro-preliminar-mercosul-ue.pdf')
 ALUNOS = [
     ('Alan Araújo Lima', '243684'),
     ('Nathan', '[a confirmar]'),
+    ('Matteo Lucato', '[a confirmar]'),
 ]
 DISCIPLINA = 'CX904 - Podcast CERI'
 ENTREGA = 'Roteiro preliminar - 9 de outubro de 2026'
@@ -160,8 +161,16 @@ def cabecalho():
          Spacer(1, 0.75 * cm),
          P(f'<b>Disciplina:</b> {DISCIPLINA}', 'IdLeft')]
     rotulo = 'Alunos:' if len(ALUNOS) > 1 else 'Aluno:'
-    nomes = '; '.join(f'{n} &nbsp;&nbsp;<b>RA:</b> {ra}' for n, ra in ALUNOS)
-    s.append(P(f'<b>{rotulo}</b> {nomes}', 'IdLeft'))
+    if len(ALUNOS) <= 2:
+        nomes = '; '.join(f'{n} &nbsp;&nbsp;<b>RA:</b> {ra}' for n, ra in ALUNOS)
+        s.append(P(f'<b>{rotulo}</b> {nomes}', 'IdLeft'))
+    else:
+        # com tres integrantes a linha unica estoura a largura: um por linha,
+        # com o rotulo apenas na primeira
+        s.append(P(f'<b>{rotulo}</b>', 'IdLeft'))
+        for n, ra in ALUNOS:
+            s.append(P(f'&nbsp;&nbsp;&nbsp;&nbsp;{n} &nbsp;&nbsp;<b>RA:</b> {ra}',
+                       'IdLeft'))
     s += [Spacer(1, 0.75 * cm),
           HRFlowable(width='100%', thickness=0.9, color=RULE),
           Spacer(1, 0.35 * cm),
@@ -582,7 +591,8 @@ S.append(caixa([
       'trinta minutos, em data de sua conveniência, no Instituto ou de forma '
       'remota. Enviaríamos as perguntas com antecedência.', 'Mailx'),
     P('Agradecemos a atenção.', 'Mailx'),
-    P('Alan Araújo Lima — RA 243684<br/>Nathan — RA [a confirmar]', 'Mailx'),
+    P('Alan Araújo Lima — RA 243684<br/>Nathan — RA [a confirmar]<br/>'
+      'Matteo Lucato — RA [a confirmar]', 'Mailx'),
 ]))
 
 # --- 7. Referencias
@@ -675,8 +685,8 @@ S.append(P(
 # --- 9. Pendencias
 S.append(H1('Pendências e próximos passos'))
 for i, b in enumerate([
-    '<b>Registro acadêmico.</b> Confirmar o RA do Nathan para a versão final da '
-    'entrega.',
+    '<b>Registro acadêmico.</b> Confirmar os RAs do Nathan e do Matteo para a '
+    'versão final da entrega.',
     '<b>Contato com o entrevistado.</b> Enviar o convite ao Professor Fernando '
     'Sarti na semana de 13 de outubro, com as perguntas em anexo; acionar o '
     'Professor Célio Hiratuka caso não haja resposta em uma semana.',
@@ -692,7 +702,7 @@ for i, b in enumerate([
     'movimentação na ação principal da Polônia no TJUE ou no pedido de parecer '
     'formulado pelo Parlamento Europeu, dado que ambos podem alterar o bloco de '
     'abertura.',
-    '<b>Divisão de tarefas.</b> Definir entre os dois a responsabilidade pela '
+    '<b>Divisão de tarefas.</b> Definir entre os três a responsabilidade pela '
     'contextualização, pela condução da entrevista e pela edição.',
     '<b>Gravação.</b> Data provável na segunda metade de novembro, condicionada à '
     'agenda do entrevistado.',
@@ -702,7 +712,9 @@ for i, b in enumerate([
 
 # ===================================================================== BUILD
 def build():
-    autores = ' e '.join(n for n, _ in ALUNOS)
+    nomes = [n for n, _ in ALUNOS]
+    autores = nomes[0] if len(nomes) == 1 else \
+        ', '.join(nomes[:-1]) + ' e ' + nomes[-1]
     doc = BaseDocTemplate(
         OUT, pagesize=A4, leftMargin=LEFT, rightMargin=RIGHT,
         topMargin=TOP, bottomMargin=BOTTOM,
