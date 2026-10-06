@@ -570,28 +570,6 @@ S.append(P(
     '(2023). Fica como terceira opção apenas por não pertencer ao Instituto, o que '
     'torna o agendamento menos previsível no prazo da disciplina.'))
 
-S.append(H2('Minuta de e-mail de convite'))
-S.append(caixa([
-    P('<b>Assunto:</b> Convite para entrevista no Podcast CERI (CX904), episódio '
-      'sobre o Acordo Mercosul-União Europeia', 'Mailx'),
-    Spacer(1, 5),
-    P('Prezado Professor Fernando Sarti,', 'Mailx'),
-    P('Somos alunos de graduação do Instituto de Economia e cursamos a disciplina '
-      'CX904, Podcast CERI, cujo produto final é um episódio de aproximadamente '
-      'trinta minutos.', 'Mailx'),
-    P('Nosso episódio examina que padrão de inserção externa o Acordo '
-      'Mercosul-União Europeia consolida, agora que o Acordo Provisório de Comércio '
-      'está em aplicação provisória desde 1º de maio. Tomamos como referência '
-      'central o trabalho que o senhor apresentou com Marta Castilho, no V ENEI, '
-      'sobre os impactos do acordo na indústria brasileira.', 'Mailx'),
-    P('Gostaríamos de convidá-lo para a entrevista, com duração aproximada de '
-      'trinta minutos, em data de sua conveniência, no Instituto ou de forma '
-      'remota. Enviaríamos as perguntas com antecedência.', 'Mailx'),
-    P('Agradecemos a atenção.', 'Mailx'),
-    P('Alan Araújo Lima, RA 238212<br/>Nathan Pereira, RA 243684<br/>'
-      'Matteo Lucato, RA 246226', 'Mailx'),
-]))
-
 # --- 7. Referencias
 S.append(H1('Referências preliminares'))
 S.append(H2('Apresentadas na primeira entrega'))
@@ -667,62 +645,6 @@ for r in [
     'Mercosul-UE. <i>Canal Rural</i>, 29 set. 2026. Fonte: Estadão Conteúdo.',
 ]:
     S.append(P(r, 'Refx'))
-
-# --- 8. Nota de correcoes
-S.append(H1('Nota sobre correções à primeira entrega'))
-S.append(P(
-    'Dois pontos da primeira entrega foram corrigidos após consulta às fontes '
-    'primárias, e registramos a correção para que não pareça ajuste silencioso.'))
-S.append(P(
-    '<b>Primeiro.</b> A primeira entrega afirmava que a vigência definitiva '
-    '"depende da ratificação pelos 27 Estados-membros e do parecer do Tribunal de '
-    'Justiça da União Europeia". A formulação confundia os dois instrumentos: a '
-    'ratificação pelos vinte e sete condiciona o Acordo de Parceria, e não o Acordo '
-    'Provisório de Comércio, que é o que está em aplicação provisória e que '
-    'dispensa esse trâmite por tratar de matéria de competência exclusiva da União '
-    'Europeia. A distinção passou a ocupar o primeiro bloco de contextualização, '
-    'por ser condição para entender o que está em jogo no litígio em curso.'))
-S.append(P(
-    '<b>Segundo.</b> O dado de US$ 21,8 bilhões e 44% da pauta está correto, mas '
-    'sua atribuição ao Comex Stat é imprecisa. A formulação consta da página '
-    'oficial do Ministério da Agricultura e Pecuária sobre o acordo, e o agregado '
-    '"produtos agrícolas" corresponde à classificação do Ministério, não a uma '
-    'categoria nativa do Comex Stat, cujos dados de base alimentam o cálculo. A '
-    'referência passou a ser o MAPA, e a mesma fonte permitiu acrescentar o valor '
-    'de US$ 25,2 bilhões para o agronegócio em sentido amplo, equivalente a cerca '
-    'de 51% da pauta.'))
-
-# --- 9. Pendencias
-S.append(P(
-    '<b>Terceiro.</b> A referência ao trabalho de Sarti e Castilho trazia o '
-    'imprint "Belo Horizonte: Face/UFMG". Os anais do V Encontro Nacional de '
-    'Economia Industrial e Inovação, realizado em Belo Horizonte entre 10 e 14 de '
-    'maio de 2021, foram publicados pela Editora Blucher, em São Paulo, na série '
-    'Blucher Engineering Proceedings. A referência foi corrigida e completada com a '
-    'paginação (p. 1647-1659) e o DOI (10.5151/v-enei-731).'))
-S.append(H1('Pendências e próximos passos'))
-for i, b in enumerate([
-    '<b>Contato com o entrevistado.</b> Enviar o convite ao Professor Fernando '
-    'Sarti na semana de 13 de outubro, com as perguntas em anexo; acionar o '
-    'Professor Célio Hiratuka caso não haja resposta em uma semana.',
-    '<b>Assinatura da coluna da Consultor Jurídico.</b> A coluna Território '
-    'Aduaneiro de 29 de abril de 2026 não identifica a autoria na página, de modo '
-    'que a referência foi feita pelo título. Confirmar a assinatura com a redação '
-    'do periódico antes da versão final.',
-    '<b>Replicação no Comex Stat.</b> Reproduzir a composição da pauta exportadora '
-    'à União Europeia em 2025 diretamente no Comex Stat, declarando a agregação '
-    'utilizada, para dispor de um cálculo próprio além do agregado do MAPA.',
-    '<b>Acompanhamento processual.</b> Verificar, até a gravação, se houve '
-    'movimentação na ação principal da Polônia no TJUE ou no pedido de parecer '
-    'formulado pelo Parlamento Europeu, dado que ambos podem alterar o bloco de '
-    'abertura.',
-    '<b>Divisão de tarefas.</b> Definir entre os três a responsabilidade pela '
-    'contextualização, pela condução da entrevista e pela edição.',
-    '<b>Gravação.</b> Data provável na segunda metade de novembro, condicionada à '
-    'agenda do entrevistado.',
-], start=1):
-    S.append(Paragraph(b, styles['Bulletx'], bulletText=f'{i}.'))
-
 
 # ===================================================================== BUILD
 def build():

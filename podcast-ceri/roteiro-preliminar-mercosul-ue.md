@@ -117,24 +117,6 @@ O tema dialoga diretamente com a agenda do CERI sobre inserção externa brasile
 
 **Alternativa externa:** Marta Castilho (UFRJ), coautora do estudo citado e organizadora de "Impactos do acordo Mercosul-União Europeia sobre as mulheres" (2023). Fica como terceira opção apenas por não pertencer ao Instituto, o que torna o agendamento menos previsível no prazo da disciplina.
 
-## Minuta de e-mail de convite
-
-> Assunto: Convite para entrevista no Podcast CERI (CX904), episódio sobre o Acordo Mercosul-União Europeia
->
-> Prezado Professor Fernando Sarti,
->
-> Somos alunos de graduação do Instituto de Economia e cursamos a disciplina CX904, Podcast CERI,, cujo produto final é um episódio de aproximadamente trinta minutos.
->
-> Nosso episódio examina que padrão de inserção externa o Acordo Mercosul-União Europeia consolida, agora que o Acordo Provisório de Comércio está em aplicação provisória desde 1º de maio. Tomamos como referência central o trabalho que o senhor apresentou com Marta Castilho, no V ENEI, sobre os impactos do acordo na indústria brasileira.
->
-> Gostaríamos de convidá-lo para a entrevista, com duração aproximada de trinta minutos, em data de sua conveniência, no Instituto ou de forma remota. Enviaríamos as perguntas com antecedência.
->
-> Agradecemos a atenção.
->
-> Alan Araújo Lima, RA 238212
-> Nathan Pereira, RA 243684
-> Matteo Lucato, RA 246226
-
 # Referências preliminares
 
 ## Apresentadas na primeira entrega
@@ -176,22 +158,3 @@ UNIÃO EUROPEIA; MERCOSUL. *Acordo Provisório sobre Comércio entre a União Eu
 ACORDO Mercosul-UE entra em vigor no dia 1º: lições e apontamentos. *Consultor Jurídico*, São Paulo, 29 abr. 2026. Coluna Território Aduaneiro. Entrada pelo título: a página não identifica a autoria da coluna.
 
 TRIBUNAL DE JUSTIÇA DA UNIÃO EUROPEIA rejeita pedido da Polônia contra aplicação provisória do acordo Mercosul-UE. *Canal Rural*, 29 set. 2026. Fonte: Estadão Conteúdo.
-
-# Nota sobre correções à primeira entrega
-
-Dois pontos da primeira entrega foram corrigidos após consulta às fontes primárias, e registro a correção para que não pareça ajuste silencioso.
-
-**Primeiro.** A primeira entrega afirmava que a vigência definitiva "depende da ratificação pelos 27 Estados-membros e do parecer do Tribunal de Justiça da União Europeia". A formulação confundia os dois instrumentos: a ratificação pelos vinte e sete condiciona o Acordo de Parceria, e não o Acordo Provisório de Comércio, que é o que está em aplicação provisória e que dispensa esse trâmite por tratar de matéria de competência exclusiva da União Europeia. A distinção passou a ocupar o primeiro bloco de contextualização, por ser condição para entender o que está em jogo no litígio em curso.
-
-**Segundo.** O dado de US$ 21,8 bilhões e 44% da pauta está correto, mas sua atribuição ao Comex Stat é imprecisa. A formulação consta da página oficial do Ministério da Agricultura e Pecuária sobre o acordo, e o agregado "produtos agrícolas" corresponde à classificação do Ministério, não a uma categoria nativa do Comex Stat, cujos dados de base alimentam o cálculo. A referência passou a ser o MAPA, e a mesma fonte permitiu acrescentar o valor de US$ 25,2 bilhões para o agronegócio em sentido amplo, equivalente a cerca de 51% da pauta.
-
-**Terceiro.** A referência ao trabalho de Sarti e Castilho trazia o imprint "Belo Horizonte: Face/UFMG". Os anais do V Encontro Nacional de Economia Industrial e Inovação, realizado em Belo Horizonte entre 10 e 14 de maio de 2021, foram publicados pela Editora Blucher, em São Paulo, na série Blucher Engineering Proceedings. A referência foi corrigida e completada com a paginação (p. 1647-1659) e o DOI (10.5151/v-enei-731).
-
-# Pendências e próximos passos
-
-1. **Contato com o entrevistado.** Enviar o convite ao Professor Fernando Sarti na semana de 13 de outubro, com as perguntas em anexo; acionar o Professor Célio Hiratuka caso não haja resposta em uma semana.
-2. **Assinatura da coluna da Consultor Jurídico.** A coluna Território Aduaneiro de 29 de abril de 2026 não identifica a autoria na página, de modo que a referência foi feita pelo título. Confirmar a assinatura com a redação do periódico antes da versão final.
-3. **Replicação no Comex Stat.** Reproduzir a composição da pauta exportadora à União Europeia em 2025 diretamente no Comex Stat, declarando a agregação utilizada, para dispor de um cálculo próprio além do agregado do MAPA.
-4. **Acompanhamento processual.** Verificar, até a gravação, se houve movimentação na ação principal da Polônia no TJUE ou no pedido de parecer formulado pelo Parlamento Europeu, dado que ambos podem alterar o bloco de abertura.
-5. **Divisão de tarefas.** Definir entre os três a responsabilidade pela contextualização, pela condução da entrevista e pela edição.
-6. **Gravação.** Data provável na segunda metade de novembro, condicionada à agenda do entrevistado.
