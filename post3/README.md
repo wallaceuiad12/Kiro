@@ -160,12 +160,31 @@ outra data, ajuste o texto em `variations.json`.
 Evolução do Post 3, em `carrossel/`. Quatro telas, 1080×1350, mesma identidade
 monocromática. Visão geral em `carrossel/contato-4-telas.png`.
 
-| Tela | Arquivo | Conteúdo |
+| Tela | Arquivo | Headline |
 |---|---|---|
-| 01 | `01-capa.png` | "o que é a *Decade.*": IA e consultores humanos, US$ 85M, indicador de arraste |
-| 02 | `02-como-funciona.png` | "a sua vida financeira *num só lugar.*": Open Finance, consultor sênior, assinatura sem comissão |
-| 03 | `03-quem-fundou.png` | "*dois ex-Nubank.*": Vitor Olivier e Felipe Meneses |
-| 04 | `04-convite.png` | "a Decade vai estar *na Unicamp.*" com faixa de CTA e data |
+| 01 | `01-capa.png` | "cuidar do dinheiro *é um segundo emprego.*" |
+| 02 | `02-como-funciona.png` | "um consultor sênior *no seu WhatsApp.*" |
+| 03 | `03-quem-fundou.png` | "o ex-CTO do Nubank *e um Thiel Fellow.*" |
+| 04 | `04-convite.png` | "a história inteira, *ao vivo na Unicamp.*" |
+
+### De onde vem o apelo
+
+A primeira versão da copy era descritiva ("o que é a Decade", "a sua vida financeira num
+só lugar") e chamava pouca atenção. A reescrita mudou a fonte do apelo, não o registro
+tipográfico: o manual define a Decade como sóbria e editorial, sem cor de acento (p.2 e
+p.4), então gritar no estilo quebraria a marca. O apelo vem do conteúdo.
+
+| Tela | Recurso |
+|---|---|
+| 01 | Provocação dirigida ao leitor, não descrição da empresa. A frase é do próprio CEO: *"Managing your own money is a second job"*. Mais provocativa que qualquer adjetivo inventado, e é dele |
+| 02 | Benefício concreto e inesperado no lugar de abstração. "um consultor sênior no seu WhatsApp" é tangível; "sua vida financeira num só lugar" não é |
+| 03 | Credencial como gancho. "o ex-CTO do Nubank e um Thiel Fellow" diz mais a um público de empreendedorismo na Unicamp do que "dois ex-Nubank" |
+| 04 | Fecho com promessa e atrito baixo: a história inteira, ao vivo, coffee break incluso |
+
+Se o time quiser copy e arte francamente mais agressivas, o próprio manual abre essa porta
+em outro lugar: pela p.6, peça de mobilização de campus é **liderada pela Liga**, e aí
+Anton e o amarelo estão liberados. Na arte oficial do evento, quem lidera é a Decade, e o
+teto de energia é este.
 
 `01-capa-escura.png` é uma capa alternativa em fundo preto, para quem preferir abrir o
 carrossel com mais impacto e dar continuidade ao Post 2. O manual p.6 permite preto ou
