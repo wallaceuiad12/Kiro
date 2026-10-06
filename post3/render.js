@@ -2,7 +2,9 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
-const VARIATIONS = require('./variations.json');
+const cfgFile = process.argv[2] || './variations.json';
+const outDir  = process.argv[3] || 'out';
+const VARIATIONS = require(cfgFile.startsWith('.') ? cfgFile : './' + cfgFile);
 
 (async () => {
   const browser = await chromium.launch({ args: ['--no-sandbox'] });
@@ -19,12 +21,12 @@ const VARIATIONS = require('./variations.json');
     await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(350);
 
-    const out = path.resolve(__dirname, 'out', `${v.id}@2x.png`);
+    const out = path.resolve(__dirname, outDir, `${v.id}@2x.png`);
     await page.screenshot({ path: out, clip: { x: 0, y: 0, width: 1080, height: 1350 } });
 
     // mede as faixas de tinta de cada bloco, para conferir alinhamento
     const bands = await page.evaluate(() => {
-      const sel = ['.kicker', '.headline', '.body', '.data', '.ctabox'];
+      const sel = ['.kicker', '.headline', '.body', '.data', '.ctabox', '.people', '.quote'];
       const r = {};
       for (const s of sel) {
         const el = document.querySelector(s);
@@ -40,5 +42,5 @@ const VARIATIONS = require('./variations.json');
   }
 
   await browser.close();
-  console.log('\nrenderizado em post3/out/');
+  console.log('\nrenderizado em post3/' + outDir + '/');
 })();

@@ -1,0 +1,125 @@
+[
+  {
+    "id": "01-capa",
+    "theme": "light",
+    "kicker": "UNICAMP · OUTUBRO",
+    "headline": "o que é a<br><em>Decade.</em>",
+    "body": "US$ 85 milhões na maior rodada seed<br>da história da américa latina — para<br>reinventar como se cuida do dinheiro.",
+    "data": "26.10 · 17H30 · UNICAMP",
+    "swipe": "ARRASTE →",
+    "y": {
+      "kicker": 92,
+      "headline": 468,
+      "body": 740,
+      "data": 935,
+      "swipe": 1120
+    }
+  },
+  {
+    "id": "01-capa-escura",
+    "theme": "dark",
+    "kicker": "UNICAMP · OUTUBRO",
+    "headline": "o que é a<br><em>Decade.</em>",
+    "body": "US$ 85 milhões na maior rodada seed<br>da história da américa latina — para<br>reinventar como se cuida do dinheiro.",
+    "data": "26.10 · 17H30 · UNICAMP",
+    "swipe": "ARRASTE →",
+    "y": {
+      "kicker": 92,
+      "headline": 468,
+      "body": 740,
+      "data": 935,
+      "swipe": 1120
+    }
+  },
+  {
+    "id": "02-o-que-e",
+    "theme": "light",
+    "kicker": "02 · O QUE É",
+    "headline": "inteligência humana<br><em>e artificial.</em>",
+    "headlineSize": 86,
+    "headlineLineHeight": 94,
+    "body": "gestão de patrimônio que combina IA com<br>consultores humanos sêniores. uma camada<br>independente entre você e as instituições<br>financeiras.",
+    "counter": "02 / 06",
+    "y": {
+      "kicker": 92,
+      "headline": 474,
+      "body": 740,
+      "counter": 1120
+    }
+  },
+  {
+    "id": "03-o-que-fazem",
+    "theme": "light",
+    "kicker": "03 · O QUE FAZEM",
+    "headline": "a sua vida financeira<br><em>num só lugar.</em>",
+    "headlineSize": 80,
+    "headlineLineHeight": 90,
+    "body": "conectam suas contas pelo Open Finance e<br>acompanham carteira e gastos de forma<br>contínua — com um consultor sênior a uma<br>mensagem de distância no WhatsApp.",
+    "counter": "03 / 06",
+    "y": {
+      "kicker": 92,
+      "headline": 478,
+      "body": 740,
+      "counter": 1120
+    }
+  },
+  {
+    "id": "04-como-fazem",
+    "theme": "light",
+    "kicker": "04 · COMO FAZEM",
+    "headline": "sem comissão.<br><em>sem conflito.</em>",
+    "headlineSize": 92,
+    "headlineLineHeight": 100,
+    "body": "a consultoria tradicional é remunerada por<br>comissão de produto. a Decade cobra<br>assinatura — e a IA derruba a assimetria de<br>informação que sustenta o modelo antigo.",
+    "counter": "04 / 06",
+    "y": {
+      "kicker": 92,
+      "headline": 474,
+      "body": 740,
+      "counter": 1120
+    }
+  },
+  {
+    "id": "05-quem-fundou",
+    "theme": "light",
+    "kicker": "05 · QUEM FUNDOU",
+    "headline": "<em>dois ex-Nubank.</em>",
+    "headlineSize": 92,
+    "headlineLineHeight": 100,
+    "people": [
+      {
+        "nome": "Vitor Olivier",
+        "cargo": "co-fundador e CEO · 12 anos de Nubank,<br>de um dos primeiros engenheiros a CTO"
+      },
+      {
+        "nome": "Felipe Meneses",
+        "cargo": "co-fundador e head de IA · primeiro brasileiro<br>no Thiel Fellowship, fundou a Hyperplane,<br>comprada pelo Nubank"
+      }
+    ],
+    "counter": "05 / 06",
+    "y": {
+      "kicker": 92,
+      "headline": 474,
+      "people": 650,
+      "counter": 1120
+    }
+  },
+  {
+    "id": "06-convite",
+    "theme": "light",
+    "kicker": "06 · O CONVITE",
+    "headline": "a Decade vai estar<br><em>na Unicamp.</em>",
+    "headlineSize": 95,
+    "headlineLineHeight": 104,
+    "cta": "inscreva-se pelo link na bio",
+    "data": "26.10 · 17H30 · UNICAMP",
+    "counter": "06 / 06",
+    "y": {
+      "kicker": 92,
+      "headline": 474,
+      "cta": 760,
+      "data": 935,
+      "counter": 1120
+    }
+  }
+]
