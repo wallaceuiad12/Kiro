@@ -111,11 +111,11 @@ O tema dialoga diretamente com a agenda do CERI sobre inserção externa brasile
 
 # Entrevistado
 
-**Principal: Fernando Sarti (Instituto de Economia, Unicamp).** Professor do Instituto desde julho de 2002 e livre-docente desde 2019, é pesquisador do Núcleo de Economia Industrial e da Tecnologia desde 1988, do qual foi coordenador entre 2005 e 2007. A escolha se justifica por ele ser coautor, com Marta Castilho, do trabalho "Impactos do Acordo Mercosul e União Europeia sobre a Indústria Brasileira", apresentado no V Encontro Nacional de Economia Industrial e Inovação, isto é, por ter examinado exatamente o objeto da pergunta-guia, e pelo ângulo da indústria de transformação, que é o eixo do episódio. As perguntas 3, 4 e 6 dirigem-se particularmente a ele.
+**Primeira opção: Fernando Sarti.** O professor Sarti é do NEIT, o núcleo de economia industrial do Instituto, e foi ele quem escreveu, com Marta Castilho, o trabalho sobre os impactos do acordo na indústria brasileira que está nas nossas referências. É a escolha mais direta que temos: ele já olhou para esse problema pelo ângulo que nos interessa, o da indústria de transformação, e não pelo do agronegócio, que é o recorte que domina o debate público sobre o acordo. As perguntas 3, 4 e 6 são especialmente para ele, e a 3 parte do que ele próprio argumenta no texto.
 
-**Reserva: Célio Hiratuka (Instituto de Economia, Unicamp).** Professor associado, pesquisador do mesmo Núcleo de Economia Industrial e da Tecnologia, coordenador do Grupo de Estudos Brasil-China e Diretor Associado do Instituto entre outubro de 2019 e outubro de 2023. Sua trajetória em comércio internacional e política industrial cobre o mesmo eixo, e a coordenação do Grupo de Estudos Brasil-China acrescenta a possibilidade de situar o acordo na comparação com o padrão de comércio Brasil-China. As perguntas 1, 2 e 4 dirigem-se particularmente a ele.
+**Segunda opção: Célio Hiratuka.** Também é do NEIT e trabalha com comércio internacional e política industrial, então cobre o mesmo terreno. Tem uma vantagem própria: como coordena o Grupo de Estudos Brasil-China, pode comparar o padrão que o acordo com a União Europeia tende a consolidar com o que o comércio com a China já consolidou, contraponto que o episódio não teria de outra forma. Nesse caso, as perguntas 1, 2 e 4 ganhariam peso.
 
-**Alternativa externa:** Marta Castilho (UFRJ), coautora do estudo citado e organizadora de "Impactos do acordo Mercosul-União Europeia sobre as mulheres" (2023). Fica como terceira opção apenas por não pertencer ao Instituto, o que torna o agendamento menos previsível no prazo da disciplina.
+**Se nenhum dos dois puder: Marta Castilho (UFRJ).** É a coautora do estudo e organizou o livro sobre os impactos do acordo sobre as mulheres. Ficou em terceiro só porque não é do Instituto, e combinar agenda com alguém de fora, no prazo que temos, é mais arriscado.
 
 # Referências preliminares
 
