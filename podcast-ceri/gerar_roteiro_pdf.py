@@ -27,10 +27,8 @@ OUT = os.path.join(ROOT, 'roteiro-preliminar-mercosul-ue.pdf')
 
 # ---------------------------------------------------------------- identificacao
 ALUNOS = [
-    # ATENCAO: a 1a entrega registrava "Alan Araujo Lima - RA: 243684".
-    # O RA abaixo (238212) foi informado depois. Conferir antes de enviar.
     ('Alan Araújo Lima', '238212'),
-    ('Nathan', '[a confirmar]'),
+    ('Nathan', '243684'),
     ('Matteo Lucato', '246226'),
 ]
 DISCIPLINA = 'CX904 - Podcast CERI'
@@ -54,14 +52,12 @@ BOTTOM = 2.0 * cm
 CONTENT_W = PAGE_W - LEFT - RIGHT
 
 # ------------------------------------------------------------------------ cores
-INK = colors.HexColor('#1A1A1A')
-NAVY = colors.HexColor('#1F3864')
-IEBLUE = colors.HexColor('#44697D')
-GRAY = colors.HexColor('#5A5A5A')
-RULE = colors.HexColor('#C9D2DA')
-BOXBG = colors.HexColor('#F4F6F8')
-TABHEAD = colors.HexColor('#1F3864')
-TABALT = colors.HexColor('#F2F5F8')
+# Documento monocromatico: tudo preto sobre branco, sem preenchimentos.
+INK = colors.black
+NAVY = colors.black
+IEBLUE = colors.black
+GRAY = colors.black
+RULE = colors.black
 
 styles = getSampleStyleSheet()
 
@@ -101,7 +97,7 @@ _add('Refx', parent=styles['BodyText'], fontName=BASE, fontSize=9.4,
 _add('Cellx', parent=styles['BodyText'], fontName=BASE, fontSize=8.6,
      leading=11.8, textColor=INK, spaceAfter=0)
 _add('CellHead', parent=styles['BodyText'], fontName=BASE + '-Bold', fontSize=8.6,
-     leading=11.8, textColor=colors.white, spaceAfter=0)
+     leading=11.8, textColor=INK, spaceAfter=0)
 _add('Mailx', parent=styles['BodyText'], fontName=BASE, fontSize=9.4,
      leading=14, textColor=INK, alignment=TA_JUSTIFY, spaceAfter=6)
 
@@ -125,8 +121,8 @@ def H2(t):
 # ------------------------------------------------------------------- cabecalho
 def logo_row():
     """Logos oficiais: Unicamp a esquerda, Instituto de Economia a direita."""
-    uni = os.path.join(LOGOS, 'unicamp-logo.png')
-    ie = os.path.join(LOGOS, 'ie-logotipo-color.png')
+    uni = os.path.join(LOGOS, 'unicamp-logo-preto.png')
+    ie = os.path.join(LOGOS, 'ie-logotipo-preto.png')
     cells = []
 
     if os.path.exists(uni):
@@ -190,28 +186,26 @@ def tabela(linhas, larguras):
     data = [[P(c, 'CellHead') for c in linhas[0]]]
     data += [[P(c, 'Cellx') for c in row] for row in linhas[1:]]
     t = Table(data, colWidths=larguras, repeatRows=1, hAlign='LEFT')
-    cmds = [
+    # sem preenchimento: grade fina preta e cabecalho apenas em negrito,
+    # separado do corpo por um fio mais grosso
+    t.setStyle(TableStyle([
         ('GRID', (0, 0), (-1, -1), 0.4, RULE),
-        ('BACKGROUND', (0, 0), (-1, 0), TABHEAD),
+        ('LINEBELOW', (0, 0), (-1, 0), 1.0, RULE),
         ('VALIGN', (0, 0), (-1, -1), 'TOP'),
         ('LEFTPADDING', (0, 0), (-1, -1), 5),
         ('RIGHTPADDING', (0, 0), (-1, -1), 5),
         ('TOPPADDING', (0, 0), (-1, -1), 5),
         ('BOTTOMPADDING', (0, 0), (-1, -1), 5),
-    ]
-    for i in range(1, len(data)):
-        if i % 2 == 0:
-            cmds.append(('BACKGROUND', (0, i), (-1, i), TABALT))
-    t.setStyle(TableStyle(cmds))
+    ]))
     return t
 
 
 def caixa(paras, largura=None):
     t = Table([[p] for p in paras], colWidths=[largura or CONTENT_W])
+    # caixa sem fundo: so um contorno fino preto
     t.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, -1), BOXBG),
-        ('LINEBEFORE', (0, 0), (0, -1), 2.2, IEBLUE),
-        ('LEFTPADDING', (0, 0), (-1, -1), 12),
+        ('BOX', (0, 0), (-1, -1), 0.5, RULE),
+        ('LEFTPADDING', (0, 0), (-1, -1), 10),
         ('RIGHTPADDING', (0, 0), (-1, -1), 10),
         ('TOPPADDING', (0, 0), (-1, 0), 8),
         ('BOTTOMPADDING', (0, -1), (-1, -1), 8),
@@ -424,8 +418,8 @@ for b in [
     'anos de negociação (MAPA, 2026).',
     'Aprovação, pelo Conselho da União Europeia, em 9 de janeiro de 2026, das duas '
     'decisões que autorizam a assinatura dos dois instrumentos (Conselho da UE, '
-    '2026). <font color="#A61C00">[VERIFICAR: número e data da decisão relativa ao '
-    'Acordo Provisório no Jornal Oficial da UE]</font>',
+    '2026). [VERIFICAR: número e data da decisão relativa ao '
+    'Acordo Provisório no Jornal Oficial da UE]',
     'A distinção entre o Acordo Provisório de Comércio, de competência exclusiva da '
     'União Europeia, e o Acordo de Parceria, acordo misto sujeito à ratificação '
     'pelos vinte e sete (Conjur, 29 abr. 2026; MAPA, 2026).',
@@ -593,7 +587,7 @@ S.append(caixa([
       'trinta minutos, em data de sua conveniência, no Instituto ou de forma '
       'remota. Enviaríamos as perguntas com antecedência.', 'Mailx'),
     P('Agradecemos a atenção.', 'Mailx'),
-    P('Alan Araújo Lima — RA 238212<br/>Nathan — RA [a confirmar]<br/>'
+    P('Alan Araújo Lima — RA 238212<br/>Nathan — RA 243684<br/>'
       'Matteo Lucato — RA 246226', 'Mailx'),
 ]))
 
@@ -616,9 +610,9 @@ for r in [
     'SARTI, Fernando; CASTILHO, Marta. Impactos do acordo Mercosul e União Europeia '
     'sobre a indústria brasileira. In: ENCONTRO NACIONAL DE ECONOMIA INDUSTRIAL E '
     'INOVAÇÃO, 5., 2021, Belo Horizonte. <i>Anais</i>. São Paulo: Blucher '
-    'Proceedings, 2021. <font color="#A61C00">[VERIFICAR: autoria, paginação e '
+    'Proceedings, 2021. [VERIFICAR: autoria, paginação e '
     'imprint — a primeira entrega registrou "Belo Horizonte: Face/UFMG"; a lista de '
-    'artigos do V ENEI está em Blucher Proceedings]</font>',
+    'artigos do V ENEI está em Blucher Proceedings]',
 ]:
     S.append(P(r, 'Refx'))
 
@@ -647,14 +641,14 @@ for r in [
     'CONSELHO DA UNIÃO EUROPEIA. <i>Decisão (UE) 2026/183</i>, relativa à '
     'assinatura e à aplicação provisória do Acordo Provisório de Comércio entre a '
     'União Europeia e o Mercosul. <i>Jornal Oficial da União Europeia</i>, 2026. '
-    '<font color="#A61C00">[VERIFICAR: data, ementa exata e número do Jornal '
-    'Oficial]</font>',
+    '[VERIFICAR: data, ementa exata e número do Jornal '
+    'Oficial]',
     'MERCOSUL; UNIÃO EUROPEIA. <i>Acordo Provisório de Comércio</i>. Apêndice '
     '2-A-1: cronograma de desgravação tarifária da União Europeia. Assunção, '
     '17 jan. 2026.',
     'Acordo Mercosul-UE entra em vigor no dia 1º: lições e apontamentos. '
     '<i>Consultor Jurídico</i>, São Paulo, 29 abr. 2026. '
-    '<font color="#A61C00">[VERIFICAR: autoria da coluna]</font>',
+    '[VERIFICAR: autoria da coluna]',
     'TJUE rejeita pedido da Polônia contra aplicação provisória do acordo '
     'Mercosul-UE. <i>Canal Rural</i>, 29 set. 2026. Fonte: Estadão Conteúdo.',
 ]:
@@ -687,8 +681,6 @@ S.append(P(
 # --- 9. Pendencias
 S.append(H1('Pendências e próximos passos'))
 for i, b in enumerate([
-    '<b>Registro acadêmico.</b> Confirmar o RA do Nathan para a versão final da '
-    'entrega.',
     '<b>Contato com o entrevistado.</b> Enviar o convite ao Professor Fernando '
     'Sarti na semana de 13 de outubro, com as perguntas em anexo; acionar o '
     'Professor Célio Hiratuka caso não haja resposta em uma semana.',
