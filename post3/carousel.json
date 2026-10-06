@@ -4,157 +4,36 @@
     "theme": "light",
     "kicker": "UNICAMP · OUTUBRO",
     "headline": "o que é a<br><em>Decade.</em>",
-    "body": "US$ 85 milhões na maior rodada seed<br>da história da américa latina, para<br>reinventar como se cuida do dinheiro.",
+    "body": "IA e consultores humanos sêniores para<br>as maiores decisões da sua vida. US$ 85<br>milhões na maior seed da américa latina.",
     "data": "26.10 · 17H30 · UNICAMP",
     "swipe": "ARRASTE →",
-    "y": {
-      "kicker": 92,
-      "headline": 468,
-      "body": 740,
-      "data": 935,
-      "swipe": 1120
-    }
+    "y": { "kicker": 92, "headline": 468, "body": 740, "data": 935, "swipe": 1120 }
   },
   {
     "id": "01-capa-escura",
     "theme": "dark",
     "kicker": "UNICAMP · OUTUBRO",
     "headline": "o que é a<br><em>Decade.</em>",
-    "body": "US$ 85 milhões na maior rodada seed<br>da história da américa latina, para<br>reinventar como se cuida do dinheiro.",
+    "body": "IA e consultores humanos sêniores para<br>as maiores decisões da sua vida. US$ 85<br>milhões na maior seed da américa latina.",
     "data": "26.10 · 17H30 · UNICAMP",
     "swipe": "ARRASTE →",
-    "y": {
-      "kicker": 92,
-      "headline": 468,
-      "body": 740,
-      "data": 935,
-      "swipe": 1120
-    }
+    "y": { "kicker": 92, "headline": 468, "body": 740, "data": 935, "swipe": 1120 }
   },
   {
-    "id": "02-o-que-e",
+    "id": "02-como-funciona",
     "theme": "light",
-    "kicker": "02 · O QUE É",
-    "headline": "inteligência humana<br><em>e artificial.</em>",
-    "headlineSize": 86,
-    "headlineLineHeight": 94,
-    "body": "gestão de patrimônio que combina IA com<br>consultores humanos sêniores. uma camada<br>independente entre você e as instituições<br>financeiras.",
-    "counter": "02 / 10",
-    "y": {
-      "kicker": 92,
-      "headline": 474,
-      "body": 740,
-      "counter": 1120
-    }
-  },
-  {
-    "id": "03-o-que-fazem",
-    "theme": "light",
-    "kicker": "03 · O QUE FAZEM",
+    "kicker": "02 · COMO FUNCIONA",
     "headline": "a sua vida financeira<br><em>num só lugar.</em>",
     "headlineSize": 80,
     "headlineLineHeight": 90,
-    "body": "conectam suas contas pelo Open Finance e<br>acompanham carteira e gastos de forma<br>contínua, com um consultor sênior a uma<br>mensagem de distância no WhatsApp.",
-    "counter": "03 / 10",
-    "y": {
-      "kicker": 92,
-      "headline": 478,
-      "body": 740,
-      "counter": 1120
-    }
+    "body": "conectam suas contas pelo Open Finance e<br>acompanham carteira e gastos de forma<br>contínua. cobram assinatura, não<br>comissão de produto, então sem conflito.",
+    "counter": "02 / 04",
+    "y": { "kicker": 92, "headline": 478, "body": 740, "counter": 1120 }
   },
   {
-    "id": "04-como-fazem",
+    "id": "03-quem-fundou",
     "theme": "light",
-    "kicker": "04 · COMO FAZEM",
-    "headline": "sem comissão.<br><em>sem conflito.</em>",
-    "headlineSize": 92,
-    "headlineLineHeight": 100,
-    "body": "a consultoria tradicional é remunerada por<br>comissão de produto. a Decade cobra<br>assinatura, e a IA derruba a assimetria de<br>informação que sustenta o modelo antigo.",
-    "counter": "04 / 10",
-    "y": {
-      "kicker": 92,
-      "headline": 474,
-      "body": 740,
-      "counter": 1120
-    }
-  },
-  {
-    "id": "05-o-problema",
-    "theme": "light",
-    "kicker": "05 · O PROBLEMA",
-    "headline": "um país que<br><em>não investe.</em>",
-    "headlineSize": 95,
-    "headlineLineHeight": 104,
-    "stats": [
-      {
-        "num": "33%",
-        "rotulo": "dos brasileiros têm<br>algum investimento"
-      },
-      {
-        "num": "7%",
-        "rotulo": "conseguiriam viver<br>do que pouparam"
-      }
-    ],
-    "swipe": "FONTE · DECADE",
-    "counter": "05 / 10",
-    "y": {
-      "kicker": 92,
-      "headline": 474,
-      "stats": 752,
-      "swipe": 1030,
-      "counter": 1120
-    }
-  },
-  {
-    "id": "06-por-que-o-brasil",
-    "theme": "light",
-    "kicker": "06 · POR QUE O BRASIL",
-    "headline": "a infraestrutura<br><em>que só existe aqui.</em>",
-    "headlineSize": 78,
-    "headlineLineHeight": 88,
-    "body": "o Pix move cerca de 100 bilhões de<br>transações por ano e o Open Finance<br>padroniza o acesso aos dados. é o que torna<br>o monitoramento contínuo possível no Brasil.",
-    "counter": "06 / 10",
-    "y": {
-      "kicker": 92,
-      "headline": 480,
-      "body": 740,
-      "counter": 1120
-    }
-  },
-  {
-    "id": "07-a-tese",
-    "theme": "light",
-    "kicker": "07 · A TESE",
-    "quote": "serviços financeiros são complexos por<br>desenho, e monetizados pela assimetria<br>de informação. a IA derruba essa<br>assimetria.",
-    "quoteAuthor": "FELIPE MENESES · CO-FUNDADOR E HEAD DE IA",
-    "counter": "07 / 10",
-    "y": {
-      "kicker": 92,
-      "quote": 600,
-      "counter": 1120
-    }
-  },
-  {
-    "id": "08-quem-apostou",
-    "theme": "light",
-    "kicker": "08 · QUEM APOSTOU",
-    "headline": "quem apostou<br><em>US$ 85 milhões.</em>",
-    "headlineSize": 92,
-    "headlineLineHeight": 100,
-    "body": "Greenoaks, Benchmark e Diffusion lideraram<br>a rodada, com Atlantico e Norte Ventures.<br>é a maior seed já levantada por uma<br>startup latino-americana.",
-    "counter": "08 / 10",
-    "y": {
-      "kicker": 92,
-      "headline": 474,
-      "body": 740,
-      "counter": 1120
-    }
-  },
-  {
-    "id": "09-quem-fundou",
-    "theme": "light",
-    "kicker": "09 · QUEM FUNDOU",
+    "kicker": "03 · QUEM FUNDOU",
     "headline": "<em>dois ex-Nubank.</em>",
     "headlineSize": 92,
     "headlineLineHeight": 100,
@@ -168,30 +47,19 @@
         "cargo": "co-fundador e head de IA · primeiro brasileiro<br>no Thiel Fellowship, fundou a Hyperplane,<br>comprada pelo Nubank"
       }
     ],
-    "counter": "09 / 10",
-    "y": {
-      "kicker": 92,
-      "headline": 474,
-      "people": 650,
-      "counter": 1120
-    }
+    "counter": "03 / 04",
+    "y": { "kicker": 92, "headline": 474, "people": 650, "counter": 1120 }
   },
   {
-    "id": "10-convite",
+    "id": "04-convite",
     "theme": "light",
-    "kicker": "10 · O CONVITE",
+    "kicker": "04 · O CONVITE",
     "headline": "a Decade vai estar<br><em>na Unicamp.</em>",
     "headlineSize": 95,
     "headlineLineHeight": 104,
     "cta": "inscreva-se pelo link na bio",
     "data": "26.10 · 17H30 · UNICAMP",
-    "counter": "10 / 10",
-    "y": {
-      "kicker": 92,
-      "headline": 474,
-      "cta": 760,
-      "data": 935,
-      "counter": 1120
-    }
+    "counter": "04 / 04",
+    "y": { "kicker": 92, "headline": 474, "cta": 760, "data": 935, "counter": 1120 }
   }
 ]

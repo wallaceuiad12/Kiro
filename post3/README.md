@@ -94,14 +94,42 @@ cd post3
 pip3 install pillow numpy
 npm i -D playwright && npx playwright install chromium
 
-python3 extract_assets.py      # recorta símbolo e lockups, converte p/ monocromático
-python3 extract_motif.py       # extrai o motivo de barras (diagnóstico)
-python3 make_motif_tints.py    # gera o motivo a partir do símbolo
-node render.js                 # renderiza todas as variações de variations.json
-python3 measure.py             # confere o alinhamento contra o original
+python3 superres.py                            # recorta e trata os ativos de marca
+node render.js variations.json out             # as 4 variações do Post 3
+node render.js carousel.json carrossel         # as 4 telas do carrossel
+node render.js extras.json extras              # as 4 peças avulsas
+python3 measure.py                             # confere o alinhamento contra o original
 ```
 
-Para trocar copy, edite `variations.json`. O campo `headline` aceita `<br>` e `<em>` (itálico).
+Para trocar copy, edite o JSON correspondente. O campo `headline` aceita `<br>` e `<em>`
+(itálico), e os blocos disponíveis são `body`, `quote` + `quoteAuthor`, `people`, `stats`,
+`cta`, `data`, `counter` e `swipe`. Cada bloco só é renderizado se estiver definido.
+
+## Resolução dos ativos de marca
+
+O símbolo e os lockups não existem como arquivo: foram recortados das duas peças
+publicadas. Isso impõe um teto de qualidade, e o caminho até o resultado atual descartou
+duas abordagens que pareciam boas:
+
+| Tentativa | Resultado |
+|---|---|
+| Vetorizar com potrace | **Descartada.** Traçar um JPEG de 189 px faz o potrace seguir o ruído de compressão: borda bamba e o globo sobre o "i" da Liga se desfaz |
+| Média das duas peças | **Descartada.** O alinhamento só chega a IoU ~0.85, e somar máscaras desalinhadas gera franja cinza, ou seja, mais borrão |
+| Trocar todos os ativos para a peça escura | **Revertida.** O símbolo e o lockup da Decade ficaram mais pesados: off-white sobre preto sofre mais com JPEG do que tinta escura sobre fundo claro |
+
+O que ficou:
+
+- **Pré-ampliação de 4×** com LANCZOS. Não cria informação, mas faz o navegador
+  **reduzir** em vez de ampliar, e era a ampliação no navegador que produzia o aspecto
+  pixelado no render @2x.
+- **Só o logo da Liga trocou de fonte**, passando a vir da peça escura, onde ele está em
+  195×80 e, mais importante, onde o globo e as letras de EMPREENDEDORA têm definição.
+- **O peso da tinta do logo da Liga é calibrado por busca** para bater com o do Post 1
+  (alvo 0.2496, obtido 0.2495), senão a marca do parceiro sairia mais gorda que a original.
+- Símbolo e lockup da Decade seguem vindo do Post 1 com os parâmetros já validados.
+
+O teto só sobe de verdade com o arquivo oficial da Liga, que o manual p.7 registra como
+pendência. Quando chegar, é só trocar os PNGs em `assets/` e rodar `node render.js`.
 
 ---
 
@@ -113,8 +141,8 @@ todas as peças. Vale corrigir o manual, cuja p.1 ainda traz 25.10.2026.
 **Copy aprovada** sem a transcrição dos áudios. Os textos são redação a partir dos fatos
 do manual e das fontes públicas listadas adiante.
 
-**O logo mono da Liga é derivado** do colorido do Post 1 por conversão de luminância, não é
-o arquivo oficial. Quando o PNG oficial chegar nas versões clara e escura (manual p.7),
+**O logo mono da Liga é derivado** do colorido da peça escura por conversão de luminância,
+não é o arquivo oficial. Quando o PNG oficial chegar nas versões clara e escura (manual p.7),
 basta trocar `assets/liga_lockup_black.png` e `assets/liga_lockup_offwhite.png` e rodar
 `node render.js`. Nada mais muda.
 
@@ -129,48 +157,61 @@ outra data, ajuste o texto em `variations.json`.
 
 # Carrossel · "o que é a Decade"
 
-Evolução do Post 3, em `carrossel/`. Dez telas, 1080×1350, mesma identidade monocromática.
-Visão geral em `carrossel/contato-10-telas.png`.
+Evolução do Post 3, em `carrossel/`. Quatro telas, 1080×1350, mesma identidade
+monocromática. Visão geral em `carrossel/contato-4-telas.png`.
 
 | Tela | Arquivo | Conteúdo |
 |---|---|---|
-| 01 | `01-capa.png` | "o que é a *Decade.*" com o gancho dos US$ 85M e indicador de arraste |
-| 02 | `02-o-que-e.png` | "inteligência humana *e artificial.*", a tagline do manual (p.4) |
-| 03 | `03-o-que-fazem.png` | "a sua vida financeira *num só lugar.*": Open Finance e consultor sênior |
-| 04 | `04-como-fazem.png` | "sem comissão. *sem conflito.*", o modelo por assinatura |
-| 05 | `05-o-problema.png` | "um país que *não investe.*" com os números 33% e 7% em mono |
-| 06 | `06-por-que-o-brasil.png` | "a infraestrutura *que só existe aqui.*": Pix e Open Finance |
-| 07 | `07-a-tese.png` | citação de Felipe Meneses sobre assimetria de informação |
-| 08 | `08-quem-apostou.png` | "quem apostou *US$ 85 milhões.*", os fundos da rodada |
-| 09 | `09-quem-fundou.png` | "*dois ex-Nubank.*": Vitor Olivier e Felipe Meneses |
-| 10 | `10-convite.png` | "a Decade vai estar *na Unicamp.*" com faixa de CTA e data |
-
-A narrativa vai do que a empresa é até o convite, passando pelo problema que ela ataca,
-por que o Brasil é o mercado de partida, a tese e quem bancou a rodada. Dez é o limite
-clássico de um carrossel no Instagram, então a sequência fecha sem sobra.
+| 01 | `01-capa.png` | "o que é a *Decade.*": IA e consultores humanos, US$ 85M, indicador de arraste |
+| 02 | `02-como-funciona.png` | "a sua vida financeira *num só lugar.*": Open Finance, consultor sênior, assinatura sem comissão |
+| 03 | `03-quem-fundou.png` | "*dois ex-Nubank.*": Vitor Olivier e Felipe Meneses |
+| 04 | `04-convite.png` | "a Decade vai estar *na Unicamp.*" com faixa de CTA e data |
 
 `01-capa-escura.png` é uma capa alternativa em fundo preto, para quem preferir abrir o
 carrossel com mais impacto e dar continuidade ao Post 2. O manual p.6 permite preto ou
 off-white em post de chamada; as telas internas seguem off-white porque são conteúdo
 institucional, onde a Decade lidera em off-white.
 
-Navegação: o rótulo da seção vai no kicker em mono (`03 · O QUE FAZEM`) e o contador
-`03 / 10` fica acima do rodapé. O lockup Decade + Liga aparece em **todas** as telas,
+Navegação: o rótulo da seção vai no kicker em mono (`02 · COMO FUNCIONA`) e o contador
+`02 / 04` fica acima do rodapé. O lockup Decade + Liga aparece em **todas** as telas,
 porque p.5 trata a segunda marca como assinatura de rodapé.
 
-A tela 05 usa mono no lugar da serifada para os números, como manda o manual p.4 ("mono
-para dados, números, detalhes técnicos"), e traz `FONTE · DECADE` abaixo, porque os
+### Por que quatro e não três
+
+Três telas exigiriam juntar fundadores e convite numa só. Isso foi testado e medido: a
+faixa de CTA passa a **encobrir** a última linha das credenciais do Felipe Meneses, e a
+folga mínima entre blocos cai para **13 px**, contra os 106 a 204 px que o Post 1 mantém.
+A respiração generosa é justamente o que define a estética sóbria da Decade, e o manual
+p.5 pede área de proteção generosa, então comprimir a esse ponto sairia da identidade.
+
+Com quatro telas, "o que fazem" e "como fazem" entram juntos na tela 02, o que funciona
+porque são a mesma ideia vista de dois ângulos: o que a plataforma faz e como ela cobra.
+
+## Peças avulsas
+
+Quatro peças que não couberam no carrossel curto ficaram em `extras/`, prontas para usar
+como post único ou story. Visão geral em `extras/contato-extras.png`.
+
+| Arquivo | Conteúdo |
+|---|---|
+| `extra-o-problema.png` | "um país que *não investe.*" com 33% e 7% em mono |
+| `extra-por-que-o-brasil.png` | "a infraestrutura *que só existe aqui.*": Pix e Open Finance |
+| `extra-a-tese.png` | citação de Felipe Meneses sobre assimetria de informação |
+| `extra-quem-apostou.png` | "quem apostou *US$ 85 milhões.*", os fundos da rodada |
+
+A peça do problema usa mono no lugar da serifada para os números, como manda o manual p.4
+("mono para dados, números, detalhes técnicos"), e traz `FONTE · DECADE` abaixo, porque os
 percentuais são números citados pelos próprios fundadores, não medição independente.
 
-A tela 07 traz uma declaração que Felipe Meneses deu à imprensa, em tradução livre do
+A peça da tese traz uma declaração que Felipe Meneses deu à imprensa, em tradução livre do
 inglês. O original é "Financial services are complex by design and often monetized through
 asymmetry of information. AI collapses that asymmetry."
 
 ## Checagem
 
-| Tela | Saturação máx. | Margem lateral mínima |
+| Conjunto | Saturação máx. | Margem lateral mínima |
 |---|---|---|
-| todas | 11 (o off-white da marca) | 146 px |
+| 4 variações do Post 3 + 5 telas + 4 avulsas | 11 (o off-white da marca) | 146 px |
 
 ## Fatos e fontes
 
@@ -199,7 +240,7 @@ Conteúdo reescrito para conformidade com restrições de licenciamento.
 
 ## Notas do carrossel
 
-A tela 10 diz "a Decade vai estar na Unicamp" e não nomeia quem comparece, porque nenhuma
+A tela 04 diz "a Decade vai estar na Unicamp" e não nomeia quem comparece, porque nenhuma
 fonte confirma presença dos fundadores no evento. Se Olivier ou Meneses forem confirmados,
 é só nomear em `carousel.json`.
 
