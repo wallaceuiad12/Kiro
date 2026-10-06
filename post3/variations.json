@@ -1,0 +1,74 @@
+[
+  {
+    "id": "v0-replica-post1",
+    "theme": "light",
+    "kicker": "UNICAMP · OUTUBRO",
+    "headline": "algo está sendo<br><em>construído.</em>",
+    "body": "as inscrições abrem em breve. entre<br>na nossa comunidade no WhatsApp<br>e saiba antes de todo mundo.",
+    "data": "26.10 · 17H30",
+    "y": {
+      "kicker": 92,
+      "headline": 468,
+      "body": 740,
+      "data": 935
+    }
+  },
+  {
+    "id": "v1-infos-claro",
+    "theme": "light",
+    "kicker": "UNICAMP · OUTUBRO",
+    "headline": "o que vai<br><em>acontecer.</em>",
+    "body": "inteligência humana e artificial para as<br>maiores decisões da sua vida. uma tarde<br>com quem levantou a maior seed da LatAm.",
+    "data": "26.10 · 17H30 · UNICAMP",
+    "y": {
+      "kicker": 92,
+      "headline": 468,
+      "body": 740,
+      "data": 935
+    }
+  },
+  {
+    "id": "v2-infos-escuro",
+    "theme": "dark",
+    "kicker": "UNICAMP · OUTUBRO",
+    "headline": "o que vai<br><em>acontecer.</em>",
+    "body": "inteligência humana e artificial para as<br>maiores decisões da sua vida. uma tarde<br>com quem levantou a maior seed da LatAm.",
+    "data": "26.10 · 17H30 · UNICAMP",
+    "y": {
+      "kicker": 92,
+      "headline": 468,
+      "body": 740,
+      "data": 935
+    }
+  },
+  {
+    "id": "v3-contagem-claro",
+    "theme": "light",
+    "kicker": "UNICAMP · OUTUBRO",
+    "headline": "faltam<br><em>vinte dias.</em>",
+    "body": "as inscrições seguem abertas.<br>coffee break incluso.",
+    "data": "26.10 · 17H30 · UNICAMP",
+    "y": {
+      "kicker": 92,
+      "headline": 468,
+      "body": 775,
+      "data": 935
+    }
+  },
+  {
+    "id": "v4-cta-claro",
+    "theme": "light",
+    "kicker": "UNICAMP · OUTUBRO",
+    "headline": "as inscrições<br><em>estão abertas.</em>",
+    "headlineSize": 100,
+    "headlineLineHeight": 100,
+    "cta": "inscreva-se pelo link na bio",
+    "data": "26.10 · 17H30 · UNICAMP",
+    "y": {
+      "kicker": 92,
+      "headline": 474,
+      "cta": 765,
+      "data": 935
+    }
+  }
+]

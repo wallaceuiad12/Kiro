@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {
+    font-family: 'Playfair';
+    src: url('assets/fonts/PlayfairDisplay[wght].ttf') format('truetype-variations');
+    font-weight: 400 900; font-style: normal;
+  }
+  @font-face {
+    font-family: 'Playfair';
+    src: url('assets/fonts/PlayfairDisplay-Italic[wght].ttf') format('truetype-variations');
+    font-weight: 400 900; font-style: italic;
+  }
+  @font-face {
+    font-family: 'JBMono';
+    src: url('assets/fonts/JetBrainsMono[wght].ttf') format('truetype-variations');
+    font-weight: 100 800; font-style: normal;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; }
+
+  .canvas {
+    position: relative; width: 1080px; height: 1350px;
+    background: var(--bg); overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* motivo de barras = simbolo Decade ampliado (IoU 0.914 contra o original) */
+  .motif {
+    position: absolute; left: -84px; top: 92px;
+    width: 1248px; height: 1155px;
+    opacity: var(--motif-opacity);
+  }
+
+  .symbol { position: absolute; left: 502px; top: 351px; width: 75.9px; height: 71.7px; }
+
+  .block { position: absolute; left: 0; width: 1080px; text-align: center; }
+
+  .kicker {
+    font-family: 'JBMono'; font-weight: 500; font-size: 26px;
+    letter-spacing: 0.39em; text-indent: 0.39em;
+    text-transform: uppercase; color: var(--muted);
+  }
+
+  .headline {
+    font-family: 'Playfair'; font-weight: 500; color: var(--ink);
+    font-size: var(--h-size); line-height: var(--h-lh);
+  }
+  .headline em { font-style: italic; font-weight: 500; }
+
+  .body {
+    font-family: 'Playfair'; font-weight: 400; color: var(--muted);
+    font-size: 36px; line-height: 52px;
+  }
+
+  .data {
+    font-family: 'JBMono'; font-weight: 500; font-size: 32px;
+    letter-spacing: 0.20em; text-indent: 0.20em;
+    text-transform: uppercase; color: var(--ink);
+  }
+
+  /* caixa de CTA: mesma proporcao da peca escura (70% da largura, 108px de altura),
+     mas em monocromatico -- a peca original usa off-white sobre preto */
+  .ctabox {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 754px; height: 108px;
+    background: var(--cta-bg);
+    font-family: 'Playfair'; font-style: italic; font-weight: 500;
+    font-size: 42px; color: var(--cta-ink);
+  }
+
+  .footer { position: absolute; left: 0; top: 0; width: 1080px; height: 1350px; }
+  .footer img { position: absolute; }
+  .f-decade { left: 302.1px; top: 1222.6px; width: 227px;   height: 50.6px; }
+  .f-liga   { left: 610.9px; top: 1200.2px; width: 166.2px; height: 72.6px; }
+  .f-divider{
+    position: absolute; left: 568.7px; top: 1210.8px;
+    width: 1.7px; height: 59px; background: var(--divider);
+  }
+</style>
+</head>
+<body>
+  <div class="canvas" id="canvas"></div>
+<script>
+const V = window.CONFIG;
+
+const THEMES = {
+  light: {
+    '--bg': '#F5F1EC', '--ink': '#000000', '--muted': '#514F4D',
+    '--motif-opacity': '1', '--divider': '#A19E99',
+    '--cta-bg': '#000000', '--cta-ink': '#F5F1EC',
+    motif: 'assets/motif_tint_light.png',
+    symbol: 'assets/symbol_black.png',
+    decade: 'assets/decade_lockup_black.png',
+    liga: 'assets/liga_lockup_black.png',
+  },
+  dark: {
+    '--bg': '#0C0B09', '--ink': '#F5F1EC', '--muted': '#A19E99',
+    '--motif-opacity': '1', '--divider': '#514F4D',
+    '--cta-bg': '#F5F1EC', '--cta-ink': '#0C0B09',
+    motif: 'assets/motif_tint_dark.png',
+    symbol: 'assets/symbol_offwhite.png',
+    decade: 'assets/decade_lockup_offwhite.png',
+    liga: 'assets/liga_lockup_offwhite.png',
+  },
+};
+
+const t = THEMES[V.theme];
+const c = document.getElementById('canvas');
+for (const k in t) if (k.startsWith('--')) c.style.setProperty(k, t[k]);
+c.style.setProperty('--h-size', (V.headlineSize || 99) + 'px');
+c.style.setProperty('--h-lh',   (V.headlineLineHeight || 108) + 'px');
+
+let html = '';
+html += `<img class="motif" src="${t.motif}">`;
+html += `<img class="symbol" src="${t.symbol}">`;
+html += `<div class="block kicker" style="top:${V.y.kicker}px">${V.kicker}</div>`;
+html += `<div class="block headline" style="top:${V.y.headline}px">${V.headline}</div>`;
+if (V.body)   html += `<div class="block body" style="top:${V.y.body}px">${V.body}</div>`;
+if (V.cta)    html += `<div class="block" style="top:${V.y.cta}px"><span class="ctabox">${V.cta}</span></div>`;
+html += `<div class="block data" style="top:${V.y.data}px">${V.data}</div>`;
+html += `<div class="footer">
+           <img class="f-decade" src="${t.decade}">
+           <div class="f-divider"></div>
+           <img class="f-liga" src="${t.liga}">
+         </div>`;
+c.innerHTML = html;
+</script>
+</body>
+</html>
