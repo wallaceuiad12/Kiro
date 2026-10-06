@@ -216,7 +216,8 @@ DOC.append(('capa', (
         'item por item, uma <b>resposta-modelo</b>, os <b>erros que mais custam nota</b> e os '
         '<b>pontos de diferenciação</b>.',
         'Esta edição <b>completa a versão anterior</b>: os blocos que faltavam foram escritos e vêm '
-        'marcados com <b>[acrescentado]</b>. Agora as nove questões têm os cinco blocos.',
+        'marcados com <b>[acrescentado]</b>. Agora as nove questões têm os cinco blocos — e a '
+        '<b>resposta-modelo é individual para cada alínea</b>, sem sínteses que juntem itens.',
     ], 'azul'),
 )))
 
@@ -391,18 +392,27 @@ TXT(
     'A primeira versão trazia a distribuição de pontos de todas as questões, mas só parte dos outros '
     'blocos. A tabela mostra o que já existia (<b>✓</b>) e o que foi escrito agora (<b>+</b>).')
 TAB([
-    ['Questão', 'O que pede', 'Pontos', 'Resposta-modelo', 'Erros', 'Diferenciação'],
-    ['<b>Prova 1 · Q1</b>', '✓', '✓', '✓ item c · <b>+</b> itens a e b', '✓', '✓'],
-    ['<b>Prova 1 · Q2</b>', '<b>+</b>', '✓', '✓ item c · <b>+</b> itens a e b', '✓', '<b>+</b>'],
-    ['<b>Prova 1 · Q3</b>', '<b>+</b>', '✓', '<b>+</b> itens a e b', '<b>+</b>', '✓'],
-    ['<b>Prova 2 · Q1</b>', '✓', '✓', '✓ síntese a-b-c', '✓', '✓'],
-    ['<b>Prova 2 · Q2</b>', '<b>+</b>', '✓', '✓ itens b e c · <b>+</b> item a', '✓', '<b>+</b>'],
-    ['<b>Prova 2 · Q3</b>', '<b>+</b>', '✓', '<b>+</b> itens a e b', '<b>+</b>', '✓'],
-    ['<b>Prova 3 · Q1</b>', '<b>+</b>', '✓', '<b>+</b> itens a, b e c', '<b>+</b>', '✓'],
-    ['<b>Prova 3 · Q2</b>', '✓', '✓', '✓ conclusão + repertório', '✓', '<b>+</b>'],
-    ['<b>Prova 3 · Q3</b>', '✓', '✓', '✓', '<b>+</b>', '✓'],
-], [CONTENT_W * .17, CONTENT_W * .13, CONTENT_W * .10, CONTENT_W * .30,
+    ['Questão', 'O que pede', 'Pontos', 'Resposta-modelo (por item)', 'Erros', 'Diferenciação'],
+    ['<b>Prova 1 · Q1</b>', '✓', '✓', 'a <b>+</b> · b <b>+</b> · c ✓', '✓', '✓'],
+    ['<b>Prova 1 · Q2</b>', '<b>+</b>', '✓', 'a <b>+</b> · b <b>+</b> · c ✓', '✓', '<b>+</b>'],
+    ['<b>Prova 1 · Q3</b>', '<b>+</b>', '✓', 'a <b>+</b> · b <b>+</b>', '<b>+</b>', '✓'],
+    ['<b>Prova 2 · Q1</b>', '✓', '✓',
+     'a <b>+</b> · b <b>+</b> · c <b>+</b><br/><i>antes: síntese única das três</i>', '✓', '✓'],
+    ['<b>Prova 2 · Q2</b>', '<b>+</b>', '✓',
+     'a <b>+</b> · b ✓ · c <b>+</b><br/><i>antes: b e c num bloco só</i>', '✓', '<b>+</b>'],
+    ['<b>Prova 2 · Q3</b>', '<b>+</b>', '✓', 'a <b>+</b> · b <b>+</b>', '<b>+</b>', '✓'],
+    ['<b>Prova 3 · Q1</b>', '<b>+</b>', '✓', 'a <b>+</b> · b <b>+</b> · c <b>+</b>', '<b>+</b>', '✓'],
+    ['<b>Prova 3 · Q2</b>', '✓', '✓',
+     'corpo <b>+</b> · conclusão ✓<br/><i>+ repertório dos seis autores</i>', '✓', '<b>+</b>'],
+    ['<b>Prova 3 · Q3</b>', '✓', '✓', 'questão sem alíneas ✓', '<b>+</b>', '✓'],
+], [CONTENT_W * .15, CONTENT_W * .12, CONTENT_W * .09, CONTENT_W * .34,
     CONTENT_W * .10, CONTENT_W * .20])
+BOX('Resposta-modelo de todos os itens',
+    'Na primeira versão, três questões tinham resposta-modelo <b>agrupada</b>: a Prova 2 · Q1 trazia '
+    'uma síntese única das alíneas a, b e c; a Prova 2 · Q2 juntava b e c num só bloco; e a Prova 3 · '
+    'Q2 só desenvolvia a conclusão, deixando o corpo da resposta — os três autores — por escrever. '
+    'Agora <b>cada alínea tem a sua própria resposta-modelo</b>, redigida para cobrir exatamente os '
+    'itens pontuados daquela alínea. São <b>22 respostas-modelo</b> no total.', 'ouro')
 TXT(
     'Acrescentou-se também o <b>Apêndice A</b>, com a lista dos dez erros clássicos — que o quadro de '
     'autoavaliação da primeira versão citava sem apresentar.')
@@ -791,26 +801,78 @@ PONTOS([
      'burocrático</b>, origem do patronato político brasileiro', 1),
 ])
 
-H3('Resposta-modelo condensada (síntese das três alíneas)')
+H3('Resposta-modelo condensada (item a)' + NOVO)
 TXT(
-    'Faoro responde <b>patrimonialismo</b>, e a resposta é weberiana no sentido estrito: não se trata '
-    'de desvio moral nem de corrupção, mas de um <b>tipo de dominação legítima</b> em que a '
-    'administração é extensão da casa do soberano, o cargo é prebenda e não há separação entre o '
-    'patrimônio do rei e o do reino.')
+    'Faoro responde <b>patrimonialismo</b>, e a resposta é weberiana no sentido estrito. Os três '
+    'conceitos precisam ser definidos com rigor, porque é da precisão deles que depende o resto do '
+    'argumento.')
 TXT(
-    'A evidência é <b>institucional</b>. A Reconquista faz do rei a fonte dos títulos de propriedade e '
-    'da jurisdição; as formas senhoriais existem, mas não fragmentam a soberania; e a <b>Lei Mental de '
-    '1434</b>, ao determinar que as doações régias revertam à Coroa na falta de herdeiro varão direto, '
-    'demonstra que nenhum senhorio se torna autônomo. Onde a terra retorna sempre ao rei, não há '
-    'vassalagem feudal no sentido pleno: o monarca nunca se converte em <i>primus inter pares</i>.')
+    '<b>Patrimonialismo</b> é uma forma de <b>dominação tradicional</b> em que a administração é '
+    'extensão da <b>casa do soberano</b>. Os quadros não são funcionários no sentido moderno, mas '
+    'dependentes pessoais do senhor, recrutados por lealdade e confiança; o cargo é <b>prebenda</b> — '
+    'fonte de renda apropriada por quem o ocupa —, e não função delimitada por competência. Faltam, '
+    'por definição, a separação entre o patrimônio do rei e o do reino, a regra impessoal e a carreira '
+    'por mérito. Importa dizer o que o conceito <b>não</b> é: não se trata de desvio moral nem de '
+    'corrupção, mas de um <b>tipo de dominação legítima</b> — a acusação de corrupção pressuporia a '
+    'norma impessoal que aqui simplesmente não existe.')
 TXT(
-    'A <b>Revolução de Avis</b> completa o quadro. A monarquia vence com apoio urbano e mercantil, mas '
-    'o beneficiário é a Coroa, não os mercadores: a expansão marítima se organiza como <b>empresa '
-    'régia</b>, com monopólios e estancos, e o comerciante atua como <b>concessionário</b>. Sem '
-    'burguesia autônoma, a riqueza passa necessariamente pelo Estado — é o <b>capitalismo politicamente '
-    'orientado</b> —, e os quadros que operam esse aparelho cristalizam-se num <b>estamento '
-    'burocrático</b> que se apropria do Estado e vive dele. Transplantada para a América, a lógica '
-    'produz o patronato político brasileiro.')
+    '<b>Estamento</b> designa um estrato social definido por <b>honra, estilo de vida e privilégio '
+    'juridicamente garantido</b>: pertence-se a ele por qualidade reconhecida e protegida em direito, '
+    'com acesso reservado a cargos, foros e distinções. O contraste é com <b>classe</b>, definida pela '
+    'posição no <b>mercado</b> — pela propriedade e pela chance de obter renda. A distinção é decisiva '
+    'para Faoro: um estamento se fecha e se reproduz pelo controle de posições no <b>Estado</b>, e não '
+    'pela concorrência econômica.')
+TXT(
+    '<b>Capitalismo politicamente orientado</b> nomeia a obtenção de lucro por meio de oportunidades '
+    '<b>garantidas politicamente</b>: monopólios e estancos, concessões, arrematação de tributos, '
+    'contratos de fornecimento ao Estado, privilégios de rota. O ganho decorre da proximidade ao poder '
+    'que distribui a oportunidade, não da eficiência na concorrência. É o tipo de capitalismo '
+    'compatível com — e produzido por — a dominação patrimonial.')
+
+H3('Resposta-modelo condensada (item b)' + NOVO)
+TXT(
+    'A evidência é <b>institucional</b>, e não cultural: Faoro não argumenta por temperamento ibérico, '
+    'mas por estrutura jurídica de propriedade e de jurisdição.')
+TXT(
+    'A <b>Reconquista</b> é o ponto de partida. O território é conquistado sob comando régio e '
+    '<b>distribuído a partir da Coroa</b>: o rei é a fonte dos títulos de propriedade e da jurisdição, '
+    'e não o vértice de uma pirâmide de pactos entre pares. A terra chega ao senhor pela mão do '
+    'monarca — não o monarca ao poder pela soma dos senhores.')
+TXT(
+    'Daí a <b>não fragmentação da soberania</b>. As formas senhoriais existem — doações, honras, '
+    'coutos —, e Faoro não as nega; mas a jurisdição última permanece <b>régia</b>, e é isso que '
+    'separa o caso português do feudalismo pleno. O senhor exerce poderes delegados e revogáveis, não '
+    'soberania própria.')
+TXT(
+    'A <b>Lei Mental de 1434</b> é a prova mais forte e a menos lembrada: determina que as doações '
+    'régias <b>revertam à Coroa</b> na falta de herdeiro varão direto. Onde a terra retorna sempre ao '
+    'rei, nenhum senhorio se torna autônomo e a propriedade senhorial é estruturalmente precária. Não '
+    'há vassalagem feudal no sentido pleno: o monarca nunca se converte em <i>primus inter pares</i>.')
+TXT(
+    'Por fim, os <b>monopólios régios</b> e a organização da expansão como <b>empresa da Coroa</b> — '
+    'Casa da Guiné e Mina, Casa da Índia, estancos — mostram que o padrão se estende da terra ao '
+    'comércio: o que seria a esfera da iniciativa mercantil nasce, em Portugal, dentro do aparelho do '
+    'rei.')
+
+H3('Resposta-modelo condensada (item c)' + NOVO)
+TXT(
+    'A <b>Revolução de Avis</b> completa o quadro. Em 1383-85 Portugal vive uma <b>crise dinástica</b>: '
+    'morto D. Fernando sem sucessor masculino, a alta nobreza, ligada por casamento e interesse a '
+    'Castela, inclina-se pela solução castelhana; contra ela, a Casa de Avis ascende com apoio dos '
+    'setores <b>urbanos e mercantis</b> de Lisboa e do Porto e da pequena nobreza. O resultado imediato '
+    'é um Estado <b>centralizado precocemente</b>, antes das demais monarquias nacionais, com uma '
+    'nobreza nova criada pelo próprio rei e dependente dele.')
+TXT(
+    'O passo decisivo do argumento está em identificar <b>quem comanda</b> o arranjo que se segue. A '
+    'monarquia vence com apoio urbano e mercantil, mas o beneficiário é a <b>Coroa</b>, não os '
+    'mercadores: a expansão marítima se organiza como <b>empresa régia</b>, com monopólios e estancos, '
+    'e o comerciante entra nela como <b>concessionário</b> — não como sujeito autônomo de acumulação. '
+    'Em lugar de uma burguesia que conquista o Estado, tem-se um <b>Estado que absorve o comércio</b>.')
+TXT(
+    'A consequência fecha a tese. Sem burguesia autônoma, a riqueza passa necessariamente pelo Estado '
+    '— é o <b>capitalismo politicamente orientado</b> —, e os quadros que operam esse aparelho '
+    'cristalizam-se num <b>estamento burocrático</b> que se apropria do Estado e vive dele. '
+    'Transplantada para a América, a lógica produz o patronato político brasileiro.')
 
 BOX('Erros que mais custam nota',
     'Usar patrimonialismo como sinônimo de <b>corrupção</b>: é o erro mais comum e o mais penalizado. '
@@ -886,7 +948,7 @@ TXT(
     '<b>Estado-empresário</b>, cuja saúde financeira depende do giro mercantil que ele próprio '
     'monopoliza — e que, por isso mesmo, precisa manter o giro a qualquer custo.')
 
-H3('Resposta-modelo condensada (itens b e c)')
+H3('Resposta-modelo condensada (item b)')
 TXT(
     'Godinho <b>sustenta</b> Faoro ao dar lastro material àquilo que em <i>Os Donos do Poder</i> é '
     'tipologia: se a espinha dorsal da receita régia se desloca da renda da terra para as alfândegas e '
@@ -894,13 +956,30 @@ TXT(
     '“capitalismo politicamente orientado” deixa de ser conceito e ganha contabilidade. O '
     'Estado-empresário de Faoro aparece nas contas.')
 TXT(
+    'O reforço é duplo. Primeiro, monopólios e alfândegas aparecem como receita <b>central</b>, e não '
+    'acessória: não são privilégios pitorescos à margem de uma economia privada — são o que mantém a '
+    'Coroa de pé. Segundo, a <b>precocidade da centralização</b> ganha explicação material, e não '
+    'apenas tipológica: Portugal se centraliza cedo porque a sua máquina fiscal depende de um comércio '
+    'que só o Estado pode armar, monopolizar e proteger militarmente.')
+TXT(
+    'O ganho argumentativo, para quem defende Faoro, é escapar da acusação de essencialismo: a tese '
+    'deixa de repousar sobre um tipo weberiano e passa a apoiar-se em série orçamentária.')
+
+H3('Resposta-modelo condensada (item c)' + NOVO)
+TXT(
     'Mas Godinho <b>qualifica</b> a tese no ponto mais sensível. O Estado que emerge do orçamento não é '
     'proprietário onipotente: é estrutural e cronicamente <b>endividado</b>, com receitas empenhadas '
-    'antes de arrecadadas, dependente do capital genovês, florentino, flamengo e alemão para armar as '
-    'frotas, e incapaz de controlar a distribuição europeia da especiaria, feita em <b>Antuérpia</b>. O '
-    'monopólio régio é, em medida importante, <b>nominal</b>. A expansão, nessa chave, é menos projeto '
-    'soberano de um estamento que domina a sociedade do que <b>fuga para frente</b> de uma Coroa '
-    'acossada pelo próprio caixa.')
+    'antes de arrecadadas e expedientes permanentes de antecipação e alienação.')
+TXT(
+    'Mais: depende do capital <b>genovês, florentino, flamengo e alemão</b> para armar as frotas, e é '
+    'incapaz de controlar a distribuição europeia da especiaria, feita em <b>Antuérpia</b>. O monopólio '
+    'régio é, em medida importante, <b>nominal</b> — a Coroa monopoliza a compra na origem, não o '
+    'mercado que fixa o preço final.')
+TXT(
+    'Daí a inflexão sobre a própria expansão: ela aparece menos como projeto soberano de um estamento '
+    'que domina a sociedade do que como <b>fuga para frente</b> de uma Coroa acossada pelo próprio '
+    'caixa. E Godinho recusa, além disso, a <b>causa única</b>: a expansão é complexo de fatores '
+    'convergentes, não execução de uma vontade.')
 TXT(
     'A conclusão é que os dois se completam <b>invertendo a direção da causalidade</b>: para Faoro, o '
     'Estado organiza a economia; para Godinho, a <b>restrição orçamentária organiza o Estado</b>. '
@@ -1181,6 +1260,39 @@ TAB([
      'meio se torna produto',
      'A economia colonial propriamente dita'],
 ], [CONTENT_W * .13, CONTENT_W * .22, CONTENT_W * .40, CONTENT_W * .25])
+
+H3('Resposta-modelo condensada (corpo da resposta — os três autores)' + NOVO)
+TXT(
+    'A escolha abaixo é deliberada: Caio Prado, Fragoso <i>et al.</i> e Faoro recortam três escalas '
+    'muito distintas — a colônia, a rede imperial e o Estado —, e por isso o exercício de comparação '
+    'rende mais. Qualquer trio serve, desde que as <b>três colunas</b> sejam preenchidas para cada '
+    'autor.')
+TXT(
+    '<b>Caio Prado Jr. — a colônia no quadro da expansão comercial europeia.</b> A pergunta que a '
+    'escala permite responder é: <i>por que o Brasil é desigual e extrovertido?</i> Ao recortar a '
+    'colônia <b>dentro</b> da expansão comercial europeia, a economia só pode aparecer como função '
+    'externa — se a unidade de análise é a colônia definida pela sua inserção, então o que a explica '
+    'está fora dela, e a tese do “sentido” segue <b>necessariamente</b> do recorte. É a escala que '
+    'produz a conclusão, não o contrário. O que ela torna invisível é a vida social interna dotada de '
+    'lógica própria: o abastecimento, o mercado interno, a formação de fortunas locais — que o recorte '
+    'converte em detalhe subsidiário <b>antes</b> de examiná-los.')
+TXT(
+    '<b>Fragoso, Bicalho e Gouvêa — o império como rede pluricontinental.</b> A pergunta é outra: '
+    '<i>como a sociedade colonial se reproduzia e se governava?</i> Tomando como unidade o império '
+    'policêntrico, tornam-se visíveis os circuitos que não passam por Lisboa, o crédito controlado por '
+    'comerciantes coloniais e as hierarquias construídas pela economia da mercê — precisamente o que o '
+    'eixo bipolar metrópole-colônia não capta. A tese do “Antigo Regime nos trópicos” é consequência '
+    'direta dessa ampliação de escala. O que ela torna invisível é a drenagem de excedente e a '
+    'violência estrutural da escravidão: ao iluminar a agência das elites coloniais, a rede deixa na '
+    'sombra a coerção que sustentava a produção.')
+TXT(
+    '<b>Faoro — o Estado português como sujeito de longa duração.</b> A pergunta é: <i>por que o Estado '
+    'brasileiro antecede e domina a sociedade?</i> Tomando o Estado como unidade e percorrendo-o da '
+    'Reconquista à República, a <b>continuidade</b> se impõe sobre a ruptura — uma série de seis '
+    'séculos privilegia, por construção, o que permanece, e é essa escala temporal que produz a tese '
+    'do patrimonialismo persistente. O que ela torna invisível são as descontinuidades históricas e os '
+    '<b>limites reais</b> do poder régio: o Estado aparece como vontade, e não como objeto de '
+    'restrição — exatamente o que Godinho mostrará ao ler a mesma Coroa pelo orçamento.')
 
 H3('Resposta-modelo da conclusão')
 TXT(

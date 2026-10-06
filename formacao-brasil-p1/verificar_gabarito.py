@@ -5,7 +5,8 @@ Checagens:
   1. Soma dos pontos de cada alínea == total declarado no título da alínea.
   2. Soma das alíneas == total declarado no título da questão.
   3. Cada questão tem os cinco blocos do gabarito.
-  4. Soma das três questões de cada prova == 100 pontos.
+  4. Cada alínea tem a sua PRÓPRIA resposta-modelo (nenhuma agrupa itens).
+  5. Soma das três questões de cada prova == 100 pontos.
 
 Lê o Markdown gerado (que vem da mesma fonte que o PDF), de modo que o que se
 verifica é exatamente o que foi publicado.
@@ -48,6 +49,20 @@ def carregar_gabaritos(texto):
                 questoes[m.group(1)] = (int(m.group(2)), bloco_q)
         provas[nome] = questoes
     return provas
+
+
+def alineas_com_modelo(trecho):
+    """Letras cobertas por algum título 'Resposta-modelo ... (item X)'."""
+    cobertas = set()
+    for m in re.finditer(r'#### Resposta-modelo[^\n]*', trecho):
+        dentro = re.search(r'\(ite(?:m|ns) ([^)]*)\)', m.group(0))
+        if dentro:
+            cobertas |= set(re.findall(r'\b([a-c])\b', dentro.group(1)))
+    return cobertas
+
+
+def tem_modelo(trecho):
+    return bool(re.search(r'#### Resposta-modelo', trecho))
 
 
 def somar_alineas(trecho):
@@ -114,10 +129,26 @@ def main():
                 falhas.append(f'{prova} · {questao}: bloco(s) ausente(s) — '
                               f'{", ".join(faltando)}')
 
-            marca = 'ok' if (ok_q and not faltando) else 'FALHA'
+            # A resposta-modelo tem de ser individual: cada alínea com
+            # distribuição de pontos precisa do seu próprio bloco.
+            letras = [r for r, _, _ in alineas if r != 'único']
+            if letras:
+                cobertas = alineas_com_modelo(trecho)
+                sem_modelo = sorted(set(letras) - cobertas)
+                modelos = f'modelo: {"".join(sorted(cobertas)) or "nenhum"}'
+            else:
+                sem_modelo = [] if tem_modelo(trecho) else ['único']
+                modelos = 'modelo: sem alíneas'
+            if sem_modelo:
+                falhas.append(f'{prova} · {questao}: sem resposta-modelo própria para a(s) '
+                              f'alínea(s) {", ".join(sem_modelo)}')
+
+            ok_tudo = ok_q and not faltando and not sem_modelo
+            marca = 'ok' if ok_tudo else 'FALHA'
             print(f'  {questao} ({declarado_q} pts) [{marca}]  '
-                  f'{" | ".join(detalhes)}'
-                  + (f'  blocos ausentes: {faltando}' if faltando else ''))
+                  f'{" | ".join(detalhes)}  ·  {modelos}'
+                  + (f'  blocos ausentes: {faltando}' if faltando else '')
+                  + (f'  sem modelo: {sem_modelo}' if sem_modelo else ''))
 
         if total_prova != 100:
             falhas.append(f'{prova}: as três questões somam {total_prova} ≠ 100')
@@ -129,7 +160,8 @@ def main():
             print('  -', f_)
         return 1
 
-    print('Tudo confere: somas corretas e os cinco blocos presentes em todas as questões.')
+    print('Tudo confere: somas corretas, cinco blocos em todas as questões e '
+          'resposta-modelo própria para cada alínea.')
     return 0
 
 

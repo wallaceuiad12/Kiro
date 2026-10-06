@@ -11,7 +11,7 @@ Pontos 1 e 2 do programa · **Seis autores, uma linha**
 >
 > Cada gabarito tem cinco blocos: **o que a questão pede**, a **distribuição de pontos** item por item, uma **resposta-modelo**, os **erros que mais custam nota** e os **pontos de diferenciação**.
 >
-> Esta edição **completa a versão anterior**: os blocos que faltavam foram escritos e vêm marcados com **[acrescentado]**. Agora as nove questões têm os cinco blocos.
+> Esta edição **completa a versão anterior**: os blocos que faltavam foram escritos e vêm marcados com **[acrescentado]**. Agora as nove questões têm os cinco blocos — e a **resposta-modelo é individual para cada alínea**, sem sínteses que juntem itens.
 
 
 ### Sumário
@@ -141,27 +141,31 @@ Cada questão tem cinco blocos. **O que a questão pede** explicita a operação
 
 A primeira versão trazia a distribuição de pontos de todas as questões, mas só parte dos outros blocos. A tabela mostra o que já existia (**✓**) e o que foi escrito agora (**+**).
 
-| **Questão** | **O que pede** | **Pontos** | **Resposta-modelo** | **Erros** | **Diferenciação** |
+| **Questão** | **O que pede** | **Pontos** | **Resposta-modelo (por item)** | **Erros** | **Diferenciação** |
 
 |---|---|---|---|---|---|
 
-| **Prova 1 · Q1** | ✓ | ✓ | ✓ item c · **+** itens a e b | ✓ | ✓ |
+| **Prova 1 · Q1** | ✓ | ✓ | a **+** · b **+** · c ✓ | ✓ | ✓ |
 
-| **Prova 1 · Q2** | **+** | ✓ | ✓ item c · **+** itens a e b | ✓ | **+** |
+| **Prova 1 · Q2** | **+** | ✓ | a **+** · b **+** · c ✓ | ✓ | **+** |
 
-| **Prova 1 · Q3** | **+** | ✓ | **+** itens a e b | **+** | ✓ |
+| **Prova 1 · Q3** | **+** | ✓ | a **+** · b **+** | **+** | ✓ |
 
-| **Prova 2 · Q1** | ✓ | ✓ | ✓ síntese a-b-c | ✓ | ✓ |
+| **Prova 2 · Q1** | ✓ | ✓ | a **+** · b **+** · c **+**  <br>*antes: síntese única das três* | ✓ | ✓ |
 
-| **Prova 2 · Q2** | **+** | ✓ | ✓ itens b e c · **+** item a | ✓ | **+** |
+| **Prova 2 · Q2** | **+** | ✓ | a **+** · b ✓ · c **+**  <br>*antes: b e c num bloco só* | ✓ | **+** |
 
-| **Prova 2 · Q3** | **+** | ✓ | **+** itens a e b | **+** | ✓ |
+| **Prova 2 · Q3** | **+** | ✓ | a **+** · b **+** | **+** | ✓ |
 
-| **Prova 3 · Q1** | **+** | ✓ | **+** itens a, b e c | **+** | ✓ |
+| **Prova 3 · Q1** | **+** | ✓ | a **+** · b **+** · c **+** | **+** | ✓ |
 
-| **Prova 3 · Q2** | ✓ | ✓ | ✓ conclusão + repertório | ✓ | **+** |
+| **Prova 3 · Q2** | ✓ | ✓ | corpo **+** · conclusão ✓  <br>*+ repertório dos seis autores* | ✓ | **+** |
 
-| **Prova 3 · Q3** | ✓ | ✓ | ✓ | **+** | ✓ |
+| **Prova 3 · Q3** | ✓ | ✓ | questão sem alíneas ✓ | **+** | ✓ |
+
+> **Resposta-modelo de todos os itens**
+>
+> Na primeira versão, três questões tinham resposta-modelo **agrupada**: a Prova 2 · Q1 trazia uma síntese única das alíneas a, b e c; a Prova 2 · Q2 juntava b e c num só bloco; e a Prova 3 · Q2 só desenvolvia a conclusão, deixando o corpo da resposta — os três autores — por escrever. Agora **cada alínea tem a sua própria resposta-modelo**, redigida para cobrir exatamente os itens pontuados daquela alínea. São **22 respostas-modelo** no total.
 
 Acrescentou-se também o **Apêndice A**, com a lista dos dez erros clássicos — que o quadro de autoavaliação da primeira versão citava sem apresentar.
 
@@ -454,13 +458,37 @@ E há um efeito inverso, mais interessante: a própria existência da repreensã
 | Concluir: sem burguesia autônoma, a riqueza passa pelo Estado e consolida-se o **estamento burocrático**, origem do patronato político brasileiro | 1 |
 
 
-#### Resposta-modelo condensada (síntese das três alíneas)
+#### Resposta-modelo condensada (item a)  [acrescentado]
 
-Faoro responde **patrimonialismo**, e a resposta é weberiana no sentido estrito: não se trata de desvio moral nem de corrupção, mas de um **tipo de dominação legítima** em que a administração é extensão da casa do soberano, o cargo é prebenda e não há separação entre o patrimônio do rei e o do reino.
+Faoro responde **patrimonialismo**, e a resposta é weberiana no sentido estrito. Os três conceitos precisam ser definidos com rigor, porque é da precisão deles que depende o resto do argumento.
 
-A evidência é **institucional**. A Reconquista faz do rei a fonte dos títulos de propriedade e da jurisdição; as formas senhoriais existem, mas não fragmentam a soberania; e a **Lei Mental de 1434**, ao determinar que as doações régias revertam à Coroa na falta de herdeiro varão direto, demonstra que nenhum senhorio se torna autônomo. Onde a terra retorna sempre ao rei, não há vassalagem feudal no sentido pleno: o monarca nunca se converte em *primus inter pares*.
+**Patrimonialismo** é uma forma de **dominação tradicional** em que a administração é extensão da **casa do soberano**. Os quadros não são funcionários no sentido moderno, mas dependentes pessoais do senhor, recrutados por lealdade e confiança; o cargo é **prebenda** — fonte de renda apropriada por quem o ocupa —, e não função delimitada por competência. Faltam, por definição, a separação entre o patrimônio do rei e o do reino, a regra impessoal e a carreira por mérito. Importa dizer o que o conceito **não** é: não se trata de desvio moral nem de corrupção, mas de um **tipo de dominação legítima** — a acusação de corrupção pressuporia a norma impessoal que aqui simplesmente não existe.
 
-A **Revolução de Avis** completa o quadro. A monarquia vence com apoio urbano e mercantil, mas o beneficiário é a Coroa, não os mercadores: a expansão marítima se organiza como **empresa régia**, com monopólios e estancos, e o comerciante atua como **concessionário**. Sem burguesia autônoma, a riqueza passa necessariamente pelo Estado — é o **capitalismo politicamente orientado** —, e os quadros que operam esse aparelho cristalizam-se num **estamento burocrático** que se apropria do Estado e vive dele. Transplantada para a América, a lógica produz o patronato político brasileiro.
+**Estamento** designa um estrato social definido por **honra, estilo de vida e privilégio juridicamente garantido**: pertence-se a ele por qualidade reconhecida e protegida em direito, com acesso reservado a cargos, foros e distinções. O contraste é com **classe**, definida pela posição no **mercado** — pela propriedade e pela chance de obter renda. A distinção é decisiva para Faoro: um estamento se fecha e se reproduz pelo controle de posições no **Estado**, e não pela concorrência econômica.
+
+**Capitalismo politicamente orientado** nomeia a obtenção de lucro por meio de oportunidades **garantidas politicamente**: monopólios e estancos, concessões, arrematação de tributos, contratos de fornecimento ao Estado, privilégios de rota. O ganho decorre da proximidade ao poder que distribui a oportunidade, não da eficiência na concorrência. É o tipo de capitalismo compatível com — e produzido por — a dominação patrimonial.
+
+
+#### Resposta-modelo condensada (item b)  [acrescentado]
+
+A evidência é **institucional**, e não cultural: Faoro não argumenta por temperamento ibérico, mas por estrutura jurídica de propriedade e de jurisdição.
+
+A **Reconquista** é o ponto de partida. O território é conquistado sob comando régio e **distribuído a partir da Coroa**: o rei é a fonte dos títulos de propriedade e da jurisdição, e não o vértice de uma pirâmide de pactos entre pares. A terra chega ao senhor pela mão do monarca — não o monarca ao poder pela soma dos senhores.
+
+Daí a **não fragmentação da soberania**. As formas senhoriais existem — doações, honras, coutos —, e Faoro não as nega; mas a jurisdição última permanece **régia**, e é isso que separa o caso português do feudalismo pleno. O senhor exerce poderes delegados e revogáveis, não soberania própria.
+
+A **Lei Mental de 1434** é a prova mais forte e a menos lembrada: determina que as doações régias **revertam à Coroa** na falta de herdeiro varão direto. Onde a terra retorna sempre ao rei, nenhum senhorio se torna autônomo e a propriedade senhorial é estruturalmente precária. Não há vassalagem feudal no sentido pleno: o monarca nunca se converte em *primus inter pares*.
+
+Por fim, os **monopólios régios** e a organização da expansão como **empresa da Coroa** — Casa da Guiné e Mina, Casa da Índia, estancos — mostram que o padrão se estende da terra ao comércio: o que seria a esfera da iniciativa mercantil nasce, em Portugal, dentro do aparelho do rei.
+
+
+#### Resposta-modelo condensada (item c)  [acrescentado]
+
+A **Revolução de Avis** completa o quadro. Em 1383-85 Portugal vive uma **crise dinástica**: morto D. Fernando sem sucessor masculino, a alta nobreza, ligada por casamento e interesse a Castela, inclina-se pela solução castelhana; contra ela, a Casa de Avis ascende com apoio dos setores **urbanos e mercantis** de Lisboa e do Porto e da pequena nobreza. O resultado imediato é um Estado **centralizado precocemente**, antes das demais monarquias nacionais, com uma nobreza nova criada pelo próprio rei e dependente dele.
+
+O passo decisivo do argumento está em identificar **quem comanda** o arranjo que se segue. A monarquia vence com apoio urbano e mercantil, mas o beneficiário é a **Coroa**, não os mercadores: a expansão marítima se organiza como **empresa régia**, com monopólios e estancos, e o comerciante entra nela como **concessionário** — não como sujeito autônomo de acumulação. Em lugar de uma burguesia que conquista o Estado, tem-se um **Estado que absorve o comércio**.
+
+A consequência fecha a tese. Sem burguesia autônoma, a riqueza passa necessariamente pelo Estado — é o **capitalismo politicamente orientado** —, e os quadros que operam esse aparelho cristalizam-se num **estamento burocrático** que se apropria do Estado e vive dele. Transplantada para a América, a lógica produz o patronato político brasileiro.
 
 > **Erros que mais custam nota**
 >
@@ -528,11 +556,22 @@ As pressões que a tornam insuficiente são de dois tipos, e ambas crescem. A **
 O ultramar altera a **estrutura** da receita, e não apenas o seu volume — e é esse o ponto do argumento. A espinha dorsal se desloca da renda da terra para a renda do **comércio e das alfândegas**: primeiro o ouro da Guiné, depois, decisivamente, a especiaria. A Coroa passa a viver do que **circula**, não do que se colhe. É essa inversão que faz do Estado português um **Estado-empresário**, cuja saúde financeira depende do giro mercantil que ele próprio monopoliza — e que, por isso mesmo, precisa manter o giro a qualquer custo.
 
 
-#### Resposta-modelo condensada (itens b e c)
+#### Resposta-modelo condensada (item b)
 
 Godinho **sustenta** Faoro ao dar lastro material àquilo que em *Os Donos do Poder* é tipologia: se a espinha dorsal da receita régia se desloca da renda da terra para as alfândegas e os monopólios de comércio, então a economia efetivamente **passa pelo Estado**, e o “capitalismo politicamente orientado” deixa de ser conceito e ganha contabilidade. O Estado-empresário de Faoro aparece nas contas.
 
-Mas Godinho **qualifica** a tese no ponto mais sensível. O Estado que emerge do orçamento não é proprietário onipotente: é estrutural e cronicamente **endividado**, com receitas empenhadas antes de arrecadadas, dependente do capital genovês, florentino, flamengo e alemão para armar as frotas, e incapaz de controlar a distribuição europeia da especiaria, feita em **Antuérpia**. O monopólio régio é, em medida importante, **nominal**. A expansão, nessa chave, é menos projeto soberano de um estamento que domina a sociedade do que **fuga para frente** de uma Coroa acossada pelo próprio caixa.
+O reforço é duplo. Primeiro, monopólios e alfândegas aparecem como receita **central**, e não acessória: não são privilégios pitorescos à margem de uma economia privada — são o que mantém a Coroa de pé. Segundo, a **precocidade da centralização** ganha explicação material, e não apenas tipológica: Portugal se centraliza cedo porque a sua máquina fiscal depende de um comércio que só o Estado pode armar, monopolizar e proteger militarmente.
+
+O ganho argumentativo, para quem defende Faoro, é escapar da acusação de essencialismo: a tese deixa de repousar sobre um tipo weberiano e passa a apoiar-se em série orçamentária.
+
+
+#### Resposta-modelo condensada (item c)  [acrescentado]
+
+Mas Godinho **qualifica** a tese no ponto mais sensível. O Estado que emerge do orçamento não é proprietário onipotente: é estrutural e cronicamente **endividado**, com receitas empenhadas antes de arrecadadas e expedientes permanentes de antecipação e alienação.
+
+Mais: depende do capital **genovês, florentino, flamengo e alemão** para armar as frotas, e é incapaz de controlar a distribuição europeia da especiaria, feita em **Antuérpia**. O monopólio régio é, em medida importante, **nominal** — a Coroa monopoliza a compra na origem, não o mercado que fixa o preço final.
+
+Daí a inflexão sobre a própria expansão: ela aparece menos como projeto soberano de um estamento que domina a sociedade do que como **fuga para frente** de uma Coroa acossada pelo próprio caixa. E Godinho recusa, além disso, a **causa única**: a expansão é complexo de fatores convergentes, não execução de uma vontade.
 
 A conclusão é que os dois se completam **invertendo a direção da causalidade**: para Faoro, o Estado organiza a economia; para Godinho, a **restrição orçamentária organiza o Estado**. Vistos juntos, o patrimonialismo deixa de ser poder absoluto e passa a ser aperto permanente.
 
@@ -729,6 +768,17 @@ O contraste com Portugal é o que amarra a comparação do curso. Território de
 | **Godinho** | O que a Coroa podia de fato fazer? | Lendo o Estado pelo **orçamento**, ele aparece como objeto de **restrição**, não como vontade soberana | A colônia como sujeito; a sociedade |
 
 | **Neves** | O que havia antes, e por que a floresta é como é? | Adotando a **longa duração** e o ambiente como unidade, a história se estende por milênios e o meio se torna produto | A economia colonial propriamente dita |
+
+
+#### Resposta-modelo condensada (corpo da resposta — os três autores)  [acrescentado]
+
+A escolha abaixo é deliberada: Caio Prado, Fragoso *et al.* e Faoro recortam três escalas muito distintas — a colônia, a rede imperial e o Estado —, e por isso o exercício de comparação rende mais. Qualquer trio serve, desde que as **três colunas** sejam preenchidas para cada autor.
+
+**Caio Prado Jr. — a colônia no quadro da expansão comercial europeia.** A pergunta que a escala permite responder é: *por que o Brasil é desigual e extrovertido?* Ao recortar a colônia **dentro** da expansão comercial europeia, a economia só pode aparecer como função externa — se a unidade de análise é a colônia definida pela sua inserção, então o que a explica está fora dela, e a tese do “sentido” segue **necessariamente** do recorte. É a escala que produz a conclusão, não o contrário. O que ela torna invisível é a vida social interna dotada de lógica própria: o abastecimento, o mercado interno, a formação de fortunas locais — que o recorte converte em detalhe subsidiário **antes** de examiná-los.
+
+**Fragoso, Bicalho e Gouvêa — o império como rede pluricontinental.** A pergunta é outra: *como a sociedade colonial se reproduzia e se governava?* Tomando como unidade o império policêntrico, tornam-se visíveis os circuitos que não passam por Lisboa, o crédito controlado por comerciantes coloniais e as hierarquias construídas pela economia da mercê — precisamente o que o eixo bipolar metrópole-colônia não capta. A tese do “Antigo Regime nos trópicos” é consequência direta dessa ampliação de escala. O que ela torna invisível é a drenagem de excedente e a violência estrutural da escravidão: ao iluminar a agência das elites coloniais, a rede deixa na sombra a coerção que sustentava a produção.
+
+**Faoro — o Estado português como sujeito de longa duração.** A pergunta é: *por que o Estado brasileiro antecede e domina a sociedade?* Tomando o Estado como unidade e percorrendo-o da Reconquista à República, a **continuidade** se impõe sobre a ruptura — uma série de seis séculos privilegia, por construção, o que permanece, e é essa escala temporal que produz a tese do patrimonialismo persistente. O que ela torna invisível são as descontinuidades históricas e os **limites reais** do poder régio: o Estado aparece como vontade, e não como objeto de restrição — exatamente o que Godinho mostrará ao ler a mesma Coroa pelo orçamento.
 
 
 #### Resposta-modelo da conclusão

@@ -37,13 +37,20 @@ Três simulados de 100 pontos e 2 horas, com três questões cada:
 
 Cada questão do gabarito tem **cinco blocos**: o que a questão pede, a distribuição de pontos item
 por item, uma resposta-modelo redigida, os erros que mais custam nota e os pontos de diferenciação.
-Fecha com dois apêndices: a lista dos **dez erros clássicos** e o **quadro de autoavaliação**.
+A **resposta-modelo é individual para cada alínea** — são 22 no total, cada uma escrita para cobrir
+exatamente os itens pontuados da sua alínea. Fecha com dois apêndices: a lista dos **dez erros
+clássicos** e o **quadro de autoavaliação**.
 
 Esta é a **edição completa**: a primeira versão (`../provas-dissertativas-com-gabarito (1).pdf`)
 trazia a distribuição de pontos de todas as questões, mas só parte dos outros blocos. Os blocos que
-faltavam foram escritos e vêm marcados com **[acrescentado]** no título — nenhum conteúdo da versão
-anterior foi alterado. A Parte II abre com um **mapa de cobertura** mostrando o que já existia e o
-que entrou agora.
+faltavam foram escritos e vêm marcados com **[acrescentado]** no título. A Parte II abre com um
+**mapa de cobertura** mostrando o que já existia e o que entrou agora.
+
+Em três questões a resposta-modelo vinha **agrupada** e foi separada por alínea: a Prova 2 · Q1 tinha
+uma síntese única de a, b e c; a Prova 2 · Q2 juntava b e c; e a Prova 3 · Q2 só desenvolvia a
+conclusão, sem o corpo com os três autores. Nessas três, o texto original foi redistribuído entre as
+alíneas e ampliado para cobrir todos os itens pontuados. Os demais blocos da primeira versão estão
+reproduzidos sem alteração.
 
 ## Como regerar os PDFs
 
