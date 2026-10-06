@@ -249,15 +249,8 @@ S += cabecalho()
 
 # --- 1. Tema e titulo
 S.append(H1('Tema e título do episódio'))
-S.append(caixa([
-    P('<b>Título:</b> Mercosul-UE em aplicação provisória: que inserção externa '
-      'o acordo consolida?', 'Cellx'),
-    Spacer(1, 4),
-    P('<b>Alternativos:</b> (i) Quarenta e quatro por cento: o acordo Mercosul-UE '
-      'e a pauta que o Brasil leva à Europa; (ii) Em vigor e sob litígio: o acordo '
-      'Mercosul-UE entre a desgravação tarifária e o Tribunal de Justiça.', 'Cellx'),
-]))
-S.append(Spacer(1, 8))
+S.append(P('<b>Título:</b> Mercosul-UE em aplicação provisória: que inserção '
+           'externa o acordo consolida?'))
 S.append(P(
     'O episódio examina que padrão de especialização produtiva o Acordo '
     'Mercosul-União Europeia tende a consolidar, agora que deixou de ser promessa '
@@ -298,7 +291,8 @@ S.append(P(
     'política industrial: supondo que a diversificação seja desejável, o acordo '
     'preserva ou suprime os instrumentos de que o Estado brasileiro precisaria para '
     'promovê-la? Trata-se de uma pergunta aberta, e não de uma conclusão a ser '
-    'confirmada pelo entrevistado — há interpretações divergentes e documentadas '
+    'confirmada pelo entrevistado, já que há interpretações divergentes e '
+    'documentadas '
     'sobre ambos os eixos, e o episódio ganha ao expô-las.'))
 
 # --- 3. Justificativa
@@ -341,7 +335,7 @@ for par in [
     'unanimidade no Conselho, em violação ao artigo 218 do Tratado sobre o '
     'Funcionamento da União Europeia (Canal Rural/Estadão Conteúdo, 29 set. 2026). '
     'Preferências tarifárias já operam, portanto, sob uma decisão do Conselho cuja '
-    'validade está sob exame judicial — situação que interessa ao episódio não como '
+    'validade está sob exame judicial, situação que interessa ao episódio não como '
     'curiosidade processual, mas porque define o horizonte de cálculo de quem '
     'decide investir com base nessas preferências.',
 
@@ -373,8 +367,8 @@ for par in [
     '2025 (CNI, 2026). O problema analítico que daí resulta é mais interessante do '
     'que a denúncia da assimetria: a oportunidade existe no papel, mas seu '
     'aproveitamento exigiria que a pauta exportadora nacional mudasse, e os '
-    'produtos agroindustriais considerados sensíveis — carne bovina, frango, arroz, '
-    'mel, açúcar e etanol — permanecem sob cotas tarifárias, com acesso limitado e '
+    'produtos agroindustriais considerados sensíveis (carne bovina, frango, arroz, '
+    'mel, açúcar e etanol) permanecem sob cotas tarifárias, com acesso limitado e '
     'controlado (Conjur, 29 abr. 2026). É essa distância entre abertura formal e '
     'capacidade produtiva de ocupá-la que a entrevista deve investigar.',
 
@@ -395,11 +389,11 @@ S.append(tabela([
      'que autorizou sua aplicação provisória',
      'Estabelecer que o tema é atual e que o "acordo em vigor" é um objeto jurídico '
      'instável'],
-    ['Contextualização 1 — o que, exatamente, entrou em vigor', '2‑8',
+    ['Contextualização 1: o que, exatamente, entrou em vigor', '2‑8',
      'A distinção entre os dois instrumentos e o estado de cada um',
      'Desfazer a confusão corrente entre acordo comercial e acordo de parceria, e '
      'mostrar por que isso importa'],
-    ['Contextualização 2 — a assimetria da pauta', '8‑13',
+    ['Contextualização 2: a assimetria da pauta', '8‑13',
      'Composição das exportações brasileiras ao bloco e perfil da desgravação '
      'concedida pela União Europeia',
      'Apresentar os dois conjuntos de dados que sustentam, e tensionam, a hipótese '
@@ -412,14 +406,19 @@ S.append(tabela([
      'Encerrar sem fabricar conclusão'],
 ], [3.1 * cm, 1.5 * cm, 5.5 * cm, 5.9 * cm]))
 
-S.append(H2('Contextualização 1 — dados e documentos a citar (2-8 min)'))
+S.append(H2('Contextualização 1: dados e documentos a citar (2 a 8 min)'))
 for b in [
     'Assinatura em Assunção, Paraguai, em 17 de janeiro de 2026, após vinte e seis '
     'anos de negociação (MAPA, 2026).',
     'Aprovação, pelo Conselho da União Europeia, em 9 de janeiro de 2026, das duas '
-    'decisões que autorizam a assinatura dos dois instrumentos (Conselho da UE, '
-    '2026). [VERIFICAR: número e data da decisão relativa ao '
-    'Acordo Provisório no Jornal Oficial da UE]',
+    'decisões que autorizam a assinatura dos instrumentos: a Decisão (UE) 2026/183, '
+    'relativa à assinatura e à aplicação provisória do Acordo Provisório sobre '
+    'Comércio, e a Decisão (UE) 2026/185, relativa ao Acordo de Parceria. Ambas '
+    'foram publicadas no Jornal Oficial da União Europeia de 27 de fevereiro de '
+    '2026 (JO L, 2026/183 e JO L, 2026/185).',
+    'O texto do próprio Acordo Provisório sobre Comércio foi publicado no mesmo '
+    'Jornal Oficial, em JO L, 2026/184, de 27 de fevereiro de 2026, o que permite '
+    'citar os capítulos diretamente da fonte oficial.',
     'A distinção entre o Acordo Provisório de Comércio, de competência exclusiva da '
     'União Europeia, e o Acordo de Parceria, acordo misto sujeito à ratificação '
     'pelos vinte e sete (Conjur, 29 abr. 2026; MAPA, 2026).',
@@ -433,9 +432,11 @@ for b in [
     'Decreto nº 12.866, de 4 de março de 2026, que regulamenta a investigação e a '
     'aplicação de salvaguardas bilaterais em acordos de livre comércio, incluído o '
     'Mercosul-União Europeia.',
-    'Ação da Polônia contra o Conselho da União Europeia pedindo a anulação da '
-    'Decisão (UE) 2026/183; indeferimento do pedido de suspensão liminar em 29 de '
-    'setembro de 2026 e manutenção da ação principal em análise; fundamentos '
+    'Ação da Polônia contra o Conselho da União Europeia, autuada como Processo '
+    'C-460/26, pedindo a anulação da Decisão (UE) 2026/183. O pedido de suspensão '
+    'liminar foi indeferido por despacho do vice-presidente do Tribunal de Justiça '
+    'em 29 de setembro de 2026, no Processo C-460/26 R, e a ação principal segue em '
+    'análise; fundamentos '
     'invocados: fracionamento artificial do acordo para evitar a unanimidade no '
     'Conselho, em violação ao artigo 218 do TFUE, avanço da aplicação provisória '
     'sem consentimento definitivo do Parlamento Europeu e ausência de '
@@ -444,7 +445,7 @@ for b in [
 ]:
     S.append(B(b))
 
-S.append(H2('Contextualização 2 — dados e documentos a citar (8-13 min)'))
+S.append(H2('Contextualização 2: dados e documentos a citar (8 a 13 min)'))
 for b in [
     'Exportações brasileiras de produtos agrícolas à União Europeia em 2025: '
     'US$ 21,8 bilhões, equivalentes a 44% da pauta destinada ao bloco; '
@@ -476,9 +477,9 @@ for b in [
 S.append(H1('Roteiro de entrevista'))
 S.append(pergunta(
     1,
-    'O senhor diria que o padrão de comércio que o acordo encontra — com cerca de '
+    'O senhor diria que o padrão de comércio que o acordo encontra, com cerca de '
     'metade da pauta brasileira ao bloco concentrada em produtos agrícolas e '
-    'extrativos — é um ponto de partida que a desgravação tende a aprofundar, ou um '
+    'extrativos, é um ponto de partida que a desgravação tende a aprofundar, ou um '
     'ponto de partida que ela permite modificar?',
     'é a tradução direta da pergunta-guia e estabelece o diagnóstico sobre o qual '
     'todas as demais se apoiam.',
@@ -551,7 +552,7 @@ S.append(P(
     'coordenador entre 2005 e 2007. A escolha se justifica por ele ser coautor, com '
     'Marta Castilho, do trabalho "Impactos do Acordo Mercosul e União Europeia '
     'sobre a Indústria Brasileira", apresentado no V Encontro Nacional de Economia '
-    'Industrial e Inovação — isto é, por ter examinado exatamente o objeto da '
+    'Industrial e Inovação, isto é, por ter examinado exatamente o objeto da '
     'pergunta-guia, e pelo ângulo da indústria de transformação, que é o eixo do '
     'episódio. As perguntas 3, 4 e 6 dirigem-se particularmente a ele.'))
 S.append(P(
@@ -571,12 +572,12 @@ S.append(P(
 
 S.append(H2('Minuta de e-mail de convite'))
 S.append(caixa([
-    P('<b>Assunto:</b> Convite para entrevista — Podcast CERI (CX904), episódio '
+    P('<b>Assunto:</b> Convite para entrevista no Podcast CERI (CX904), episódio '
       'sobre o Acordo Mercosul-União Europeia', 'Mailx'),
     Spacer(1, 5),
     P('Prezado Professor Fernando Sarti,', 'Mailx'),
     P('Somos alunos de graduação do Instituto de Economia e cursamos a disciplina '
-      'CX904 — Podcast CERI, cujo produto final é um episódio de aproximadamente '
+      'CX904, Podcast CERI, cujo produto final é um episódio de aproximadamente '
       'trinta minutos.', 'Mailx'),
     P('Nosso episódio examina que padrão de inserção externa o Acordo '
       'Mercosul-União Europeia consolida, agora que o Acordo Provisório de Comércio '
@@ -587,8 +588,8 @@ S.append(caixa([
       'trinta minutos, em data de sua conveniência, no Instituto ou de forma '
       'remota. Enviaríamos as perguntas com antecedência.', 'Mailx'),
     P('Agradecemos a atenção.', 'Mailx'),
-    P('Alan Araújo Lima — RA 238212<br/>Nathan Pereira — RA 243684<br/>'
-      'Matteo Lucato — RA 246226', 'Mailx'),
+    P('Alan Araújo Lima, RA 238212<br/>Nathan Pereira, RA 243684<br/>'
+      'Matteo Lucato, RA 246226', 'Mailx'),
 ]))
 
 # --- 7. Referencias
@@ -609,10 +610,9 @@ for r in [
     'sus principales problemas</i>. Santiago: Cepal, 1949.',
     'SARTI, Fernando; CASTILHO, Marta. Impactos do acordo Mercosul e União Europeia '
     'sobre a indústria brasileira. In: ENCONTRO NACIONAL DE ECONOMIA INDUSTRIAL E '
-    'INOVAÇÃO, 5., 2021, Belo Horizonte. <i>Anais</i>. São Paulo: Blucher '
-    'Proceedings, 2021. [VERIFICAR: autoria, paginação e '
-    'imprint — a primeira entrega registrou "Belo Horizonte: Face/UFMG"; a lista de '
-    'artigos do V ENEI está em Blucher Proceedings]',
+    'INOVAÇÃO, 5., 2021, Belo Horizonte. <i>Anais</i>. São Paulo: Blucher, 2021. '
+    'p. 1647-1659. (Blucher Engineering Proceedings). '
+    'DOI: 10.5151/v-enei-731.',
 ]:
     S.append(P(r, 'Refx'))
 
@@ -638,17 +638,31 @@ for r in [
     'Europeia. Brasília, DF, 2026.',
     'CONFEDERAÇÃO NACIONAL DA INDÚSTRIA. <i>Manual do Acordo Mercosul-União '
     'Europeia</i>. Brasília, DF: CNI, 2026.',
-    'CONSELHO DA UNIÃO EUROPEIA. <i>Decisão (UE) 2026/183</i>, relativa à '
-    'assinatura e à aplicação provisória do Acordo Provisório de Comércio entre a '
-    'União Europeia e o Mercosul. <i>Jornal Oficial da União Europeia</i>, 2026. '
-    '[VERIFICAR: data, ementa exata e número do Jornal '
-    'Oficial]',
-    'MERCOSUL; UNIÃO EUROPEIA. <i>Acordo Provisório de Comércio</i>. Apêndice '
-    '2-A-1: cronograma de desgravação tarifária da União Europeia. Assunção, '
-    '17 jan. 2026.',
-    'Acordo Mercosul-UE entra em vigor no dia 1º: lições e apontamentos. '
-    '<i>Consultor Jurídico</i>, São Paulo, 29 abr. 2026. '
-    '[VERIFICAR: autoria da coluna]',
+    'UNIÃO EUROPEIA. Conselho da União Europeia. Decisão (UE) 2026/183 do Conselho, '
+    'de 9 de janeiro de 2026, relativa à assinatura e à aplicação provisória do '
+    'Acordo Provisório sobre Comércio entre a União Europeia, por um lado, e o '
+    'Mercado Comum do Sul, a República Argentina, a República Federativa do Brasil, '
+    'a República do Paraguai e a República Oriental do Uruguai, por outro. '
+    '<i>Jornal Oficial da União Europeia</i>, L, 2026/183, 27 fev. 2026.',
+    'UNIÃO EUROPEIA. Conselho da União Europeia. Decisão (UE) 2026/185 do Conselho, '
+    'de 9 de janeiro de 2026, relativa à assinatura, em nome da União, e à '
+    'aplicação provisória do Acordo de Parceria entre a União Europeia e os seus '
+    'Estados-Membros, por um lado, e o Mercado Comum do Sul e seus Estados-Partes, '
+    'por outro. <i>Jornal Oficial da União Europeia</i>, L, 2026/185, '
+    '27 fev. 2026.',
+    'TRIBUNAL DE JUSTIÇA DA UNIÃO EUROPEIA. <i>Processo C-460/26</i>: República da '
+    'Polónia contra Conselho da União Europeia. Comunicação de ação. <i>Jornal '
+    'Oficial da União Europeia</i>, C, 2026/3166, 2026. Despacho de medidas '
+    'provisórias no Processo C-460/26 R, de 29 de setembro de 2026.',
+    'UNIÃO EUROPEIA; MERCOSUL. <i>Acordo Provisório sobre Comércio entre a União '
+    'Europeia, por um lado, e o Mercado Comum do Sul, a República Argentina, a '
+    'República Federativa do Brasil, a República do Paraguai e a República Oriental '
+    'do Uruguai, por outro</i>. Assinado em Assunção, 17 de janeiro de 2026. '
+    '<i>Jornal Oficial da União Europeia</i>, L, 2026/184, 27 fev. 2026. Apêndice '
+    '2-A-1: cronograma de desgravação tarifária da União Europeia.',
+    'ACORDO Mercosul-UE entra em vigor no dia 1º: lições e apontamentos. '
+    '<i>Consultor Jurídico</i>, São Paulo, 29 abr. 2026. Coluna Território '
+    'Aduaneiro. Entrada pelo título: a página não identifica a autoria da coluna.',
     'TJUE rejeita pedido da Polônia contra aplicação provisória do acordo '
     'Mercosul-UE. <i>Canal Rural</i>, 29 set. 2026. Fonte: Estadão Conteúdo.',
 ]:
@@ -679,16 +693,22 @@ S.append(P(
     'de 51% da pauta.'))
 
 # --- 9. Pendencias
+S.append(P(
+    '<b>Terceiro.</b> A referência ao trabalho de Sarti e Castilho trazia o '
+    'imprint "Belo Horizonte: Face/UFMG". Os anais do V Encontro Nacional de '
+    'Economia Industrial e Inovação, realizado em Belo Horizonte entre 10 e 14 de '
+    'maio de 2021, foram publicados pela Editora Blucher, em São Paulo, na série '
+    'Blucher Engineering Proceedings. A referência foi corrigida e completada com a '
+    'paginação (p. 1647-1659) e o DOI (10.5151/v-enei-731).'))
 S.append(H1('Pendências e próximos passos'))
 for i, b in enumerate([
     '<b>Contato com o entrevistado.</b> Enviar o convite ao Professor Fernando '
     'Sarti na semana de 13 de outubro, com as perguntas em anexo; acionar o '
     'Professor Célio Hiratuka caso não haja resposta em uma semana.',
-    '<b>Dados a confirmar.</b> Autoria, paginação e imprint do trabalho de Sarti e '
-    'Castilho no V ENEI; número, data e ementa exata da Decisão (UE) 2026/183 no '
-    'Jornal Oficial da União Europeia; número e data da decisão do Conselho de 9 de '
-    'janeiro de 2026 relativa ao Acordo Provisório; autoria da coluna da Consultor '
-    'Jurídico de 29 de abril de 2026.',
+    '<b>Assinatura da coluna da Consultor Jurídico.</b> A coluna Território '
+    'Aduaneiro de 29 de abril de 2026 não identifica a autoria na página, de modo '
+    'que a referência foi feita pelo título. Confirmar a assinatura com a redação '
+    'do periódico antes da versão final.',
     '<b>Replicação no Comex Stat.</b> Reproduzir a composição da pauta exportadora '
     'à União Europeia em 2025 diretamente no Comex Stat, declarando a agregação '
     'utilizada, para dispor de um cálculo próprio além do agregado do MAPA.',
