@@ -27,9 +27,11 @@ OUT = os.path.join(ROOT, 'roteiro-preliminar-mercosul-ue.pdf')
 
 # ---------------------------------------------------------------- identificacao
 ALUNOS = [
-    ('Alan Araújo Lima', '243684'),
+    # ATENCAO: a 1a entrega registrava "Alan Araujo Lima - RA: 243684".
+    # O RA abaixo (238212) foi informado depois. Conferir antes de enviar.
+    ('Alan Araújo Lima', '238212'),
     ('Nathan', '[a confirmar]'),
-    ('Matteo Lucato', '[a confirmar]'),
+    ('Matteo Lucato', '246226'),
 ]
 DISCIPLINA = 'CX904 - Podcast CERI'
 ENTREGA = 'Roteiro preliminar - 9 de outubro de 2026'
@@ -591,8 +593,8 @@ S.append(caixa([
       'trinta minutos, em data de sua conveniência, no Instituto ou de forma '
       'remota. Enviaríamos as perguntas com antecedência.', 'Mailx'),
     P('Agradecemos a atenção.', 'Mailx'),
-    P('Alan Araújo Lima — RA 243684<br/>Nathan — RA [a confirmar]<br/>'
-      'Matteo Lucato — RA [a confirmar]', 'Mailx'),
+    P('Alan Araújo Lima — RA 238212<br/>Nathan — RA [a confirmar]<br/>'
+      'Matteo Lucato — RA 246226', 'Mailx'),
 ]))
 
 # --- 7. Referencias
@@ -685,8 +687,8 @@ S.append(P(
 # --- 9. Pendencias
 S.append(H1('Pendências e próximos passos'))
 for i, b in enumerate([
-    '<b>Registro acadêmico.</b> Confirmar os RAs do Nathan e do Matteo para a '
-    'versão final da entrega.',
+    '<b>Registro acadêmico.</b> Confirmar o RA do Nathan para a versão final da '
+    'entrega.',
     '<b>Contato com o entrevistado.</b> Enviar o convite ao Professor Fernando '
     'Sarti na semana de 13 de outubro, com as perguntas em anexo; acionar o '
     'Professor Célio Hiratuka caso não haja resposta em uma semana.',
