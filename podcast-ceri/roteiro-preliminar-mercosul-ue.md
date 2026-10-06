@@ -4,7 +4,7 @@ INSTITUTO DE ECONOMIA
 
 Disciplina: CX904 — Podcast CERI
 
-Alunos: Alan Araújo Lima — RA: 238212; Nathan — RA: 243684; Matteo Lucato — RA: 246226
+Alunos: Alan Araújo Lima — RA: 238212; Nathan Pereira — RA: 243684; Matteo Lucato — RA: 246226
 
 Roteiro preliminar — entrega de 9 de outubro de 2026
 
@@ -133,7 +133,7 @@ O tema dialoga diretamente com a agenda do CERI sobre inserção externa brasile
 > Agradecemos a atenção.
 >
 > Alan Araújo Lima — RA 238212
-> Nathan — RA 243684
+> Nathan Pereira — RA 243684
 > Matteo Lucato — RA 246226
 
 # Referências preliminares

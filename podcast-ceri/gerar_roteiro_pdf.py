@@ -28,7 +28,7 @@ OUT = os.path.join(ROOT, 'roteiro-preliminar-mercosul-ue.pdf')
 # ---------------------------------------------------------------- identificacao
 ALUNOS = [
     ('Alan Araújo Lima', '238212'),
-    ('Nathan', '243684'),
+    ('Nathan Pereira', '243684'),
     ('Matteo Lucato', '246226'),
 ]
 DISCIPLINA = 'CX904 - Podcast CERI'
@@ -587,7 +587,7 @@ S.append(caixa([
       'trinta minutos, em data de sua conveniência, no Instituto ou de forma '
       'remota. Enviaríamos as perguntas com antecedência.', 'Mailx'),
     P('Agradecemos a atenção.', 'Mailx'),
-    P('Alan Araújo Lima — RA 238212<br/>Nathan — RA 243684<br/>'
+    P('Alan Araújo Lima — RA 238212<br/>Nathan Pereira — RA 243684<br/>'
       'Matteo Lucato — RA 246226', 'Mailx'),
 ]))
 
