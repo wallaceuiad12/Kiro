@@ -1,4 +1,4 @@
-# Post 3 — Decade × Liga Empreendedora · versão preto e branco
+# Post 3 · Decade × Liga Empreendedora · versão preto e branco
 
 Quatro variações em `out/`, 1080×1350 (4:5), **monocromáticas estritas**.
 
@@ -6,11 +6,11 @@ Quatro variações em `out/`, 1080×1350 (4:5), **monocromáticas estritas**.
 |---|---|---|---|
 | `v1-infos-claro.png` | "o que vai acontecer." | off-white | **Canônica pelo manual** (p.6: post de infos → Decade lidera, fundo off-white) |
 | `v2-infos-escuro.png` | mesma copy, invertida | preto | Só válida se tratada como *post de chamada* (p.6 permite preto ou off-white) |
-| `v3-contagem-claro.png` | "faltam vinte dias." | off-white | ⚠️ Conteúdo datado — válido só em 06.10 |
+| `v3-contagem-claro.png` | "faltam vinte dias." | off-white | ⚠️ Conteúdo datado, válido só em 06.10 |
 | `v4-cta-claro.png` | "as inscrições estão abertas." + faixa de CTA | off-white | Faixa com 70% da largura, igual à do Post 2 |
 
 Cada peça tem três saídas: `.png` (1080×1350), `.jpg` (qualidade 95, sem subamostragem
-de croma — preserva a serifada fina) e `@2x.png` (2160×2700, para reaproveitar em impresso).
+de croma, que preserva a serifada fina) e `@2x.png` (2160×2700, para reaproveitar em impresso).
 
 ---
 
@@ -20,7 +20,7 @@ Modelo de imagem erra acentuação em português, distorce o símbolo e introduz
 cada peça é HTML/CSS renderizado em Chromium headless com supersampling 2×, então:
 
 - os hex saem exatamente como o manual especifica;
-- o texto é texto de verdade — "inscrições", "está", "construído" sem deformação;
+- o texto é texto de verdade: "inscrições", "está", "construído" sem deformação;
 - o símbolo e os lockups são **recortados das peças originais**, não redesenhados.
 
 ## Conformidade com o manual
@@ -51,12 +51,12 @@ para 1080×1350 pelo fator 0.84375:
 | Título | `#040303` | Preto `#000000` |
 | Corpo e kicker | `#504D48` | Cinza médio `#514F4D` |
 | Fundo | `#F5F1EC` | Off-white `#F5F1EC` |
-| Motivo de barras | `#E9E5E0` | — |
+| Motivo de barras | `#E9E5E0` | não consta |
 | Peça escura: fundo | `#0C0B09` | Preto |
 | Peça escura: texto | `#F4F1ED` | Off-white |
 
 **O motivo do fundo é o próprio símbolo ampliado.** Descobri isso amplificando o contraste
-do fundo 8× — a silhueta é a mesma elipse de barras. Busca de encaixe confirmou:
+do fundo 8×: a silhueta é a mesma elipse de barras. Busca de encaixe confirmou:
 escala 1480×1370 no offset (−100, 110) sobre 1280×1600, **IoU = 0.914**. Usar o símbolo
 como fonte do motivo elimina os artefatos que a extração tonal deixava onde havia texto.
 
@@ -101,7 +101,7 @@ node render.js                 # renderiza todas as variações de variations.js
 python3 measure.py             # confere o alinhamento contra o original
 ```
 
-Para trocar copy, edite `variations.json` — `headline` aceita `<br>` e `<em>` (itálico).
+Para trocar copy, edite `variations.json`. O campo `headline` aceita `<br>` e `<em>` (itálico).
 
 ---
 
@@ -110,13 +110,13 @@ Para trocar copy, edite `variations.json` — `headline` aceita `<br>` e `<em>` 
 **Data oficial: 26.10.2026 · 17H30 · Unicamp**, confirmada pelo marketing. É o que está em
 todas as peças. Vale corrigir o manual, cuja p.1 ainda traz 25.10.2026.
 
-**Copy aprovada** sem a transcrição dos áudios — os textos são redação a partir dos fatos
+**Copy aprovada** sem a transcrição dos áudios. Os textos são redação a partir dos fatos
 do manual e das fontes públicas listadas adiante.
 
 **O logo mono da Liga é derivado** do colorido do Post 1 por conversão de luminância, não é
 o arquivo oficial. Quando o PNG oficial chegar nas versões clara e escura (manual p.7),
 basta trocar `assets/liga_lockup_black.png` e `assets/liga_lockup_offwhite.png` e rodar
-`node render.js` — nada mais muda.
+`node render.js`. Nada mais muda.
 
 **A serifada é Playfair Display**, a mesma aproximação que o manual adota (p.7) até a fonte
 proprietária da Decade ser definida. Para trocar, substitua o arquivo em `assets/fonts/` e
@@ -127,19 +127,27 @@ outra data, ajuste o texto em `variations.json`.
 
 ---
 
-# Carrossel — "o que é a Decade"
+# Carrossel · "o que é a Decade"
 
-Evolução do Post 3, em `carrossel/`. Seis telas, 1080×1350, mesma identidade monocromática.
-Visão geral em `carrossel/contato-6-telas.png`.
+Evolução do Post 3, em `carrossel/`. Dez telas, 1080×1350, mesma identidade monocromática.
+Visão geral em `carrossel/contato-10-telas.png`.
 
 | Tela | Arquivo | Conteúdo |
 |---|---|---|
-| 01 | `01-capa.png` | "o que é a *Decade.*" — gancho dos US$ 85M + indicador de arraste |
-| 02 | `02-o-que-e.png` | "inteligência humana *e artificial.*" — a tagline do manual (p.4) |
-| 03 | `03-o-que-fazem.png` | "a sua vida financeira *num só lugar.*" — Open Finance + consultor sênior |
-| 04 | `04-como-fazem.png` | "sem comissão. *sem conflito.*" — modelo por assinatura |
-| 05 | `05-quem-fundou.png` | "*dois ex-Nubank.*" — Vitor Olivier e Felipe Meneses |
-| 06 | `06-convite.png` | "a Decade vai estar *na Unicamp.*" — faixa de CTA + data |
+| 01 | `01-capa.png` | "o que é a *Decade.*" com o gancho dos US$ 85M e indicador de arraste |
+| 02 | `02-o-que-e.png` | "inteligência humana *e artificial.*", a tagline do manual (p.4) |
+| 03 | `03-o-que-fazem.png` | "a sua vida financeira *num só lugar.*": Open Finance e consultor sênior |
+| 04 | `04-como-fazem.png` | "sem comissão. *sem conflito.*", o modelo por assinatura |
+| 05 | `05-o-problema.png` | "um país que *não investe.*" com os números 33% e 7% em mono |
+| 06 | `06-por-que-o-brasil.png` | "a infraestrutura *que só existe aqui.*": Pix e Open Finance |
+| 07 | `07-a-tese.png` | citação de Felipe Meneses sobre assimetria de informação |
+| 08 | `08-quem-apostou.png` | "quem apostou *US$ 85 milhões.*", os fundos da rodada |
+| 09 | `09-quem-fundou.png` | "*dois ex-Nubank.*": Vitor Olivier e Felipe Meneses |
+| 10 | `10-convite.png` | "a Decade vai estar *na Unicamp.*" com faixa de CTA e data |
+
+A narrativa vai do que a empresa é até o convite, passando pelo problema que ela ataca,
+por que o Brasil é o mercado de partida, a tese e quem bancou a rodada. Dez é o limite
+clássico de um carrossel no Instagram, então a sequência fecha sem sobra.
 
 `01-capa-escura.png` é uma capa alternativa em fundo preto, para quem preferir abrir o
 carrossel com mais impacto e dar continuidade ao Post 2. O manual p.6 permite preto ou
@@ -147,8 +155,16 @@ off-white em post de chamada; as telas internas seguem off-white porque são con
 institucional, onde a Decade lidera em off-white.
 
 Navegação: o rótulo da seção vai no kicker em mono (`03 · O QUE FAZEM`) e o contador
-`03 / 06` fica acima do rodapé. O lockup Decade + Liga aparece em **todas** as telas,
+`03 / 10` fica acima do rodapé. O lockup Decade + Liga aparece em **todas** as telas,
 porque p.5 trata a segunda marca como assinatura de rodapé.
+
+A tela 05 usa mono no lugar da serifada para os números, como manda o manual p.4 ("mono
+para dados, números, detalhes técnicos"), e traz `FONTE · DECADE` abaixo, porque os
+percentuais são números citados pelos próprios fundadores, não medição independente.
+
+A tela 07 traz uma declaração que Felipe Meneses deu à imprensa, em tradução livre do
+inglês. O original é "Financial services are complex by design and often monetized through
+asymmetry of information. AI collapses that asymmetry."
 
 ## Checagem
 
@@ -158,18 +174,18 @@ porque p.5 trata a segunda marca como assinatura de rodapé.
 
 ## Fatos e fontes
 
-O manual não traz nome de fundador. Em vez de inventar, apurei em fontes públicas —
-os dois nomes aparecem de forma consistente em veículos independentes:
+O manual não traz nome de fundador. Em vez de inventar, apurei em fontes públicas. Os
+dois nomes aparecem de forma consistente em veículos independentes:
 
-- **Vitor Olivier** — co-fundador e CEO; 12 anos de Nubank, de um dos primeiros engenheiros
+- **Vitor Olivier**: co-fundador e CEO; 12 anos de Nubank, de um dos primeiros engenheiros
   a CTO, saindo em agosto de 2025.
-- **Felipe Meneses** — co-fundador e head de IA; primeiro brasileiro selecionado para o
+- **Felipe Meneses**: co-fundador e head de IA; primeiro brasileiro selecionado para o
   Thiel Fellowship; fundou a Hyperplane, adquirida pelo Nubank em 2024.
-- **A empresa** — consultoria de patrimônio nativa em IA, São Paulo e San Francisco,
+- **A empresa**: consultoria de patrimônio nativa em IA, São Paulo e San Francisco,
   26 pessoas entre engenheiros e consultores. Seed de US$ 85 milhões (a maior já levantada
   por uma startup latino-americana) com Greenoaks, Benchmark e Diffusion, mais Atlantico
   e Norte Ventures. Saiu do stealth em 4 de agosto de 2026.
-- **O produto** — consolida contas pelo Open Finance (BTG Pactual, XP, Genial, C6),
+- **O produto**: consolida contas pelo Open Finance (BTG Pactual, XP, Genial, C6),
   monitora carteira e gastos de forma contínua e dá acesso a um consultor humano sênior
   por WhatsApp, por assinatura mensal em vez de comissão por produto.
 
@@ -183,7 +199,7 @@ Conteúdo reescrito para conformidade com restrições de licenciamento.
 
 ## Notas do carrossel
 
-A tela 06 diz "a Decade vai estar na Unicamp" e não nomeia quem comparece, porque nenhuma
+A tela 10 diz "a Decade vai estar na Unicamp" e não nomeia quem comparece, porque nenhuma
 fonte confirma presença dos fundadores no evento. Se Olivier ou Meneses forem confirmados,
 é só nomear em `carousel.json`.
 

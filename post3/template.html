@@ -80,6 +80,17 @@
     color: var(--muted); line-height: 40px; margin-top: 10px;
   }
 
+  /* bloco de numeros: mono nos dados, como manda o manual (p.4) */
+  .stats { display: flex; justify-content: center; gap: 148px; }
+  .stat .num {
+    font-family: 'JBMono'; font-weight: 500; font-size: 104px;
+    letter-spacing: -0.02em; color: var(--ink); line-height: 112px;
+  }
+  .stat .rotulo {
+    font-family: 'Playfair'; font-weight: 400; font-size: 27px;
+    line-height: 38px; color: var(--muted); margin-top: 14px;
+  }
+
   /* citacao atribuida */
   .quote {
     font-family: 'Playfair'; font-style: italic; font-weight: 400;
@@ -148,10 +159,16 @@ let html = '';
 html += `<img class="motif" src="${t.motif}">`;
 html += `<img class="symbol" src="${t.symbol}">`;
 html += `<div class="block kicker" style="top:${V.y.kicker}px">${V.kicker}</div>`;
-html += `<div class="block headline" style="top:${V.y.headline}px">${V.headline}</div>`;
+if (V.headline)
+  html += `<div class="block headline" style="top:${V.y.headline}px">${V.headline}</div>`;
 if (V.body)   html += `<div class="block body" style="top:${V.y.body}px">${V.body}</div>`;
 if (V.quote)  html += `<div class="block quote" style="top:${V.y.quote}px">${V.quote}`
                     + (V.quoteAuthor ? `<span class="autor">${V.quoteAuthor}</span>` : '')
+                    + `</div>`;
+if (V.stats)  html += `<div class="block stats" style="top:${V.y.stats}px">`
+                    + V.stats.map(s =>
+                        `<div class="stat"><div class="num">${s.num}</div>`
+                      + `<div class="rotulo">${s.rotulo}</div></div>`).join('')
                     + `</div>`;
 if (V.people) html += `<div class="block people" style="top:${V.y.people}px">`
                     + V.people.map(p =>
