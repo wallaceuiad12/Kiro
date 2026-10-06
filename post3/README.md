@@ -105,25 +105,25 @@ Para trocar copy, edite `variations.json` — `headline` aceita `<br>` e `<em>` 
 
 ---
 
-## ⚠️ Pendências — ler antes de publicar
+## Notas técnicas
 
-1. **Copy não validada.** O conteúdo dos dois áudios do Octávio (23s e 42s) não foi
-   incorporado: não processo áudio, e o sandbox não tem transcritor. Os textos aqui são
-   redação minha a partir dos fatos do manual (Unicamp, 17H30, "inteligência humana e
-   artificial para as maiores decisões da sua vida", maior seed da LatAm, coffee break).
-   **Precisa passar pelo Octávio.**
+**Data oficial: 26.10.2026 · 17H30 · Unicamp**, confirmada pelo marketing. É o que está em
+todas as peças. Vale corrigir o manual, cuja p.1 ainda traz 25.10.2026.
 
-2. **Conflito de data.** Manual p.1 diz **25.10.2026**; as duas peças publicadas dizem
-   **26.10**. Usei 26.10 por consistência com o que está no ar. Confirmar qual vale.
+**Copy aprovada** sem a transcrição dos áudios — os textos são redação a partir dos fatos
+do manual e das fontes públicas listadas adiante.
 
-3. **v3 é datada.** "faltam vinte dias" vale para 06.10.2026. Recalcular se publicar depois.
+**O logo mono da Liga é derivado** do colorido do Post 1 por conversão de luminância, não é
+o arquivo oficial. Quando o PNG oficial chegar nas versões clara e escura (manual p.7),
+basta trocar `assets/liga_lockup_black.png` e `assets/liga_lockup_offwhite.png` e rodar
+`node render.js` — nada mais muda.
 
-4. **Logo mono da Liga é derivado.** Foi obtido por conversão do logo colorido do Post 1,
-   não é arquivo oficial. O manual p.7 registra como pendência obter o PNG transparente
-   nas versões clara e escura. Vale substituir pelo oficial quando chegar.
+**A serifada é Playfair Display**, a mesma aproximação que o manual adota (p.7) até a fonte
+proprietária da Decade ser definida. Para trocar, substitua o arquivo em `assets/fonts/` e
+recalibre os corpos com `measure.py`.
 
-5. **Serif é aproximação.** Playfair Display, como o próprio manual assume (p.7) até a
-   fonte proprietária da Decade ser definida.
+**A v3 tem contagem regressiva.** "faltam vinte dias" vale para 06.10.2026. Publicando em
+outra data, ajuste o texto em `variations.json`.
 
 ---
 
@@ -181,19 +181,12 @@ Fontes: [Business Wire](https://www.businesswire.com/news/home/20260804082552/en
 
 Conteúdo reescrito para conformidade com restrições de licenciamento.
 
-## ⚠️ Pendências específicas do carrossel
+## Notas do carrossel
 
-1. **Nenhuma fonte confirma presença dos fundadores no evento.** A tela 06 dizia
-   originalmente "eles vão estar na Unicamp" e foi corrigida para "a Decade vai estar na
-   Unicamp". Se Olivier ou Meneses estiverem confirmados, vale nomear — mas só com
-   confirmação.
+A tela 06 diz "a Decade vai estar na Unicamp" e não nomeia quem comparece, porque nenhuma
+fonte confirma presença dos fundadores no evento. Se Olivier ou Meneses forem confirmados,
+é só nomear em `carousel.json`.
 
-2. **Dados de produto mudam rápido.** Preço, número de funcionários e instituições
-   conectadas são de agosto/setembro de 2026. Deixei preço e licenças **fora da arte**
-   justamente por isso; o que está nas peças é estrutural, não numérico volátil.
-
-3. **A Decade é rigorosa com a própria marca** (manual p.2 e p.7, que pede SLA de
-   aprovação). Um carrossel que descreve a empresa e nomeia fundadores deveria passar
-   pela aprovação deles antes de publicar, não só pela Liga.
-
-4. **Copy segue sem validação do Octávio** — os dois áudios continuam sem transcrição.
+Preço da assinatura, número de funcionários e instituições conectadas ficaram **fora da
+arte** por serem dados voláteis (referência de agosto/setembro de 2026). O que está nas
+telas é estrutural, não numérico perecível.
