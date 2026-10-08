@@ -9,7 +9,7 @@ Quatro variações em `out/`, 1080×1350 (4:5), **monocromáticas estritas**.
 | `v3-contagem-claro.png` | "faltam vinte dias." | off-white | ⚠️ Conteúdo datado, válido só em 06.10 |
 | `v4-cta-claro.png` | "as inscrições estão abertas." + faixa de CTA | off-white | Faixa com 70% da largura, igual à do Post 2 |
 
-Cada peça tem três saídas: `.png` (1080×1350), `.jpg` (qualidade 95, sem subamostragem
+Cada peça tem três saídas, que são `.png` (1080×1350), `.jpg` (qualidade 95, sem subamostragem
 de croma, que preserva a serifada fina) e `@2x.png` (2160×2700, para reaproveitar em impresso).
 
 ---
@@ -20,7 +20,7 @@ Modelo de imagem erra acentuação em português, distorce o símbolo e introduz
 cada peça é HTML/CSS renderizado em Chromium headless com supersampling 2×, então:
 
 - os hex saem exatamente como o manual especifica;
-- o texto é texto de verdade: "inscrições", "está", "construído" sem deformação;
+- o texto é texto de verdade, com "inscrições", "está" e "construído" sem deformação;
 - o símbolo e os lockups são **recortados das peças originais**, não redesenhados.
 
 ## Conformidade com o manual
@@ -56,7 +56,7 @@ para 1080×1350 pelo fator 0.84375:
 | Peça escura: texto | `#F4F1ED` | Off-white |
 
 **O motivo do fundo é o próprio símbolo ampliado.** Descobri isso amplificando o contraste
-do fundo 8×: a silhueta é a mesma elipse de barras. Busca de encaixe confirmou:
+do fundo 8×, e a silhueta é a mesma elipse de barras. Busca de encaixe confirmou:
 escala 1480×1370 no offset (−100, 110) sobre 1280×1600, **IoU = 0.914**. Usar o símbolo
 como fonte do motivo elimina os artefatos que a extração tonal deixava onde havia texto.
 
@@ -107,7 +107,7 @@ Para trocar copy, edite o JSON correspondente. O campo `headline` aceita `<br>` 
 
 ## Resolução dos ativos de marca
 
-O símbolo e os lockups não existem como arquivo: foram recortados das duas peças
+O símbolo e os lockups não existem como arquivo. Foram recortados das duas peças
 publicadas. Isso impõe um teto de qualidade, e o caminho até o resultado atual descartou
 duas abordagens que pareciam boas:
 
@@ -171,7 +171,7 @@ monocromática. Visão geral em `carrossel/contato-4-telas.png`.
 
 A primeira versão da copy era descritiva ("o que é a Decade", "a sua vida financeira num
 só lugar") e chamava pouca atenção. A reescrita mudou a fonte do apelo, não o registro
-tipográfico: o manual define a Decade como sóbria e editorial, sem cor de acento (p.2 e
+tipográfico, porque o manual define a Decade como sóbria e editorial, sem cor de acento (p.2 e
 p.4), então gritar no estilo quebraria a marca. O apelo vem do conteúdo.
 
 | Tela | Recurso |
@@ -182,7 +182,7 @@ p.4), então gritar no estilo quebraria a marca. O apelo vem do conteúdo.
 | 04 | Fecho com promessa e atrito baixo: a história inteira, ao vivo, coffee break incluso |
 
 Se o time quiser copy e arte francamente mais agressivas, o próprio manual abre essa porta
-em outro lugar: pela p.6, peça de mobilização de campus é **liderada pela Liga**, e aí
+em outro lugar, porque pela p.6 a peça de mobilização de campus é **liderada pela Liga**, e aí
 Anton e o amarelo estão liberados. Na arte oficial do evento, quem lidera é a Decade, e o
 teto de energia é este.
 
@@ -197,14 +197,15 @@ porque p.5 trata a segunda marca como assinatura de rodapé.
 
 ### Por que quatro e não três
 
-Três telas exigiriam juntar fundadores e convite numa só. Isso foi testado e medido: a
+Três telas exigiriam juntar fundadores e convite numa só. Isso foi testado e medido, e a
 faixa de CTA passa a **encobrir** a última linha das credenciais do Felipe Meneses, e a
 folga mínima entre blocos cai para **13 px**, contra os 106 a 204 px que o Post 1 mantém.
 A respiração generosa é justamente o que define a estética sóbria da Decade, e o manual
 p.5 pede área de proteção generosa, então comprimir a esse ponto sairia da identidade.
 
 Com quatro telas, "o que fazem" e "como fazem" entram juntos na tela 02, o que funciona
-porque são a mesma ideia vista de dois ângulos: o que a plataforma faz e como ela cobra.
+porque são a mesma ideia vista por dois ângulos, um sendo o que a plataforma faz e o
+outro como ela cobra.
 
 ## Peças avulsas
 

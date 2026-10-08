@@ -22,7 +22,7 @@ referência de cor, só de composição.
 ## Paleta Decade
 
 Preto `#000000` · Off-white `#F5F1EC` · Cinza claro `#A19E99` · Cinza médio `#514F4D` ·
-Grafite `#343332`. **Sem cor de acento**: é a ausência de cor vibrante que dá a sobriedade
+Grafite `#343332`. **Sem cor de acento**, porque é a ausência de cor vibrante que dá a sobriedade
 da marca.
 
 Tons medidos nas peças reais: título `#040303`, corpo e kicker `#504D48`, motivo de barras
@@ -30,9 +30,9 @@ do fundo `#E9E5E0`; na versão escura, fundo `#0C0B09`, texto `#F4F1ED`, barras 
 
 ## Quem lidera cada peça
 
-Arte oficial do evento e comunicação institucional: **Decade lidera**, serifada no título,
+Na arte oficial do evento e na comunicação institucional a **Decade lidera**, com serifada no título,
 mono nos dados, Liga como assinatura de rodapé. Peças de mobilização de campus (stories,
-panfleto, reels): Liga lidera, e aí o amarelo e a Anton são liberados.
+panfleto, reels), a Liga lidera, e aí o amarelo e a Anton são liberados.
 
 ## Fundadores da Decade
 
