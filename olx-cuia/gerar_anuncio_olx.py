@@ -3,12 +3,14 @@
 Gera um mockup de anúncio da OLX usando a foto da cuia Sadhu.
 Brincadeira, não é material oficial nem afiliado à OLX.
 
-A altura final é calculada a partir do conteúdo, então a barra de
-botões nunca cobre a descrição ou o card do vendedor.
+A interface imita um Android atual (Material 3), com barra de status do
+Android, top app bar achatada, botões em formato pill e a barra de gestos
+no rodapé. A altura final é calculada a partir do conteúdo, então a barra
+de ações nunca cobre a descrição ou o card do vendedor.
 """
 
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 # ---------------------------------------------------------------- caminhos
 AQUI = Path(__file__).resolve().parent
@@ -22,24 +24,29 @@ def fonte(nome, tamanho):
     return ImageFont.truetype(str(FONTES / f"NotoSans-{nome}.ttf"), tamanho)
 
 
-# ---------------------------------------------------------------- paleta
+# ------------------------------------------------- paleta (Material 3)
 ROXO = (110, 10, 214)
-ROXO_CLARO = (243, 234, 253)
+ROXO_CLARO = (237, 224, 251)
 BRANCO = (255, 255, 255)
-PRETO_TEXTO = (30, 30, 30)
-CINZA_TEXTO = (60, 60, 60)
-CINZA = (118, 118, 118)
-CINZA_LINHA = (228, 228, 228)
+ON_SURFACE = (28, 27, 31)
+ON_SURFACE_VAR = (73, 69, 79)
+OUTLINE = (121, 116, 126)
+OUTLINE_VAR = (228, 225, 230)
 FUNDO_FOTO = (18, 18, 18)
-VERDE_BG = (226, 247, 231)
-VERDE_TXT = (21, 128, 61)
+VERDE_BG = (214, 245, 222)
+VERDE_TXT = (16, 109, 52)
+NAV_PILL = (28, 27, 31)
 
 L = 1080
 MARGEM = 48
-ALTURA_BARRA = 176
-CANVAS = 3200  # rascunho generoso, cortado no final
+H_STATUS = 72
+H_APPBAR = 168
+H_ACOES = 176
+H_NAV = 72
+CANVAS = 3400  # rascunho generoso, cortado no final
 
 # ---------------------------------------------------------------- conteúdo
+HORA = "10:51"
 PRECO = "R$ 1,50"
 SELO = "Preço bom, 97% abaixo da média"
 TITULO = "Cuia Sadhu de silicone inquebrável, tamanho pequeno"
@@ -52,14 +59,16 @@ DESCRICAO = (
     "Já caiu da mesa, da cadeira e até da escada, continua inteirinha.\n"
     "\n"
     "Estado: usada, mas lavada. Juro.\n"
-    "Motivo da venda: comprei duas achando que vinha par.\n"
+    "Motivo da venda: usei ela de copo de café uma única vez e agora todo "
+    "mate que eu tomo tem gosto de café. Já lavei sete vezes, já deixei de "
+    "molho, já pedi desculpa pra ela. Não tem volta.\n"
     "Aceito PIX ou R$ 1,50 em moedinha.\n"
     "\n"
     "Não entrego e não envio. Vem buscar que a gente roda um mate."
 )
 
 # ---------------------------------------------------------------- fontes
-f_status = fonte("SemiBold", 30)
+f_status = fonte("Medium", 32)
 f_logo = fonte("Black", 54)
 f_preco = fonte("Black", 86)
 f_badge = fonte("Bold", 30)
@@ -76,15 +85,14 @@ img = Image.new("RGB", (L, CANVAS), BRANCO)
 d = ImageDraw.Draw(img)
 
 
+# ---------------------------------------------------------------- helpers
 def largura(texto, f):
     x0, _, x1, _ = d.textbbox((0, 0), texto, font=f)
     return x1 - x0
 
 
-def centro(texto, f, x_ini, x_fim, y, cor, desenho=None):
-    (desenho or d).text(
-        ((x_ini + x_fim) / 2 - largura(texto, f) / 2, y), texto, font=f, fill=cor
-    )
+def centro(texto, f, x_ini, x_fim, y, cor):
+    d.text(((x_ini + x_fim) / 2 - largura(texto, f) / 2, y), texto, font=f, fill=cor)
 
 
 def quebra(texto, f, max_larg):
@@ -107,54 +115,96 @@ def quebra(texto, f, max_larg):
     return linhas
 
 
-# ================================================= 1. barra de status
-d.text((MARGEM - 8, 12), "10:51", font=f_status, fill=PRETO_TEXTO)
+def _mascara_coracao(lado, w):
+    """Silhueta cheia de coração, centrada num quadrado de lado `lado`."""
+    m = Image.new("L", (lado, lado), 0)
+    dm = ImageDraw.Draw(m)
+    cx = cy = lado / 2
+    r = w * 0.28
+    topo = cy - w * 0.18
+    for dx in (-w * 0.22, w * 0.22):
+        dm.ellipse([cx + dx - r, topo - r, cx + dx + r, topo + r], fill=255)
+    dm.polygon(
+        [(cx - w * 0.5, topo), (cx + w * 0.5, topo), (cx, cy + w * 0.52)], fill=255
+    )
+    return m
 
-bx = L - 230
-for i, h in enumerate((12, 18, 24)):
-    d.rectangle([bx + i * 16, 38 - h, bx + i * 16 + 10, 38], fill=PRETO_TEXTO)
 
-wx = L - 138
-for r in (22, 15, 8):
-    d.arc([wx - r, 34 - r, wx + r, 34 + r], 210, 330, fill=PRETO_TEXTO, width=5)
-d.ellipse([wx - 3, 31, wx + 3, 37], fill=PRETO_TEXTO)
+def coracao(base, cx, cy, w, cor, espessura=None):
+    """
+    Desenha um coração em (cx, cy). Sem `espessura` sai cheio; com
+    `espessura` sai vazado, usando erosão da máscara para o contorno
+    ficar com a mesma grossura em toda a volta.
+    """
+    S = 4  # supersample, suaviza as bordas
+    lado = int(w * S * 1.7)
+    m = _mascara_coracao(lado, w * S)
+    if espessura:
+        k = 2 * int(espessura * S) + 1
+        m = ImageChops.subtract(m, m.filter(ImageFilter.MinFilter(k)))
+    m = m.resize((lado // S, lado // S), Image.LANCZOS)
+    base.paste(Image.new("RGB", m.size, cor), (int(cx - m.width / 2), int(cy - m.height / 2)), m)
 
-d.rounded_rectangle([L - 108, 14, L - 52, 40], radius=6, outline=PRETO_TEXTO, width=4)
-d.rectangle([L - 50, 22, L - 44, 32], fill=PRETO_TEXTO)
-d.rounded_rectangle([L - 103, 19, L - 72, 35], radius=3, fill=PRETO_TEXTO)
 
-# ================================================= 2. header
-HEADER_BASE = 172
-cy = (56 + HEADER_BASE) // 2
+# ======================================= 1. barra de status do Android
+cy = H_STATUS // 2
+d.text((MARGEM, cy - 21), HORA, font=f_status, fill=ON_SURFACE)
 
-d.line([(52, cy), (104, cy)], fill=PRETO_TEXTO, width=6)
-d.line([(52, cy), (74, cy - 22)], fill=PRETO_TEXTO, width=6)
-d.line([(52, cy), (74, cy + 22)], fill=PRETO_TEXTO, width=6)
+# ícones de notificação à esquerda, bem típico do Android
+nx = MARGEM + largura(HORA, f_status) + 34
+d.rounded_rectangle([nx, cy - 14, nx + 30, cy + 8], radius=8, fill=ON_SURFACE)
+d.polygon([(nx + 6, cy + 7), (nx + 18, cy + 7), (nx + 6, cy + 18)], fill=ON_SURFACE)
+nx += 50
+d.line([(nx + 14, cy - 15), (nx + 14, cy + 6)], fill=ON_SURFACE, width=5)
+d.polygon([(nx + 4, cy + 1), (nx + 24, cy + 1), (nx + 14, cy + 15)], fill=ON_SURFACE)
+d.rectangle([nx, cy + 17, nx + 28, cy + 22], fill=ON_SURFACE)
+
+# sinal de celular (triângulo cheio, signal_cellular_4_bar)
+sx = L - 232
+d.polygon([(sx, cy + 17), (sx + 36, cy + 17), (sx + 36, cy - 19)], fill=ON_SURFACE)
+
+# wifi (leque sólido apontando para cima)
+wx, wr = L - 158, 25
+d.pieslice([wx - wr, cy - wr + 8, wx + wr, cy + wr + 8], 228, 312, fill=ON_SURFACE)
+
+# bateria vertical com nível, como no Android
+bx = L - 88
+d.rounded_rectangle([bx + 9, cy - 24, bx + 25, cy - 18], radius=3, fill=ON_SURFACE)
+d.rounded_rectangle(
+    [bx, cy - 20, bx + 34, cy + 22], radius=10, outline=ON_SURFACE, width=4
+)
+d.rounded_rectangle([bx + 6, cy - 12, bx + 28, cy + 16], radius=6, fill=ON_SURFACE)
+
+# ======================================= 2. top app bar (Material 3)
+APPBAR_BASE = H_STATUS + H_APPBAR
+cy = H_STATUS + H_APPBAR // 2
+
+# arrow_back
+d.line([(52, cy), (106, cy)], fill=ON_SURFACE, width=6)
+d.line([(52, cy), (76, cy - 24)], fill=ON_SURFACE, width=6)
+d.line([(52, cy), (76, cy + 24)], fill=ON_SURFACE, width=6)
 
 centro("OLX", f_logo, 0, L, cy - 36, ROXO)
 
-sx, sy = L - 190, cy
-d.line([(sx - 18, sy + 6), (sx + 18, sy - 14)], fill=PRETO_TEXTO, width=5)
-d.line([(sx - 18, sy - 2), (sx + 18, sy + 18)], fill=PRETO_TEXTO, width=5)
-for px, py in ((sx - 22, sy + 2), (sx + 22, sy - 18), (sx + 22, sy + 22)):
-    d.ellipse([px - 10, py - 10, px + 10, py + 10], fill=BRANCO, outline=PRETO_TEXTO, width=5)
+# share (três nós ligados por duas hastes)
+sx = L - 192
+d.line([(sx - 16, cy + 8), (sx + 18, cy - 14)], fill=ON_SURFACE, width=5)
+d.line([(sx - 16, cy - 4), (sx + 18, cy + 20)], fill=ON_SURFACE, width=5)
+for px, py in ((sx - 20, cy + 2), (sx + 22, cy - 18), (sx + 22, cy + 24)):
+    d.ellipse([px - 11, py - 11, px + 11, py + 11], fill=BRANCO, outline=ON_SURFACE, width=5)
 
-hx, hy = L - 78, cy - 6
-d.ellipse([hx - 24, hy - 16, hx - 2, hy + 6], outline=PRETO_TEXTO, width=5)
-d.ellipse([hx + 2, hy - 16, hx + 24, hy + 6], outline=PRETO_TEXTO, width=5)
-d.polygon([(hx - 21, hy + 2), (hx + 21, hy + 2), (hx, hy + 28)], fill=BRANCO)
-d.line([(hx - 21, hy + 1), (hx, hy + 28)], fill=PRETO_TEXTO, width=5)
-d.line([(hx + 21, hy + 1), (hx, hy + 28)], fill=PRETO_TEXTO, width=5)
+# favorite_border (coração vazado, feito por duas camadas)
+coracao(img, L - 78, cy, 54, ON_SURFACE, espessura=5)
 
-# ================================================= 3. foto
+# ======================================= 3. foto
 FOTO_ALTURA = 900
-FOTO_BASE = HEADER_BASE + FOTO_ALTURA
-d.rectangle([0, HEADER_BASE, L, FOTO_BASE], fill=FUNDO_FOTO)
+FOTO_BASE = APPBAR_BASE + FOTO_ALTURA
+d.rectangle([0, APPBAR_BASE, L, FOTO_BASE], fill=FUNDO_FOTO)
 
 original = Image.open(FOTO).convert("RGB")
 escala = FOTO_ALTURA / original.height
 nova = original.resize((round(original.width * escala), FOTO_ALTURA), Image.LANCZOS)
-img.paste(nova, ((L - nova.width) // 2, HEADER_BASE))
+img.paste(nova, ((L - nova.width) // 2, APPBAR_BASE))
 
 cont = "1 / 1"
 cw = largura(cont, f_contador)
@@ -163,73 +213,83 @@ d.rounded_rectangle(
 )
 d.text((L - 60 - cw - 24, FOTO_BASE - 74), cont, font=f_contador, fill=BRANCO)
 
-# ================================================= 4. preço e selo
+# ======================================= 4. preço e selo
 y = FOTO_BASE + 44
-d.text((MARGEM, y), PRECO, font=f_preco, fill=PRETO_TEXTO)
+d.text((MARGEM, y), PRECO, font=f_preco, fill=ON_SURFACE)
 y += 118
 
 sw = largura(SELO, f_badge)
-d.rounded_rectangle([MARGEM, y, MARGEM + sw + 76, y + 58], radius=29, fill=VERDE_BG)
+d.rounded_rectangle([MARGEM, y, MARGEM + sw + 76, y + 58], radius=16, fill=VERDE_BG)
 ax, ay = MARGEM + 30, y + 29
 d.line([(ax, ay - 14), (ax, ay + 6)], fill=VERDE_TXT, width=5)
 d.polygon([(ax - 10, ay + 2), (ax + 10, ay + 2), (ax, ay + 18)], fill=VERDE_TXT)
 d.text((MARGEM + 52, y + 12), SELO, font=f_badge, fill=VERDE_TXT)
 y += 96
 
-# ================================================= 5. título e meta
+# ======================================= 5. título e meta
 for linha in quebra(TITULO, f_titulo, L - 2 * MARGEM):
-    d.text((MARGEM, y), linha, font=f_titulo, fill=PRETO_TEXTO)
+    d.text((MARGEM, y), linha, font=f_titulo, fill=ON_SURFACE)
     y += 56
 y += 10
 
-d.text((MARGEM, y), LOCAL, font=f_meta, fill=CINZA)
+d.text((MARGEM, y), LOCAL, font=f_meta, fill=OUTLINE)
 y += 42
-d.text((MARGEM, y), DATA, font=f_meta, fill=CINZA)
+d.text((MARGEM, y), DATA, font=f_meta, fill=OUTLINE)
 y += 62
 
-d.line([(MARGEM, y), (L - MARGEM, y)], fill=CINZA_LINHA, width=3)
+d.line([(MARGEM, y), (L - MARGEM, y)], fill=OUTLINE_VAR, width=3)
 y += 40
 
-# ================================================= 6. descrição
-d.text((MARGEM, y), "Descrição", font=f_sec, fill=PRETO_TEXTO)
+# ======================================= 6. descrição
+d.text((MARGEM, y), "Descrição", font=f_sec, fill=ON_SURFACE)
 y += 58
 
 for linha in quebra(DESCRICAO, f_desc, L - 2 * MARGEM):
     if linha:
-        d.text((MARGEM, y), linha, font=f_desc, fill=CINZA_TEXTO)
+        d.text((MARGEM, y), linha, font=f_desc, fill=ON_SURFACE_VAR)
     y += 46
 y += 20
 
-d.line([(MARGEM, y), (L - MARGEM, y)], fill=CINZA_LINHA, width=3)
+d.line([(MARGEM, y), (L - MARGEM, y)], fill=OUTLINE_VAR, width=3)
 y += 40
 
-# ================================================= 7. vendedor
+# ======================================= 7. vendedor
 d.ellipse([MARGEM, y, MARGEM + 88, y + 88], fill=ROXO_CLARO)
 centro(VENDEDOR[0], f_vend, MARGEM, MARGEM + 88, y + 22, ROXO)
-d.text((MARGEM + 116, y + 12), VENDEDOR, font=f_vend, fill=PRETO_TEXTO)
-d.text((MARGEM + 116, y + 54), VENDEDOR_SUB, font=f_vend_sub, fill=CINZA)
+d.text((MARGEM + 116, y + 12), VENDEDOR, font=f_vend, fill=ON_SURFACE)
+d.text((MARGEM + 116, y + 54), VENDEDOR_SUB, font=f_vend_sub, fill=OUTLINE)
 y += 88 + 44
 
-# ================================================= 8. corta e fecha
-A = y + ALTURA_BARRA
+# ======================================= 8. corta e fecha
+A = y + H_ACOES + H_NAV
 if A > CANVAS:
     raise SystemExit(f"conteúdo passou do canvas ({A} > {CANVAS})")
 img = img.crop((0, 0, L, A))
 d = ImageDraw.Draw(img)
 
-BARRA = A - ALTURA_BARRA
-d.rectangle([0, BARRA, L, A], fill=BRANCO)
-d.line([(0, BARRA), (L, BARRA)], fill=CINZA_LINHA, width=3)
+# barra de ações
+ACOES = A - H_ACOES - H_NAV
+d.rectangle([0, ACOES, L, A], fill=BRANCO)
+d.line([(0, ACOES), (L, ACOES)], fill=OUTLINE_VAR, width=3)
 
-by0, by1 = BARRA + 36, A - 48
+by0, by1 = ACOES + 32, ACOES + H_ACOES - 36
 meio = L // 2
 raio = (by1 - by0) // 2
 
+# outlined button
 d.rounded_rectangle([MARGEM, by0, meio - 14, by1], radius=raio, outline=ROXO, width=5)
 centro("Ligar", f_botao, MARGEM, meio - 14, by0 + 22, ROXO)
 
+# filled button
 d.rounded_rectangle([meio + 14, by0, L - MARGEM, by1], radius=raio, fill=ROXO)
 centro("Chat", f_botao, meio + 14, L - MARGEM, by0 + 22, BRANCO)
+
+# barra de gestos do Android
+d.rounded_rectangle(
+    [meio - 162, A - H_NAV // 2 - 6, meio + 162, A - H_NAV // 2 + 6],
+    radius=6,
+    fill=NAV_PILL,
+)
 
 img.save(SAIDA, "PNG", optimize=True)
 print(f"gerado: {SAIDA.name} ({img.width}x{img.height})")
