@@ -1,0 +1,44 @@
+[
+  {
+    "id": "extra-o-problema",
+    "theme": "light",
+    "kicker": "O PROBLEMA",
+    "headline": "um país que<br><em>não investe.</em>",
+    "headlineSize": 95,
+    "headlineLineHeight": 104,
+    "stats": [
+      { "num": "33%", "rotulo": "dos brasileiros têm<br>algum investimento" },
+      { "num": "7%", "rotulo": "conseguiriam viver<br>do que pouparam" }
+    ],
+    "swipe": "FONTE · DECADE",
+    "y": { "kicker": 92, "headline": 474, "stats": 752, "swipe": 1030 }
+  },
+  {
+    "id": "extra-por-que-o-brasil",
+    "theme": "light",
+    "kicker": "POR QUE O BRASIL",
+    "headline": "a infraestrutura<br><em>que só existe aqui.</em>",
+    "headlineSize": 78,
+    "headlineLineHeight": 88,
+    "body": "o Pix move cerca de 100 bilhões de<br>transações por ano e o Open Finance<br>padroniza o acesso aos dados. é o que torna<br>o monitoramento contínuo possível no Brasil.",
+    "y": { "kicker": 92, "headline": 480, "body": 740 }
+  },
+  {
+    "id": "extra-a-tese",
+    "theme": "light",
+    "kicker": "A TESE",
+    "quote": "serviços financeiros são complexos por<br>desenho, e monetizados pela assimetria<br>de informação. a IA derruba essa<br>assimetria.",
+    "quoteAuthor": "FELIPE MENESES · CO-FUNDADOR E HEAD DE IA",
+    "y": { "kicker": 92, "quote": 600 }
+  },
+  {
+    "id": "extra-quem-apostou",
+    "theme": "light",
+    "kicker": "QUEM APOSTOU",
+    "headline": "quem apostou<br><em>US$ 85 milhões.</em>",
+    "headlineSize": 92,
+    "headlineLineHeight": 100,
+    "body": "Greenoaks, Benchmark e Diffusion lideraram<br>a rodada, com Atlantico e Norte Ventures.<br>é a maior seed já levantada por uma<br>startup latino-americana.",
+    "y": { "kicker": 92, "headline": 474, "body": 740 }
+  }
+]
