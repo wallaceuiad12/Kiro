@@ -45,7 +45,7 @@ SELO = "Preço bom, 97% abaixo da média"
 TITULO = "Cuia Sadhu de silicone inquebrável, tamanho pequeno"
 LOCAL = "Barão Geraldo, Campinas, SP"
 DATA = "Publicado hoje às 10:51"
-VENDEDOR = "Wallace"
+VENDEDOR = "Matteo"
 VENDEDOR_SUB = "Na OLX desde outubro de 2026"
 DESCRICAO = (
     "Cuia de silicone Sadhu, azul e amarela. Não quebra de jeito nenhum. "
