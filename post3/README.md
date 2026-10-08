@@ -186,10 +186,34 @@ em outro lugar, porque pela p.6 a peça de mobilização de campus é **liderada
 Anton e o amarelo estão liberados. Na arte oficial do evento, quem lidera é a Decade, e o
 teto de energia é este.
 
-`01-capa-escura.png` é uma capa alternativa em fundo preto, para quem preferir abrir o
-carrossel com mais impacto e dar continuidade ao Post 2. O manual p.6 permite preto ou
-off-white em post de chamada; as telas internas seguem off-white porque são conteúdo
-institucional, onde a Decade lidera em off-white.
+Cada tela existe em **duas versões**, clara e escura, com o sufixo `-escura` nos arquivos
+do conjunto preto. São dois carrosséis completos e intercambiáveis, não uma mistura.
+
+| | Clara | Escura |
+|---|---|---|
+| Visão geral | `contato-4-telas.png` | `contato-4-telas-escuras.png` |
+| Fundo | off-white `#F5F1EC` | preto `#0C0B09` |
+| Título e dados | preto `#000000` | off-white `#F5F1EC` |
+| Texto secundário | cinza médio `#514F4D` | cinza claro `#A19E99` |
+| Logos | ambos em preto | ambos em off-white |
+| Faixa de CTA | caixa preta, texto off-white | caixa off-white, texto preto |
+
+A inversão da faixa de CTA segue o Post 2, que já usava caixa off-white sobre fundo
+escuro. A troca de logos para off-white em fundo preto é o que o manual p.5 determina.
+
+Contraste do texto secundário conferido nos dois conjuntos, com folga sobre o mínimo AA
+de 4.5:1.
+
+| Combinação | Razão |
+|---|---|
+| cinza médio `#514F4D` sobre off-white | 7.25:1 |
+| cinza claro `#A19E99` sobre preto | 7.37:1 |
+| off-white `#F5F1EC` sobre preto | 17.50:1 |
+
+Pelo manual p.6, post de infos do evento pede fundo off-white, e post de chamada aceita
+preto ou off-white. O conjunto claro é o canônico para conteúdo institucional, e o escuro
+funciona quando a peça for tratada como chamada ou quando a sequência precisar dar
+continuidade ao Post 2, que era escuro.
 
 Navegação: o rótulo da seção vai no kicker em mono (`02 · COMO FUNCIONA`) e o contador
 `02 / 04` fica acima do rodapé. O lockup Decade + Liga aparece em **todas** as telas,
@@ -231,7 +255,7 @@ asymmetry of information. AI collapses that asymmetry."
 
 | Conjunto | Saturação máx. | Margem lateral mínima |
 |---|---|---|
-| 4 variações do Post 3 + 5 telas + 4 avulsas | 11 (o off-white da marca) | 146 px |
+| 4 variações do Post 3 + 8 telas + 4 avulsas | 11 (o off-white da marca) | 104 px |
 
 ## Fatos e fontes
 

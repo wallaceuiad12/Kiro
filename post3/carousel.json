@@ -52,6 +52,22 @@
     }
   },
   {
+    "id": "02-como-funciona-escura",
+    "theme": "dark",
+    "kicker": "02 · COMO FUNCIONA",
+    "headline": "um consultor sênior<br><em>no seu WhatsApp.</em>",
+    "headlineSize": 92,
+    "headlineLineHeight": 100,
+    "body": "IA que monitora sua carteira sem parar,<br>e um humano sênior para as decisões.<br>cobram assinatura, não comissão, então<br>não há conflito de interesse.",
+    "counter": "02 / 04",
+    "y": {
+      "kicker": 92,
+      "headline": 474,
+      "body": 740,
+      "counter": 1120
+    }
+  },
+  {
     "id": "03-quem-fundou",
     "theme": "light",
     "kicker": "03 · QUEM FUNDOU",
@@ -77,8 +93,53 @@
     }
   },
   {
+    "id": "03-quem-fundou-escura",
+    "theme": "dark",
+    "kicker": "03 · QUEM FUNDOU",
+    "headline": "o ex-CTO do Nubank<br><em>e um Thiel Fellow.</em>",
+    "headlineSize": 92,
+    "headlineLineHeight": 100,
+    "people": [
+      {
+        "nome": "Vitor Olivier",
+        "cargo": "12 anos de Nubank, de um dos primeiros<br>engenheiros a CTO"
+      },
+      {
+        "nome": "Felipe Meneses",
+        "cargo": "primeiro brasileiro no Thiel Fellowship,<br>fundou a Hyperplane, comprada pelo Nubank"
+      }
+    ],
+    "counter": "03 / 04",
+    "y": {
+      "kicker": 92,
+      "headline": 474,
+      "people": 714,
+      "counter": 1150
+    }
+  },
+  {
     "id": "04-convite",
     "theme": "light",
+    "kicker": "04 · O CONVITE",
+    "headline": "a história inteira,<br><em>ao vivo na Unicamp.</em>",
+    "headlineSize": 90,
+    "headlineLineHeight": 98,
+    "body": "coffee break incluso.",
+    "cta": "inscreva-se pelo link na bio",
+    "data": "26.10 · 17H30 · UNICAMP",
+    "counter": "04 / 04",
+    "y": {
+      "kicker": 92,
+      "headline": 474,
+      "cta": 760,
+      "data": 930,
+      "body": 1010,
+      "counter": 1130
+    }
+  },
+  {
+    "id": "04-convite-escura",
+    "theme": "dark",
     "kicker": "04 · O CONVITE",
     "headline": "a história inteira,<br><em>ao vivo na Unicamp.</em>",
     "headlineSize": 90,
