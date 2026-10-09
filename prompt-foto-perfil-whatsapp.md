@@ -106,3 +106,54 @@ Do not beautify. Preserve natural skin texture and real asymmetry.
 - Fundo mais neutro para WhatsApp: troque o bloco de cenário por `plain soft grey studio background, subtle gradient`.
 - Mais fechado no rosto, que lê melhor em miniatura redonda: troque `framed from mid-torso up` por `head and shoulders only, face filling about 60% of the frame`.
 - Sem barba: remova a linha do bigode e cavanhaque e escreva `clean shaven`.
+
+## Ferramentas alternativas
+
+A API gratuita do Gemini nao libera modelo de imagem, o `limit` do nivel free e zero.
+Estas opcoes abaixo funcionam sem cartao de credito e aceitam anexar foto de referencia.
+
+### 1. Qwen Chat (melhor alternativa gratuita)
+
+https://chat.qwen.ai, modo Image Edit. Login com e-mail, sem cartao.
+
+O Qwen Image Edit foi feito justamente para trocar roupa e cenario preservando
+identidade, que e exatamente o seu caso. Anexe a colagem de rosto e use o
+prompt curto abaixo, porque ele responde melhor a instrucao direta de edicao.
+
+```
+Keep this man's face exactly as it is, do not change his facial features, bone structure, hair or facial hair.
+Dress him in a navy blue ribbed quarter-zip sweater over a blue and white thin-striped oxford shirt with the collar out, and light grey tailored trousers.
+Place him inside a brushed stainless steel elevator with soft out-of-focus metallic reflections.
+Upper body portrait, square 1:1 crop, calm confident expression with a subtle closed-mouth smile, looking at the camera.
+Photorealistic, 85mm lens, natural skin texture, no beautification, no smoothing.
+```
+
+### 2. ChatGPT
+
+https://chatgpt.com, nivel gratuito gera imagem com limite diario.
+Anexe as duas imagens e cole o prompt principal em ingles deste arquivo.
+Se ele recusar por envolver pessoa real, diga que e a sua propria foto e que
+o uso e foto de perfil pessoal.
+
+### 3. Grok
+
+https://grok.com ou o app do X, nivel gratuito. Aceita ate cinco imagens de
+referencia e faz edicao por regiao preservando o resto do quadro.
+Mesmo fluxo, anexe as duas e cole o prompt principal.
+
+### 4. Hugging Face Spaces
+
+https://huggingface.co/spaces, procure por `Qwen-Image-Edit` ou `FLUX.1-Kontext`.
+Roda no navegador, de graca, sem cartao. Fila pode demorar em horario de pico.
+Use o prompt curto da secao do Qwen.
+
+### 5. Local com ComfyUI, para quem tem GPU
+
+Qwen-Image-Edit-2511 em GGUF roda local e de graca. Pede placa de 12 GB a 16 GB
+de VRAM. Melhor opcao se quiser gerar muitas variacoes sem limite.
+
+### Cuidado ao escolher
+
+Existem muitos sites que se anunciam como gerador de personagem consistente
+gratuito e sao de origem desconhecida. Evite subir suas fotos de rosto nesses.
+As cinco opcoes acima sao de empresas e plataformas identificaveis.
