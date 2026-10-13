@@ -9,15 +9,32 @@ Contexto para qualquer peça de comunicação deste evento.
 O `Manual_Marca_Evento_Decade.pdf`, na p.1, traz 25.10.2026. **Essa data está
 desatualizada**; vale 26.10. Não "corrigir" peças para 25.10.
 
-## Regra de marca que mais se viola
+## Logo da Liga em cor padrão, decisão que vale sobre o manual
 
-O manual proíbe o amarelo da Liga (`#F5C518`) na arte oficial do evento, em três pontos
-distintos (p.2, p.5 e p.7). Em fundo off-white os dois logos vão em preto monocromático;
-em fundo preto, os dois em off-white.
+O manual proíbe o amarelo da Liga (`#F5C518`) na arte oficial do evento em três pontos
+distintos (p.2, p.5 e p.7), e manda os dois logos monocromáticos.
 
-As duas primeiras peças publicadas (`Post1 - Inicio.jpeg` e o print do Instagram) trazem o
-logo da Liga em amarelo e, portanto, estão fora do manual. Não use essas peças como
-referência de cor, só de composição.
+**A Diretoria de Marketing decidiu o contrário.** O logo da Liga entra na forma padrão,
+preto e amarelo, igual ao do site e das outras publicações, em todas as peças do evento.
+Consistência da marca do parceiro pesou mais que a regra do manual.
+
+**Não reverter para monocromático sem combinar antes.** Se uma sessão futura encontrar o
+amarelo nas peças e achar que é erro, não é.
+
+As duas variantes oficiais da Liga são usadas conforme o fundo, e isso vem do próprio
+material original:
+
+| Fundo da peça | "LIGA" | Foguete, globo e "EMPREENDEDORA" |
+|---|---|---|
+| off-white `#F5F1EC` | preto `#211815` | amarelo `#F5C518` |
+| preto `#0C0B09` | off-white `#FFFEFB` | amarelo `#F5C518` |
+
+A cor fica **confinada ao logo da Liga**. Todo o resto da peça segue monocromático na
+paleta da Decade, e isso é verificado peça por peça no pipeline. O lockup da Decade nunca
+recebe cor.
+
+Os ativos monocromáticos antigos continuam em `post3/assets/liga_lockup_black.png` e
+`liga_lockup_offwhite.png`, caso a decisão mude.
 
 ## Paleta Decade
 

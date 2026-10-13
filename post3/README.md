@@ -1,6 +1,7 @@
-# Post 3 · Decade × Liga Empreendedora · versão preto e branco
+# Post 3 · Decade × Liga Empreendedora
 
-Quatro variações em `out/`, 1080×1350 (4:5), **monocromáticas estritas**.
+Quatro variações em `out/`, 1080×1350 (4:5). Monocromáticas na paleta da Decade, com o
+logo da Liga em cor padrão (ver a divergência decidida, adiante).
 
 | Arquivo | Variação | Fundo | Observação |
 |---|---|---|---|
@@ -27,15 +28,40 @@ cada peça é HTML/CSS renderizado em Chromium headless com supersampling 2×, e
 
 | Regra | Onde | Status |
 |---|---|---|
-| Paleta Decade sem cor de acento | p.4 | ✅ saturação máx. 11 (o próprio off-white `#F5F1EC`) |
-| Amarelo nunca na arte oficial | p.2, p.7 | ✅ logo da Liga convertido para preto chapado |
-| Fundo off-white → ambos os logos em preto | p.5 | ✅ |
-| Fundo preto → ambos em off-white | p.5 | ✅ (v2) |
+| Paleta Decade sem cor de acento | p.4 | ✅ nenhuma cor fora do logo da Liga |
 | Decade primeiro, Liga depois, linha fina | p.5 | ✅ mantida a ordem original |
 | Serif no título, mono nos dados | p.4, p.6 | ✅ Playfair Display + JetBrains Mono |
+| Amarelo nunca na arte oficial | p.2, p.7 | ⚠️ **divergência decidida pelo marketing**, ver abaixo |
+| Logos monocromáticos conforme o fundo | p.5 | ⚠️ idem |
 
-As duas peças já publicadas trazem o logo da Liga em amarelo `#F5C518` (4.690 px
-coloridos medidos no `Post1`), o que contraria p.2, p.5 e p.7. Estas versões corrigem isso.
+### Divergência decidida sobre o logo da Liga
+
+O manual proíbe o amarelo da Liga na arte oficial do evento em p.2, p.5 e p.7, e manda os
+dois logos monocromáticos. **A Diretoria de Marketing decidiu o contrário**, para que a
+marca do parceiro apareça na forma padrão, igual à do site e das outras publicações.
+
+Consequência direta, para ficar registrada. As peças **não são mais preto e branco
+estrito**. A cor fica confinada ao logo da Liga, e todo o resto segue monocromático na
+paleta da Decade.
+
+As duas variantes oficiais são aplicadas conforme o fundo, e ambas vêm do material
+original, onde o único elemento que muda entre elas é o texto "LIGA".
+
+| Fundo da peça | "LIGA" | Foguete, globo e "EMPREENDEDORA" |
+|---|---|---|
+| off-white `#F5F1EC` | preto `#211815` | amarelo `#F5C518` |
+| preto `#0C0B09` | off-white `#FFFEFB` | amarelo `#F5C518` |
+
+As três cores saem da paleta oficial da Liga (manual p.3), não da amostra do JPEG, que
+está degradada pela compressão. Verificado nas peças finais, onde os tons predominantes da
+área do logo são exatamente `#211815`, `#FFFEFB` e `#F5C518`.
+
+O pipeline confere peça por peça que **nenhum pixel colorido cai fora da caixa do logo**.
+Nas 16 peças o resultado é zero. O lockup da Decade nunca recebe cor.
+
+Os ativos monocromáticos antigos seguem em `assets/liga_lockup_black.png` e
+`assets/liga_lockup_offwhite.png`, caso a decisão mude. Para voltar, basta reapontá-los no
+`template.html` e rodar `node render.js`.
 
 ---
 
@@ -95,6 +121,7 @@ pip3 install pillow numpy
 npm i -D playwright && npx playwright install chromium
 
 python3 superres.py                            # recorta e trata os ativos de marca
+python3 liga_color.py                          # logo da Liga em cor padrao, 2 variantes
 node render.js variations.json out             # as 4 variações do Post 3
 node render.js carousel.json carrossel         # as 4 telas do carrossel
 node render.js extras.json extras              # as 4 peças avulsas
@@ -124,6 +151,7 @@ O que ficou:
   pixelado no render @2x.
 - **Só o logo da Liga trocou de fonte**, passando a vir da peça escura, onde ele está em
   195×80 e, mais importante, onde o globo e as letras de EMPREENDEDORA têm definição.
+  A versão em cor padrão sai da mesma extração, em `liga_color.py`.
 - **O peso da tinta do logo da Liga é calibrado por busca** para bater com o do Post 1
   (alvo 0.2496, obtido 0.2495), senão a marca do parceiro sairia mais gorda que a original.
 - Símbolo e lockup da Decade seguem vindo do Post 1 com os parâmetros já validados.
@@ -141,8 +169,7 @@ todas as peças. Vale corrigir o manual, cuja p.1 ainda traz 25.10.2026.
 **Copy aprovada** sem a transcrição dos áudios. Os textos são redação a partir dos fatos
 do manual e das fontes públicas listadas adiante.
 
-**O logo mono da Liga é derivado** do colorido da peça escura por conversão de luminância,
-não é o arquivo oficial. Quando o PNG oficial chegar nas versões clara e escura (manual p.7),
+**O logo da Liga é derivado** da peça escura, não é o arquivo oficial. Quando o PNG oficial chegar nas versões clara e escura (manual p.7),
 basta trocar `assets/liga_lockup_black.png` e `assets/liga_lockup_offwhite.png` e rodar
 `node render.js`. Nada mais muda.
 
@@ -195,7 +222,9 @@ do conjunto preto. São dois carrosséis completos e intercambiáveis, não uma 
 | Fundo | off-white `#F5F1EC` | preto `#0C0B09` |
 | Título e dados | preto `#000000` | off-white `#F5F1EC` |
 | Texto secundário | cinza médio `#514F4D` | cinza claro `#A19E99` |
-| Logos | ambos em preto | ambos em off-white |
+| "LIGA" do logo | preto `#211815` | off-white `#FFFEFB` |
+| Amarelo da Liga | `#F5C518` | `#F5C518` |
+| Lockup Decade | preto | off-white |
 | Faixa de CTA | caixa preta, texto off-white | caixa off-white, texto preto |
 
 A inversão da faixa de CTA segue o Post 2, que já usava caixa off-white sobre fundo
@@ -253,9 +282,9 @@ asymmetry of information. AI collapses that asymmetry."
 
 ## Checagem
 
-| Conjunto | Saturação máx. | Margem lateral mínima |
+| Conjunto | Cor fora do logo da Liga | Margem lateral mínima |
 |---|---|---|
-| 4 variações do Post 3 + 8 telas + 4 avulsas | 11 (o off-white da marca) | 104 px |
+| 4 variações do Post 3 + 8 telas + 4 avulsas | 0 px em todas as 16 | 104 px |
 
 ## Fatos e fontes
 
