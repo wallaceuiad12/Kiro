@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Capa Agrofloresta é mais | Ecofalante Unicamp</title>
+<style>
+  @font-face { font-family: 'Libre Baskerville'; src: url('tipografia/LibreBaskerville.ttf'); font-weight: 400 700; }
+  @font-face { font-family: 'Montserrat'; src: url('tipografia/Montserrat.ttf'); font-weight: 100 900; }
+
+  /* Paleta medida nos posts anteriores da Ecofalante Unicamp */
+  :root {
+    --verde: #1C543B;
+    --bordo: #4A1216;
+    --marrom: #80634A;
+    --amarelo: #F7D655;
+    --amarelo-claro: #F6EFA6;
+    --amarelo-info: #F8E79E;
+    --amarelo-logo: #F0D16E;
+    --oliva: #A09F2B;
+    --ouro: #C49A1C;
+    --tracejado: #54805C;
+  }
+  html, body { margin: 0; padding: 0; background: #111; }
+  #capa {
+    position: relative; width: 1080px; height: 1080px; overflow: hidden;
+    background: var(--verde); font-family: 'Montserrat', sans-serif;
+  }
+  #fundo { position: absolute; left: 0; top: 0; }
+
+  .logo { position: absolute; top: 17px; right: 22px; display: flex; align-items: center; gap: 12px; }
+  .logo img { height: 62px; display: block; }
+  .logo span {
+    font-family: 'Libre Baskerville', serif; font-size: 25px; color: var(--amarelo-logo);
+    letter-spacing: .03em; line-height: 1; padding-top: 6px;
+  }
+
+  .sombra, .moldura { position: absolute; width: 928px; height: 457px; border-radius: 10px; }
+  .sombra { left: 112px; top: 138px; background: linear-gradient(160deg, #575959, #393b3b); }
+  .moldura {
+    left: 76px; top: 110px; box-sizing: border-box; overflow: hidden;
+    border: 3px solid var(--ouro); background: #000;
+  }
+  .moldura img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .selo {
+    position: absolute; right: 48px; top: 556px;
+    background: var(--amarelo); color: var(--verde);
+    font-weight: 800; font-size: 16.5px; letter-spacing: .13em; line-height: 1;
+    padding: 12px 21px 11px 23px; border-radius: 999px;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, .28);
+  }
+
+  .rotulo { position: absolute; left: 27px; color: var(--amarelo-claro); font-weight: 700; letter-spacing: .16em; white-space: nowrap; line-height: 1; }
+  .debatedora { top: 640px; font-size: 17.6px; }
+  .cargo { top: 667px; font-size: 13.6px; font-weight: 600; opacity: .88; }
+
+  h1 {
+    position: absolute; left: 44px; top: 703px; margin: 0;
+    font-family: 'Libre Baskerville', serif; font-weight: 400; color: var(--amarelo);
+    font-size: 97px; line-height: 1.2; white-space: nowrap;
+  }
+
+  .info { position: absolute; right: 42px; bottom: 30px; display: flex; flex-direction: column; align-items: flex-end; }
+  .linha { display: flex; flex-direction: column; align-items: flex-end; }
+  .linha p {
+    margin: 0; padding-bottom: 14px; color: var(--amarelo-info);
+    font-weight: 700; font-size: 17.5px; letter-spacing: .2em; line-height: 1; white-space: nowrap;
+  }
+  .linha i { display: block; align-self: stretch; height: 9.5px; margin-left: -16px; background: var(--oliva); }
+  .linha + .linha { margin-top: 10px; }
+</style>
+</head>
+<body>
+<div id="capa">
+  <svg id="fundo" width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg"><defs></defs></svg>
+
+  <div class="logo"><img src="logo-icone-ecofalante-unicamp.svg" alt=""><span>ECOFALANTE UNICAMP</span></div>
+
+  <div class="sombra"></div>
+  <div class="moldura"><img src="still-agrofloresta-e-mais.jpg" alt="Abertura do documentário Agrofloresta é mais"></div>
+  <div class="selo">SESSÃO PELA MANHÃ · CHEGUE MAIS CEDO</div>
+
+  <div class="rotulo debatedora">DEBATEDORA: GABRIELA BERNARDES</div>
+  <div class="rotulo cargo">COORDENADORA DA COZINHA SOLIDÁRIA DONA LINDU</div>
+
+  <h1>‘Agrofloresta é mais’</h1>
+
+  <div class="info">
+    <div class="linha"><p>TEMA: SOBERANIA ALIMENTAR</p><i></i></div>
+    <div class="linha"><p>DATA: TERÇA, 20/10 ; 10H30</p><i></i></div>
+    <div class="linha"><p>LOCAL: COZINHA SOLIDÁRIA DONA LINDU</p><i></i></div>
+  </div>
+</div>
+
+<script>
+// Folhagem desenhada em SVG (no lugar dos elementos de banco do Canva usados nos posts anteriores)
+const NS = 'http://www.w3.org/2000/svg';
+const fundo = document.getElementById('fundo');
+const defs = fundo.querySelector('defs');
+const COR = { bordo: '#4A1216', marrom: '#80634A', tracejado: '#54805C' };
+const grau = Math.PI / 180;
+let semente = 20261020;
+const rnd = () => ((semente = (semente * 16807) % 2147483647) - 1) / 2147483646;
+const f = (n) => n.toFixed(1);
+const S = (p) => f(p[0]) + ',' + f(p[1]);
+const pt = (x, y, a, u, v) => [x + u * Math.cos(a) - v * Math.sin(a), y + u * Math.sin(a) + v * Math.cos(a)];
+
+function add(tag, attrs, pai = fundo) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  pai.appendChild(e);
+  return e;
+}
+
+// curva fechada suave (Catmull-Rom convertido em Bezier)
+function suave(pts) {
+  const n = pts.length;
+  let d = 'M' + S(pts[0]);
+  for (let i = 0; i < n; i++) {
+    const p0 = pts[(i - 1 + n) % n], p1 = pts[i], p2 = pts[(i + 1) % n], p3 = pts[(i + 2) % n];
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+    const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    d += 'C' + S(c1) + ' ' + S(c2) + ' ' + S(p2);
+  }
+  return d + 'Z';
+}
+
+// folíolo lanceolado com base em (x,y), direção a (rad), comprimento L, largura w
+function lamina(x, y, a, L, w, curva = 0) {
+  const P = (u, v) => pt(x, y, a, u, v + curva * L * (u / L) ** 2);
+  return 'M' + S(P(0, 0)) +
+    'C' + S(P(.16 * L, .7 * w)) + ' ' + S(P(.58 * L, .62 * w)) + ' ' + S(P(L, 0)) +
+    'C' + S(P(.58 * L, -.62 * w)) + ' ' + S(P(.16 * L, -.7 * w)) + ' ' + S(P(0, 0)) + 'Z';
+}
+
+// leque de folíolos saindo de um ponto (palmeira vista de perto)
+function leque(x, y, a0, a1, n, Lmin, Lmax, w, curva, cor) {
+  let d = '';
+  for (let i = 0; i < n; i++) {
+    const t = n === 1 ? .5 : i / (n - 1);
+    const a = (a0 + (a1 - a0) * t) * grau + (rnd() - .5) * .05;
+    const L = (Lmin + (Lmax - Lmin) * Math.sin(Math.PI * (.12 + .76 * t))) * (.88 + .24 * rnd());
+    d += lamina(x, y, a, L, w * (.85 + .3 * rnd()), curva * (t - .5) * 2);
+  }
+  add('path', { d, fill: cor });
+}
+
+// fronde pinada: raque curva com folíolos dos dois lados
+function fronde(x, y, a, R, giro, n, o) {
+  const passos = 90, pts = [];
+  let px = x, py = y, an = a * grau;
+  for (let i = 0; i <= passos; i++) {
+    pts.push([px, py, an]);
+    px += Math.cos(an) * R / passos; py += Math.sin(an) * R / passos; an += giro * grau / passos;
+  }
+  let d = '';
+  for (let i = 0; i < n; i++) {
+    const t = o.inicio + (1 - o.inicio) * i / (n - 1);
+    const [qx, qy, qa] = pts[Math.round(t * passos)];
+    const perfil = Math.sin(Math.PI * Math.min(1, .3 + t * .75));
+    for (const s of o.lados) {
+      const L = o.len * (.5 + .5 * perfil) * (.9 + .2 * rnd()) * (s === 1 ? 1 : o.fatorOposto || 1);
+      d += lamina(qx, qy, qa + s * o.ang * grau * (1 - .3 * t), L, o.w * (.85 + .3 * rnd()), s * o.queda);
+    }
+  }
+  add('path', { d, fill: o.cor });
+  add('path', { d: 'M' + pts.map(S).join('L'), fill: 'none', stroke: o.cor, 'stroke-width': o.raque || 6, 'stroke-linecap': 'round' });
+}
+
+// folha com recortes (cortes = lista de paths), via máscara
+let nMask = 0;
+function recortada(contorno, cortes, cor) {
+  const id = 'recorte' + (nMask++);
+  const m = add('mask', { id, maskUnits: 'userSpaceOnUse', x: -200, y: -200, width: 1480, height: 1480 }, defs);
+  add('rect', { x: -200, y: -200, width: 1480, height: 1480, fill: '#fff' }, m);
+  for (const c of cortes) add('path', { d: c, fill: '#000' }, m);
+  add('path', { d: contorno, fill: cor, mask: `url(#${id})` });
+}
+
+// corte afunilado ao longo de uma nervura lateral (coordenadas locais da folha)
+function corte(x, y, a, u0, s, ang, rIn, rOut, wIn, wOut, curv) {
+  const P = (r) => { const aa = ang - curv * (r / rOut); return [u0 + r * Math.cos(aa), s * r * Math.sin(aa)]; };
+  const esq = [], dir = [];
+  for (let k = 0; k <= 14; k++) {
+    const r = rIn + (rOut - rIn) * k / 14;
+    const [u, v] = P(r), [u2, v2] = P(r + 1);
+    const nl = Math.hypot(u2 - u, v2 - v), nu = -(v2 - v) / nl, nv = (u2 - u) / nl;
+    const w = (wIn + (wOut - wIn) * (k / 14) ** 1.4) / 2;
+    esq.push(pt(x, y, a, u + nu * w, v + nv * w));
+    dir.push(pt(x, y, a, u - nu * w, v - nv * w));
+  }
+  const c = pt(x, y, a, ...P(rIn)), r = wIn / 2;
+  return ['M' + esq.map(S).join('L') + 'L' + dir.reverse().map(S).join('L') + 'Z',
+          `M${f(c[0] - r)},${f(c[1])}a${f(r)},${f(r)} 0 1,0 ${f(2 * r)},0a${f(r)},${f(r)} 0 1,0 ${f(-2 * r)},0Z`];
+}
+
+// costela-de-adão (Monstera): contorno de coração, cortes pela nervura e furos perto do centro
+function monstera(x, y, a, L, cor, nCortes = 5) {
+  const A = a * grau;
+  const meia = [[0, 0], [-.04, .08], [-.14, .2], [-.15, .36], [-.04, .48], [.14, .55], [.34, .57], [.54, .51], [.72, .39], [.87, .2], [1, 0]];
+  const outra = meia.slice(1, -1).reverse().map(([u, v]) => [u, -v * .97]);
+  const contorno = suave([...meia, ...outra].map(([u, v]) => pt(x, y, A, u * L, v * L)));
+  const cortes = [];
+  for (const s of [1, -1]) {
+    for (let i = 0; i < nCortes; i++) {
+      const t = i / (nCortes - 1);
+      const ang = (106 - 60 * t) * grau;
+      cortes.push(...corte(x, y, A, (.02 + .66 * t) * L, s, ang, .15 * L, .85 * L, .026 * L, .062 * L, .22));
+    }
+  }
+  add('path', { d: 'M' + S(pt(x, y, A, -.02 * L, 0)) + 'L' + S(pt(x, y, A, -.75 * L, .04 * L)), stroke: cor, 'stroke-width': .045 * L, 'stroke-linecap': 'round', fill: 'none' });
+  recortada(contorno, cortes, cor);
+}
+
+// folha de bananeira com rasgos até a nervura
+function bananeira(x, y, a, L, cor, rasgos) {
+  const A = a * grau;
+  const meia = [[0, 0], [.05, .09], [.2, .155], [.45, .17], [.7, .145], [.88, .085], [1, 0]];
+  const outra = meia.slice(1, -1).reverse().map(([u, v]) => [u, -v]);
+  const contorno = suave([...meia, ...outra].map(([u, v]) => pt(x, y, A, u * L, v * L)));
+  const cortes = [];
+  for (const [t, s] of rasgos) cortes.push(...corte(x, y, A, t * L, s, 72 * grau, .006 * L, .3 * L, .004 * L, .02 * L, .08));
+  add('path', { d: 'M' + S(pt(x, y, A, 0, 0)) + 'L' + S(pt(x, y, A, -.4 * L, 0)), stroke: cor, 'stroke-width': .028 * L, 'stroke-linecap': 'round', fill: 'none' });
+  recortada(contorno, cortes, cor);
+}
+
+// ---------- composição ----------
+// canto superior esquerdo
+bananeira(-90, 70, -18, 340, COR.marrom, [[.42, 1], [.6, -1]]);
+fronde(-40, 64, -6, 480, 26, 12, { len: 175, w: 26, ang: 60, lados: [1, -1], fatorOposto: .55, queda: .12, inicio: .08, cor: COR.bordo });
+
+// canto superior direito
+bananeira(1150, 170, 205, 270, COR.marrom, [[.5, -1]]);
+leque(1110, -40, 98, 168, 9, 160, 300, 24, .12, COR.bordo);
+
+// canto inferior esquerdo
+leque(-40, 1120, -82, -12, 8, 150, 235, 30, .1, COR.marrom);
+bananeira(-30, 1130, -76, 400, COR.bordo, [[.3, 1], [.42, 1], [.56, 1], [.68, -1], [.74, 1]]);
+monstera(338, 1112, -97, 222, COR.bordo, 5);
+
+// canto inferior direito
+bananeira(1130, 1125, -150, 310, COR.marrom, [[.45, 1], [.62, -1]]);
+leque(1012, 1135, -176, -72, 11, 180, 330, 23, .1, COR.bordo);
+
+// trilha tracejada
+add('path', {
+  d: 'M-30,262 C40,300 74,380 60,470 C48,560 300,600 520,520 C700,455 840,540 905,630 C960,705 1030,790 1110,835',
+  fill: 'none', stroke: COR.tracejado, 'stroke-width': 10, 'stroke-dasharray': '30 22', opacity: .95,
+});
+
+// ---------- ajuste do título ----------
+document.fonts.ready.then(() => {
+  const h1 = document.querySelector('h1');
+  const max = 1000;
+  const w = h1.getBoundingClientRect().width;
+  if (w > max) h1.style.fontSize = (97 * max / w).toFixed(1) + 'px';
+  document.body.dataset.pronto = '1';
+});
+</script>
+</body>
+</html>
