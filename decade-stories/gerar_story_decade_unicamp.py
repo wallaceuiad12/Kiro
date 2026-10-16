@@ -23,6 +23,7 @@ Saida:
 
 from pathlib import Path
 
+import qrcode
 from PIL import Image, ImageDraw, ImageFont
 
 BASE = Path(__file__).parent
@@ -33,7 +34,8 @@ ASSETS = BASE / "assets"
 W, H = 1080, 1920          # story vertical 9:16
 SC = 2                     # supersampling: renderiza em 2160x3840 e reduz
 M = 80                     # margem lateral
-LINK = "luma.com/wqw35sxf"  # destino da inscricao, sem o esquema para ficar limpo
+LINK_URL = "https://luma.com/wqw35sxf"   # vai no QR, com esquema para a camera abrir
+LINK_LABEL = "luma.com/wqw35sxf"         # vai escrito na arte, sem esquema
 
 # ---------------------------------------------------------------- cores
 OFFWHITE = (245, 241, 236)
@@ -101,6 +103,19 @@ def dotted(draw, y, x0, x1, color, dot=3, gap=9, thick=2):
 
 def rule(draw, y, x0, x1, color, thick=1):
     draw.rectangle([px(x0), px(y), px(x1), px(y) + px(thick) - 1], fill=color)
+
+
+def qr_block(link, size, pad, fg=BLACK, bg=OFFWHITE):
+    """QR com moldura clara, para ficar escaneavel sobre fundo claro ou escuro."""
+    q = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, box_size=16, border=0)
+    q.add_data(link)
+    q.make(fit=True)
+    code = q.make_image(fill_color="black", back_color="white").convert("L")
+    code = code.resize((px(size), px(size)), Image.NEAREST)
+    frame = Image.new("RGB", (px(size + 2 * pad), px(size + 2 * pad)), bg)
+    frame.paste(Image.new("RGB", code.size, fg), (px(pad), px(pad)),
+                Image.eval(code, lambda v: 255 - v))
+    return frame
 
 
 def cover(img, box_w, box_h, top_bias=0.05):
@@ -228,12 +243,17 @@ def build(variant="offwhite"):
     d.text((cx, px(cap_y)), nome, font=f_cap_it, fill=ink)
     d.text((cx + wn, px(cap_y)), resto, font=f_cap, fill=ink)
 
-    # ---- CTA, o proprio link e a chamada
-    cta_y, cta_h = 1402, 152
+    # ---- CTA, link escrito para quem digita e QR para quem escaneia
+    cta_y, cta_h = 1402, 160
     d.rectangle([px(M), px(cta_y), px(W - M), px(cta_y + cta_h)], fill=block_bg)
-    tracked(d, (M + 42, cta_y + 32), "INSCREVA-SE  ·  VAGAS LIMITADAS",
+    tracked(d, (M + 42, cta_y + 36), "INSCREVA-SE  ·  VAGAS LIMITADAS",
             f_cta2, block_soft, tracking=4)
-    tracked(d, (M + 40, cta_y + 76), LINK, f_cta, block_ink, tracking=1)
+    tracked(d, (M + 40, cta_y + 80), LINK_LABEL, f_cta, block_ink, tracking=1)
+
+    qs, qpad = 116, 11
+    qr = qr_block(LINK_URL, qs, qpad, fg=BLACK, bg=OFFWHITE)
+    canvas.paste(qr, (px(W - M - 28) - qr.width,
+                      px(cta_y + (cta_h - qs - 2 * qpad) / 2)))
 
     # ---- rodape: lockup dos dois logos
     foot = cta_y + cta_h + 48

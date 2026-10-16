@@ -15,7 +15,9 @@ a mesma linguagem dos panfletos `panfleto6.png` / `panfelto7.png`.
 | `assets/` | retrato, wordmark "nu" e logos recortados do panfleto oficial |
 | `fonts/` | Playfair Display, JetBrains Mono, Montserrat e Anton (Google Fonts, licença OFL inclusa) |
 
-Para regerar, rode `python gerar_story_decade_unicamp.py` com Pillow e numpy instalados.
+Para regerar, rode `python gerar_story_decade_unicamp.py` com Pillow, numpy e qrcode
+instalados. O QR é gerado na hora a partir do link, então não há perda de qualidade em
+nenhum tamanho.
 
 ## Texto da peça
 
@@ -26,7 +28,8 @@ Para regerar, rode `python gerar_story_decade_unicamp.py` com Pillow e numpy ins
 - Dados, `26.10 · 17h30 · Unicamp`, com Coffee Break incluso
 - Credencial em mono, `↑ DECADE · US$ 85 MI EM SEED, A MAIOR DA AMÉRICA LATINA`
 - Convidado, `Vitor Olivier · fundador da Decade`, com o selo `nu EX-CTO DO NUBANK` sobre o retrato
-- CTA, `INSCREVA-SE · VAGAS LIMITADAS` com o link `luma.com/wqw35sxf` em destaque
+- CTA, `INSCREVA-SE · VAGAS LIMITADAS` com o link `luma.com/wqw35sxf` escrito em destaque
+  e o QR do mesmo endereço à direita
 
 Quem lidera a leitura é a Decade, que é o nome de peso do evento. Open Bank entra como tema
 na linha de apoio, e a autoria da Liga aparece no chapéu e no lockup do rodapé.
@@ -50,12 +53,17 @@ conversa com as outras peças da campanha sem retrabalho de arquivo.
 Todo o conteúdo vive entre `y=210` e `y=1702`. O topo fica livre para o avatar e o botão de
 fechar, e a base deixa espaço para a barra de resposta.
 
-O link aparece escrito no bloco escuro, então quem vê o story consegue digitar. Vale somar
-o sticker de link do Instagram em cima do bloco para deixar o clique direto, já que texto
-escrito na imagem não é clicável.
+O bloco de inscrição traz o endereço escrito e o QR do mesmo link, então funciona para quem
+digita, para quem escaneia de outra tela e para quem só tira print. Vale somar o sticker de
+link do Instagram em cima do bloco para deixar o clique direto, já que texto escrito na
+imagem não é clicável.
+
+O QR carrega o endereço completo com `https://`, e o texto aparece sem o esquema para a
+leitura ficar limpa. As duas artes foram validadas com leitor de QR depois de reduzidas para
+1080x1920.
 
 ## Legenda sugerida para repost no feed
 
 > A gente trouxe a Decade pra Unicamp. Dia 26.10, às 17h30, conversa com Vitor Olivier,
 > ex-CTO do Nubank e fundador da Decade, sobre Open Bank e a engenharia que sustenta uma
-> fintech desse tamanho. Vagas limitadas, inscrição em luma.com/wqw35sxf.
+> fintech desse tamanho. Vagas limitadas, inscrição em luma.com/wqw35sxf ou pelo QR do story.
