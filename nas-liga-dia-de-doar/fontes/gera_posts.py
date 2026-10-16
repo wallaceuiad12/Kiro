@@ -98,20 +98,20 @@ def calendario(dr, x, y, lado, dia="29", mes="NOVEMBRO", semana="DOMINGO"):
     M.texto_espacado(dr, (x + (lado - w) / 2, y_mes), mes, f_mes, M.BRANCO, tr)
 
 
-def linha_info(dr, x, y, rotulo_txt, valor, larg_max, cor_marca, tam_val=34):
+def linha_info(dr, x, y, rotulo_txt, valor, larg_max, cor_marca, tam_val=34, esc=1.0):
     """Linha de informação com marcador, rótulo pequeno e valor em destaque."""
-    s = 17
-    dr.rectangle([x, y + 6, x + s, y + 6 + s], fill=cor_marca)
-    f_rot = M.fonte("ExtraBold", 21)
-    M.texto_espacado(dr, (x + s + 14, y), rotulo_txt, f_rot, (110, 110, 110), 3.2)
+    s = 17 * esc
+    dr.rectangle([x, y + 6 * esc, x + s, y + 6 * esc + s], fill=cor_marca)
+    f_rot = M.fonte("ExtraBold", 21 * esc)
+    M.texto_espacado(dr, (x + s + 14 * esc, y), rotulo_txt, f_rot, (110, 110, 110), 3.2 * esc)
 
     tam = tam_val
-    while tam > 22:
+    while tam > 20:
         f_val = M.fonte("Bold", tam)
         if dr.textlength(valor, font=f_val) <= larg_max:
             break
         tam -= 1
-    dr.text((x, y + 31), valor, font=f_val, fill=M.PRETO)
+    dr.text((x, y + 31 * esc), valor, font=f_val, fill=M.PRETO)
 
 
 def card_movimento(im, dr, x, y, alt_logo=76, tam_tag=46):
@@ -139,50 +139,69 @@ def post_feed():
     MG = 80
     im = Image.new("RGBA", (W, H), (255, 255, 255, 255))
 
-    # ---- decoração: roxo no alto à direita, andorinha e sol embaixo à direita
+    # ---- decoração de canto, mesma diagonal do story
     im.alpha_composite(M.estrela_roxa(360), (836, -124))
-    im.alpha_composite(M.andorinha(96, espelhar=True), (762, 150))
-    im.alpha_composite(M.sol(296), (656, 540))
-    im.alpha_composite(M.andorinha(380), (698, 520))
+    im.alpha_composite(M.estrela_roxa(300), (-150, 936))
+    im.alpha_composite(M.andorinha(100, espelhar=True), (730, 196))
 
     dr = ImageDraw.Draw(im)
 
-    # ---- rótulo
-    rotulo(im, dr, MG, 70, "SAVE THE DATE", 27)
-
-    # ---- título
-    f_med = M.fonte("Black", 56)
-    f_big = M.fonte("Black", 84)
-    dr.text((MG, 118), "CAMINHADA PELO", font=f_med, fill=M.PRETO)
-    y = 190
+    # ---- 1. título
+    rotulo(im, dr, MG, 58, "SAVE THE DATE", 24)
+    f_med = M.fonte("Black", 46)
+    f_big = M.fonte("Black", 72)
+    dr.text((MG, 96), "CAMINHADA PELO", font=f_med, fill=M.PRETO)
+    y = 160
     _, h = M.faixa_titulo(im, dr, (MG, y), "DIA DE DOAR", f_big)
     y += h + 6
-    M.faixa_titulo(im, dr, (MG, y), "CAMPINAS", f_big)
+    _, h = M.faixa_titulo(im, dr, (MG, y), "CAMPINAS", f_big)
+    y_fim_titulo = y + h
 
-    # ---- data em faixa roxa
-    y = 452
-    f_data = M.fonte("ExtraBold", 34)
-    txt = "DOMINGO, 29 DE NOVEMBRO"
-    w = M.largura_espacada(dr, txt, f_data, 2.2)
-    asc, desc = f_data.getmetrics()
-    dr.rectangle([MG, y, MG + w + 44, y + asc + desc + 16], fill=M.ROXO)
-    M.texto_espacado(dr, (MG + 22, y + 8), txt, f_data, (255, 255, 255), 2.2)
+    # ---- 2. calendário e informações lado a lado
+    y = int(y_fim_titulo + 30)
+    LADO = 234
+    calendario(dr, MG, y, LADO)
 
-    # ---- informações
-    bloco_info(dr, MG, 548, [
-        "8h  ·  Bosque Jequitibás",
-        "1 km até o Centro de Convivência",
-        "Camiseta oficial  ·  em breve",
-    ], tam=27, lh=1.52)
+    x_info = MG + LADO + 36
+    larg_info = W - x_info - 60
+    passo = LADO / 3
+    esc = 0.9
+    linha_info(dr, x_info, y + 2, "CONCENTRAÇÃO", "8h no Bosque Jequitibás",
+               larg_info, M.LARANJA, tam_val=30, esc=esc)
+    linha_info(dr, x_info, y + 2 + passo, "PERCURSO", "1 km até o Centro de Convivência",
+               larg_info, M.VERDE, tam_val=30, esc=esc)
+    linha_info(dr, x_info, y + 2 + passo * 2, "CAMISETA OFICIAL", "Informações em breve",
+               larg_info, M.CIANO, tam_val=30, esc=esc)
 
-    # ---- logo do movimento e tagline
-    logo = M.logo_dia_de_doar(66, fundo=M.CREME)
-    im.alpha_composite(logo, (MG, 684))
-    caixa_tagline(im, dr, MG, 788, 420, tam=34)
+    # ---- 3. card do movimento, com sol e andorinha saindo dele
+    y_card = int(y + LADO + 30)
+    ALT_LOGO = 60
+    w_card, h_card = card_movimento(im, dr, MG, y_card, alt_logo=ALT_LOGO, tam_tag=36)
+    logo_card = M.logo_dia_de_doar(ALT_LOGO)
+    h_cab = logo_card.size[1]
+    x_borda = MG + w_card
 
-    # ---- assinatura
-    dr.rectangle([0, 908, W, 911], fill=(234, 234, 234))
-    assinatura(im, dr, W / 2, 930, alt_logo=116, label=False)
+    ave = M.andorinha(268)
+    esc_ave = ave.size[0] / 100
+    fundo_ave = ave.getchannel("A").getbbox()[3]
+    x_ave = int(x_borda - 58 * ave.size[0] / 356)
+    # cabeça na altura da tagline, como no story
+    cab_y = y_card + h_cab + 30
+    y_ave = int(cab_y - 32 * esc_ave)
+    cab_x = x_ave + 28 * esc_ave
+    SOL = int(236 * ave.size[0] / 356)
+    im.alpha_composite(M.sol(SOL), (int(cab_x - SOL / 2), int(cab_y - SOL / 2)))
+
+    # o sol passa por trás do cabeçalho creme, então o selo Campinas fica limpo
+    dr.rectangle([MG, y_card, x_borda, y_card + h_cab], fill=M.CREME)
+    im.alpha_composite(logo_card, (MG, y_card))
+    im.alpha_composite(ave, (x_ave, y_ave))
+    y_fim_ave = y_ave + fundo_ave
+
+    # ---- 4. assinatura
+    y_ass = int(max(y_card + h_card + 28, y_fim_ave + 16))
+    dr.rectangle([MG, y_ass, W - MG, y_ass + 3], fill=(232, 232, 232))
+    assinatura(im, dr, W / 2, y_ass + 22, alt_logo=92, label=False)
 
     return im.convert("RGB")
 

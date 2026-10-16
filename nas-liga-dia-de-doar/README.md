@@ -49,15 +49,15 @@ A integração das duas identidades funciona porque o amarelo da Liga, `#FDC815`
 
 **O título usa faixa sólida atrás do texto**, que é o recurso de destaque da identidade original do evento. Mantivemos as duas linhas mais importantes, "DIA DE DOAR" e "CAMPINAS", sobre laranja, e deixamos "CAMINHADA PELO" sem faixa para criar hierarquia.
 
-**A data ganhou faixa roxa.** No material original o roxo aparece como forma geométrica decorativa. Aqui ele passa a carregar informação, porque save the date precisa que a data seja o segundo elemento mais visível da peça, logo depois do nome do evento.
-
 **A assinatura fica isolada no rodapé**, separada por um filete e sobre branco. Em peça com duas organizações, assinatura disputando espaço com ilustração gera a leitura de patrocínio em vez de realização conjunta.
 
-**No story a data vira uma folha de calendário**, com cabeçalho laranja para o dia da semana e corpo roxo para o dia e o mês. Ao lado dela ficam as três informações práticas, cada uma com um rótulo pequeno e o valor em destaque, marcadas com as cores da paleta. Assim a pessoa lê a data de longe e os detalhes de perto.
+**Feed e story seguem o mesmo sistema**, com quatro blocos na mesma ordem. Primeiro o título, depois o calendário com as informações, depois o card do movimento e por fim a assinatura. Quem vê uma peça reconhece a outra na hora.
 
-**O card do movimento repete a composição da arte original**, logo do Dia de Doar sobre creme e tagline sobre verde, com o sol e a andorinha saindo pela borda direita. É a referência visual mais reconhecível da campanha em Campinas.
+**A data vira uma folha de calendário**, com cabeçalho laranja para o dia da semana e corpo roxo para o dia e o mês. Ao lado dela ficam as três informações práticas, cada uma com um rótulo pequeno e o valor em destaque, marcadas com as cores da paleta. Assim a pessoa lê a data de longe e os detalhes de perto.
 
-**O story não tem links.** Link escrito em imagem de story não é clicável, ocupa espaço e disputa atenção com a assinatura. Se for preciso direcionar para um site, use a figurinha de link do próprio Instagram, posicionada na área livre abaixo da assinatura.
+**O card do movimento repete a composição da arte original**, logo do Dia de Doar sobre creme e tagline sobre verde, com o sol e a andorinha saindo pela borda direita. É a referência visual mais reconhecível da campanha em Campinas. O sol passa por trás do cabeçalho creme, então o selo Campinas fica sempre limpo.
+
+**As peças não têm links.** Link escrito em imagem não é clicável, ocupa espaço e disputa atenção com a assinatura. No feed o endereço vai na legenda. No story, use a figurinha de link do próprio Instagram, posicionada na área livre abaixo da assinatura.
 
 **O story respeita as zonas de segurança** do Instagram. O texto começa em 236 pixels e o último elemento de conteúdo termina em 1662, deixando a base livre para a barra de resposta. As formas roxas e a andorinha pequena ficam nos cantos, só como decoração.
 
