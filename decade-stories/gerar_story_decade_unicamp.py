@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Story 1080x1920 (9:16) do evento Open Bank · Decade x Liga Empreendedora.
+Story 1080x1920 (9:16) do evento Decade na Unicamp, tema Open Bank.
 
 Identidade Decade (Manual_Marca_Evento_Decade.pdf)
 - fundo off-white #F5F1EC ou preto, sem amarelo na arte oficial do evento
@@ -15,10 +15,10 @@ Todo o conteudo fica entre y=210 e y=1680 para nao brigar com a interface
 do Instagram (topo com avatar, base com a barra de resposta).
 
 Uso:
-    python gerar_story_open_bank.py
+    python gerar_story_decade_unicamp.py
 Saida:
-    story-open-bank-offwhite.png   (principal)
-    story-open-bank-preto.png      (variante)
+    story-decade-na-unicamp-offwhite.png   (principal)
+    story-decade-na-unicamp-preto.png      (variante)
 """
 
 from pathlib import Path
@@ -158,9 +158,9 @@ def build(variant="offwhite"):
     d = ImageDraw.Draw(canvas)
 
     f_eyebrow = font(MONO, 23, 600)
-    f_t1 = font(SERIF, 120, 700)
-    f_t2_it = font(SERIF_IT, 90, 500)
-    f_t2 = font(SERIF, 90, 500)
+    f_t1 = font(SERIF, 152, 700)
+    f_t2_it = font(SERIF_IT, 100, 500)
+    f_t2 = font(SERIF, 100, 500)
     f_sub = font(MONO, 26, 400)
     f_label = font(MONO, 21, 600)
     f_data = font(MONO, 52, 600)
@@ -177,16 +177,16 @@ def build(variant="offwhite"):
     tracked(d, (M, 240), "A LIGA EMPREENDEDORA APRESENTA", f_eyebrow, accent, tracking=4.5)
 
     # ---- titulo
-    d.text((px(M), px(296)), "Open Bank", font=f_t1, fill=ink)
+    d.text((px(M), px(284)), "Decade", font=f_t1, fill=ink)
     w_it = d.textlength("na ", font=f_t2_it)
-    d.text((px(M), px(438)), "na ", font=f_t2_it, fill=ink)
-    d.text((px(M) + w_it, px(438)), "Unicamp", font=f_t2, fill=ink)
+    d.text((px(M), px(448)), "na ", font=f_t2_it, fill=ink)
+    d.text((px(M) + w_it, px(448)), "Unicamp", font=f_t2, fill=ink)
 
     # ---- subtitulo
-    sub = ("a Liga Empreendedora traz pra Unicamp uma conversa sobre "
-           "open banking com quem construiu a engenharia do Nubank")
-    y = 582
-    for line in wrap(d, sub, f_sub, 790):
+    sub = ("uma conversa sobre Open Bank e o futuro do sistema financeiro "
+           "com quem construiu a engenharia do Nubank")
+    y = 596
+    for line in wrap(d, sub, f_sub, 900):
         d.text((px(M), px(y)), line, font=f_sub, fill=soft)
         y += 40
     dotted(d, 722, M, W - M, faint)
@@ -254,7 +254,7 @@ def build(variant="offwhite"):
     # ---- rodape: lockup dos dois logos
     foot = cta_y + cta_h + 48
     rule(d, foot, M, W - M, faint)
-    liga = Image.open(ASSETS / ("liga_offwhite.png" if dark else "liga_black.png")).convert("RGBA")
+    liga = Image.open(ASSETS / ("liga_color_dark.png" if dark else "liga_color.png")).convert("RGBA")
     dec = Image.open(ASSETS / ("decade_offwhite.png" if dark else "decade_black.png")).convert("RGBA")
     paste_h(canvas, liga, M, foot + 38, 60)
     paste_h(canvas, dec, W - M, foot + 48, 38, align="right")
@@ -264,8 +264,8 @@ def build(variant="offwhite"):
 
 
 if __name__ == "__main__":
-    for v, name in (("offwhite", "story-open-bank-offwhite.png"),
-                    ("preto", "story-open-bank-preto.png")):
+    for v, name in (("offwhite", "story-decade-na-unicamp-offwhite.png"),
+                    ("preto", "story-decade-na-unicamp-preto.png")):
         img = build(v)
         img.save(BASE / name)
         print("ok", name, img.size)

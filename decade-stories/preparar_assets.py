@@ -45,6 +45,36 @@ def monocromatico(src, out, cor, escala=2.2):
     print("ok", out.name, img.size)
 
 
+def liga_colorida(src, out):
+    """Logo da Liga nas cores originais, com fundo transparente."""
+    arr = np.asarray(Image.open(src).convert("RGB")).astype(np.int16)
+    dist = np.abs(arr - BG).max(axis=2)
+    rgba = np.zeros(arr.shape[:2] + (4,), dtype=np.uint8)
+    rgba[..., 0:3] = np.clip(arr, 0, 255).astype(np.uint8)
+    rgba[..., 3] = np.clip(dist * 2.2, 0, 255).astype(np.uint8)
+    img = Image.fromarray(rgba, "RGBA")
+    img = img.crop(img.getbbox())
+    img.save(out)
+    print("ok", out.name, img.size)
+
+
+def liga_versao_clara(src, out):
+    """Versao para fundo escuro, o amarelo fica e a parte escura vira off-white."""
+    arr = np.asarray(Image.open(src).convert("RGB")).astype(np.int16)
+    dist = np.abs(arr - BG).max(axis=2)
+    amarelado = (arr[..., 0] + arr[..., 1]) / 2.0 - arr[..., 2]
+    t = np.clip((amarelado - 20) / 120.0, 0, 1)[..., None]
+    amarelo = np.array([245, 197, 24], dtype=float)
+    claro = np.array([245, 241, 236], dtype=float)
+    rgba = np.zeros(arr.shape[:2] + (4,), dtype=np.uint8)
+    rgba[..., 0:3] = np.clip(amarelo * t + claro * (1 - t), 0, 255).astype(np.uint8)
+    rgba[..., 3] = np.clip(dist * 2.2, 0, 255).astype(np.uint8)
+    img = Image.fromarray(rgba, "RGBA")
+    img = img.crop(img.getbbox())
+    img.save(out)
+    print("ok", out.name, img.size)
+
+
 def main():
     panfleto = Image.open(PANFLETO).convert("RGB")
     s = panfleto.width / 760.0
@@ -79,6 +109,8 @@ def main():
     monocromatico(OUT / "logo_decade.png", OUT / "decade_offwhite.png", (245, 241, 236))
     monocromatico(OUT / "logo_liga.png", OUT / "liga_black.png", (17, 17, 17))
     monocromatico(OUT / "logo_liga.png", OUT / "liga_offwhite.png", (245, 241, 236))
+    liga_colorida(OUT / "logo_liga.png", OUT / "liga_color.png")
+    liga_versao_clara(OUT / "logo_liga.png", OUT / "liga_color_dark.png")
 
 
 if __name__ == "__main__":
