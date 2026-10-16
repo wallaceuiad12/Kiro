@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {
+    font-family: 'Anton';
+    src: url('assets/fonts/Anton-Regular.ttf') format('truetype');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('assets/fonts/Montserrat[wght].ttf') format('truetype-variations');
+    font-weight: 100 900;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { overflow: hidden; }
+
+  /* paleta do Dia de Doar, medida na peca de referencia do evento */
+  :root {
+    --laranja: #FDA501;
+    --roxo:    #8800C2;
+    --verde:   #55D62C;
+    --ciano:   #08C8FC;
+    --amarelo: #FACE22;
+    --preto:   #211815;   /* preto da Liga, manual p.3 */
+    --branco:  #FFFFFF;
+  }
+
+  .canvas {
+    position: relative; background: var(--branco); overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* acento angular ciano no topo, o gesto geometrico da identidade do evento */
+  .acento-topo {
+    position: absolute; right: -9%; top: -7%; width: 44%; height: 22%;
+    background: var(--ciano);
+    clip-path: polygon(24% 0%, 100% 8%, 62% 46%, 100% 100%, 8% 74%, 42% 38%);
+  }
+
+  /* faixa roxa do rodape, com aresta superior inclinada */
+  .faixa-rodape {
+    position: absolute; left: 0; bottom: 0; width: 100%;
+    background: var(--roxo);
+    clip-path: polygon(0% 26%, 38% 10%, 72% 22%, 100% 4%, 100% 100%, 0% 100%);
+  }
+
+  .conteudo { position: relative; z-index: 2; }
+
+  .pill {
+    display: inline-block; background: var(--laranja); color: var(--preto);
+    font-family: 'Montserrat'; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  /* titulo em linhas independentes, cada uma podendo levar marca-texto.
+     Blocos por linha em vez de fundo inline, senao o fundo de uma linha
+     cobre os glifos da linha de cima quando a entrelinha e apertada. */
+  .titulo { font-family: 'Anton'; font-weight: 400; text-transform: uppercase; }
+  .titulo .linha { display: block; }
+  .titulo .linha > span {
+    display: inline-block; color: var(--preto);
+    padding: 0.06em 0.14em 0.11em;
+    margin-left: -0.14em;
+  }
+  .titulo .linha.laranja > span { background: var(--laranja); }
+  .titulo .linha.verde > span { background: var(--verde); }
+  .titulo .linha.limpa > span { background: transparent; }
+
+  .data {
+    font-family: 'Anton'; font-weight: 400; color: var(--roxo);
+    line-height: 0.86; letter-spacing: -0.012em;
+  }
+  .data small {
+    display: block; font-family: 'Montserrat'; font-weight: 800;
+    color: var(--preto); text-transform: uppercase; letter-spacing: 0.14em;
+  }
+
+  .local { font-family: 'Montserrat'; font-weight: 700; color: var(--preto); }
+
+  .agenda li { list-style: none; display: flex; align-items: baseline; }
+  .agenda .hora {
+    font-family: 'Montserrat'; font-weight: 800; color: var(--preto);
+    background: var(--amarelo); padding: 2px 11px 1px; white-space: nowrap;
+  }
+  .agenda .o-que { font-family: 'Montserrat'; font-weight: 600; color: var(--preto); }
+
+  .camiseta {
+    display: inline-block; background: var(--verde); color: var(--preto);
+    font-family: 'Montserrat'; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* rodape sobre a faixa roxa, em off-white */
+  .rodape {
+    position: absolute; left: 0; width: 100%; z-index: 3;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .rodape .rotulo {
+    font-family: 'Montserrat'; font-weight: 700; color: var(--branco);
+    text-transform: uppercase; letter-spacing: 0.22em; opacity: 0.8;
+  }
+  .rodape .nas {
+    font-family: 'Anton'; color: var(--branco); text-transform: uppercase; line-height: 1;
+  }
+  .rodape .nas span {
+    display: block; font-family: 'Montserrat'; font-weight: 600;
+    text-transform: none; letter-spacing: 0.02em; opacity: 0.92;
+  }
+  .rodape .divisor { background: var(--branco); opacity: 0.4; }
+  .rodape img { display: block; }
+</style>
+</head>
+<body>
+  <div class="canvas" id="canvas"></div>
+<script>
+const V = window.CONFIG;
+const c = document.getElementById('canvas');
+c.style.width = V.w + 'px';
+c.style.height = V.h + 'px';
+document.body.style.width = V.w + 'px';
+document.body.style.height = V.h + 'px';
+
+const S = V.escala;
+const px = n => (n * S) + 'px';
+
+let html = '<div class="acento-topo"></div>';
+html += `<div class="faixa-rodape" style="height:${px(V.faixaAltura)}"></div>`;
+
+html += `<div class="conteudo" style="padding:0 ${px(V.pad)}">`;
+html += `<div class="pill" style="font-size:${px(26)};padding:${px(14)} ${px(26)} ${px(13)};margin-top:${px(V.topo)}">${V.pill}</div>`;
+
+html += `<div class="titulo" style="font-size:${px(V.tituloCorpo)};line-height:${px(V.tituloEntrelinha)};margin-top:${px(V.tituloTopo)}">`
+      + V.titulo.map(l => `<span class="linha ${l.fundo || 'limpa'}"><span>${l.t}</span></span>`).join('')
+      + `</div>`;
+
+html += `<div class="data" style="font-size:${px(V.dataCorpo)};margin-top:${px(V.dataTopo)}">`
+      + `${V.data}<small style="font-size:${px(27)};margin-top:${px(13)}">${V.dataLegenda}</small></div>`;
+
+html += `<div class="local" style="font-size:${px(31)};line-height:${px(42)};margin-top:${px(V.localTopo)}">${V.local}</div>`;
+
+html += `<ul class="agenda" style="margin-top:${px(20)}">`
+      + V.agenda.map(i => `<li style="margin-top:${px(11)}">`
+          + `<span class="hora" style="font-size:${px(28)}">${i.hora}</span>`
+          + `<span class="o-que" style="font-size:${px(29)};margin-left:${px(14)}">${i.oque}</span></li>`).join('')
+      + `</ul>`;
+
+html += `<div class="camiseta" style="font-size:${px(26)};padding:${px(15)} ${px(22)};margin-top:${px(V.camisetaTopo)}">${V.camiseta}</div>`;
+html += `</div>`;
+
+html += `<div class="rodape" style="bottom:${px(V.rodapeBase)};gap:${px(26)}">`
+      + `<div style="text-align:right">`
+      + `<div class="rotulo" style="font-size:${px(17)};margin-bottom:${px(6)}">Realização</div>`
+      + `<div class="nas" style="font-size:${px(34)}">NAS`
+      + `<span style="font-size:${px(17)};margin-top:${px(3)}">Núcleo de Ação Social</span></div>`
+      + `</div>`
+      + `<div class="divisor" style="width:${px(2)};height:${px(62)}"></div>`
+      + `<img src="assets/liga_color_dark.png" style="width:${px(196)}">`
+      + `</div>`;
+
+c.innerHTML = html;
+</script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+[
+  {
+    "id": "A-feed-titulo",
+    "w": 1080,
+    "h": 1350,
+    "escala": 1.0,
+    "pad": 84,
+    "topo": 84,
+    "titulo": [
+      {
+        "t": "CAMINHADA",
+        "fundo": "limpa"
+      },
+      {
+        "t": "PELO DIA",
+        "fundo": "laranja"
+      },
+      {
+        "t": "DE DOAR",
+        "fundo": "laranja"
+      }
+    ],
+    "tituloCorpo": 94,
+    "tituloEntrelinha": 108,
+    "tituloTopo": 30,
+    "dataCorpo": 124,
+    "dataTopo": 26,
+    "localTopo": 26,
+    "camisetaTopo": 24,
+    "faixaAltura": 214,
+    "rodapeBase": 52,
+    "pill": "Save the date",
+    "data": "29.11",
+    "dataLegenda": "29 de novembro · domingo · Campinas",
+    "local": "Bosque Jequitibás<br><span style=\"font-weight:600;opacity:.78\">trajeto de 1 km até o Centro de Convivência</span>",
+    "agenda": [
+      {
+        "hora": "8H",
+        "oque": "concentração"
+      },
+      {
+        "hora": "8H30",
+        "oque": "falas sobre o Dia de Doar"
+      },
+      {
+        "hora": "9H",
+        "oque": "início da caminhada"
+      }
+    ],
+    "camiseta": "participe com a camiseta oficial · R$ 60"
+  },
+  {
+    "id": "B-feed-data",
+    "w": 1080,
+    "h": 1350,
+    "escala": 1.0,
+    "pad": 84,
+    "topo": 84,
+    "titulo": [
+      {
+        "t": "CAMINHADA PELO",
+        "fundo": "limpa"
+      },
+      {
+        "t": "DIA DE DOAR",
+        "fundo": "verde"
+      }
+    ],
+    "tituloCorpo": 72,
+    "tituloEntrelinha": 84,
+    "tituloTopo": 30,
+    "dataCorpo": 210,
+    "dataTopo": 18,
+    "localTopo": 30,
+    "camisetaTopo": 24,
+    "faixaAltura": 214,
+    "rodapeBase": 52,
+    "pill": "Save the date",
+    "data": "29.11",
+    "dataLegenda": "29 de novembro · domingo · Campinas",
+    "local": "Bosque Jequitibás<br><span style=\"font-weight:600;opacity:.78\">trajeto de 1 km até o Centro de Convivência</span>",
+    "agenda": [
+      {
+        "hora": "8H",
+        "oque": "concentração"
+      },
+      {
+        "hora": "8H30",
+        "oque": "falas sobre o Dia de Doar"
+      },
+      {
+        "hora": "9H",
+        "oque": "início da caminhada"
+      }
+    ],
+    "camiseta": "participe com a camiseta oficial · R$ 60"
+  },
+  {
+    "id": "C-story",
+    "w": 1080,
+    "h": 1920,
+    "escala": 1.06,
+    "pad": 88,
+    "topo": 250,
+    "titulo": [
+      {
+        "t": "CAMINHADA",
+        "fundo": "limpa"
+      },
+      {
+        "t": "PELO DIA",
+        "fundo": "laranja"
+      },
+      {
+        "t": "DE DOAR",
+        "fundo": "laranja"
+      }
+    ],
+    "tituloCorpo": 104,
+    "tituloEntrelinha": 120,
+    "tituloTopo": 36,
+    "dataCorpo": 156,
+    "dataTopo": 44,
+    "localTopo": 44,
+    "camisetaTopo": 38,
+    "faixaAltura": 300,
+    "rodapeBase": 96,
+    "pill": "Save the date",
+    "data": "29.11",
+    "dataLegenda": "29 de novembro · domingo · Campinas",
+    "local": "Bosque Jequitibás<br><span style=\"font-weight:600;opacity:.78\">trajeto de 1 km até o Centro de Convivência</span>",
+    "agenda": [
+      {
+        "hora": "8H",
+        "oque": "concentração"
+      },
+      {
+        "hora": "8H30",
+        "oque": "falas sobre o Dia de Doar"
+      },
+      {
+        "hora": "9H",
+        "oque": "início da caminhada"
+      }
+    ],
+    "camiseta": "participe com a camiseta oficial · R$ 60"
+  }
+]
