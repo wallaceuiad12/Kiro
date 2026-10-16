@@ -53,7 +53,13 @@ A integração das duas identidades funciona porque o amarelo da Liga, `#FDC815`
 
 **A assinatura fica isolada no rodapé**, separada por um filete e sobre branco. Em peça com duas organizações, assinatura disputando espaço com ilustração gera a leitura de patrocínio em vez de realização conjunta.
 
-**No story a composição respeita as zonas de segurança** do Instagram, com os 250 pixels do topo e da base livres de informação crítica. O conteúdo vive entre 260 e 1670.
+**No story a data vira uma folha de calendário**, com cabeçalho laranja para o dia da semana e corpo roxo para o dia e o mês. Ao lado dela ficam as três informações práticas, cada uma com um rótulo pequeno e o valor em destaque, marcadas com as cores da paleta. Assim a pessoa lê a data de longe e os detalhes de perto.
+
+**O card do movimento repete a composição da arte original**, logo do Dia de Doar sobre creme e tagline sobre verde, com o sol e a andorinha saindo pela borda direita. É a referência visual mais reconhecível da campanha em Campinas.
+
+**O story não tem links.** Link escrito em imagem de story não é clicável, ocupa espaço e disputa atenção com a assinatura. Se for preciso direcionar para um site, use a figurinha de link do próprio Instagram, posicionada na área livre abaixo da assinatura.
+
+**O story respeita as zonas de segurança** do Instagram. O texto começa em 236 pixels e o último elemento de conteúdo termina em 1662, deixando a base livre para a barra de resposta. As formas roxas e a andorinha pequena ficam nos cantos, só como decoração.
 
 ## Ilustrações
 
