@@ -1,5 +1,10 @@
 # Prompt para gerar os 2 slides do Projeto Leroy Merlin
 
+> Este prompt já foi executado. Os slides prontos estão em
+> `slides-projeto-leroy-merlin.pptx` e `slides-projeto-leroy-merlin.pdf`, e foram
+> gerados pelo `build_slides.py`. Veja o `README.md`. O texto abaixo fica registrado
+> como especificação do que foi pedido e como referência para novos slides.
+
 Cole o texto abaixo na ferramenta de apresentação, anexando junto os 3 arquivos indicados na seção "Anexos".
 
 ## Anexos a enviar junto com o prompt
