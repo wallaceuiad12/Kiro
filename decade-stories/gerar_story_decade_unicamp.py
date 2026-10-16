@@ -23,7 +23,6 @@ Saida:
 
 from pathlib import Path
 
-import qrcode
 from PIL import Image, ImageDraw, ImageFont
 
 BASE = Path(__file__).parent
@@ -34,7 +33,7 @@ ASSETS = BASE / "assets"
 W, H = 1080, 1920          # story vertical 9:16
 SC = 2                     # supersampling: renderiza em 2160x3840 e reduz
 M = 80                     # margem lateral
-LINK = "https://luma.com/wqw35sxf"
+LINK = "luma.com/wqw35sxf"  # destino da inscricao, sem o esquema para ficar limpo
 
 # ---------------------------------------------------------------- cores
 OFFWHITE = (245, 241, 236)
@@ -127,18 +126,6 @@ def paste_h(canvas, img, x, y, h, align="left", tint=None):
     xx = px(x) - ww if align == "right" else px(x)
     canvas.paste(im, (xx, px(y)), im if im.mode == "RGBA" else None)
     return ww / SC
-
-
-def qr_block(link, size, pad, fg=BLACK, bg=OFFWHITE):
-    q = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, box_size=16, border=0)
-    q.add_data(link)
-    q.make(fit=True)
-    code = q.make_image(fill_color="black", back_color="white").convert("L")
-    code = code.resize((px(size), px(size)), Image.NEAREST)
-    frame = Image.new("RGB", (px(size + 2 * pad), px(size + 2 * pad)), bg)
-    tile = Image.new("RGB", code.size, fg)
-    frame.paste(tile, (px(pad), px(pad)), Image.eval(code, lambda v: 255 - v))
-    return frame
 
 
 # ---------------------------------------------------------------- arte
@@ -241,15 +228,12 @@ def build(variant="offwhite"):
     d.text((cx, px(cap_y)), nome, font=f_cap_it, fill=ink)
     d.text((cx + wn, px(cap_y)), resto, font=f_cap, fill=ink)
 
-    # ---- CTA + QR
+    # ---- CTA, o proprio link e a chamada
     cta_y, cta_h = 1402, 152
     d.rectangle([px(M), px(cta_y), px(W - M), px(cta_y + cta_h)], fill=block_bg)
-    tracked(d, (M + 42, cta_y + 36), "INSCREVA-SE", f_cta, block_ink, tracking=3)
-    tracked(d, (M + 44, cta_y + 94), "vagas limitadas  →", f_cta2, block_soft, tracking=1.5)
-    qs, qpad = 112, 12
-    qr = qr_block(LINK, qs, qpad, fg=BLACK, bg=OFFWHITE)
-    canvas.paste(qr, (px(W - M - 30) - qr.width,
-                      px(cta_y + (cta_h - qs - 2 * qpad) / 2)))
+    tracked(d, (M + 42, cta_y + 32), "INSCREVA-SE  ·  VAGAS LIMITADAS",
+            f_cta2, block_soft, tracking=4)
+    tracked(d, (M + 40, cta_y + 76), LINK, f_cta, block_ink, tracking=1)
 
     # ---- rodape: lockup dos dois logos
     foot = cta_y + cta_h + 48
