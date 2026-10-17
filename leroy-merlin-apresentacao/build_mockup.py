@@ -1,18 +1,26 @@
 #!/usr/bin/env python3
 """
-Monta um mockup novo do produto finalizado, para nao repetir as mesmas fotos
-em todos os slides.
+Monta o mockup do produto finalizado, para nao repetir as mesmas fotos em todos
+os slides.
 
-Recorta a necessaire e a ecobag das fotos originais e compoe as duas numa cena
-de estudio limpa, no cinza claro da identidade da Nunes & Lucato, com sombra
-projetada suave.
+Recorta a necessaire e a ecobag das fotos originais e compoe as duas sobre o
+branco da identidade da Nunes & Lucato.
+
+Tres decisoes para nao parecer montagem:
+
+1. A sombra sai da propria silhueta do produto, achatada e inclinada conforme a
+   direcao da luz. Elipse generica embaixo do objeto e o que mais denuncia recorte.
+2. Sombra em duas camadas, uma de contato curta e escura na base e uma projetada
+   longa e difusa, que e como sombra real se comporta.
+3. Fundo branco puro, sem cenario de estudio nem linha de apoio, para a imagem
+   se integrar ao card branco do slide em vez de parecer uma foto colada.
 
 Saida: mockup-produto-final.png
 """
 import os
 import cv2
 import numpy as np
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageFilter
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(BASE)
@@ -21,53 +29,12 @@ FOTO_ECOBAG = os.path.join(REPO, "IMG-20260928-WA0154.jpg")
 SAIDA = os.path.join(BASE, "mockup-produto-final.png")
 
 LARG, ALT = 1800, 1100
-FUNDO_TOPO = (246, 247, 250)
-FUNDO_BASE = (226, 229, 238)
+BASE_Y = int(ALT * 0.90)
+BRANCO = (255, 255, 255)
 
 
-def recorta_grabcut(caminho, margem=0.06, iteracoes=6, tira_claros=False):
-    """Separa o produto do fundo com GrabCut, partindo de um retangulo amplo."""
-    img = cv2.imread(caminho)
-    h, w = img.shape[:2]
-    rect = (int(w * margem), int(h * margem),
-            int(w * (1 - 2 * margem)), int(h * (1 - 2 * margem)))
-    mascara = np.zeros((h, w), np.uint8)
-    fundo = np.zeros((1, 65), np.float64)
-    frente = np.zeros((1, 65), np.float64)
-    cv2.grabCut(img, mascara, rect, fundo, frente, iteracoes, cv2.GC_INIT_WITH_RECT)
-    binaria = np.where((mascara == cv2.GC_FGD) | (mascara == cv2.GC_PR_FGD), 255, 0)
-    binaria = binaria.astype(np.uint8)
-    if tira_claros:
-        # A necessaire e preta sobre fundo de estudio claro. Cortar so por
-        # luminancia deixa farrapos de fundo colados na base, porque a sombra do
-        # fundo e escura. Entao a mascara e ancorada no corpo escuro do produto,
-        # dilatado o suficiente para reincorporar zíper e brilhos da borda.
-        cinza = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        escuro = np.where(cinza < 150, 255, 0).astype(np.uint8)
-        nucleo = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9))
-        escuro = cv2.morphologyEx(escuro, cv2.MORPH_CLOSE, nucleo, iterations=3)
-        escuro = maior_componente(escuro)
-        escuro = cv2.dilate(escuro, cv2.getStructuringElement(
-            cv2.MORPH_ELLIPSE, (13, 13)), iterations=1)
-        binaria = cv2.bitwise_and(binaria, escuro)
-        binaria = cv2.morphologyEx(binaria, cv2.MORPH_CLOSE, nucleo, iterations=2)
-    return img, binaria
-
-
-def recorta_por_luminancia(caminho, limite=205):
-    """Para a necessaire, que esta sobre fundo de estudio claro e uniforme."""
-    img = cv2.imread(caminho)
-    cinza = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    mascara = np.where(cinza < limite, 255, 0).astype(np.uint8)
-    # fecha buracos e remove respingos
-    nucleo = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9))
-    mascara = cv2.morphologyEx(mascara, cv2.MORPH_CLOSE, nucleo, iterations=3)
-    mascara = cv2.morphologyEx(mascara, cv2.MORPH_OPEN, nucleo, iterations=2)
-    return img, mascara
-
-
+# ------------------------------------------------------------------- recortes
 def maior_componente(mascara):
-    """Mantem apenas a maior area conectada, descarta sujeira do recorte."""
     n, rotulos, estat, _ = cv2.connectedComponentsWithStats(mascara, 8)
     if n <= 1:
         return mascara
@@ -75,80 +42,123 @@ def maior_componente(mascara):
     return np.where(rotulos == maior, 255, 0).astype(np.uint8)
 
 
-def para_rgba(img_bgr, mascara, suavizar=2.0):
-    mascara = maior_componente(mascara)
+def recorta(caminho, margem=0.06, iteracoes=6, ancora_escura=False):
+    """GrabCut partindo de um retangulo amplo."""
+    img = cv2.imread(caminho)
+    h, w = img.shape[:2]
+    rect = (int(w * margem), int(h * margem),
+            int(w * (1 - 2 * margem)), int(h * (1 - 2 * margem)))
+    mascara = np.zeros((h, w), np.uint8)
+    cv2.grabCut(img, mascara, rect, np.zeros((1, 65), np.float64),
+                np.zeros((1, 65), np.float64), iteracoes, cv2.GC_INIT_WITH_RECT)
+    binaria = np.where((mascara == cv2.GC_FGD) | (mascara == cv2.GC_PR_FGD),
+                       255, 0).astype(np.uint8)
+    if ancora_escura:
+        # A necessaire e preta sobre fundo claro. Cortar so por luminancia deixa
+        # farrapos de fundo colados na base, porque a sombra do fundo e escura.
+        # Entao a mascara e ancorada no corpo escuro e dilatada depois, para o
+        # ziper e os brilhos da borda voltarem.
+        cinza = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        escuro = np.where(cinza < 150, 255, 0).astype(np.uint8)
+        nucleo = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9))
+        escuro = cv2.morphologyEx(escuro, cv2.MORPH_CLOSE, nucleo, iterations=3)
+        escuro = maior_componente(escuro)
+        escuro = cv2.dilate(escuro, cv2.getStructuringElement(
+            cv2.MORPH_ELLIPSE, (13, 13)))
+        binaria = cv2.bitwise_and(binaria, escuro)
+        binaria = cv2.morphologyEx(binaria, cv2.MORPH_CLOSE, nucleo, iterations=2)
+    return img, maior_componente(binaria)
+
+
+def para_rgba(img_bgr, mascara):
+    """Encolhe a mascara 1 px antes de suavizar, senao sobra halo do fundo."""
+    mascara = cv2.erode(mascara, cv2.getStructuringElement(
+        cv2.MORPH_ELLIPSE, (3, 3)))
     rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
-    alfa = Image.fromarray(mascara).filter(ImageFilter.GaussianBlur(suavizar))
+    alfa = Image.fromarray(mascara).filter(ImageFilter.GaussianBlur(1.1))
     out = Image.fromarray(rgb).convert("RGBA")
     out.putalpha(alfa)
     return out.crop(out.getbbox())
 
 
-def redimensiona_altura(img, altura):
-    prop = altura / img.height
-    return img.resize((max(1, int(img.width * prop)), altura), Image.LANCZOS)
+def redimensiona(img, largura=None, altura=None):
+    if largura:
+        k = largura / img.width
+    else:
+        k = altura / img.height
+    return img.resize((max(1, int(img.width * k)), max(1, int(img.height * k))),
+                      Image.LANCZOS)
 
 
-def redimensiona_largura(img, largura):
-    prop = largura / img.width
-    return img.resize((largura, max(1, int(img.height * prop))), Image.LANCZOS)
-
-
-def fundo_estudio():
-    base = Image.new("RGB", (LARG, ALT), FUNDO_TOPO)
-    d = ImageDraw.Draw(base)
-    for y in range(ALT):
-        t = y / ALT
-        cor = tuple(int(FUNDO_TOPO[i] + (FUNDO_BASE[i] - FUNDO_TOPO[i]) * t ** 1.6)
-                    for i in range(3))
-        d.line([(0, y), (LARG, y)], fill=cor)
-    return base
-
-
-def sombra(cena, produto, x, y, forca=150, desfoque=38):
-    """Sombra de contato, elipse achatada na base do produto."""
+# -------------------------------------------------------------------- sombras
+def sombra_silhueta(cena, produto, x, y, inclinacao=0.42, achatamento=0.17,
+                    desfoque=26, opacidade=58):
+    """Sombra projetada, a propria silhueta achatada e inclinada."""
+    alfa = produto.split()[3]
+    w, h = alfa.size
+    alt = max(8, int(h * achatamento))
+    sh = alfa.resize((w, alt), Image.LANCZOS)
+    desloc = int(h * achatamento * inclinacao * 3.2)
+    tela = Image.new("L", (w + abs(desloc) * 2, alt), 0)
+    tela.paste(sh, (abs(desloc), 0))
+    sh = tela.transform(tela.size, Image.AFFINE,
+                        (1, inclinacao, -inclinacao * alt, 0, 1, 0),
+                        resample=Image.BICUBIC)
+    sh = sh.filter(ImageFilter.GaussianBlur(desfoque))
     camada = Image.new("RGBA", cena.size, (0, 0, 0, 0))
-    d = ImageDraw.Draw(camada)
-    larg = int(produto.width * 0.92)
-    alt_s = max(14, int(produto.height * 0.11))
-    cx = x + produto.width // 2
-    cy = y + produto.height - int(alt_s * 0.35)
-    d.ellipse([cx - larg // 2, cy - alt_s // 2, cx + larg // 2, cy + alt_s // 2],
-              fill=(26, 28, 46, forca))
-    camada = camada.filter(ImageFilter.GaussianBlur(desfoque))
+    tinta = Image.new("RGBA", sh.size, (22, 24, 42, 255))
+    tinta.putalpha(sh.point(lambda v: int(v * opacidade / 255)))
+    camada.alpha_composite(tinta, (x - abs(desloc), y + h - alt // 2))
     cena.alpha_composite(camada)
 
 
+def sombra_contato(cena, produto, x, y, desfoque=9, opacidade=165):
+    """Sombra curta e escura na linha de apoio, o que ancora o objeto."""
+    alfa = produto.split()[3]
+    w, h = alfa.size
+    faixa = alfa.crop((0, int(h * 0.93), w, h)).resize((w, max(6, int(h * 0.05))),
+                                                       Image.LANCZOS)
+    faixa = faixa.filter(ImageFilter.GaussianBlur(desfoque))
+    tinta = Image.new("RGBA", faixa.size, (18, 20, 36, 255))
+    tinta.putalpha(faixa.point(lambda v: int(v * opacidade / 255)))
+    cena.alpha_composite(tinta, (x, y + h - faixa.height // 2))
+
+
+# ----------------------------------------------------------------------- cena
+def fundo():
+    """Branco puro, o mesmo fundo dos slides, sem cenario e sem linha de apoio.
+
+    Gradiente de estudio e linha de horizonte sao o que mais faz a composicao
+    parecer montagem, e o branco faz a imagem se integrar ao card do slide.
+    """
+    return Image.new("RGBA", (LARG, ALT), BRANCO + (255,))
+
+
 def main():
-    # GrabCut resolve os dois casos. Na necessaire o limite por luminancia falhava,
-    # porque o fundo de estudio tem gradiente e sombra mais escuros que o limite.
-    nec_bgr, nec_mask = recorta_grabcut(FOTO_NECESSAIRE, margem=0.08, tira_claros=True)
-    necessaire = para_rgba(nec_bgr, nec_mask, suavizar=1.6)
+    nec = para_rgba(*recorta(FOTO_NECESSAIRE, margem=0.08, ancora_escura=True))
+    eco = para_rgba(*recorta(FOTO_ECOBAG))
 
-    eco_bgr, eco_mask = recorta_grabcut(FOTO_ECOBAG)
-    ecobag = para_rgba(eco_bgr, eco_mask, suavizar=2.2)
+    eco = redimensiona(eco, altura=int(ALT * 0.76))
+    nec = redimensiona(nec, largura=int(LARG * 0.25))
+    print("pecas:", "ecobag", eco.size, "necessaire", nec.size)
 
-    print("recortes:", "necessaire", necessaire.size, "ecobag", ecobag.size)
+    cena = fundo()
 
-    # a ecobag fica atras e mais alta, a necessaire na frente, criando profundidade.
-    # a necessaire e dimensionada pela largura, ela e larga e baixa
-    ecobag = redimensiona_altura(ecobag, int(ALT * 0.72))
-    necessaire = redimensiona_largura(necessaire, int(LARG * 0.235))
+    eco_x = int(LARG * 0.36) - eco.width // 2
+    eco_y = BASE_Y - eco.height
+    nec_x = int(LARG * 0.67) - nec.width // 2
+    nec_y = BASE_Y - nec.height
 
-    cena = fundo_estudio().convert("RGBA")
+    # luz vem de cima a esquerda, as duas sombras caem para a direita
+    sombra_silhueta(cena, eco, eco_x, eco_y, desfoque=24, opacidade=74)
+    sombra_silhueta(cena, nec, nec_x, nec_y, desfoque=16, opacidade=78)
+    sombra_contato(cena, eco, eco_x, eco_y)
+    sombra_contato(cena, nec, nec_x, nec_y)
 
-    base_y = int(ALT * 0.86)
-    eco_x = int(LARG * 0.34) - ecobag.width // 2
-    eco_y = base_y - ecobag.height
-    nec_x = int(LARG * 0.62) - necessaire.width // 2
-    nec_y = base_y - necessaire.height
+    cena.alpha_composite(eco, (eco_x, eco_y))
+    cena.alpha_composite(nec, (nec_x, nec_y))
 
-    sombra(cena, ecobag, eco_x, eco_y, forca=165, desfoque=40)
-    cena.alpha_composite(ecobag, (eco_x, eco_y))
-    sombra(cena, necessaire, nec_x, nec_y, forca=175, desfoque=24)
-    cena.alpha_composite(necessaire, (nec_x, nec_y))
-
-    cena.convert("RGB").save(SAIDA, quality=94)
+    cena.convert("RGB").save(SAIDA, quality=95)
     print("gerado:", SAIDA)
 
 

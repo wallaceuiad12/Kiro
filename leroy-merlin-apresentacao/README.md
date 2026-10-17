@@ -44,14 +44,35 @@ Cada slide usa um tratamento de imagem diferente, para nenhuma foto se repetir.
 
 - Capa, ecobag em monocromia azul
 - Introdução, foto da necessaire emoldurada
-- O projeto, mockup novo com os dois produtos
+- O projeto, mockup dos dois produtos
 - Volume e valores, sem foto, o espaço é da tabela e dos indicadores
 
-O mockup foi montado pelo `build_mockup.py`, que recorta os dois produtos das fotos
-originais com GrabCut e compõe em cena de estúdio com sombra de contato. Na
-necessaire, recortar só por luminância deixava farrapos de fundo colados na base,
-porque a sombra do fundo é escura, então a máscara é ancorada no corpo escuro do
-produto e depois dilatada para reincorporar o zíper.
+O logotipo da Leroy Merlin aparece no topo direito de todos os slides depois da capa,
+sempre na mesma posição, como co-marca da proposta.
+
+## O mockup
+
+Montado pelo `build_mockup.py`, que recorta os dois produtos das fotos originais com
+GrabCut e compõe sobre o branco da identidade. Três decisões para não parecer
+montagem:
+
+1. **A sombra sai da própria silhueta** do produto, achatada e inclinada conforme a
+   direção da luz, em duas camadas, uma de contato curta e escura na base e uma
+   projetada longa e difusa. Elipse genérica embaixo do objeto é o que mais denuncia
+   recorte.
+2. **Fundo branco puro**, sem cenário de estúdio nem linha de apoio. Gradiente e
+   linha de horizonte deixavam a cena artificial, e o branco faz a imagem se
+   integrar ao card do slide em vez de parecer uma foto colada.
+3. **Escalas reais**, a ecobag com cerca de 38 cm de altura e a necessaire com 22 cm
+   de largura, na mesma proporção que teriam lado a lado.
+
+Na necessaire, recortar só por luminância deixava farrapos de fundo colados na base,
+porque a sombra do fundo do estúdio é escura, então a máscara é ancorada no corpo
+escuro do produto e depois dilatada para reincorporar o zíper. A máscara também é
+erodida 1 px antes de suavizar, senão sobra halo claro na silhueta.
+
+Equalizar a exposição das duas peças foi testado e descartado, lavava o preto da
+necessaire e estourava o verde da ecobag.
 
 ## Identidade visual
 

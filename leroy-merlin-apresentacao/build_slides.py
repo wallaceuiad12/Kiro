@@ -67,6 +67,9 @@ MOCKUP = os.path.join(BASE, "mockup-produto-final.png")
 
 RODAPE_TXT = "Projeto Leroy Merlin  \u00b7  Upcycle de Uniformes"
 
+# posicao fixa do logotipo do cliente, igual em todos os slides depois da capa
+LEROY_X, LEROY_Y, LEROY_W = 1248.5, 100.0, 100.0
+
 
 # ------------------------------------------------------------------ ajudantes
 def Y(y):
@@ -197,6 +200,11 @@ def foto(c, caminho, x, y, w, h, moldura=True, ancora=0.5):
         c.setStrokeColorRGB(*LINHA)
         c.setLineWidth(1.2)
         c.rect(x, Y(y + h), w, h, stroke=1, fill=0)
+
+
+def logo_cliente(c):
+    """Logotipo da Leroy Merlin no topo direito, co-marca da proposta."""
+    logo_leroy(c, LEROY_X, LEROY_Y, LEROY_W)
 
 
 def logo_leroy(c, x, y, largura):
@@ -383,6 +391,7 @@ def slide_introducao(c):
     fundo_branco(c)
     kicker(c, "Introdu\u00e7\u00e3o")
     titulo(c, "Quem somos e ", "o que propomos")
+    logo_cliente(c)
 
     paragrafo(c, MARGIN, base(213.0, SZ_CORPO), 700.0,
               "A Nunes & Lucato atua na cadeia de res\u00edduos t\u00eaxteis com "
@@ -439,7 +448,7 @@ def slide_projeto(c):
     fundo_branco(c)
     kicker(c, "Projeto Leroy Merlin")
     titulo(c, "Upcycle de uniformes ", "inserv\u00edveis")
-    logo_leroy(c, 1234.0, 96.0, 114.5)
+    logo_cliente(c)
 
     texto(c, MARGIN, base(186.0, SZ_CORPO),
           "Estoque dispon\u00edvel de uniformes inserv\u00edveis, grade completa e "
@@ -518,6 +527,7 @@ def slide_valores(c):
     fundo_branco(c)
     kicker(c, "Volume e valores")
     titulo(c, "Produ\u00e7\u00e3o e ", "investimento do projeto")
+    logo_cliente(c)
     texto(c, MARGIN, base(186.0, SZ_CORPO),
           "Produ\u00e7\u00e3o de 2.500 acess\u00f3rios, 1.250 de cada item, "
           "integralmente a partir dos uniformes recebidos.",
